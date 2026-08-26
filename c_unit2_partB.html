@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 2 (Part B) - C Arrays & Strings </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    /* Styles for the notes content */
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+    .qa-item h4 {
+      color: #1e3a8a;
+      font-size: 1.1rem;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    .code-block {
+      background: #2d2d2d;
+      color: #f1f1f1;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+    /* Simple table style */
+    .notes-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    .notes-table th, .notes-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    .notes-table th {
+      background-color: #f3f4f6;
+      color: #1e3a8a;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>💻 Unit 2 – Part B (13-Mark Q&A)</h1>
+      <p>C Programming </p>
+      <a href="c_unit2.html" class="cta-btn">⬅ Back to Unit 2</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part B: 13-Mark Questions</h2>
+
+    <div class="qa-item">
+      <h3>1. Discuss two dimensional and multi-dimensional array with example.</h3>
+      
+      <h4>1. Two-Dimensional Array</h4>
+      <p>A two-dimensional (2D) array is a collection of elements arranged in rows and columns, similar to a matrix or a table. It can be considered as an array of arrays.</p>
+      <strong>Syntax:</strong>
+      <pre class="code-block"><code>data_type array_name[rows][columns];</code></pre>
+      <strong>Example Declaration:</strong>
+      <pre class="code-block"><code>int matrix[3][3]; // Creates a matrix with 3 rows and 3 columns</code></pre>
+      
+      <strong>Example Program - Display 2D Array:</strong>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+int main() {
+    int i, j;
+    int a[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    
+    printf("The 2D array elements are:\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("%d ", a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}</code></pre>
+      <strong>Output:</strong>
+<pre class="code-block">The 2D array elements are:
+1 2 3
+4 5 6
+</pre>
+      <strong>Explanation:</strong>
+      <ul>
+        <li>The array <code>a[2][3]</code> contains 2 rows and 3 columns.</li>
+        <li>The first loop (for <code>i</code>) controls rows, and the second loop (for <code>j</code>) controls columns.</li>
+        <li>Nested loops are used to access each element using two indices: <code>a[i][j]</code>.</li>
+      </ul>
+
+      <h4>2. Multi-Dimensional Array</h4>
+      <p>A multi-dimensional array is an extension of the 2D array. It has more than two dimensions, such as 3D, 4D, etc. They are used for storing data in 3D models or tables of values.</p>
+      <strong>Syntax:</strong>
+      <pre class="code-block"><code>data_type array_name[size1][size2][size3]...[sizeN];</code></pre>
+      <strong>Example Declaration (3D Array):</strong>
+      <pre class="code-block"><code>int cube[2][2][2]; // 2 blocks, 2 rows, 2 columns</code></pre>
+      
+      <strong>Example Program - 3D Array:</strong>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+int main() {
+    int a[2][2][2] = {
+        { {1, 2}, {3, 4} },
+        { {5, 6}, {7, 8} }
+    };
+    
+    printf("Elements of 3D array:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            for (int k = 0; k < 2; k++) {
+                printf("%d ", a[i][j][k]);
+            }
+            printf("\n");
+        }
+        printf("\n");
+    }
+    return 0;
+}</code></pre>
+      <strong>Output:</strong>
+<pre class="code-block">Elements of 3D array:
+1 2
+3 4
+
+5 6
+7 8
+</pre>
+      <strong>Explanation:</strong>
+      <ul>
+        <li><code>a[2][2][2]</code> is a 3D array having 8 elements in total (2*2*2).</li>
+        <li>Each element is accessed by three indices: <code>a[i][j][k]</code>.</li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>2. Write a program to concatenate two strings without using built-in functions.</h3>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char str1[50], str2[50];
+    int i = 0, j = 0;
+
+    // Input two strings
+    printf("Enter first string: ");
+    gets(str1);
+    printf("Enter second string: ");
+    gets(str2);
+
+    // Move i to the end of the first string
+    while (str1[i] != '\0') {
+        i++;
+    }
+
+    // Copy each character of str2 to str1
+    while (str2[j] != '\0') {
+        str1[i] = str2[j];
+        i++;
+        j++;
+    }
+
+    // Add null terminator at the end
+    str1[i] = '\0';
+
+    // Display concatenated string
+    printf("Concatenated string = %s\n", str1);
+    return 0;
+}</code></pre>
+      <strong>Output:</strong>
+<pre class="code-block">Enter first string: Hello
+Enter second string: World
+Concatenated string = HelloWorld
+</pre>
+      <strong>Explanation:</strong>
+      <ol>
+        <li><code>gets()</code> reads both strings from the user.</li>
+        <li>The first <code>while</code> loop iterates <code>i</code> to find the end of the first string (the null character <code>\0</code>).</li>
+        <li>The second <code>while</code> loop copies characters from <code>str2</code> to the end of <code>str1</code>, starting from the position of the null character.</li>
+        <li>A new null character <code>\0</code> is added at the very end to mark the end of the newly combined string.</li>
+      </ol>
+    </div>
+
+    <div class="qa-item">
+      <h3>3. Write a C program using two-dimensional arrays to perform Matrix Multiplication.</h3>
+      <strong>Algorithm:</strong>
+      <ol>
+        <li>Start</li>
+        <li>Input the number of rows (r1) and columns (c1) of matrix A.</li>
+        <li>Input the number of rows (r2) and columns (c2) of matrix B.</li>
+        <li>Check if <code>c1 != r2</code>. If true, multiplication is not possible; exit.</li>
+        <li>Read elements of matrix A (r1 x c1).</li>
+        <li>Read elements of matrix B (r2 x c2).</li>
+        <li>Initialize a result matrix C (r1 x c2) with all elements as 0.</li>
+        <li>Use three nested loops (for <code>i</code>, <code>j</code>, <code>k</code>) to perform multiplication:
+          <br><code>C[i][j] = C[i][j] + A[i][k] * B[k][j]</code></li>
+        <li>Display the resultant matrix C.</li>
+        <li>Stop</li>
+      </ol>
+
+      <strong>C Program:</strong>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a[10][10], b[10][10], c[10][10];
+    int r1, c1, r2, c2, i, j, k;
+
+    // Input size of first matrix
+    printf("Enter rows and columns of first matrix: ");
+    scanf("%d %d", &r1, &c1);
+
+    // Input size of second matrix
+    printf("Enter rows and columns of second matrix: ");
+    scanf("%d %d", &r2, &c2);
+
+    // Check matrix multiplication condition
+    if (c1 != r2) {
+        printf("Matrix multiplication not possible!");
+        return 0;
+    }
+
+    // Input first matrix
+    printf("Enter elements of first matrix:\n");
+    for (i = 0; i < r1; i++) {
+        for (j = 0; j < c1; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    // Input second matrix
+    printf("Enter elements of second matrix:\n");
+    for (i = 0; i < r2; i++) {
+        for (j = 0; j < c2; j++) {
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    // Initialize result matrix to 0
+    for (i = 0; i < r1; i++) {
+        for (j = 0; j < c2; j++) {
+            c[i][j] = 0;
+        }
+    }
+
+    // Matrix multiplication logic
+    for (i = 0; i < r1; i++) {
+        for (j = 0; j < c2; j++) {
+            for (k = 0; k < c1; k++) {
+                c[i][j] += a[i][k] * b[k][j];
+            }
+        }
+    }
+
+    // Display result matrix
+    printf("Resultant Matrix:\n");
+    for (i = 0; i < r1; i++) {
+        for (j = 0; j < c2; j++) {
+            printf("%d ", c[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>4. Write a C program to find the number of Vowels, Consonants, Digits and White spaces in a string.</h3>
+      <strong>Algorithm:</strong>
+      <ol>
+        <li>Start</li>
+        <li>Read a string from the user.</li>
+        <li>Initialize counters <code>vowels</code>, <code>consonants</code>, <code>digits</code>, and <code>spaces</code> to 0.</li>
+        <li>Traverse each character of the string using a loop until the null character <code>\0</code>.</li>
+        <li>Convert the character to lowercase (using <code>tolower()</code>) for easy comparison.</li>
+        <li>Check if the character is a vowel ('a', 'e', 'i', 'o', 'u'). If yes, increment <code>vowels</code>.</li>
+        <li>Else, check if it's an alphabet (between 'a' and 'z'). If yes, increment <code>consonants</code>.</li>
+        <li>Else, check if it's a digit (between '0' and '9'). If yes, increment <code>digits</code>.</li>
+        <li>Else, check if it's a space (' '). If yes, increment <code>spaces</code>.</li>
+        <li>After the loop, display all the counts.</li>
+        <li>Stop.</li>
+      </ol>
+      
+      <strong>C Program:</strong>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt; // For tolower() and isalpha()
+
+int main() {
+    char str[200];
+    int i, vowels = 0, consonants = 0, digits = 0, spaces = 0;
+
+    printf("Enter a string: ");
+    gets(str);
+
+    for (i = 0; str[i] != '\0'; i++) {
+        char ch = str[i];
+
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+            ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+            vowels++;
+        }
+        else if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+            consonants++;
+        }
+        else if (ch >= '0' && ch <= '9') {
+            digits++;
+        }
+        else if (ch == ' ') {
+            spaces++;
+        }
+    }
+
+    printf("\nVowels: %d", vowels);
+    printf("\nConsonants: %d", consonants);
+    printf("\nDigits: %d", digits);
+    printf("\nWhite spaces: %d\n", spaces);
+    return 0;
+}</code></pre>
+      <strong>Sample Input:</strong>
+      <pre class="code-block">Enter a string: Hello World 2025</pre>
+      <strong>Output:</strong>
+<pre class="code-block">
+Vowels: 3
+Consonants: 7
+Digits: 4
+White spaces: 2
+</pre>
+    </div>
+    
+    <div class="qa-item">
+      <h3>5. Explain the single dimensional array and 2D array with an example.</h3>
+      
+      <h4>1. Single Dimensional Array (1D Array)</h4>
+      <p>A Single Dimensional Array (1D Array) is a collection of elements of the same data type, stored in contiguous memory locations and accessed using a single subscript (index).</p>
+      <strong>Syntax:</strong>
+      <pre class="code-block"><code>data_type array_name[size];</code></pre>
+      <strong>Example:</strong>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+int main() {
+    int marks[5] = {80, 75, 90, 85, 70};
+    int i;
+    
+    printf("Marks of students:\n");
+    for (i = 0; i < 5; i++) {
+        printf("%d ", marks[i]);
+    }
+    printf("\n");
+    return 0;
+}</code></pre>
+      <strong>Output:</strong>
+      <pre class="code-block">Marks of students:
+80 75 90 85 70
+</pre>
+      <strong>Explanation:</strong>
+      <ul>
+        <li><code>marks[5]</code> is an integer array that stores 5 elements.</li>
+        <li>The elements are accessed using indices from 0 to 4 (e.g., <code>marks[0]</code>, <code>marks[1]</code>, etc.).</li>
+      </ul>
+
+      <h4>2. Two Dimensional Array (2D Array)</h4>
+      <p>A Two-Dimensional Array (2D Array) stores data in rows and columns (matrix form). It can be considered as an array of arrays.</p>
+      <strong>Syntax:</strong>
+      <pre class="code-block"><code>data_type array_name[rows][columns];</code></pre>
+      <strong>Example:</strong>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+int main() {
+    int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    int i, j;
+    
+    printf("Matrix elements:\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}</code></pre>
+      <strong>Output:</strong>
+      <pre class="code-block">Matrix elements:
+1 2 3
+4 5 6
+</pre>
+      <strong>Explanation:</strong>
+      <ul>
+        <li>The array <code>matrix[2][3]</code> has 2 rows and 3 columns.</li>
+        <li>Elements are accessed using two subscripts: <code>matrix[i][j]</code>.</li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>6. Illustrate about a string and its methods with an example.</h3>
+      <h4>Definition</h4>
+      <p>A string in C is a sequence of characters terminated by a null character (<code>\0</code>). It is represented as an array of characters.</p>
+      <strong>Example Declaration:</strong>
+<pre class="code-block"><code>char name[10] = "Ayman";
+// This is stored as {'A', 'y', 'm', 'a', 'n', '\0'}</code></pre>
+      
+      <h4>Common String Functions in C (String Methods)</h4>
+      <p>C provides several built-in functions in the header file <code>&lt;string.h&gt;</code> to perform operations on strings.</p>
+      <table class="notes-table">
+        <tr>
+          <th>Function</th>
+          <th>Purpose</th>
+          <th>Example</th>
+        </tr>
+        <tr>
+          <td><code>strlen(str)</code></td>
+          <td>Finds the length of a string (excluding <code>\0</code>).</td>
+          <td><code>strlen("Hello")</code> returns 5.</td>
+        </tr>
+        <tr>
+          <td><code>strcpy(s1, s2)</code></td>
+          <td>Copies string <code>s2</code> into string <code>s1</code>.</td>
+          <td><code>strcpy(dest, "Hi")</code></td>
+        </tr>
+        <tr>
+          <td><code>strcat(s1, s2)</code></td>
+          <td>Concatenates (joins) string <code>s2</code> to the end of <code>s1</code>.</td>
+          <td><code>strcat(s1, "World")</code></td>
+        </tr>
+        <tr>
+          <td><code>strcmp(s1, s2)</code></td>
+          <td>Compares two strings.</td>
+          <td>Returns 0 if equal, &lt; 0 if s1 < s2, > 0 if s1 > s2.</td>
+        </tr>
+        <tr>
+          <td><code>strrev(str)</code></td>
+          <td>Reverses a string (Note: not standard C).</td>
+          <td><code>strrev("abc")</code> becomes "cba".</td>
+        </tr>
+      </table>
+
+      <strong>Example Program: String Operations</strong>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char str1[50] = "Hello";
+    char str2[50] = "World";
+    char str3[50];
+
+    printf("String 1: %s\n", str1);
+    printf("String 2: %s\n", str2);
+
+    // 1. Length
+    printf("Length of str1 = %zu\n", strlen(str1));
+
+    // 2. Copy
+    strcpy(str3, str1);
+    printf("Copied String (str3) = %s\n", str3);
+
+    // 3. Concatenate
+    strcat(str1, str2);
+    printf("Concatenated String (str1) = %s\n", str1);
+
+    // 4. Compare
+    // We compare str3 ("Hello") and str2 ("World")
+    if (strcmp(str3, str2) == 0) {
+        printf("Strings str3 and str2 are equal\n");
+    } else {
+        printf("Strings str3 and str2 are not equal\n");
+    }
+    
+    return 0;
+}</code></pre>
+      <strong>Output:</strong>
+<pre class="code-block">String 1: Hello
+String 2: World
+Length of str1 = 5
+Copied String (str3) = Hello
+Concatenated String (str1) = HelloWorld
+Strings str3 and str2 are not equal
+</pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>7. Write a C program to perform the following Matrix operation: i. Addition ii. Subtraction</h3>
+      
+      <h4>i. C Program for Matrix Addition</h4>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+int main() {
+    int a[10][10], b[10][10], sum[10][10];
+    int i, j, r, c;
+
+    printf("Enter the number of rows and columns: ");
+    scanf("%d %d", &r, &c);
+
+    printf("\nEnter elements of first matrix:\n");
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    printf("\nEnter elements of second matrix:\n");
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    // Matrix Addition
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            sum[i][j] = a[i][j] + b[i][j];
+        }
+    }
+
+    printf("\nMatrix Addition Result:\n");
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            printf("%d ", sum[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}</code></pre>
+      <strong>Sample Output (Addition):</strong>
+<pre class="code-block">Enter the number of rows and columns: 2 2
+
+Enter elements of first matrix:
+1 2
+3 4
+
+Enter elements of second matrix:
+5 6
+7 8
+
+Matrix Addition Result:
+6 8
+10 12
+</pre>
+
+      <h4>ii. C Program for Matrix Subtraction</h4>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+int main() {
+    int a[10][10], b[10][10], diff[10][10];
+    int i, j, r, c;
+
+    printf("Enter the number of rows and columns: ");
+    scanf("%d %d", &r, &c);
+
+    printf("\nEnter elements of first matrix:\n");
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    printf("\nEnter elements of second matrix:\n");
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    // Matrix Subtraction
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            diff[i][j] = a[i][j] - b[i][j];
+        }
+    }
+
+    printf("\nMatrix Subtraction Result:\n");
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            printf("%d ", diff[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}</code></pre>
+      <strong>Sample Output (Subtraction):</strong>
+<pre class="code-block">Enter the number of rows and columns: 2 2
+
+Enter elements of first matrix:
+8 6
+7 5
+
+Enter elements of second matrix:
+3 2
+1 4
+
+Matrix Subtraction Result:
+5 4
+6 1
+</pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>8. Describe a one dimensional and Two dimensional Array with a suitable example.</h3>
+      
+      <h4>1. One-Dimensional Array</h4>
+      <p>A one-dimensional array is a linear collection of elements of the same data type, stored in contiguous memory locations and accessed using a single index. The index starts from 0 and goes up to size-1.</p>
+      <strong>Syntax:</strong>
+      <pre class="code-block"><code>data_type array_name[size];</code></pre>
+      <strong>Example:</strong>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+int main() {
+    // Initialize an array of 5 integers
+    int marks[5] = {80, 70, 90, 85, 75};
+    int i;
+    
+    printf("Marks of students:\n");
+    // Loop from index 0 to 4
+    for (i = 0; i < 5; i++) {
+        printf("%d ", marks[i]); // Access using one index
+    }
+    printf("\n");
+    return 0;
+}</code></pre>
+      <strong>Output:</strong>
+      <pre class="code-block">Marks of students:
+80 70 90 85 75
+</pre>
+      
+      <h4>2. Two-Dimensional Array</h4>
+      <p>A two-dimensional array stores data in the form of rows and columns, visualized like a matrix or table. It is also known as an "array of arrays".</p>
+      <strong>Syntax:</strong>
+      <pre class="code-block"><code>data_type array_name[rows][columns];</code></pre>
+      <strong>Example:</strong>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+int main() {
+    // Initialize a 2x3 matrix (2 rows, 3 columns)
+    int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    int i, j;
+    
+    printf("Matrix elements:\n");
+    // Outer loop for rows
+    for (i = 0; i < 2; i++) {
+        // Inner loop for columns
+        for (j = 0; j < 3; j++) {
+            printf("%d ", matrix[i][j]); // Access using two indices
+        }
+        printf("\n"); // New line after each row
+    }
+    return 0;
+}</code></pre>
+      <strong>Output:</strong>
+      <pre class="code-block">Matrix elements:
+1 2 3
+4 5 6
+</pre>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+ 
+
+ 
+
+</body>
+</html>

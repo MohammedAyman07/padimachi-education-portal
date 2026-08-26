@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 3 (Part A) - Maths </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+  
+    /* --- Styles optimized for Math content (from provided example) --- */
+    body {
+        font-family: 'Times New Roman', Times, serif; /* Serif font for better readability */
+    }
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+      font-family: Arial, sans-serif; /* Sans-serif for headings */
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.25rem; /* Slightly larger for clarity */
+      margin-bottom: 12px;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol {
+      color: #222; /* Darker text */
+      font-size: 1.1rem; /* Larger base font */
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    /* Style for matrix/equation blocks */
+    .code-block {
+      background: #f8f9fa; /* Lighter background */
+      color: #212529;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.15rem; /* Larger font for equations */
+      white-space: pre-wrap;
+      overflow-x: auto;
+      margin: 15px 0;
+      border: 1px solid #ddd;
+      text-align: left; /* Align equations to the left */
+    }
+    /* Simple table style */
+    .matrix-table {
+      margin: 10px auto;
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 1.15rem;
+    }
+    .matrix-table td {
+      padding: 5px 10px;
+    }
+    .matrix-table {
+      border-left: 2px solid #000;
+      border-right: 2px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>🧮 Unit 3 – Part A (2-Mark Q&A)</h1>
+      <p>Engineering Mathematics </p>
+      <a href="maths_unit3.html" class="cta-btn">⬅ Back to Unit 3</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part A: 2-Mark Questions</h2>
+<div class="qa-item">
+        <h3>QB. 1: Evaluate &int;<sub>0</sub><sup>&pi;/2</sup> Cos<sup>13</sup>x dx</h3>
+        <div class="code-block">
+Sol: Here, n=13 is odd.<br>
+&int;<sub>0</sub><sup>&pi;/2</sup> cos<sup>n</sup>x dx = (n-1)/n &middot; (n-3)/(n-2) &middot; (n-5)/(n-4) &middot;&middot;&middot; 2/3<br>
+&int;<sub>0</sub><sup>&pi;/2</sup> cos<sup>13</sup>x dx = (12/13) &middot; (10/11) &middot; (8/9) &middot; (6/7) &middot; (4/5) &middot; (2/3)<br>
+= (12 &middot; 10 &middot; 8 &middot; 6 &middot; 4 &middot; 2) / (13 &middot; 11 &middot; 9 &middot; 7 &middot; 5 &middot; 3 &middot; 1)<br>
+= (4 &middot; 2 &middot; 8 &middot; 2 &middot; 4 &middot; 2) / (13 &middot; 11 &middot; 3 &middot; 7)<br>
+= (8 &middot; 16 &middot; 8) / (143 &middot; 21)<br>
+= 1024 / 3003
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 2: Evaluate &int;<sub>0</sub><sup>&pi;/2</sup> sin<sup>6</sup>x dx</h3>
+      <div class="code-block">
+Sol Here, n=6 is even.<br>
+&int;<sub>0</sub><sup>&pi;/2</sup> sin<sup>n</sup>x dx = (n-1)/n &middot; (n-3)/(n-2) &middot; (n-5)/(n-4) &middot;&middot;&middot; 1/2 &middot; &pi;/2<br>
+&int;<sub>0</sub><sup>&pi;/2</sup> sin<sup>6</sup>x dx = (6-1)/6 &middot; (6-3)/(6-2) &middot; (6-5)/(6-4) &middot; &pi;/2<br>
+&int;<sub>0</sub><sup>&pi;/2</sup> sin<sup>6</sup>x dx = 5/6 &middot; 3/4 &middot; 1/2 &middot; &pi;/2 = 5&pi;/32
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 3: Prove that &int;<sub>0</sub><sup>a</sup> f(x)dx = &int;<sub>0</sub><sup>a</sup> f(a-x)dx</h3>
+      <div class="code-block">
+Sol: Let RHS = &int;<sub>0</sub><sup>a</sup> f(a-x)dx.<br>
+Let u = a-x<br>
+du/dx = -1 &rArr; du = -dx &rArr; dx = -du<br>
+Limits: x | 0 | a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u | a | 0<br>
+RHS = -&int;<sub>a</sub><sup>0</sup> f(u)du<br>
+{&middot;: &int;<sub>b</sub><sup>a</sup> f(x)dx = -&int;<sub>a</sub><sup>b</sup> f(x)dx}<br>
+RHS = &int;<sub>0</sub><sup>a</sup> f(u)du<br>
+RHS = &int;<sub>0</sub><sup>a</sup> f(x)dx = LHS
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 4: Given that &int;<sub>0</sub><sup>10</sup> f(x)dx = 17 and &int;<sub>0</sub><sup>8</sup> f(x)dx = 12, then, find &int;<sub>8</sub><sup>10</sup> f(x)dx.</h3>
+      <div class="code-block">
+Sol:<br>
+&int;<sub>0</sub><sup>8</sup> f(x)dx + &int;<sub>8</sub><sup>10</sup> f(x)dx = &int;<sub>0</sub><sup>10</sup> f(x)dx.<br>
+&int;<sub>8</sub><sup>10</sup> f(x)dx = &int;<sub>0</sub><sup>10</sup> f(x)dx - &int;<sub>0</sub><sup>8</sup> f(x)dx = 17 - 12 = 5
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 5: &int;<sub>0</sub><sup>3</sup> 1/&radic;x dx</h3>
+      <div class="code-block">
+Sol: &int;<sub>0</sub><sup>3</sup> 1/&radic;x dx = &int;<sub>0</sub><sup>3</sup> 1/x<sup>1/2</sup> dx = &int;<sub>0</sub><sup>3</sup> x<sup>-1/2</sup> dx.<br>
+&int;<sub>0</sub><sup>3</sup> 1/&radic;x dx = [x<sup>1/2</sup> / (1/2)]<sub>0</sub><sup>3</sup> = [2&radic;x]<sub>0</sub><sup>3</sup> = 2&radic;3 - 0 = 2&radic;3
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 6: If f is continuous and &int;<sub>0</sub><sup>4</sup> f(x)dx = 10, find &int;<sub>0</sub><sup>2</sup> f(2x)dx.</h3>
+      <div class="code-block">
+Sol: Let u = 2x<br>
+du/dx = 2 &rArr; 2dx = du &rArr; dx = 1/2 du<br>
+Limit: x | 0 | 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u | 0 | 4<br>
+&int;<sub>0</sub><sup>2</sup> f(2x)dx = 1/2 &int;<sub>0</sub><sup>4</sup> f(u)du = 1/2 &times; 10 = 5
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 7: &int; &radic;(a<sup>2</sup>-x<sup>2</sup>) dx</h3>
+      <div class="code-block">
+Sol: Let x = a sin&theta; then, dx/d&theta; = a cos&theta; &rArr; dx = a cos&theta; d&theta;<br>
+sin&theta; = x/a &rArr; &theta; = sin<sup>-1</sup>(x/a)<br>
+&int; &radic;(a<sup>2</sup>-x<sup>2</sup>) dx = &int; &radic;(a<sup>2</sup>-a<sup>2</sup>sin<sup>2</sup>&theta;) &middot; a cos&theta; d&theta;<br>
+= &int; &radic;(a<sup>2</sup>(1-sin<sup>2</sup>&theta;)) &middot; a cos&theta; d&theta;<br>
+= &int; &radic;(a<sup>2</sup>cos<sup>2</sup>&theta;) &middot; a cos&theta; d&theta;<br>
+= &int; (a cos&theta;)(a cos&theta;) d&theta;<br>
+= &int; a<sup>2</sup>cos<sup>2</sup>&theta; d&theta;<br>
+= a<sup>2</sup> &int; ( (1+cos 2&theta;)/2 ) d&theta;<br>
+= (a<sup>2</sup>/2) &int; (1+cos 2&theta;) d&theta;<br>
+= (a<sup>2</sup>/2) [ &int; d&theta; + &int; cos 2&theta; d&theta; ]<br>
+= (a<sup>2</sup>/2) [&theta; + (sin 2&theta;)/2]<br>
+{&middot;: sin 2&theta; = 2 sin&theta; cos&theta;}<br>
+= (a<sup>2</sup>/2) [&theta; + sin&theta; cos&theta;]<br>
+= (a<sup>2</sup>/2) [sin<sup>-1</sup>(x/a) + (x/a) &radic;(1-sin<sup>2</sup>&theta;)]<br>
+= (a<sup>2</sup>/2) [sin<sup>-1</sup>(x/a) + (x/a) &radic;(1-x<sup>2</sup>/a<sup>2</sup>)]<br>
+&int; &radic;(a<sup>2</sup>-x<sup>2</sup>) dx = (a<sup>2</sup>/2) [sin<sup>-1</sup>(x/a) + (x/a)(1-x<sup>2</sup>/a<sup>2</sup>)<sup>1/2</sup>]
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>Q. 8.8: Evaluate &int; (tan x) / (sec x + cos x) dx</h3>
+      <div class="code-block">
+Sol: &int; (tan x) / (sec x + cos x) dx = &int; (sin x / cos x) / (1/cos x + cos x) dx<br>
+= &int; (sin x / cos x) &middot; (cos x / (1+cos<sup>2</sup>x)) dx<br>
+= &int; (sin x) / (1+cos<sup>2</sup>x) dx<br>
+Let u = cos x &rArr; du/dx = -sin x &rArr; -du = sin x dx<br>
+= -&int; du / (1+u<sup>2</sup>) = -&int; 1 / (1+u<sup>2</sup>) du.<br>
+= -tan<sup>-1</sup>(u)<br>
+&int; (tan x) / (sec x + cos x) dx = -tan<sup>-1</sup>(cos x)
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 9: &int;<sub>-1</sub><sup>2</sup> (x<sup>2</sup>-2x)dx is</h3>
+      <div class="code-block">
+Sol: &int;<sub>-1</sub><sup>2</sup> (x<sup>2</sup>-2x)dx = &int;<sub>-1</sub><sup>2</sup> x<sup>2</sup>dx - 2&int;<sub>-1</sub><sup>2</sup> x dx.<br>
+= [x<sup>3</sup>/3]<sub>-1</sub><sup>2</sup> - 2[x<sup>2</sup>/2]<sub>-1</sub><sup>2</sup><br>
+= (8/3 - (-1/3)) - 2(4/2 - 1/2)<br>
+= (8/3 + 1/3) - 2(3/2)<br>
+= 9/3 - 2 x 5/2 = 3 - 5= -2
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 10: Evaluate: &int; 1/x<sup>4</sup> dx</h3>
+      <div class="code-block">
+Sol: &int; 1/x<sup>4</sup> dx = &int; x<sup>-4</sup> dx = x<sup>-4+1</sup> / (-4+1) = x<sup>-3</sup> / -3 = -1 / (3x<sup>3</sup>).
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 11/QB. 21: Evaluate &int;<sub>0</sub><sup>1</sup> &int;<sub>0</sub><sup>2</sup> &int;<sub>0</sub><sup>3</sup> [x y<sup>2</sup>z] dx dy dz.</h3>
+      <div class="code-block">
+Sol: I = &int;<sub>0</sub><sup>1</sup> &int;<sub>0</sub><sup>2</sup> &int;<sub>0</sub><sup>3</sup> [x y<sup>2</sup>z] dx dy dz.<br>
+= &int;<sub>0</sub><sup>1</sup> &int;<sub>0</sub><sup>2</sup> [x<sup>2</sup>y<sup>2</sup>z / 2]<sub>0</sub><sup>3</sup> dy dz = &int;<sub>0</sub><sup>1</sup> &int;<sub>0</sub><sup>2</sup> [9y<sup>2</sup>z / 2] dy dz.<br>
+= 9/2 &int;<sub>0</sub><sup>1</sup> &int;<sub>0</sub><sup>2</sup> [y<sup>2</sup>z] dy dz = 9/2 &int;<sub>0</sub><sup>1</sup> [y<sup>3</sup>z / 3]<sub>0</sub><sup>2</sup> dz.<br>
+= 9/2 &int;<sub>0</sub><sup>1</sup> [8z / 3] dz = (9/2) &times; (8/3) &int;<sub>0</sub><sup>1</sup> z dz<br>
+I = 12 [z<sup>2</sup>/2]<sub>0</sub><sup>1</sup> = 12(1/2) = 6
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 12: Evaluate : &int;<sub>1</sub><sup>2</sup> &int;<sub>1</sub><sup>3</sup> xy<sup>2</sup> dx dy</h3>
+      <div class="code-block">
+Sol: I = &int;<sub>1</sub><sup>2</sup> &int;<sub>1</sub><sup>3</sup> x y<sup>2</sup> dx dy = &int;<sub>1</sub><sup>2</sup> [x<sup>2</sup>y<sup>2</sup> / 2]<sub>1</sub><sup>3</sup> dy<br>
+I = &int;<sub>1</sub><sup>2</sup> [9y<sup>2</sup>/2 - y<sup>2</sup>/2] dy = &int;<sub>1</sub><sup>2</sup> [8y<sup>2</sup>/2] dy = &int;<sub>1</sub><sup>2</sup> 4y<sup>2</sup> dy<br>
+I = 4 &int;<sub>1</sub><sup>2</sup> y<sup>2</sup> dy = 4[y<sup>3</sup>/3]<sub>1</sub><sup>2</sup> = 4[8/3 - 1/3] = 4 &times; (7/3) = 28/3
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 13: Evaluate: &int;<sub>0</sub><sup>1</sup> &int;<sub>0</sub><sup>2</sup> &int;<sub>0</sub><sup>3</sup> [x y z] dx dy dz</h3>
+      <div class="code-block">
+Sol: I = &int;<sub>0</sub><sup>1</sup> &int;<sub>0</sub><sup>2</sup> &int;<sub>0</sub><sup>3</sup> [x y z] dx dy dz = &int;<sub>0</sub><sup>1</sup> &int;<sub>0</sub><sup>2</sup> [x<sup>2</sup>y z / 2]<sub>0</sub><sup>3</sup> dy dz.<br>
+I = &int;<sub>0</sub><sup>1</sup> &int;<sub>0</sub><sup>2</sup> [9yz / 2] dy dz = 9/2 &int;<sub>0</sub><sup>1</sup> &int;<sub>0</sub><sup>2</sup> [y z] dy dz<br>
+I = 9/2 &int;<sub>0</sub><sup>1</sup> [y<sup>2</sup>z / 2]<sub>0</sub><sup>2</sup> dz = 9/2 &int;<sub>0</sub><sup>1</sup> [4z / 2] dz<br>
+I = 9 &int;<sub>0</sub><sup>1</sup> z dz = 9 [z<sup>2</sup>/2]<sub>0</sub><sup>1</sup> = 9(1/2) = 9/2.
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 14: The value of &int;<sub>1</sub><sup>log 8</sup> &int;<sub>0</sub><sup>log y</sup> e<sup>x+y</sup> dx dy is 0. [TRUE/FALSE]</h3>
+      <div class="code-block">
+Sol I = &int;<sub>1</sub><sup>log 8</sup> &int;<sub>0</sub><sup>log y</sup> e<sup>x+y</sup> dx dy = &int;<sub>1</sub><sup>log 8</sup> &int;<sub>0</sub><sup>log y</sup> e<sup>x</sup> &middot; e<sup>y</sup> dx dy<br>
+I = &int;<sub>1</sub><sup>log 8</sup> [e<sup>x</sup> e<sup>y</sup>]<sub>0</sub><sup>log y</sup> dy = &int;<sub>1</sub><sup>log 8</sup> [e<sup>log y</sup> e<sup>y</sup> - e<sup>0</sup> e<sup>y</sup>] dy<br>
+= &int;<sub>1</sub><sup>log 8</sup> [y e<sup>y</sup> - e<sup>y</sup>] dy = &int;<sub>1</sub><sup>log 8</sup> y e<sup>y</sup> dy - &int;<sub>1</sub><sup>log 8</sup> e<sup>y</sup> dy<br>
+I = &int;<sub>1</sub><sup>log 8</sup> y e<sup>y</sup> dy - [e<sup>y</sup>]<sub>1</sub><sup>log 8</sup><br>
+I = &int;<sub>1</sub><sup>log 8</sup> y e<sup>y</sup> dy - [e<sup>log 8</sup> - e<sup>1</sup>] = &int;<sub>1</sub><sup>log 8</sup> y e<sup>y</sup> dy - (8 - e)<br>
+I<sub>1</sub> = &int;<sub>1</sub><sup>log 8</sup> y e<sup>y</sup> dy {&middot;: &int; u dv = uv - &int; v du}<br>
+Let u = y &rArr; du/dy = 1 &rArr; dy = du<br>
+&int; dv = &int; e<sup>y</sup> dy &rArr; v = e<sup>y</sup><br>
+I<sub>1</sub> = [y e<sup>y</sup>]<sub>1</sub><sup>log 8</sup> - &int;<sub>1</sub><sup>log 8</sup> e<sup>y</sup> dy = [y e<sup>y</sup>]<sub>1</sub><sup>log 8</sup> - [e<sup>y</sup>]<sub>1</sub><sup>log 8</sup><br>
+I<sub>1</sub> = [(log 8)e<sup>log 8</sup> - 1e<sup>1</sup>] - [e<sup>log 8</sup> - e<sup>1</sup>] = [8 log 8 - e] - [8 - e]<br>
+I<sub>1</sub> = 8 log 8 - 8<br>
+I = (8 log 8 - 8) - (8 - e) = 8 log 8 - 16 + e<br>
+&int;<sub>1</sub><sup>log 8</sup> &int;<sub>0</sub><sup>log y</sup> e<sup>x+y</sup> dx dy = 8 log 8 - 16 + e
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 15: Evaluate &int;<sub>1</sub><sup>a</sup> &int;<sub>2</sub><sup>b</sup> (dx dy) / (xy)</h3>
+      <div class="code-block">
+Sol: I = &int;<sub>1</sub><sup>a</sup> &int;<sub>2</sub><sup>b</sup> 1/x &middot; 1/y dx dy = &int;<sub>1</sub><sup>a</sup> (1/y) [log x]<sub>2</sub><sup>b</sup> dy<br>
+I = &int;<sub>1</sub><sup>a</sup> (1/y) (log b - log 2) dy = (log b - log 2) &int;<sub>1</sub><sup>a</sup> (1/y) dy<br>
+I = (log b - log 2) [log y]<sub>1</sub><sup>a</sup><br>
+I = (log b - log 2) (log a - log 1) = (log a) (log b - log 2)<br>
+&int;<sub>1</sub><sup>a</sup> &int;<sub>2</sub><sup>b</sup> (dx dy) / (xy) = (a-1)[log b - log 2]
+      </div>
+    </div>
+    
+    
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 2 (Part C) - C Memory Allocation </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    /* Styles for the notes content */
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+    .qa-item h4 {
+      color: #1e3a8a;
+      font-size: 1.1rem;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    .code-block {
+      background: #2d2d2d;
+      color: #f1f1f1;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+    /* Simple table style */
+    .notes-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    .notes-table th, .notes-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    .notes-table th {
+      background-color: #f3f4f6;
+      color: #1e3a8a;
+    }
+    .notes-table td code {
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>💻 Unit 2 – Part C</h1>
+      <p>C Programming </p>
+      <a href="c_unit2.html" class="cta-btn">⬅ Back to Unit 2</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part C: Additional Questions</h2>
+
+    <div class="qa-item">
+      <h3>1. Explain in detail the different types of memory allocations in C. Write a program to dynamically allocate memory for an array and calculate the sum of the elements in it.</h3>
+      
+      <p>In C programming, memory allocation refers to the process of reserving space in the computer's memory for variables or data during program execution. There are two main types:</p>
+
+      <h4>1. Static Memory Allocation</h4>
+      <ul>
+        <li>Memory is allocated at <strong>compile time</strong>.</li>
+        <li>The size and type of variables are fixed before program execution.</li>
+        <li>Memory cannot be resized while the program runs.</li>
+        <li>Uses <strong>stack</strong> memory.</li>
+        <li>Memory is automatically released when the scope (e.g., function) ends.</li>
+      </ul>
+      <strong>Example:</strong>
+      <pre class="code-block"><code>int a[5]; // Static allocation of a 5-integer array</code></pre>
+
+      <h4>2. Dynamic Memory Allocation</h4>
+      <ul>
+        <li>Memory is allocated at <strong>runtime</strong> (while the program executes).</li>
+        <li>The size of memory can be increased or decreased using pointers.</li>
+        <li>Uses <strong>heap</strong> memory.</li>
+        <li>Requires the <code>&lt;stdlib.h&gt;</code> header file.</li>
+        <li>Memory must be freed manually using <code>free()</code> to prevent memory leaks.</li>
+      </ul>
+      
+      <strong>Dynamic Memory Allocation Functions:</strong>
+      <table class="notes-table">
+        <tr>
+          <th>Function</th>
+          <th>Syntax</th>
+          <th>Purpose</th>
+        </tr>
+        <tr>
+          <td><code>malloc()</code></td>
+          <td><code>ptr = (type*) malloc(size_in_bytes);</code></td>
+          <td>Allocates a single block of memory.</td>
+        </tr>
+        <tr>
+          <td><code>calloc()</code></td>
+          <td><code>ptr = (type*) calloc(n, size_of_element);</code></td>
+          <td>Allocates multiple blocks and initializes them to zero.</td>
+        </tr>
+        <tr>
+          <td><code>realloc()</code></td>
+          <td><code>ptr = realloc(ptr, new_size);</code></td>
+          <td>Changes the size of already allocated memory.</td>
+        </tr>
+        <tr>
+          <td><code>free()</code></td>
+          <td><code>free(ptr);</code></td>
+          <td>Frees the allocated memory.</td>
+        </tr>
+      </table>
+
+      <h4>Program: Dynamic Memory Allocation for an Array and Calculate Sum</h4>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt; // Required for malloc() and free()
+
+int main() {
+    int *arr, n, i, sum = 0;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    // Dynamically allocate memory using malloc
+    // We need n * size of one int
+    arr = (int*) malloc(n * sizeof(int));
+
+    // Check if memory allocation was successful
+    if (arr == NULL) {
+        printf("Memory not allocated!\n");
+        return 0; // Exit the program
+    }
+
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]); // Read elements into the allocated memory
+    }
+
+    // Calculate the sum
+    for (i = 0; i < n; i++) {
+        sum += arr[i];
+    }
+
+    printf("Sum of elements = %d\n", sum);
+
+    // Free allocated memory
+    free(arr);
+
+    return 0;
+}</code></pre>
+      <strong>Sample Input:</strong>
+<pre class="code-block">Enter the number of elements: 5
+Enter 5 elements:
+10 20 30 40 50
+</pre>
+      <strong>Output:</strong>
+<pre class="code-block">Sum of elements = 150
+</pre>
+      <strong>Explanation:</strong>
+      <ul>
+        <li><code>malloc(n * sizeof(int))</code> allocates memory dynamically for <code>n</code> integers.</li>
+        <li>A pointer <code>arr</code> stores the base address of this allocated block.</li>
+        <li>The user enters elements, which are stored in the array.</li>
+        <li>A <code>for</code> loop calculates the sum.</li>
+        <li><code>free(arr)</code> releases the allocated memory to prevent memory leakage.</li>
+      </ul>
+
+      <h4>Difference Between Static and Dynamic Memory Allocation</h4>
+      <table class="notes-table">
+        <tr>
+          <th>Feature</th>
+          <th>Static Allocation</th>
+          <th>Dynamic Allocation</th>
+        </tr>
+        <tr>
+          <td><strong>Time of Allocation</strong></td>
+          <td>Compile-time</td>
+          <td>Run-time</td>
+        </tr>
+        <tr>
+          <td><strong>Memory Flexibility</strong></td>
+          <td>Fixed size</td>
+          <td>Can grow/shrink (realloc)</td>
+        </tr>
+        <tr>
+          <td><strong>Memory Location</strong></td>
+          <td>Stack</td>
+          <td>Heap</td>
+        </tr>
+        <tr>
+          <td><strong>Deallocation</strong></td>
+          <td>Automatic</td>
+          <td>Manual (using <code>free()</code>)</td>
+        </tr>
+        <tr>
+          <td><strong>Functions Used</strong></td>
+          <td>None</td>
+          <td><code>malloc()</code>, <code>calloc()</code>, <code>realloc()</code>, <code>free()</code></td>
+        </tr>
+      </table>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+ 
+
+
+</body>
+</html>

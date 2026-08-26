@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unit 4 (Part A) - Engineering Physics</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+
+  <!-- Internal CSS (you can move to style.css) -->
+  <style>
+    :root{
+      --bg:#f3f6fa; --card:#fff; --ink:#222; --sub:#333;
+      --brand:#1e3a8a; --accent:#2563eb; --accent2:#1d4ed8; --line:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Poppins",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    header.hero{position:relative;text-align:center;background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;padding:56px 20px}
+    header.hero .cta-btn{display:inline-block;margin-top:16px;padding:10px 18px;color:#fff;background:var(--accent);border-radius:10px;text-decoration:none;font-weight:600}
+    header.hero .cta-btn:hover{background:var(--accent2)}
+    .ads{text-align:center;margin:24px 0}
+    .ad-box{border:2px dashed #cbd5e1;padding:14px 16px;border-radius:12px;background:#fff;color:#475569}
+    .notes-content{max-width:900px;margin:34px auto;background:var(--card);border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.08);padding:28px}
+    .notes-content h2{color:var(--brand);margin-bottom:20px;border-left:6px solid var(--accent);padding-left:12px;font-size:1.5rem}
+    .qa-item{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:18px}
+    .qa-item:last-child{border-bottom:none;margin-bottom:0}
+    .qa-item h3{color:var(--accent2);font-size:1.08rem;margin:0 0 10px}
+    .qa-item p,.qa-item ul,.qa-item ol{color:var(--sub);font-size:1rem;line-height:1.7;margin:0 0 10px}
+    .qa-item ul,.qa-item ol{padding-left:22px}
+    .qa-item li{margin:6px 0}
+    .formula{display:inline-block;background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:2px 8px;font-family:ui-monospace,Menlo,Consolas,monospace}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{border:1px solid #cbd5e1;padding:8px;text-align:center}
+    th{background:#eff6ff;color:var(--accent2)}
+    sup,sub{font-size:0.7em}
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>⚛️ Unit 4 – Part A (2-Mark Q&A)</h1>
+      <p>Engineering Physics</p>
+      <a href="physics_unit4.html" class="cta-btn">⬅ Back to Unit 4</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part A: Electron Theory of Materials</h2>
+
+    <div class="qa-item">
+      <h3>1) Drawbacks of classical free-electron theory</h3>
+      <ul>
+        <li>Overestimates electronic <strong>specific heat</strong> (predicts ~3/2 k<sub>B</sub> per e⁻; experiment ≪).</li>
+        <li>Cannot explain <strong>superconductivity</strong>, <strong>photoelectric</strong> & <strong>Compton</strong> effects.</li>
+        <li>Fails to classify <strong>conductors/semiconductors/insulators</strong> (no bands).</li>
+        <li>No account of <strong>quantum statistics</strong> or <strong>periodic potential</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>2) Postulates of classical free-electron theory</h3>
+      <ul>
+        <li>Metals contain many <strong>free (conduction) electrons</strong> moving randomly like gas.</li>
+        <li>Electrons obey <strong>Newtonian mechanics</strong> & <strong>Maxwell–Boltzmann</strong> statistics.</li>
+        <li>Ion cores form a uniform positive background; <strong>electron–ion/electron–electron</strong> forces neglected (except during collisions).</li>
+        <li>Scattering gives a mean free time <span class="formula">τ</span> and path <span class="formula">λ</span>.</li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>3) Mobility of electrons (definition & unit)</h3>
+      <p>Mobility <span class="formula">μ</span> is the drift velocity per unit electric field: <span class="formula">μ = v<sub>d</sub>/E</span>.</p>
+      <p><strong>Units:</strong> m² V⁻¹ s⁻¹. Also, <span class="formula">v<sub>d</sub> = μE</span> and <span class="formula">σ = nqμ</span> (n-type single carrier).</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>4) Wiedemann–Franz law & Lorenz number</h3>
+      <p>For metals, the ratio of thermal to electrical conductivity is proportional to absolute temperature:</p>
+      <p><span class="formula">K/σ = L T</span>, where <span class="formula">L</span> is the <strong>Lorenz (Lorentz) number</strong>.</p>
+      <p><strong>Theoretical L:</strong> <span class="formula">L = \pi^2 k_B^2/(3e^2) ≈ 2.44×10⁻⁸ W Ω K⁻²</span>.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>5) Effective mass of electron (m*)</h3>
+      <p><strong>m*</strong> is the apparent inertial mass of an electron in a crystal responding to a force, determined by band curvature:</p>
+      <p><span class="formula">1/m* = (1/\hbar^2)\, d²E/dk²</span> (from E–k diagram). It can be <em>anisotropic</em>, <em>positive/negative</em>, and differs from free mass <span class="formula">m_e</span>.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>6) Mean free path (λ) & collision time (τ)</h3>
+      <ul>
+        <li><strong>Mean free path:</strong> average distance between two successive collisions. <span class="formula">λ = v τ</span> (use average speed).</li>
+        <li><strong>Collision/relaxation time:</strong> average time between collisions; sets damping of carrier motion.</li>
+      </ul>
+      <p>Electrical conductivity: <span class="formula">σ = n q² τ / m*</span>.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>7) Rest mass vs Effective mass</h3>
+      <table>
+        <tr><th>Aspect</th><th>Rest mass (m<sub>e</sub>)</th><th>Effective mass (m*)</th></tr>
+        <tr><td>Definition</td><td>Mass of free electron in vacuum</td><td>Band-structure dependent inertial mass in crystal</td></tr>
+        <tr><td>Value</td><td>9.11×10⁻³¹ kg (constant)</td><td>Varies with E–k; can be ±, tensor</td></tr>
+        <tr><td>Origin</td><td>Intrinsic property</td><td>From periodic potential curvature</td></tr>
+      </table>
+    </div>
+
+    <div class="qa-item">
+      <h3>8) Statistics for electron energy distribution in metals</h3>
+      <p><strong>Fermi–Dirac statistics</strong> applies (quantum, indistinguishable fermions, Pauli principle).</p>
+      <p>Occupation probability: <span class="formula">f(E)=1/[1+e^{(E−E_F)/(k_B T)}]</span>. At <span class="formula">T=0</span>, all <span class="formula">E&lt;E_F</span> filled.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>9) Electrical & thermal conductivity (expressions)</h3>
+      <ul>
+        <li><strong>Electrical:</strong> <span class="formula">σ = n q² τ / m*</span></li>
+        <li><strong>Thermal (free electrons):</strong> <span class="formula">K = (π²/3)\, (k_B² T)\, (n q² τ / m*) / q² = L σ T</span></li>
+      </ul>
+      <p>Here <span class="formula">n</span> = carrier density, <span class="formula">q</span> = e, <span class="formula">τ</span> = relaxation time, <span class="formula">m*</span> = effective mass.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>10) Concept of a hole in semiconductors</h3>
+      <p>A <strong>hole</strong> is an empty state in the valence band behaving like a mobile particle of charge <span class="formula">+e</span> and effective mass <span class="formula">m*_h</span>.</p>
+      <p>Under an electric field it drifts opposite to electron motion; current density <span class="formula">J_p = q p μ_p E</span>. Holes dominate in <strong>p-type</strong> material.</p>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+</body>
+</html>

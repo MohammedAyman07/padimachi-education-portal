@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unit 2 (Part A) - Physics</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+
+  <!-- Internal CSS (you can move this into style.css if you want) -->
+  <style>
+    :root{
+      --bg:#f3f6fa; --card:#fff; --ink:#222; --sub:#333;
+      --brand:#1e3a8a; --accent:#2563eb; --accent2:#1d4ed8; --line:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Poppins",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    header.hero{position:relative;text-align:center;background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;padding:56px 20px}
+    header.hero .cta-btn{display:inline-block;margin-top:16px;padding:10px 18px;color:#fff;background:var(--accent);border-radius:10px;text-decoration:none;font-weight:600}
+    header.hero .cta-btn:hover{background:var(--accent2)}
+    .ads{text-align:center;margin:24px 0}
+    .ad-box{border:2px dashed #cbd5e1;padding:14px 16px;border-radius:12px;background:#fff;color:#475569}
+    .notes-content{max-width:900px;margin:34px auto;background:var(--card);border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.08);padding:28px}
+    .notes-content h2{color:var(--brand);margin-bottom:20px;border-left:6px solid var(--accent);padding-left:12px;font-size:1.5rem}
+    .qa-item{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:18px}
+    .qa-item:last-child{border-bottom:none;margin-bottom:0}
+    .qa-item h3{color:var(--accent2);font-size:1.08rem;margin:0 0 10px}
+    .qa-item p,.qa-item ul,.qa-item ol{color:var(--sub);font-size:1rem;line-height:1.7;margin:0 0 10px}
+    .qa-item ul,.qa-item ol{padding-left:22px}
+    .qa-item li{margin:6px 0}
+    .formula{display:inline-block;background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:2px 8px;font-family:ui-monospace,Menlo,Consolas,monospace}
+    sup,sub{font-size:0.7em}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{border:1px solid #cbd5e1;padding:8px;text-align:center}
+    th{background:#eff6ff;color:var(--accent2)}
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>🔬 Unit 2 – Part A (2-Mark Q&A)</h1>
+      <p>24PY112 Engineering Physics</p>
+      <a href="physics_unit2.html" class="cta-btn">⬅ Back to Unit 2</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part A: Oscillations, Acoustics & Thermal Physics</h2>
+
+    <div class="qa-item">
+      <h3>1) Torsional pendulum</h3>
+      <p>A rigid body (disc/rod) suspended by a thin wire. Small twist → restoring torque by wire → angular SHM.</p>
+      <p><span class="formula">τ = −C θ</span> (C: torsion constant), <span class="formula">I d²θ/dt² + C θ = 0</span>, period <span class="formula">T = 2π√(I/C)</span>.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>2) Travelling vs Standing waves (energy)</h3>
+      <ul>
+        <li><strong>Travelling:</strong> Net energy transport along propagation.</li>
+        <li><strong>Standing:</strong> No net transport; energy oscillates within loops between nodes/antinodes.</li>
+      </ul>
+      <p>Standing wave formed by superposition of two opposite travelling waves of same f, A.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>3) Weber–Fechner law</h3>
+      <p>Perceived sensation is proportional to <strong>log of stimulus</strong> intensity:</p>
+      <p><span class="formula">S = k log(I/I₀)</span> (I₀: threshold).</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>4) Doppler effect (sound)</h3>
+      <p>Apparent frequency changes due to relative motion of source/observer.</p>
+      <p><span class="formula">f' = f \frac{v \pm v_o}{v \mp v_s}</span> (signs: approach ↑, recede ↓); <span class="formula">v</span> is speed of sound.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>5) Four sound-absorbing materials</h3>
+      <ul>
+        <li>Acoustic foam / mineral wool</li>
+        <li>Fiberglass panels</li>
+        <li>Heavy curtains</li>
+        <li>Cork / perforated boards</li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>6) Classification by frequency</h3>
+      <ul>
+        <li><strong>Infrasound:</strong> f &lt; 20 Hz</li>
+        <li><strong>Audible:</strong> 20 Hz – 20 kHz</li>
+        <li><strong>Ultrasound:</strong> f &gt; 20 kHz</li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>7) Properties of ultrasonics</h3>
+      <ul>
+        <li>Very high f, short λ → less diffraction, good directionality</li>
+        <li>Reflect, refract, absorb; cause heating & cavitation in liquids</li>
+        <li>Penetrate solids/liquids → NDT, imaging</li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>8) Magnetostriction & ultrasound production</h3>
+      <p>Ferromagnets (Ni/Fe/Co) change length in a magnetic field. A rod in a coil with high-frequency AC experiences rapid elongation/contraction → emits ultrasonic waves.</p>
+      <p>Resonance when drive f matches rod’s natural longitudinal mode.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>9) Three applications of ultrasonics</h3>
+      <ul>
+        <li><strong>Medical imaging:</strong> Sonography</li>
+        <li><strong>NDT:</strong> Flaw/thickness detection</li>
+        <li><strong>SONAR:</strong> Range/depth mapping</li>
+        <li>Plus: Ultrasonic cleaning, nebulizers</li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>10) Bimetallic strip & use</h3>
+      <p>Two bonded metals with different thermal expansion. Heating bends strip toward lower-expansion metal.</p>
+      <p>Used in <strong>thermostats</strong>, circuit breakers, dial thermometers.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>11) Coefficient of thermal conductivity (k)</h3>
+      <p>Rate of heat flow per unit area for unit temperature gradient (normal to area).</p>
+      <p><span class="formula">Q̇ = −k A (dT/dx)</span>; SI unit: <span class="formula">W m⁻¹ K⁻¹</span>.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>12) Why roofs are painted white in summer?</h3>
+      <p>White has high reflectance & low absorptance → less solar heat gain → cooler building & reduced AC load.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>13) Thermal behavior of Invar</h3>
+      <p>Fe–Ni alloy (~64% Fe, ~36% Ni) with <strong>very low CTE</strong> near room temperature → minimal expansion; used in precision instruments, clock pendulums, gauge blocks.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>14) Seebeck effect</h3>
+      <p>Temperature difference between junctions of two dissimilar conductors produces an EMF → continuous current in closed circuit. Basis of <strong>thermocouples</strong>.</p>
+      <p>Seebeck coefficient: <span class="formula">S = ΔV/ΔT</span>.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>15) Heat conducted through a slab (numerical)</h3>
+      <p>Given: <span class="formula">A = 90×10⁻⁴ m²</span>, <span class="formula">d = 1.2×10⁻³ m</span>, <span class="formula">ΔT = 20 K</span>, <span class="formula">k = 0.04 W m⁻¹ K⁻¹</span>, <span class="formula">Δt = 1 s</span>.</p>
+      <p>Fourier: <span class="formula">Q = kA(ΔT/d)Δt</span> = 0.04×0.009×(20/1.2×10⁻³)×1 = <strong>6 J</strong>.</p>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+</body>
+</html>

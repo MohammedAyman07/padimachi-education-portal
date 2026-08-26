@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 5 (Part B) - Matrices and Calculus</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+    }
+    .hero {
+        background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .hero h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+    .code-block {
+      background: #f8f9fa;
+      color: #212529;
+      padding: 20px;
+      border-radius: 5px;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.15rem;
+      margin: 15px 0;
+      border: 1px solid #ddd;
+      text-align: left;
+      overflow-x: auto;
+    }
+    .cta-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #fff;
+        color: #1e3a8a;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    .ad-box {
+        text-align: center;
+        padding: 20px;
+        background: #e9ecef;
+        margin: 20px 0;
+        color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Complex Integration & Analytic Functions</h1>
+      [cite_start]<p>Unit 5 – Part B (10-Mark Q&A) [cite: 6]</p>
+    </div>
+  </header>
+
+  <section class="notes-content">
+    <h2>Part B: 10-Mark Questions</h2>
+
+    <div class="qa-item">
+      <h3>QB. 1: Evaluate \( \int_C \frac{3z^2+7z+1}{z+1} \, dz \) where C is \( |z| = \frac{1}{2} \).</h3>
+      <div class="code-block">
+        $$
+        \begin{aligned}
+        \text{Let } I &= \int_C \frac{3z^2+7z+1}{z+1} \, dz. \\
+        \text{The singular point is } z = -1. \\
+        \text{The given region C is } |z| = \frac{1}{2} \text{ (Circle with center 0, radius 0.5)}. \\
+        \text{Distance of singularity from center: } |-1| = 1. \\
+        \text{Since } 1 > 0.5, \text{ the point } z = -1 \text{ lies OUTSIDE the circle } C. \\
+        \text{By Cauchy's Integral Theorem, if a function is analytic inside and on C, the integral is 0.} \\
+        \therefore \int_C \frac{3z^2+7z+1}{z+1} \, dz = 0.
+        \end{aligned}
+        $$
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 2: Using Cauchy’s integral formula, evaluate \( \int_C \frac{z}{z-2} \, dz \) where C is the circle \( |z-2| = \frac{3}{2} \).</h3>
+      <div class="code-block">
+        $$
+        \begin{aligned}
+        \text{Let } f(z) &= z. \text{ The integral is of the form } \int \frac{f(z)}{z-a} dz. \\
+        \text{Singularity at } z &= 2. \\
+        \text{Region C: } |z-2| &= 1.5 \text{ (Circle with center at 2, radius 1.5)}. \\
+        \text{The point } z=2 \text{ is the center, so it clearly lies INSIDE C.} \\
+        \text{By Cauchy's Integral Formula: } \int_C \frac{f(z)}{z-a} dz &= 2\pi i f(a). \\
+        I &= 2\pi i f(2). \\
+        \text{Since } f(z) = z, \implies f(2) = 2. \\
+        I &= 2\pi i (2) = 4\pi i.
+        \end{aligned}
+        $$
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 3: Evaluate \( \int_C \frac{\sin \pi z^2 + \cos \pi z^2}{(z-1)(z-2)} \, dz \) where C is \( |z|=3 \).</h3>
+      <div class="code-block">
+        $$
+        \begin{aligned}
+        \text{Poles are at } z=1 \text{ and } z=2. \\
+        \text{Region C is } |z|=3. \text{ Both } |1|<3 \text{ and } |2|<3 \text{ lie INSIDE C.} \\
+        \text{Using Cauchy's Residue Theorem: } I = 2\pi i (\text{Sum of Residues}). \\
+        f(z) &= \frac{\sin \pi z^2 + \cos \pi z^2}{(z-1)(z-2)} \\
+        \text{Res}(z=1) &= \lim_{z \to 1} (z-1)f(z) = \frac{\sin \pi + \cos \pi}{1-2} = \frac{0 - 1}{-1} = 1. \\
+        \text{Res}(z=2) &= \lim_{z \to 2} (z-2)f(z) = \frac{\sin 4\pi + \cos 4\pi}{2-1} = \frac{0 + 1}{1} = 1. \\
+        I &= 2\pi i (1 + 1) = 4\pi i.
+        \end{aligned}
+        $$
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 4: Using Cauchy’s integral formula evaluate \( \int_C \frac{4-3z}{z(z-1)(z-2)} \, dz \), where C is the circle \( |z| = \frac{3}{2} \).</h3>
+      <div class="code-block">
+        $$
+        \begin{aligned}
+        \text{Poles: } z=0, z=1, z=2. \\
+        \text{Region: } |z|=1.5. \\
+        \text{Inside: } z=0 \text{ and } z=1. \quad \text{Outside: } z=2. \\
+        \text{Rewriting integrand using partial fractions or Residue theorem directly.} \\
+        \text{Let } g(z) &= \frac{4-3z}{z(z-1)(z-2)}. \\
+        \text{Res}(z=0) &= \lim_{z \to 0} \frac{4-3z}{(z-1)(z-2)} = \frac{4}{(-1)(-2)} = \frac{4}{2} = 2. \\
+        \text{Res}(z=1) &= \lim_{z \to 1} \frac{4-3z}{z(z-2)} = \frac{4-3}{1(1-2)} = \frac{1}{-1} = -1. \\
+        \text{Integral } &= 2\pi i (\text{Sum of residues inside}) \\
+        &= 2\pi i (2 - 1) = 2\pi i.
+        \end{aligned}
+        $$
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 5: Find the Taylor’s series for \( f(z) = \sin z \) about \( z = \frac{\pi}{4} \).</h3>
+      <div class="code-block">
+        $$
+        \begin{aligned}
+        \text{Taylor Series: } f(z) &= \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (z-a)^n, \quad a = \frac{\pi}{4}. \\
+        f(z) &= \sin z \implies f(\pi/4) = \frac{1}{\sqrt{2}} \\
+        f'(z) &= \cos z \implies f'(\pi/4) = \frac{1}{\sqrt{2}} \\
+        f''(z) &= -\sin z \implies f''(\pi/4) = -\frac{1}{\sqrt{2}} \\
+        f'''(z) &= -\cos z \implies f'''(\pi/4) = -\frac{1}{\sqrt{2}} \\
+        \text{Substituting values:} \\
+        \sin z &= \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}}(z-\frac{\pi}{4}) - \frac{1}{\sqrt{2}}\frac{(z-\frac{\pi}{4})^2}{2!} - \frac{1}{\sqrt{2}}\frac{(z-\frac{\pi}{4})^3}{3!} + \dots \\
+        &= \frac{1}{\sqrt{2}} \left[ 1 + \left(z-\frac{\pi}{4}\right) - \frac{\left(z-\frac{\pi}{4}\right)^2}{2} - \frac{\left(z-\frac{\pi}{4}\right)^3}{6} + \dots \right]
+        \end{aligned}
+        $$
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 6: Obtain the Taylor’s series to represent the function \( \frac{1}{(z+2)(z+3)} \) in the region \( |z| < 2 \).</h3>
+      <div class="code-block">
+        $$
+        \begin{aligned}
+        \text{Partial Fractions: } \frac{1}{(z+2)(z+3)} &= \frac{1}{z+2} - \frac{1}{z+3}. \\
+        \text{Region } |z|<2 \implies |z/2|<1 \text{ and } |z/3|<1. \\
+        \text{Expand in powers of } z: \\
+        \text{Term 1: } \frac{1}{z+2} &= \frac{1}{2(1+z/2)} = \frac{1}{2}(1 + \frac{z}{2})^{-1} = \frac{1}{2} \sum_{n=0}^{\infty} (-1)^n (\frac{z}{2})^n. \\
+        \text{Term 2: } \frac{1}{z+3} &= \frac{1}{3(1+z/3)} = \frac{1}{3}(1 + \frac{z}{3})^{-1} = \frac{1}{3} \sum_{n=0}^{\infty} (-1)^n (\frac{z}{3})^n. \\
+        f(z) &= \sum_{n=0}^{\infty} (-1)^n z^n \left[ \frac{1}{2^{n+1}} - \frac{1}{3^{n+1}} \right].
+        \end{aligned}
+        $$
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 7: Expand \( f(z) = \frac{z^2-1}{(z+2)(z+3)} \) as a Laurent’s series if \( 2 < |z| < 3 \).</h3>
+      <div class="code-block">
+        $$
+        \begin{aligned}
+        \text{Since numerator degree } \ge \text{ denominator, divide first:} \\
+        \frac{z^2-1}{z^2+5z+6} &= 1 + \frac{-5z-7}{(z+2)(z+3)}. \\
+        \text{Partial fractions for remainder: } \frac{-5z-7}{(z+2)(z+3)} = \frac{A}{z+2} + \frac{B}{z+3}. \\
+        \text{Solving: } A=3, \quad B=-8. \\
+        f(z) &= 1 + \frac{3}{z+2} - \frac{8}{z+3}. \\
+        \text{Region } 2 < |z| < 3: \\
+        1. \quad |z| > 2 \implies |\frac{2}{z}| < 1. \quad \frac{3}{z+2} = \frac{3}{z(1+2/z)} = \frac{3}{z} \sum (-1)^n (\frac{2}{z})^n. \\
+        2. \quad |z| < 3 \implies |\frac{z}{3}| < 1. \quad \frac{8}{z+3} = \frac{8}{3(1+z/3)} = \frac{8}{3} \sum (-1)^n (\frac{z}{3})^n. \\
+        \text{Result: } f(z) &= 1 + \sum_{n=0}^{\infty} \frac{3(-1)^n 2^n}{z^{n+1}} - \sum_{n=0}^{\infty} \frac{8(-1)^n z^n}{3^{n+1}}.
+        \end{aligned}
+        $$
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 8: (i) Test whether \( f(z) = z^2 \) is analytic. (ii) Prove \( f(z) = e^z \) is analytic and find its derivative.</h3>
+      <div class="code-block">
+        <p><b>(i) \( f(z) = z^2 \):</b></p>
+        $$
+        \begin{aligned}
+        f(z) &= (x+iy)^2 = x^2 - y^2 + i(2xy). \\
+        u &= x^2-y^2, \quad v = 2xy. \\
+        u_x &= 2x, \quad v_x = 2y. \\
+        u_y &= -2y, \quad v_y = 2x. \\
+        \text{CR Equations: } u_x = v_y \implies 2x=2x \text{ (True)}. \\
+        u_y = -v_x \implies -2y = -(2y) \text{ (True)}. \\
+        \text{Partial derivatives are continuous, CR eqns satisfied. } f(z) \text{ is Analytic.}
+        \end{aligned}
+        $$
+        <p><b>(ii) \( f(z) = e^z \):</b></p>
+        $$
+        \begin{aligned}
+        f(z) &= e^{x+iy} = e^x(\cos y + i \sin y). \\
+        u &= e^x \cos y, \quad v = e^x \sin y. \\
+        u_x &= e^x \cos y, \quad v_x = e^x \sin y. \\
+        u_y &= -e^x \sin y, \quad v_y = e^x \cos y. \\
+        \text{Check CR: } u_x = v_y \text{ and } u_y = -v_x. \text{ (Both hold)}. \\
+        f'(z) &= u_x + i v_x = e^x \cos y + i e^x \sin y = e^z.
+        \end{aligned}
+        $$
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 9: (i) Find constants a, b, c if \( f(z) = x + ay + i(bx+cy) \) is analytic. (ii) Prove \( (\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2})|f(z)|^2 = 4|f'(z)|^2 \).</h3>
+      <div class="code-block">
+        <p><b>(i) Finding Constants:</b></p>
+        $$
+        \begin{aligned}
+        u &= x+ay, \quad v = bx+cy. \\
+        u_x &= 1, \quad u_y = a. \\
+        v_x &= b, \quad v_y = c. \\
+        \text{CR Eqns: } u_x = v_y \implies 1 = c. \\
+        u_y = -v_x \implies a = -b. \\
+        \text{Answer: } c = 1, b = -a.
+        \end{aligned}
+        $$
+        <p><b>(ii) Proof:</b></p>
+        $$
+        \begin{aligned}
+        \text{Let } \nabla^2 &= \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} = 4 \frac{\partial^2}{\partial z \partial \bar{z}}. \\
+        |f(z)|^2 &= f(z) \overline{f(z)} = f(z) \bar{f}(\bar{z}). \\
+        \nabla^2 (f(z)\bar{f}(\bar{z})) &= 4 \partial_z \partial_{\bar{z}} (f(z)\bar{f}(\bar{z})) \\
+        &= 4 \partial_z [ f(z) \bar{f}'(\bar{z}) ] \\
+        &= 4 f'(z) \bar{f}'(\bar{z}) \\
+        &= 4 |f'(z)|^2. \quad \text{(Hence Proved)}
+        \end{aligned}
+        $$
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 10: (i) If \( u = \sin 2x \cosh 2y + \cos 2x \), find analytic function \( f(z) \).</h3>
+      <div class="code-block">
+        $$
+        \begin{aligned}
+        \text{Milne Thomson Method:} \\
+        u_x &= 2\cos 2x \cosh 2y - 2\sin 2x \\
+        u_y &= 2\sin 2x \sinh 2y \\
+        \text{Put } y=0, x=z: \\
+        \phi_1(z,0) &= u_x(z,0) = 2\cos 2z \cosh(0) - 2\sin 2z = 2\cos 2z - 2\sin 2z. \\
+        \phi_2(z,0) &= u_y(z,0) = 2\sin 2z \sinh(0) = 0. \\
+        f'(z) &= \phi_1(z,0) - i\phi_2(z,0) = 2\cos 2z - 2\sin 2z. \\
+        f(z) &= \int (2\cos 2z - 2\sin 2z) dz \\
+        f(z) &= \sin 2z + \cos 2z + C.
+        \end{aligned}
+        $$
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 11: Show that \( u = \frac{1}{2}\log(x^2+y^2) \) is harmonic and determine its analytic function and conjugate.</h3>
+      <div class="code-block">
+        $$
+        \begin{aligned}
+        u &= \frac{1}{2} \log(x^2+y^2) = \log (\sqrt{x^2+y^2}) = \log r. \\
+        \text{In polar,} \nabla^2 u &= \frac{1}{r} \frac{\partial}{\partial r} (r \frac{\partial u}{\partial r}) + \frac{1}{r^2} \frac{\partial^2 u}{\partial \theta^2}. \\
+        u_r &= \frac{1}{r}, \quad r u_r = 1, \quad \frac{\partial}{\partial r}(1) = 0. \quad u_{\theta\theta} = 0. \\
+        \therefore \nabla^2 u &= 0 \implies \text{Harmonic.} \\
+        \text{Milne Thomson for } f(z): \\
+        u_x &= \frac{x}{x^2+y^2}, \quad u_y = \frac{y}{x^2+y^2}. \\
+        \phi_1(z,0) &= \frac{z}{z^2} = \frac{1}{z}, \quad \phi_2(z,0) = 0. \\
+        f'(z) &= \frac{1}{z} \implies f(z) = \log z + C. \\
+        f(z) &= \log(re^{i\theta}) = \log r + i\theta. \\
+        \text{Conjugate } v &= \theta = \tan^{-1}(y/x).
+        \end{aligned}
+        $$
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 12: (i) Find bilinear map: \( 0, -1, i \to i, 0, \infty \). (ii) Find bilinear map: \( 1, i, -1 \to 0, 1, \infty \).</h3>
+      <div class="code-block">
+        <p><b>(i) \( (z_1, z_2, z_3) = (0, -1, i) \to (w_1, w_2, w_3) = (i, 0, \infty) \)</b></p>
+        $$
+        \begin{aligned}
+        \text{Cross Ratio: } \frac{w-w_1}{w-w_2} &= \frac{z-z_1}{z-z_2} \cdot \frac{z_3-z_2}{z_3-z_1} \\
+        \text{Since } w_3 = \infty \text{, we omit terms with } w_3. \\
+        \frac{w-i}{w-0} &= \frac{z-0}{z-(-1)} \cdot \frac{i-(-1)}{i-0} \\
+        \frac{w-i}{w} &= \frac{z}{z+1} \cdot \frac{1+i}{i} \\
+        \frac{w-i}{w} &= \frac{z(1-i)}{z+1} \cdot \frac{1}{i(1-i)} \cdot (1+i) \dots \text{Simplify: } \frac{1+i}{i} = 1-i. \\
+        1 - \frac{i}{w} &= \frac{z(1-i)}{z+1}. \\
+        \text{Solving yields: } w &= -i \left( \frac{z+1}{z+1 - z(1-i)} \right) = \dots \implies w = \frac{z+1}{z-i} \cdot i \dots \text{result check: } \\
+        \text{Standard form result: } w &= \frac{-(z+1)}{i(z-i)}.
+        \end{aligned}
+        $$
+
+        <p><b>(ii) \( (1, i, -1) \to (0, 1, \infty) \)</b></p>
+        $$
+        \begin{aligned}
+        \frac{w-0}{1-0} &= \frac{z-1}{z-(-1)} \cdot \frac{i-(-1)}{i-1} \\
+        w &= \frac{z-1}{z+1} \cdot \frac{i+1}{i-1} \\
+        \text{Constant: } \frac{i+1}{i-1} \times \frac{i+1}{i+1} &= \frac{2i}{-2} = -i. \\
+        w &= -i \left( \frac{z-1}{z+1} \right).
+        \end{aligned}
+        $$
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 13: Evaluate \( \int_C \frac{z+4}{z^2+2z+5} \, dz \) where C is \( |z+1+i| = 2 \).</h3>
+      <div class="code-block">
+        $$
+        \begin{aligned}
+        \text{Denominator roots: } z^2+2z+5 = 0 \implies z = \frac{-2 \pm \sqrt{4-20}}{2} = -1 \pm 2i. \\
+        \text{Poles: } \alpha = -1+2i, \quad \beta = -1-2i. \\
+        \text{Center of C is } -1-i. \text{ Radius } 2. \\
+        \text{Distance to } \alpha: |(-1+2i) - (-1-i)| = |3i| = 3 > 2 \text{ (Outside)}. \\
+        \text{Distance to } \beta: |(-1-2i) - (-1-i)| = |-i| = 1 < 2 \text{ (Inside)}. \\
+        \text{Residue at } \beta (-1-2i): \lim_{z \to \beta} (z-\beta) \frac{z+4}{(z-\alpha)(z-\beta)} = \frac{\beta+4}{\beta-\alpha}. \\
+        \beta+4 = 3-2i. \quad \beta-\alpha = (-1-2i) - (-1+2i) = -4i. \\
+        \text{Res} &= \frac{3-2i}{-4i}. \\
+        \text{Integral } &= 2\pi i \left( \frac{3-2i}{-4i} \right) = -\frac{\pi}{2}(3-2i) = \frac{\pi}{2}(2i-3).
+        \end{aligned}
+        $$
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 14: Evaluate \( \int_C \frac{z+1}{(z^2+2z+4)^2} \, dz \) where C is \( |z+1+i| = 2 \).</h3>
+      <div class="code-block">
+        $$
+        \begin{aligned}
+        \text{Roots of } z^2+2z+4=0 \text{ are } z = -1 \pm i\sqrt{3}. \\
+        z_1 = -1 + 1.732i, \quad z_2 = -1 - 1.732i. \\
+        \text{Center: } -1-i (-1 - 1i). \\
+        \text{Dist } z_1: |(-1+1.732i) - (-1-i)| = |2.732i| > 2 \text{ (Out)}. \\
+        \text{Dist } z_2: |(-1-1.732i) - (-1-i)| = |-0.732i| < 2 \text{ (In)}. \\
+        \text{Pole } z_2 \text{ is of order 2.} \\
+        f(z) &= \frac{z+1}{(z-z_1)^2 (z-z_2)^2} \implies \phi(z) = \frac{z+1}{(z-z_1)^2}. \\
+        \text{Integral } &= 2\pi i \cdot \phi'(z_2). \\
+        \phi'(z) &= \frac{(z-z_1)^2(1) - (z+1)2(z-z_1)}{(z-z_1)^4} = \frac{(z-z_1) - 2(z+1)}{(z-z_1)^3} = \frac{-z -z_1 - 2}{(z-z_1)^3}. \\
+        \text{Substitute } z_2 \text{ and solve.} 
+        \end{aligned}
+        $$
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>QB. 15: Expand \( \frac{1}{z^2-3z+2} \) in the region \( 1 < |z| < 2 \).</h3>
+      <div class="code-block">
+        $$
+        \begin{aligned}
+        f(z) &= \frac{1}{(z-1)(z-2)} = \frac{1}{z-2} - \frac{1}{z-1}. \\
+        \text{Region } 1 < |z| < 2: \\
+        \text{Since } |z|>1 \implies |1/z|<1. \quad \text{Use } \frac{1}{z-1} = \frac{1}{z(1-1/z)} = \frac{1}{z}\sum (\frac{1}{z})^n. \\
+        \text{Since } |z|<2 \implies |z/2|<1. \quad \text{Use } \frac{1}{z-2} = \frac{-1}{2(1-z/2)} = -\frac{1}{2}\sum (\frac{z}{2})^n. \\
+        f(z) &= -\frac{1}{2}\sum_{n=0}^{\infty} \left(\frac{z}{2}\right)^n - \sum_{n=0}^{\infty} \frac{1}{z^{n+1}}.
+        \end{aligned}
+        $$
+      </div>
+    </div>
+
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 3 (Part B) - Physics Q&A</title>
+    <script src="protection.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <style>
+    /* Clean, readable styling */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f6;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #2c3e50;
+      border-bottom: 2px solid #2f18fd;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+    h3 {
+      color: #350fce;
+      margin-top: 30px;
+      border-left: 5px solid #4c17ea;
+      padding-left: 15px;
+      background-color: #f0f8ff;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    h4 {
+      color: #290aee;
+      margin-top: 20px;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    p, li {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    ul, ol {
+      margin-left: 20px;
+    }
+    /* Style for the image placeholders */
+    .img-placeholder {
+      display: block;
+      background-color: #eee;
+      border: 2px dashed #ccc;
+      color: #777;
+      padding: 20px;
+      text-align: center;
+      margin: 20px auto;
+      border-radius: 5px;
+      max-width: 80%;
+      font-style: italic;
+    }
+    /* Highlight equations */
+    .mjx-chtml {
+      font-size: 110% !important;
+    }
+    hr {
+      border: 0;
+      height: 1px;
+      background: #ddd;
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Unit 3 – Part B: Optics and Lasers</h1>
+
+    <div class="qa-item">
+      <h3>Q1: Explain the formation of interference fringes in an air-wedge shaped film. How is the thickness of the wire determined by this method?</h3>
+      
+      <h4>1. Formation of Interference Fringes (Air Wedge)</h4>
+      <p>An air wedge is a thin film of air with zero thickness at one end and progressively increasing thickness at the other. It is formed by placing a thin object (like a wire) between two optically flat glass plates.</p>
+      
+      <div class="img-placeholder">[Place Diagram of interference in an air wedge film here]</div>
+            
+      <ul>
+          <li><strong>Reflection:</strong> When monochromatic light falls on the film, it is partly reflected from the top surface of the air film (Ray 1) and partly transmitted, then reflected from the bottom surface (Ray 2).</li>
+          <li><strong>Coherence:</strong> These two rays are coherent as they originate from the same source.</li>
+          <li><strong>Phase Change:</strong> A phase change of $180^\circ$ (or $\pi$) occurs for <strong>Ray 2</strong> because it reflects from the denser medium (the bottom plate). No phase shift occurs for <strong>Ray 1</strong>.</li>
+          <li><strong>Interference:</strong> This phase difference causes destructive interference at the point of contact (zero thickness), resulting in a dark fringe. As thickness $t$ increases, the path difference $2t$ increases, creating alternating bright and dark straight-line fringes.</li>
+      </ul>
+
+      <h4>2. Determination of Thickness of Wire</h4>
+      <p>The setup is used to measure the thickness of a thin wire.</p>
+      
+      <ul>
+          <li><strong>Setup:</strong> Two glass plates form a wedge with the wire inserted at one end.</li>
+          <li><strong>Illumination:</strong> Light from a sodium vapor lamp falls normally on the wedge via a glass plate at $45^\circ$.</li>
+          <li><strong>Observation:</strong> Fringes are viewed through a microscope.</li>
+      </ul>
+
+      <div class="img-placeholder">[Place Diagram of experimental setup here]</div>
+      
+      <p><strong>Calculation:</strong><br>
+      By measuring the average width of a specific number of fringes (e.g., 5 or 10), we determine the fringe width ($\beta$). The thickness of the wire ($t$) is related to fringe width ($\beta$), wavelength ($\lambda$), and the length of the wedge ($L$) by:</p>
+      
+      $$ \beta = \frac{\lambda L}{2t} $$
+      
+      <p>Rearranging for thickness:</p>
+      
+      $$ t = \frac{\lambda L}{2\beta} $$
+      
+      <p>Thus, knowing $\lambda$, $L$, and the measured $\beta$, the thickness $t$ is calculated.</p>
+    </div>
+
+    <hr>
+
+    <div class="qa-item">
+      <h3>Q2: Describe the construction of a Michelson interferometer and discuss the different type of interference fringes formed in it.</h3>
+
+      <h4>1. Principle and Construction</h4>
+      <p>The Michelson Interferometer works on the principle of <strong>division of amplitude</strong>, splitting a light beam into two parts that travel different paths and recombine to interfere.</p>
+
+      <div class="img-placeholder"><img src="Diagram of a Michelson Interferometer.png"></div>
+      
+      
+      <ul>
+          <li><strong>Beam Splitter ($G_1$):</strong> A semi-silvered glass plate at $45^\circ$ that splits the source light into reflected and transmitted beams of equal intensity.</li>
+          <li><strong>Compensatory Plate ($G_2$):</strong> Placed in the path of the transmitted beam to equalize the optical path lengths through the glass material.</li>
+          <li><strong>Mirrors:</strong> A movable mirror ($M_1$) and a fixed mirror ($M_2$).</li>
+          <li><strong>Operation:</strong> Beams reflect off $M_1$ and $M_2$, return to $G_1$, and recombine towards the screen/telescope.</li>
+      </ul>
+
+      <h4>2. Types of Fringes</h4>
+      <p>The pattern depends on the alignment of $M_1$ and $M_2$.</p>
+      <ul>
+          <li><strong>Circular Fringes:</strong> Formed when $M_1$ and $M_2$ are perfectly parallel.</li>
+           <img src="circular.png">            
+
+          <li><strong>Curved Fringes:</strong> Formed when $M_1$ and $M_2$ are inclined, creating a wedge-shaped air film.</li>
+ <img src="curved.png">            
+          
+          <li><strong>Straight Fringes:</strong> Formed when $M_1$ and $M_2$ effectively intersect.</li>
+  <img src="Straight.png">            
+     
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="qa-item">
+      <h3>Q3: Explain the principle, construction, and working of an Nd-YAG laser.</h3>
+      
+      <p>The Nd-YAG is a four-level, solid-state laser.</p>
+      
+      <h4>1. Principle</h4>
+      <p>The active medium is an Nd-YAG rod pumped by a krypton flash tube. Neodymium ions ($Nd^{3+}$) are raised to excited levels, achieving population inversion in a metastable state. The transition to a lower state emits a laser at <strong>$1.06 \mu m$</strong>.</p>
+
+      <h4>2. Construction</h4>
+      <ul>
+          <li><strong>Active Medium:</strong> Yttrium Aluminium Garnet ($Y_3Al_5O_{12}$) crystal rod where some Yttrium ions are replaced by Neodymium ($Nd^{3+}$).</li>
+          <li><strong>Pumping:</strong> Krypton flash tube.</li>
+          <li><strong>Resonator:</strong> Two mirrors, $M_1$ (fully reflecting) and $M_2$ (partially reflecting).</li>
+          <li><strong>Cavity:</strong> An elliptical reflector focuses flash tube light onto the rod.</li>
+      </ul>
+<img src="NDYAG.png">            
+      <h4>3. Working</h4>
+      <img src="Energy level ND.png">
+      <ol>
+          <li><strong>Pumping:</strong> Flash tube light ($0.73 \mu m$, $0.80 \mu m$) excites $Nd^{3+}$ ions from ground state $E_0$ to pump bands $E_3$ and $E_4$.</li>
+          <li><strong>Metastable State:</strong> Ions decay non-radiatively to the metastable state $E_2$.</li>
+          <li><strong>Population Inversion:</strong> Ions accumulate at $E_2$, creating inversion between $E_2$ and $E_1$.</li>
+          <li><strong>Laser Output:</strong> Stimulated emission occurs from $E_2 \to E_1$, releasing photons at $1.06 \mu m$. These are amplified by the mirrors to form the laser beam.</li>
+      </ol>
+      
+      <p><strong>Applications:</strong> Range finders, micro-machining (welding, drilling).</p>
+    </div>
+
+    <hr>
+
+    <div class="qa-item">
+      <h3>Q4: Explain the modes of vibrations of CO2 molecule. Explain the construction, functioning, and application of CO2 laser.</h3>
+      
+      <p>The $CO_2$ laser is a highly efficient four-level molecular gas laser.</p>
+
+      <h4>1. Modes of Vibration</h4>
+      <ul>
+          <li><strong>Symmetric Stretching:</strong> Oxygen atoms vibrate simultaneously away from or towards the carbon atom along the axis.</li>
+         <img src="CO2SYMETIC.png">
+          <li><strong>Bending:</strong> Atoms vibrate perpendicular to the molecular axis.</li>
+         <img src="CO2BENDING.png">
+          <li><strong>Asymmetric Stretching:</strong> Oxygen atoms move in one direction while Carbon moves in the opposite direction.</li>
+      <img src="CO2ASYMIRTC.png">
+        </ul>
+      
+      <h4>2. Construction</h4>
+      <ul>
+          <li><strong>Medium:</strong> Mixture of $CO_2$, $N_2$, and $He$ in a quartz discharge tube.</li>
+          <li><strong>Pumping:</strong> Electrical discharge via high-voltage DC.</li>
+          <li><strong>Resonator:</strong> Concave mirrors ($M_1$, $M_2$).</li>
+          <li><strong>Brewster Windows:</strong> Used to minimize reflection losses and polarize the beam.</li>
+      </ul>
+ <img src="CO2LASER.png">            
+      <h4>3. Working</h4>
+<img src="CO2ENERY.png">      <ol>
+          <li><strong>Excitation of Nitrogen:</strong> Electrons from the discharge collide with $N_2$ molecules:
+          $$ N_2 + e^* \to N_2^* + e $$
+          </li>
+          <li><strong>Energy Transfer:</strong> Excited $N_2^*$ transfers energy to $CO_2$ molecules (resonant transfer to level $E_5$):
+          $$ N_2^* + CO_2 \to CO_2^* + N_2 $$
+          </li>
+          <li><strong>Laser Transitions:</strong>
+              <ul>
+                  <li>$E_5 \to E_4$ (Symmetric Stretch): <strong>$10.6 \mu m$</strong> (Dominant).</li>
+                  <li>$E_5 \to E_3$ (Bending): <strong>$9.6 \mu m$</strong>.</li>
+              </ul>
+          </li>
+          <li><strong>Role of Helium:</strong> Conducts heat away to the tube walls to maintain efficiency.</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <div class="qa-item">
+      <h3>Q5: With proper theory and diagrams, derive Einstein’s coefficients. Also discuss its inferences.</h3>
+      
+      <h4>1. Interaction Processes</h4>
+      <p>Consider two energy levels $E_1$ (Ground) and $E_2$ (Excited) with populations $N_1$ and $N_2$. Let $Q$ be the radiation energy density.</p>
+      
+      <ul>
+          <li><strong>Stimulated Absorption:</strong> Atom absorbs photon $h\nu$ and moves to $E_2$.
+          $$ N_{ab} = B_{12} N_1 Q $$
+          </li>
+          
+          <li><strong>Spontaneous Emission:</strong> Atom falls to $E_1$ randomly.
+          $$ N_{sp} = A_{21} N_2 $$
+          </li>
+          
+          <li><strong>Stimulated Emission:</strong> Incident photon triggers atom to fall to $E_1$, emitting a coherent photon.
+          $$ N_{st} = B_{21} N_2 Q $$
+          </li>
+      </ul>
+      
+      <h4>2. Derivation</h4>
+      <p>At thermal equilibrium, Absorption Rate = Emission Rate:</p>
+      $$ N_{ab} = N_{sp} + N_{st} $$
+      $$ B_{12} N_1 Q = A_{21} N_2 + B_{21} N_2 Q $$
+      
+      <p>Solving for energy density $Q$:</p>
+      $$ Q (B_{12} N_1 - B_{21} N_2) = A_{21} N_2 $$
+      $$ Q = \frac{A_{21} N_2}{B_{12} N_1 - B_{21} N_2} $$
+      
+      <p>Divide numerator and denominator by $B_{21} N_2$:</p>
+      $$ Q = \frac{\frac{A_{21}}{B_{21}}}{\frac{B_{12}}{B_{21}} \frac{N_1}{N_2} - 1} $$
+      
+      <p>Using Boltzmann’s law, $\frac{N_1}{N_2} = e^{h\nu / kT}$. Substituting this:</p>
+      $$ Q = \frac{\frac{A_{21}}{B_{21}}}{\frac{B_{12}}{B_{21}} e^{h\nu / kT} - 1} \quad \text{--- (1)} $$
+      
+      <p>Compare this with Planck’s Radiation Law:</p>
+      $$ Q = \frac{8\pi h \nu^3}{c^3} \left( \frac{1}{e^{h\nu / kT} - 1} \right) \quad \text{--- (2)} $$
+      
+      <h4>3. Inferences</h4>
+      <ol>
+          <li>$$ B_{12} = B_{21} $$ Probability of stimulated absorption equals stimulated emission.</li>
+          <li>$$ \frac{A_{21}}{B_{21}} = \frac{8\pi h \nu^3}{c^3} $$ The ratio of spontaneous to stimulated emission depends on the cube of frequency.</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <div class="qa-item">
+      <h3>Q6: Derive an expression for numerical aperture and acceptance angle of an optical fiber.</h3>
+      
+      <h4>1. Principle</h4>
+      <p>Light propagates via <strong>Total Internal Reflection (TIR)</strong>. The core refractive index ($n_1$) must be greater than the cladding ($n_2$).</p>
+      
+            
+      <h4>2. Derivation</h4>
+      <p>Let light enter from a medium ($n_0$) at acceptance angle $\theta_0$, refracting into the core at $\theta_r$.</p>
+      
+      <p><strong>Step 1: At Fiber Entry (Snell’s Law)</strong></p>
+      $$ n_0 \sin \theta_0 = n_1 \sin \theta_r \quad \text{--- (1)} $$
+          
+      <p><strong>Step 2: At Core-Cladding Interface</strong><br>
+      The ray strikes at angle $\phi$. From geometry, $\phi = 90^\circ - \theta_r$.<br>
+      For the limiting case of TIR, $\phi$ equals the critical angle $\phi_c$, and the angle of refraction in cladding is $90^\circ$.</p>
+      
+      $$ n_1 \sin(90^\circ - \theta_r) = n_2 \sin 90^\circ $$
+      $$ n_1 \cos \theta_r = n_2 \implies \cos \theta_r = \frac{n_2}{n_1} \quad \text{--- (2)} $$
+          
+      <p><strong>Step 3: Combining</strong><br>
+      Using trigonometric identity $\sin \theta_r = \sqrt{1 - \cos^2 \theta_r}$:</p>
+      
+      $$ \sin \theta_r = \sqrt{1 - \left(\frac{n_2}{n_1}\right)^2} = \frac{\sqrt{n_1^2 - n_2^2}}{n_1} $$
+      
+      <p>Substitute this back into Eq (1):</p>
+      $$ n_0 \sin \theta_0 = n_1 \left( \frac{\sqrt{n_1^2 - n_2^2}}{n_1} \right) $$
+      $$ n_0 \sin \theta_0 = \sqrt{n_1^2 - n_2^2} $$
+      
+      <h4>3. Final Expressions</h4>
+      <p><strong>Numerical Aperture (NA):</strong> ($NA = \sin \theta_0$)</p>
+      $$ NA = \frac{\sqrt{n_1^2 - n_2^2}}{n_0} $$
+      <p>If air is the launching medium ($n_0=1$):</p>
+      $$ NA = \sqrt{n_1^2 - n_2^2} $$
+      
+      <p><strong>Acceptance Angle ($\theta_0$):</strong></p>
+      $$ \theta_0 = \sin^{-1} \left( \frac{\sqrt{n_1^2 - n_2^2}}{n_0} \right) $$
+
+    </div>
+  </div>
+
+</body>
+</html>

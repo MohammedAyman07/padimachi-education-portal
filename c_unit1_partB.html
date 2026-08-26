@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1 (Part B) - C Basics </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    /* Styles for the notes content */
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .qa-item p strong {
+      color: #222;
+      font-size: 1.05rem;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    .notes-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 15px auto;
+      border: 1px solid #ddd;
+      display: block;
+    }
+    .code-block {
+      background: #2d2d2d;
+      color: #f1f1f1;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>💻 Unit 1 – Part B (13-Mark Q&A)</h1>
+      <p>C Programming </p>
+      <a href="c_unit1.html" class="cta-btn">⬅ Back to Unit 1</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part B: 13-Mark Questions</h2>
+
+    <div class="qa-item">
+      <h3>1. Write a C program to find the sum of two numbers using a flowchart and algorithm.</h3>
+      
+      <strong>Algorithm</strong>
+      <ol>
+        <li>Start</li>
+        <li>Read two numbers: a, b</li>
+        <li>Compute sum = a + b</li>
+        <li>Display sum</li>
+        <li>Stop</li>
+      </ol>
+
+      <strong>Flowchart</strong>
+      <img src="c_sum_flowchart.png" alt="Flowchart to sum two numbers" class="notes-image" style="max-width: 250px;">
+      
+      <strong>C Program</strong>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int number1;
+    int number2;
+    int sum;
+
+    printf("Enter the first integer: ");
+    scanf("%d", &amp;number1);
+
+    printf("Enter the second integer: ");
+    scanf("%d", &amp;number2);
+
+    sum = number1 + number2;
+
+    printf("\nThe sum of %d and %d is: %d\n", number1, number2, sum);
+    return 0;
+}</code></pre>
+
+      <strong>Explanation</strong>
+      <p>This program follows an Input-Process-Output (IPO) structure:</p>
+      <ul>
+        <li><strong>Input:</strong> It uses <code>printf</code> to prompt the user and <code>scanf</code> to read two integers, storing them in <code>number1</code> and <code>number2</code>.</li>
+        <li><strong>Process:</strong> It calculates the sum using the assignment statement: <code>sum = number1 + number2;</code>.</li>
+        <li><strong>Output:</strong> It uses <code>printf</code> again to display a formatted message showing the original two numbers and their calculated sum.</li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>2. Elaborate the decision making and looping statements with suitable examples.</h3>
+      
+      <strong>1. Decision-Making Statements</strong>
+      <p>Decision-making statements are used to execute parts of code based on specific conditions.</p>
+      <ul>
+        <li><strong>if statement:</strong> Executes a block if the condition is true.
+<pre class="code-block"><code>if (x > 0) {
+    printf("Positive number");
+}</code></pre></li>
+        <li><strong>if-else statement:</strong> Executes one block if true, and another if false.
+<pre class="code-block"><code>if (x % 2 == 0) {
+    printf("Even");
+} else {
+    printf("Odd");
+}</code></pre></li>
+        <li><strong>Nested if statement:</strong> An <code>if</code> statement inside another <code>if</code> statement.
+<pre class="code-block"><code>if (x > 0) {
+    if (x < 10) {
+        printf("x is between 1 and 9");
+    }
+}</code></pre></li>
+        <li><strong>if-else-if ladder:</strong> Used to check multiple conditions sequentially.
+<pre class="code-block"><code>if (marks >= 90)
+    printf("Grade A");
+else if (marks >= 75)
+    printf("Grade B");
+else
+    printf("Grade C");
+</code></pre></li>
+        <li><strong>switch statement:</strong> Used for multiple choices based on a single variable.
+<pre class="code-block"><code>switch (choice) {
+    case 1: printf("Addition"); break;
+    case 2: printf("Subtraction"); break;
+    default: printf("Invalid choice");
+}</code></pre></li>
+      </ul>
+
+      <strong>2. Looping Statements</strong>
+      <p>Looping statements execute a block of code repeatedly.</p>
+      <ul>
+        <li><strong>for loop (Entry-controlled):</strong>
+<pre class="code-block"><code>for (int i = 1; i <= 5; i++) {
+    printf("%d ", i);
+}
+// Output: 1 2 3 4 5
+</code></pre></li>
+        <li><strong>while loop (Entry-controlled):</strong>
+<pre class="code-block"><code>int i = 1;
+while (i <= 5) {
+    printf("%d ", i);
+    i++;
+}</code></pre></li>
+        <li><strong>do-while loop (Exit-controlled):</strong> Executes at least once.
+<pre class="code-block"><code>int i = 1;
+do {
+    printf("%d ", i);
+    i++;
+} while (i <= 5);
+</code></pre></li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>3. i. Explain the general structure of a C program with an example. <br> ii. Write a C program to find the largest of three numbers using ternary operator.</h3>
+      
+      <strong>i. General Structure of a C Program</strong>
+      <p>A C program is organized into several sections:</p>
+      <ol>
+        <li><strong>Documentation Section:</strong> Comments describing the program.</li>
+        <li><strong>Preprocessor Section:</strong> Includes header files (e.g., <code>#include</code>).</li>
+        <li><strong>Global Declarations:</strong> Global variables and function prototypes.</li>
+        <li><strong>main() Function:</strong> The entry point where program execution begins.</li>
+        <li><strong>Subprograms / Functions:</strong> User-defined functions.</li>
+      </ol>
+
+      <strong>Example Program:</strong>
+<pre class="code-block"><code>#include &lt;stdio.h&gt; // Preprocessor section
+
+// Global declarations
+int globalvar = 10;
+void display(); // Function prototype
+
+int main() { // main function section
+    int a = 5, b = 10; // Local declarations
+    int sum;
+    sum = a + b; // Statements
+    printf("Sum = %d\n", sum);
+    display(); // Function call
+    return 0;
+}
+
+// Subprogram / function
+void display() {
+    printf("This is a user-defined function.\n");
+}</code></pre>
+
+      <strong>ii. C Program: Largest of Three Numbers (Ternary Operator)</strong>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, c, largest;
+    
+    // Input three numbers
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &amp;a, &amp;b, &amp;c);
+    
+    // Using nested ternary operator
+    largest = (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
+    
+    // Output result
+    printf("Largest number = %d\n", largest);
+    return 0;
+}</code></pre>
+      <strong>Output:</strong>
+<pre class="code-block"><code>Enter three numbers: 10 20 5
+Largest number = 20
+</code></pre>
+      <strong>Explanation:</strong>
+      <ul>
+        <li>First, it checks if <code>a > b</code>.</li>
+        <li>If true, it checks if <code>a > c</code>. If true, <code>a</code> is largest, else <code>c</code> is largest.</li>
+        <li>If false (meaning <code>b >= a</code>), it checks if <code>b > c</code>. If true, <code>b</code> is largest, else <code>c</code> is largest.</li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>4. Explain the different types of loops in C with syntax.</h3>
+      <p>Loops are used to execute a block of code repeatedly as long as a condition is true. C has three main types of loops:</p>
+
+      <strong>1. for loop (Entry-controlled)</strong>
+      <p>Used when the number of iterations is known. The condition is tested before entering the loop.</p>
+      <strong>Syntax:</strong>
+<pre class="code-block"><code>for (initialization; condition; update) {
+    // body of loop
+}
+</code></pre>
+      <strong>Example:</strong>
+<pre class="code-block"><code>for(int i = 1; i <= 5; i++) {
+    printf("%d ", i);
+}
+// Output: 1 2 3 4 5
+</code></pre>
+
+      <strong>2. while loop (Entry-controlled)</strong>
+      <p>Used when the number of iterations is not fixed. The condition is tested before the loop body executes.</p>
+      <strong>Syntax:</strong>
+<pre class="code-block"><code>initialization;
+while (condition) {
+    // body of loop
+    update;
+}
+</code></pre>
+      <strong>Example:</strong>
+<pre class="code-block"><code>int i = 1;
+while (i <= 5) {
+    printf("%d ", i);
+    i++;
+}
+// Output: 1 2 3 4 5
+</code></pre>
+
+      <strong>3. do-while loop (Exit-controlled)</strong>
+      <p>The loop body is executed at least once because the condition is tested *after* the body executes.</p>
+      <strong>Syntax:</strong>
+<pre class="code-block"><code>initialization;
+do {
+    // body of loop
+    update;
+} while (condition);
+</code></pre>
+      <strong>Example:</strong>
+<pre class="code-block"><code>int i = 1;
+do {
+    printf("%d ", i);
+    i++;
+} while (i <= 5);
+// Output: 1 2 3 4 5
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>5. Explain the all-looping statement with example.</h3>
+      <p>Loops are used to execute a block of code repeatedly as long as a condition is true. C provides three main types of loops:</p>
+
+      <strong>1. for loop (Entry-controlled)</strong>
+      <p>Used when the number of iterations is known. Condition is tested before entering.</p>
+      <strong>Syntax:</strong> <code>for (initialization; condition; update) { ... }</code>
+      <strong>Example:</strong>
+<pre class="code-block"><code>for(int i = 1; i <= 5; i++) {
+    printf("%d ", i);
+}
+// Output: 1 2 3 4 5
+</code></pre>
+
+      <strong>2. while loop (Entry-controlled)</strong>
+      <p>Used when iterations are not fixed. Condition is tested before executing.</p>
+      <strong>Syntax:</strong> <code>while (condition) { ... update; }</code>
+      <strong>Example:</strong>
+<pre class="code-block"><code>int i = 1;
+while (i <= 5) {
+    printf("%d ", i);
+    i++;
+}
+// Output: 1 2 3 4 5
+</code></pre>
+
+      <strong>3. do-while loop (Exit-controlled)</strong>
+      <p>Executes at least once. Condition is tested after the body.</p>
+      <strong>Syntax:</strong> <code>do { ... update; } while (condition);</code>
+      <strong>Example:</strong>
+<pre class="code-block"><code>int i = 1;
+do {
+    printf("%d ", i);
+    i++;
+} while (i <= 5);
+// Output: 1 2 3 4 5
+</code></pre>
+
+      <strong>Loop Control Statements</strong>
+      <p>C also has statements to control loop execution:</p>
+      <ul>
+        <li><strong>a) break:</strong> Terminates the loop immediately.
+<pre class="code-block"><code>for(int i = 1; i <= 5; i++) {
+    if(i == 3) break;
+    printf("%d ", i);
+}
+// Output: 1 2
+</code></pre></li>
+        <li><strong>b) continue:</strong> Skips the current iteration and moves to the next.
+<pre class="code-block"><code>for(int i = 1; i <= 5; i++) {
+    if (i == 3) continue;
+    printf("%d ", i);
+}
+// Output: 1 2 4 5
+</code></pre></li>
+        <li><strong>c) goto:</strong> Transfers control to a labeled statement. (Use is generally discouraged).
+<pre class="code-block"><code>int i = 1;
+loop:
+if(i <= 3) {
+    printf("%d ", i);
+    i++;
+    goto loop;
+}
+// Output: 1 2 3
+</code></pre></li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>6. Explain the decision-making statement with an example.</h3>
+      <p>Decision-making statements execute code based on conditions.</p>
+      
+      <strong>1. if statement</strong>
+      <p>Executes a block if the condition is true.</p>
+      <strong>Syntax:</strong> <code>if (condition) { ... }</code>
+      <strong>Example:</strong>
+<pre class="code-block"><code>int x = 10;
+if (x > 0) {
+    printf("x is positive");
+}
+// Output: x is positive
+</code></pre>
+
+      <strong>2. if-else statement</strong>
+      <p>Executes one block if true, another if false.</p>
+      <strong>Syntax:</strong> <code>if (condition) { ... } else { ... }</code>
+      <strong>Example:</strong>
+<pre class="code-block"><code>int x = 5;
+if (x % 2 == 0) {
+    printf("Even");
+} else {
+    printf("Odd");
+}
+// Output: Odd
+</code></pre>
+
+      <strong>3. Nested if statement</strong>
+      <p>An <code>if</code> statement inside another <code>if</code>.</p>
+<pre class="code-block"><code>if (x > 0) {
+    if (x < 10) {
+        printf("x is between 1 and 9");
+    }
+}
+// Output: x is between 1 and 9
+</code></pre>
+
+      <strong>4. if-else-if ladder</strong>
+      <p>Used to check multiple conditions sequentially.</p>
+<pre class="code-block"><code>int marks = 80;
+if (marks >= 90)
+    printf("Grade A");
+else if (marks >= 75)
+    printf("Grade B");
+else
+    printf("Grade C");
+// Output: Grade B
+</code></pre>
+
+      <strong>5. switch statement</strong>
+      <p>Used for multiple choices on a single variable.</p>
+<pre class="code-block"><code>switch (choice) {
+    case 1: printf("Addition"); break;
+    case 2: printf("Subtraction"); break;
+    default: printf("Invalid choice");
+}
+// Output: Subtraction
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>7. Describe the structure of a C program with an example.</h3>
+      <p>A C program follows a well-defined structure:</p>
+      <ol>
+        <li><strong>Documentation Section:</strong> Contains comments (e.g., <code>// Program to add two numbers</code>).</li>
+        <li><strong>Preprocessor Section:</strong> Includes header files (e.g., <code>#include &lt;stdio.h&gt;</code>).</li>
+        <li><strong>Global Declaration Section:</strong> Declares global variables and function prototypes (e.g., <code>int x;</code>, <code>void display();</code>).</li>
+        <li><strong>main() Function Section:</strong> Execution starts here. Contains declarations and statements.
+<pre class="code-block"><code>int main() {
+    int a, b, sum;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &amp;a, &amp;b);
+    sum = a + b;
+    printf("Sum = %d", sum);
+    return 0;
+}</code></pre></li>
+        <li><strong>Subprograms (Functions):</strong> User-defined functions written outside <code>main()</code>.
+<pre class="code-block"><code>void display() {
+    printf("This is a function.");
+}</code></pre></li>
+      </ol>
+
+      <strong>Full Example Program:</strong>
+<pre class="code-block"><code>#include &lt;stdio.h&gt; // Preprocessor section
+
+// Global Declaration
+int globalvar = 10;
+void display();
+
+int main() { // main function section
+    int a, b, sum; // Declarations
+    printf("Enter two numbers: ");
+    scanf("%d %d", &amp;a, &amp;b);
+    sum = a + b;
+    // Statement
+    printf("Sum = %d\n", sum);
+    display(); // Function call
+    return 0;
+}
+
+// Subprogram
+void display() {
+    printf("This is a user-defined function.\n");
+}</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>8. Explain about the various Decision making and branching statement with example.</h3>
+      <p>Decision-making statements alter the flow of program execution based on conditions, allowing the program to "decide" which code to run.</p>
+
+      <strong>1. if statement</strong>
+      <p>Executes a block if the condition is true.</p>
+      <strong>Syntax:</strong> <code>if (condition) { ... }</code>
+      <strong>Example:</strong>
+<pre class="code-block"><code>int x = 10;
+if (x > 0) {
+    printf("x is positive");
+}
+// Output: x is positive
+</code></pre>
+
+      <strong>2. if-else statement</strong>
+      <p>Executes one block if true, another if false.</p>
+      <strong>Syntax:</strong> <code>if (condition) { ... } else { ... }</code>
+      <strong>Example:</strong>
+<pre class="code-block"><code>int x = 5;
+if (x % 2 == 0) {
+    printf("Even");
+} else {
+    printf("Odd");
+}
+// Output: Odd
+</code></pre>
+
+      <strong>3. Nested if statement</strong>
+      <p>An <code>if</code> statement inside another <code>if</code>.</p>
+<pre class="code-block"><code>if (x > 0) {
+    if (x < 10) {
+        printf("x is between 1 and 9");
+    }
+}
+// Output: x is between 1 and 9
+</code></pre>
+
+      <strong>4. if-else-if ladder</strong>
+      <p>Used to check multiple conditions sequentially.</p>
+<pre class="code-block"><code>int marks = 80;
+if (marks >= 90)
+    printf("Grade A");
+else if (marks >= 75)
+    printf("Grade B");
+else
+    printf("Grade C");
+// Output: Grade B
+</code></pre>
+
+      <strong>5. switch statement</strong>
+      <p>Used for multiple choices on a single variable.</p>
+<pre class="code-block"><code>switch (choice) {
+    case 1: printf("Addition"); break;
+    case 2: printf("Subtraction"); break;
+    default: printf("Invalid choice");
+}
+// Output: Subtraction
+</code></pre>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  
+
+ 
+</body>
+</html>

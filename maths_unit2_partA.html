@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 2 (Part A) - Maths </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    /* --- Styles optimized for Math content --- */
+    body {
+        font-family: 'Times New Roman', Times, serif; /* Serif font for better readability */
+    }
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+      font-family: Arial, sans-serif; /* Sans-serif for headings */
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.25rem; /* Slightly larger for clarity */
+      margin-bottom: 12px;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol {
+      color: #222; /* Darker text */
+      font-size: 1.1rem; /* Larger base font */
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    /* Style for matrix/equation blocks */
+    .code-block {
+      background: #f8f9fa; /* Lighter background */
+      color: #212529;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.15rem; /* Larger font for equations */
+      white-space: pre-wrap;
+      overflow-x: auto;
+      margin: 15px 0;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>🧮 Unit 2 – Part A (2-Mark Q&A)</h1>
+      <p>Engineering Mathematics</p>
+      <a href="maths_unit2.html" class="cta-btn">⬅ Back to Unit 2</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part A: 2-Mark Questions (Calculus)</h2>
+
+    <div class="qa-item">
+      <h3>1. Continuity of Piecewise Function f(x) at x=2</h3>
+      <div class="code-block">
+        f(x) = 
+        <table style="display: inline-table; vertical-align: middle; border: none; border-left: 1px solid #000; padding-left: 5px;">
+          <tr><td>cx<sup>2</sup> + 2x</td><td>, x < 2</td></tr>
+          <tr><td>x<sup>3</sup> - cx</td><td>, x &ge; 2</td></tr>
+        </table>
+      </div>
+      <p><strong>Step 1:</strong> Set the Left-Hand Limit (LHL) equal to the Right-Hand Limit (RHL) at x=2<br>
+      lim<sub>x&rarr;2<sup>-</sup></sub> (cx<sup>2</sup> + 2x) = lim<sub>x&rarr;2<sup>+</sup></sub> (x<sup>3</sup> - cx)</p>
+      
+      <p><strong>Step 2:</strong> Substitute x=2 into both expressions:<br>
+      c(2)<sup>2</sup> + 2(2) = (2)<sup>3</sup> - c(2)<br>
+      4c + 4 = 8 - 2c</p>
+      
+      <p><strong>Step 3:</strong> Solve the linear equation for c:<br>
+      6c = 4<br>
+      c = 4/6 = 2/3</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>2. Domain, Range, and Graph of f(x) = x<sup>2</sup></h3>
+      <p><strong>Step 1 (Domain):</strong> Identify that f(x) is a polynomial, defined for all real numbers.<br>
+      Domain: (-&infin;, &infin;)</p>
+      
+      <p><strong>Step 2 (Range):</strong> Identify that x<sup>2</sup> is always non-negative.<br>
+      Range: [0, &infin;)</p>
+      
+      <p><strong>Step 3 (Graph):</strong> Sketch a parabola opening upward with its vertex at (0, 0).</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>3. Domain of f(x) = (2x<sup>4</sup> - 5) / (x<sup>2</sup> + x - 6)</h3>
+      <p><strong>Step 1:</strong> Set the denominator equal to zero to find restricted values:<br>
+      x<sup>2</sup> + x - 6 = 0</p>
+      
+      <p><strong>Step 2:</strong> Factor the quadratic equation:<br>
+      (x + 3)(x - 2) = 0</p>
+      
+      <p><strong>Step 3:</strong> Solve for x to find the values excluded from the domain:<br>
+      x = -3 and x = 2</p>
+      
+      <p><strong>Step 4:</strong> State the domain as all real numbers except the excluded values:<br>
+      Domain: (-&infin;, -3) U (-3, 2) U (2, &infin;)</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>4. Evaluate lim<sub>x&rarr;1</sub> (x<sup>2</sup> - 4x) / (x<sup>2</sup> - 3x - 4)</h3>
+      <p><strong>Step 1:</strong> Use direct substitution of x=1 into the numerator and denominator:<br>
+      Numerator: (1)<sup>2</sup> - 4(1) = 1 - 4 = -3<br>
+      Denominator: (1)<sup>2</sup> - 3(1) - 4 = 1 - 3 - 4 = -6</p>
+      
+      <p><strong>Step 2:</strong> Calculate the limit:<br>
+      lim<sub>x&rarr;1</sub> ... = (-3) / (-6) = 1/2</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>5. Evaluate lim<sub>x&rarr;5</sub> (2x<sup>2</sup> - 3x + 4)</h3>
+      <p><strong>Step 1:</strong> Use direct substitution of x=5 (since it's a polynomial):<br>
+      lim<sub>x&rarr;5</sub> (2x<sup>2</sup> - 3x + 4) = 2(5)<sup>2</sup> - 3(5) + 4</p>
+      
+      <p><strong>Step 2:</strong> Calculate the value:<br>
+      2(25) - 15 + 4 = 50 - 15 + 4 = 39</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>6. Domain of f(x) = &radic;(3-x) - &radic;(2+x)</h3>
+      <p><strong>Step 1:</strong> Set the radicand (expression inside the root) of the first term &ge; 0:<br>
+      3 - x &ge; 0 &rArr; x &le; 3</p>
+      
+      <p><strong>Step 2:</strong> Set the radicand of the second term &ge; 0:<br>
+      2 + x &ge; 0 &rArr; x &ge; -2</p>
+      
+      <p><strong>Step 3:</strong> Find the intersection of the two inequalities:<br>
+      -2 &le; x &le; 3<br>
+      Domain: [-2, 3]</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>7. Find dy/dx for cos(xy) = 1 + sin y</h3>
+      <p><strong>Step 1:</strong> Differentiate both sides with respect to x using implicit differentiation.</p>
+      
+      <p><strong>Step 2:</strong> Apply the Product Rule to d/dx(xy)<br>
+      -sin(xy) &middot; d/dx(xy) = 0 + cos(y) &middot; dy/dx<br>
+      -sin(xy) &middot; (y + x(dy/dx)) = cos(y)(dy/dx)</p>
+      
+      <p><strong>Step 3:</strong> Distribute and isolate terms with dy/dx on one side:<br>
+      -y sin(xy) = x sin(xy)(dy/dx) + cos(y)(dy/dx)</p>
+      
+      <p><strong>Step 4:</strong> Factor out dy/dx and solve:<br>
+      dy/dx = (-y sin(xy)) / (x sin(xy) + cos(y))</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>8. Horizontal Tangent for y = sec x / (1 + tan x)</h3>
+      <p><strong>Step 1:</strong> Find dy/dx using the Quotient Rule and simplify the numerator:<br>
+      dy/dx = [(sec x tan x)(1 + tan x) - sec x(sec<sup>2</sup>x)] / (1 + tan x)<sup>2</sup><br>
+      dy/dx = [sec x (tan x - 1)] / (1 + tan x)<sup>2</sup></p>
+      
+      <p><strong>Step 2:</strong> Set the numerator to zero (for a horizontal tangent):<br>
+      sec x (tan x - 1) = 0</p>
+      
+      <p><strong>Step 3:</strong> Solve for x:<br>
+      sec x = 0 (No solution)<br>
+      tan x - 1 = 0 &rArr; tan x = 1</p>
+      
+      <p><strong>Step 4:</strong> State the general solution for tan x = 1:<br>
+      x = &pi;/4 + n&pi;, where n is an integer.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>9. Show Continuity of f(x) at x=1</h3>
+      <div class="code-block">
+        f(x) = 
+        <table style="display: inline-table; vertical-align: middle; border: none; border-left: 1px solid #000; padding-left: 5px;">
+          <tr><td>1 - x<sup>2</sup></td><td>, x &le; 1</td></tr>
+          <tr><td>log x</td><td>, x &ge; 1</td></tr>
+        </table>
+      </div>
+      <p><strong>Step 1:</strong> Calculate the Left-Hand Limit (LHL) at x=1:<br>
+      lim<sub>x&rarr;1<sup>-</sup></sub> (1 - x<sup>2</sup>) = 1 - (1)<sup>2</sup> = 0</p>
+      
+      <p><strong>Step 2:</strong> Calculate the Right-Hand Limit (RHL) at x=1:<br>
+      lim<sub>x&rarr;1<sup>+</sup></sub> (log x) = log(1) = 0</p>
+      
+      <p><strong>Step 3:</strong> Calculate the function value f(1):<br>
+      f(1) = 1 - (1)<sup>2</sup> = 0</p>
+      
+      <p><strong>Step 4:</strong> Conclude continuity since LHL = RHL = f(1)<br>
+      0 = 0 = 0<br>
+      The function is continuous.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>10. Find Critical Values of f(x) = 5x<sup>3</sup> - 6x</h3>
+      <p><strong>Step 1:</strong> Find the first derivative f'(x):<br>
+      f'(x) = 15x<sup>2</sup> - 6</p>
+      
+      <p><strong>Step 2:</strong> Set the derivative equal to zero:<br>
+      15x<sup>2</sup> - 6 = 0</p>
+      
+      <p><strong>Step 3:</strong> Solve for x:<br>
+      15x<sup>2</sup> = 6<br>
+      x<sup>2</sup> = 6/15 = 2/5<br>
+      x = &plusmn;&radic;(2/5)</p>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+ 
+
+
+</body>
+</html>

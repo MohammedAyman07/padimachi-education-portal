@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENGINEERING PHYSICS</title>
+    <script src="protection.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 50px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-radius: 8px;
+    }
+
+    h3 {
+      background-color: #eff6ff;
+      color: #1d4ed8;
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 0;
+    }
+
+    h4 {
+      color: #1e40af;
+      margin-top: 25px;
+      border-bottom: 1px dashed #bfdbfe;
+      padding-bottom: 5px;
+    }
+
+    .step {
+      margin-bottom: 15px;
+      padding-left: 15px;
+      border-left: 3px solid #cbd5e1;
+    }
+
+    .step-title {
+      font-weight: bold;
+      color: #475569;
+      display: block;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    .result-box {
+      border: 2px solid #2563eb;
+      background-color: #f0fdf4;
+      padding: 15px;
+      margin: 20px 0;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    .notes-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 20px auto;
+      border: 1px solid #ddd;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+        <h1>Unit 4 – Part B: ELECTRON THEORY OF MATERIALS</h1>
+
+    <div class="question-box">
+      <h3>1. Using the classical free electron theory, derive the mathematical expression for electrical conductivity and thermal conductivity of metals and hence deduce the Wiedemann-Franz law.</h3>
+
+      <h4>1. Electrical Conductivity (\( \sigma \))</h4>
+      
+      <p><strong>Definition:</strong> It is defined as the quantity of electric charge (\( Q \)) conducted per unit time (\( t \)) across unit area (\( A \)) of the solid for unit applied electric field (\( E \)).</p>
+      $$ \sigma = \frac{Q}{tAE} $$
+      
+      
+      
+      <div class="step">
+        <span class="step-title">Step 1: Acceleration</span>
+        When an electric field \( E \) is applied, the force on an electron is \( F = eE \).
+        According to Newton's law, \( F = ma \).
+        $$ a = \frac{eE}{m} $$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 2: Drift Velocity (\( v_d \))</span>
+        Drift velocity is the product of acceleration and relaxation time (\( \tau \)):
+        $$ v_d = a\tau = \frac{eE\tau}{m} $$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 3: Current Density (\( J \))</span>
+        If \( n \) is the free electron density, current density is:
+        $$ J = ne v_d $$
+        Substituting \( v_d \):
+        $$ J = \frac{ne^2E\tau}{m} $$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 4: Final Expression</span>
+        From Ohm's law, \( J = \sigma E \). Comparing the terms:
+        <div class="result-box">
+          $$ \sigma = \frac{ne^2\tau}{m} $$
+        </div>
+      </div>
+
+      <h4>2. Thermal Conductivity (\( K \))</h4>
+      
+      <p><strong>Definition:</strong> The amount of heat conducted per unit area per unit time maintained at unit temperature gradient.</p>
+
+      
+
+[Image of thermal conductivity mechanism in metals]
+
+
+      <div class="step">
+        <span class="step-title">Step 1: Heat Transfer Analysis</span>
+        Consider a rod with hot end A (Temp \( T \)) and cold end B (Temp \( T-dT \)).
+        Average Kinetic Energy at A = \( \frac{3}{2}kT \).
+        Average Kinetic Energy at B = \( \frac{3}{2}k(T-dT) \).
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 2: Net Heat Flow (\( Q \))</span>
+        The number of electrons crossing per unit area is \( \frac{1}{6}nv \).
+        The net energy transferred per unit area per second is:
+        $$ Q = \frac{1}{6}nv \left[ \frac{3}{2}kT - \frac{3}{2}k(T-dT) \right] \times 2 $$
+        (Factor of 2 accounts for transfer from A to B and deficit from B to A)
+        $$ Q = \frac{1}{2}nv k dT $$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 3: Final Expression</span>
+        By definition, \( Q = K \frac{dT}{\lambda} \).
+        Equating the two expressions for \( Q \):
+        $$ K \frac{dT}{\lambda} = \frac{1}{2}nv k dT $$
+        $$ K = \frac{1}{2}nv k \lambda $$
+        Since \( \lambda = v\tau \):
+        <div class="result-box">
+          $$ K = \frac{1}{2}nv^2 k \tau $$
+        </div>
+      </div>
+
+      <h4>3. Wiedemann-Franz Law</h4>
+      
+      <p><strong>Statement:</strong> The ratio of thermal conductivity to electrical conductivity is directly proportional to the absolute temperature.</p>
+
+      <div class="step">
+        <span class="step-title">Derivation</span>
+        Ratio of \( K \) to \( \sigma \):
+        $$ \frac{K}{\sigma} = \frac{\frac{1}{2}nv^2 k \tau}{\frac{ne^2\tau}{m}} = \frac{1}{2} \frac{mv^2 k}{e^2} $$
+        
+        We know Kinetic Energy \( \frac{1}{2}mv^2 = \frac{3}{2}kT \).
+        Substituting this:
+        $$ \frac{K}{\sigma} = \frac{3}{2}kT \frac{k}{e^2} $$
+        $$ \frac{K}{\sigma} = \frac{3}{2} \left( \frac{k}{e} \right)^2 T $$
+        $$ \frac{K}{\sigma} = L T $$
+      </div>
+
+      <div class="result-box">
+        \( L = \frac{K}{\sigma T} \) (Lorentz Number)
+      </div>
+
+    </div>
+    <div class="question-box">
+  <h3>2. What is Density of States? Derive an expression for the density of states and carrier concentration in a metal.</h3>
+
+  <h4>1. Definition: Density of States, Z(E)</h4>
+  <div class="step">
+    <p>The Density of States, denoted by \( Z(E) \) or \( N(E) \), is defined as the number of available energy states per unit energy interval per unit volume of the metal.</p>
+    <p>Mathematically:</p>
+    $$Z(E) dE = \frac{dN}{V}$$
+    <p>Where \( dN \) is the number of energy states available between energy \( E \) and \( E + dE \).</p>
+  </div>
+
+  <h4>2. Derivation of Density of States</h4>
+  
+  <div class="step">
+    <span class="step-title">Step 1: Energy Levels in 3D</span>
+    Consider a metal piece as a cube of side \( L \) and volume \( V = L^3 \). According to quantum mechanics (particle in a box), the energy levels of a free electron are given by:
+    $$E = \frac{h^2}{8mL^2} (n_x^2 + n_y^2 + n_z^2)$$
+    Let \( n^2 = n_x^2 + n_y^2 + n_z^2 \), where \( n \) is the radius vector in "n-space".
+    $$E = \frac{h^2 n^2}{8mL^2} \quad \implies \quad n^2 = \frac{8mL^2E}{h^2}$$
+    $$n = \sqrt{\frac{8mL^2E}{h^2}} \quad \text{--- (1)}$$
+  </div>
+  
+  
+
+  <div class="step">
+    <span class="step-title">Step 2: Number of States in Sphere</span>
+    Consider a sphere of radius \( n \) in quantum number space.
+    <ul>
+      <li>The total volume of the sphere is \( \frac{4}{3}\pi n^3 \).</li>
+      <li>Since \( n_x, n_y, n_z \) must be positive integers, we only consider the <strong>positive octant</strong> (1/8th) of the sphere.</li>
+      <li>According to Pauli's Exclusion Principle, each state can hold <strong>2 electrons</strong> (spin up and spin down).</li>
+    </ul>
+    The total number of energy states \( N \) within a sphere of radius \( n \) is:
+    $$N = 2 \times \frac{1}{8} \times \frac{4}{3}\pi n^3$$
+    $$N = \frac{\pi n^3}{3} \quad \text{--- (2)}$$
+  </div>
+
+  <div class="step">
+    <span class="step-title">Step 3: Substitute Energy</span>
+    Substitute the value of \( n \) from eq (1) into eq (2):
+    $$N = \frac{\pi}{3} \left( \sqrt{\frac{8mL^2E}{h^2}} \right)^3$$
+    $$N = \frac{\pi}{3} \left( \frac{8mL^2E}{h^2} \right)^{3/2}$$
+    Since \( V = L^3 \):
+    $$N = \frac{\pi}{3} V \frac{(8m)^{3/2}}{h^3} E^{3/2}$$
+  </div>
+
+  <div class="step">
+    <span class="step-title">Step 4: Differentiate to find Z(E)</span>
+    The number of states within the energy interval \( E \) and \( E+dE \) is found by differentiating \( N \) with respect to \( E \):
+    $$dN = \frac{\pi V}{3 h^3} (8m)^{3/2} \left( \frac{3}{2} E^{1/2} \right) dE$$
+    $$dN = \frac{\pi V}{2 h^3} (2\sqrt{2}m)^{3} E^{1/2} dE$$
+    Simplifying, we get the Density of States expression:
+    <div class="result-box">
+      $$Z(E) = \frac{dN}{dE} = \frac{4\pi}{h^3} (2m)^{3/2} E^{1/2} V$$
+    </div>
+    (Note: Often expressed per unit volume by setting \( V=1 \)).
+  </div>
+  
+  
+
+  <h4>3. Carrier Concentration in Metals</h4>
+  
+  <div class="step">
+    <span class="step-title">Definition</span>
+    The carrier concentration (\( n_c \)) is the total number of electrons per unit volume. It is calculated by integrating the product of the Density of States \( Z(E) \) and the Fermi-Dirac probability function \( F(E) \).
+    $$n_c = \int_0^{\infty} Z(E) F(E) dE$$
+  </div>
+
+  <div class="step">
+    <span class="step-title">At Absolute Zero (T = 0K)</span>
+    At \( T = 0K \):
+    <ul>
+      <li>For \( E < E_F \), the probability \( F(E) = 1 \) (All states are filled).</li>
+      <li>For \( E > E_F \), the probability \( F(E) = 0 \) (All states are empty).</li>
+    </ul>
+    Therefore, the integration limits become 0 to \( E_F \):
+    $$n_c = \int_0^{E_F} Z(E) \cdot 1 \cdot dE$$
+  </div>
+
+  <div class="step">
+    <span class="step-title">Calculation</span>
+    Substitute \( Z(E) \) (per unit volume, i.e., \( V=1 \)):
+    $$n_c = \int_0^{E_F} \frac{4\pi}{h^3} (2m)^{3/2} E^{1/2} dE$$
+    $$n_c = \frac{4\pi}{h^3} (2m)^{3/2} \left[ \frac{E^{3/2}}{3/2} \right]_0^{E_F}$$
+    $$n_c = \frac{4\pi}{h^3} (2m)^{3/2} \frac{2}{3} E_F^{3/2}$$
+    
+    <div class="result-box">
+      $$n_c = \frac{8\pi}{3h^3} (2mE_F)^{3/2}$$
+    </div>
+  </div>
+  
+</div>
+<div class="question-box">
+  <h3>3. (i) Write a short note on Tight Binding Approximation for energy band in solids. (ii) Derive the expression for effective mass of an electron.</h3>
+
+  <h4>(i) Tight Binding Approximation</h4>
+  
+  <div class="step">
+    <span class="step-title">Introduction</span>
+    <p>The Tight Binding Approximation (TBA) is a method used to calculate the electronic band structure of solids. Unlike the free electron model, which assumes electrons move freely, the TBA assumes that electrons are <strong>tightly bound</strong> to their respective atoms, similar to electrons in isolated atoms.</p>
+  </div>
+
+  
+
+  <div class="step">
+    <span class="step-title">Key Assumptions</span>
+    <ul>
+      <li><strong>Proximity:</strong> The electrons spend most of their time in the vicinity of the atomic nuclei.</li>
+      <li><strong>Weak Overlap:</strong> The wavefunctions of electrons on neighboring atoms overlap only slightly. This overlap acts as a small perturbation.</li>
+      <li><strong>Atomic Similarity:</strong> The crystal potential near an atom is approximated by the potential of a single isolated atom.</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <span class="step-title">Wavefunction Formation (LCAO)</span>
+    <p>The crystal wavefunction \( \psi_k(r) \) is constructed as a linear combination of atomic orbitals (LCAO). If \( \phi(r) \) represents the atomic orbital for a single atom at the origin, the wavefunction for the entire crystal satisfying Bloch's theorem is:</p>
+    $$\psi_k(r) = \sum_{n} e^{ik \cdot R_n} \phi(r - R_n)$$
+    <p>Where \( R_n \) is the position vector of the \( n^{th} \) atom and \( k \) is the wave vector.</p>
+  </div>
+
+  <div class="step">
+    <span class="step-title">Result: Energy Bands</span>
+    <p>Due to the interaction between neighboring atoms (perturbation), the discrete atomic energy levels split into continuous <strong>energy bands</strong>. The width of these bands depends on the extent of the overlap between the orbitals. Stronger overlap leads to wider bands, while weaker overlap results in narrower bands.</p>
+  </div>
+
+  <hr>
+
+  <h4>(ii) Derivation of Effective Mass</h4>
+
+  <div class="step">
+    <span class="step-title">Concept</span>
+    <p>An electron in a crystal lattice does not move as a free particle because it interacts with the periodic potential of the lattice. To account for these internal forces without complex calculations, we assign the electron a hypothetical mass called the <strong>Effective Mass (\( m^* \))</strong>.</p>
+  </div>
+
+  
+
+  <div class="step">
+    <span class="step-title">Step 1: Group Velocity</span>
+    The velocity of an electron wave packet (group velocity \( v_g \)) in a band is given by:
+    $$v_g = \frac{d\omega}{dk}$$
+    Since Energy \( E = \hbar \omega \), we have \( \omega = E/\hbar \). Therefore:
+    $$v_g = \frac{1}{\hbar} \frac{dE}{dk} \quad \text{--- (1)}$$
+  </div>
+
+  <div class="step">
+    <span class="step-title">Step 2: Acceleration</span>
+    The rate of change of velocity (acceleration \( a \)) is:
+    $$a = \frac{dv_g}{dt} = \frac{d}{dt} \left( \frac{1}{\hbar} \frac{dE}{dk} \right)$$
+    Using the chain rule \( \frac{d}{dt} = \frac{dk}{dt} \frac{d}{dk} \):
+    $$a = \frac{1}{\hbar} \frac{d^2E}{dk^2} \frac{dk}{dt} \quad \text{--- (2)}$$
+  </div>
+
+  <div class="step">
+    <span class="step-title">Step 3: Applied Force</span>
+    When an external force \( F \) is applied to the electron, the work done is equal to the increase in energy \( dE \) in time \( dt \):
+    $$dE = F \cdot v_g \cdot dt$$
+    $$\frac{dE}{dt} = F \cdot v_g$$
+    Also, from quantum mechanics: \( \frac{dE}{dt} = \frac{dE}{dk} \frac{dk}{dt} \).
+    Equating these implies:
+    $$F = \hbar \frac{dk}{dt} \implies \frac{dk}{dt} = \frac{F}{\hbar} \quad \text{--- (3)}$$
+  </div>
+
+  <div class="step">
+    <span class="step-title">Step 4: Comparison with Newton's Law</span>
+    Substitute eq (3) into eq (2):
+    $$a = \frac{1}{\hbar} \frac{d^2E}{dk^2} \left( \frac{F}{\hbar} \right)$$
+    $$a = \frac{1}{\hbar^2} \frac{d^2E}{dk^2} F$$
+    $$F = \left[ \frac{\hbar^2}{\frac{d^2E}{dk^2}} \right] a$$
+    Comparing this with Newton's Second Law, \( F = m^* a \), we get:
+  </div>
+
+  <div class="result-box">
+    $$m^* = \frac{\hbar^2}{\frac{d^2E}{dk^2}}$$
+  </div>
+
+  <div class="step">
+    <span class="step-title">Physical Significance</span>
+    <ul>
+      <li>The effective mass is inversely proportional to the curvature of the energy band \( \frac{d^2E}{dk^2} \).</li>
+      <li><strong>Flat bands</strong> (low curvature) \(\rightarrow\) High effective mass (heavy electrons).</li>
+      <li><strong>Curved bands</strong> (high curvature) \(\rightarrow\) Low effective mass (light electrons).</li>
+    </ul>
+  </div>
+
+</div>
+<div class="question-box">
+  <h3>4. Write a short note on: (i) Fermi-Dirac Distribution, (ii) Fermi energy at T=0K and T>0K, and (iii) Significance of Fermi energy.</h3>
+
+  <h4>(i) Fermi-Dirac Distribution Function, F(E)</h4>
+  
+  <div class="step">
+    <span class="step-title">Definition</span>
+    <p>The Fermi-Dirac distribution function represents the probability that an electron will occupy a particular energy state \( E \) at a given absolute temperature \( T \). It is based on the Pauli Exclusion Principle, which states that no two fermions (electrons) can occupy the same quantum state.</p>
+  </div>
+
+  <div class="step">
+    <span class="step-title">Formula</span>
+    The probability function \( F(E) \) is given by:
+    <div class="result-box">
+      $$F(E) = \frac{1}{1 + e^{(E - E_F) / k_B T}}$$
+    </div>
+    Where:
+    <ul>
+      <li>\( E \) = Energy of the state</li>
+      <li>\( E_F \) = Fermi Energy level</li>
+      <li>\( k_B \) = Boltzmann constant</li>
+      <li>\( T \) = Absolute Temperature</li>
+    </ul>
+  </div>
+
+  
+
+  <h4>(ii) Fermi Energy at Different Temperatures</h4>
+
+  <div class="step">
+    <span class="step-title">Case 1: At Absolute Zero (T = 0K)</span>
+    At \( T = 0K \), the behavior depends on whether the energy \( E \) is greater or less than the Fermi energy \( E_F \):
+    <ul>
+      <li><strong>If \( E < E_F \):</strong> The term \( (E - E_F) \) is negative.
+        $$F(E) = \frac{1}{1 + e^{-\infty}} = \frac{1}{1+0} = 1$$
+        (100% probability of occupation)
+      </li>
+      <li><strong>If \( E > E_F \):</strong> The term \( (E - E_F) \) is positive.
+        $$F(E) = \frac{1}{1 + e^{+\infty}} = \frac{1}{1+\infty} = 0$$
+        (0% probability of occupation)
+      </li>
+    </ul>
+    <strong>Conclusion:</strong> At 0K, all energy levels below \( E_F \) are completely filled, and all levels above \( E_F \) are completely empty. Thus, <strong>Fermi energy is the maximum energy possessed by an electron at absolute zero.</strong>
+  </div>
+
+  <div class="step">
+    <span class="step-title">Case 2: At Temperature T > 0K</span>
+    As temperature increases, some electrons gain thermal energy and move to higher energy states.
+    <br>
+    Consider the specific energy state where \( E = E_F \):
+    $$F(E) = \frac{1}{1 + e^{(E_F - E_F) / k_B T}} = \frac{1}{1 + e^0}$$
+    $$F(E) = \frac{1}{1 + 1} = \frac{1}{2} = 0.5$$
+    <strong>Conclusion:</strong> At any temperature above absolute zero, the Fermi energy level is the energy state which has a <strong>50% probability</strong> of being occupied by an electron.
+  </div>
+
+  <h4>(iii) Significance of Fermi Energy</h4>
+  
+  <div class="step">
+    <ul>
+      <li><strong>Reference Level:</strong> It acts as a reference energy level which separates occupied states from unoccupied states at 0K.</li>
+      <li><strong>Probability Marker:</strong> It represents the energy state with a 50% probability of occupancy at temperatures greater than 0K.</li>
+      <li><strong>Classification of Materials:</strong> The position of the Fermi level determines the electrical conductivity of the material (whether it is a conductor, semiconductor, or insulator).</li>
+      <li><strong>Velocity Calculation:</strong> It helps in calculating the Fermi velocity of electrons, which is crucial for understanding transport properties like electrical and thermal conductivity.</li>
+    </ul>
+  </div>
+
+</div>
+<div class="question-box">
+  <h3>5. (i) Contrast the term degenerate and non-degenerate states. (ii) The thermal conductivity of a metal is 123.93 Wm⁻¹K⁻¹. Find the electrical conductivity and Lorentz number when the metal possesses relaxation time 10⁻¹⁴ sec at 300K. (Density of electron = 6 × 10²⁸ per m³)</h3>
+
+  <h4>(i) Contrast: Degenerate vs. Non-Degenerate States</h4>
+  
+  <p>In quantum mechanics, a state is defined by a specific set of quantum numbers and a corresponding wave function.</p>
+
+  
+
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Degenerate States</th>
+        <th>Non-Degenerate States</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Definition</strong></td>
+        <td>States are called degenerate when <strong>multiple different wave functions</strong> (eigenfunctions) correspond to the <strong>same energy level</strong> (eigenvalue).</td>
+        <td>States are called non-degenerate when <strong>one specific wave function</strong> corresponds to <strong>one unique energy level</strong>.</td>
+      </tr>
+      <tr>
+        <td><strong>Energy Mapping</strong></td>
+        <td>One Energy Value \(\rightarrow\) Many States (Wave functions).</td>
+        <td>One Energy Value \(\rightarrow\) One State (Wave function).</td>
+      </tr>
+      <tr>
+        <td><strong>Quantum Numbers</strong></td>
+        <td>Particles have different sets of quantum numbers but possess the same total energy.</td>
+        <td>Particles having different sets of quantum numbers possess different total energies.</td>
+      </tr>
+      <tr>
+        <td><strong>Probability Density</strong></td>
+        <td>The probability of finding a particle may differ for the different states, even though energy is the same.</td>
+        <td>The probability distribution is unique to that specific energy level.</td>
+      </tr>
+      <tr>
+        <td><strong>Example</strong></td>
+        <td>In a Hydrogen atom, the 2s and 2p orbitals have the same energy (ignoring fine structure) but different shapes. The energy level n=2 is degenerate.</td>
+        <td>The ground state (1s) of a Hydrogen atom is non-degenerate (ignoring spin).</td>
+      </tr>
+      <tr>
+        <td><strong>Symmetry</strong></td>
+        <td>Usually arises due to high symmetry in the system.</td>
+        <td>Usually arises in systems with lower symmetry or when perturbations lift degeneracy.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>(ii) Numerical Problem</h4>
+  
+  <div class="step">
+    <span class="step-title">Given Data</span>
+    <ul>
+      <li>Thermal Conductivity, \( K = 123.93 \, W m^{-1} K^{-1} \)</li>
+      <li>Relaxation Time, \( \tau = 10^{-14} \, s \)</li>
+      <li>Temperature, \( T = 300 \, K \)</li>
+      <li>Electron Density, \( n = 6 \times 10^{28} \, m^{-3} \)</li>
+      <li>Mass of electron, \( m = 9.11 \times 10^{-31} \, kg \)</li>
+      <li>Charge of electron, \( e = 1.6 \times 10^{-19} \, C \)</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <span class="step-title">1. Calculation of Electrical Conductivity (\(\sigma\))</span>
+    <p>The formula for electrical conductivity is:</p>
+    $$\sigma = \frac{n e^2 \tau}{m}$$
+    
+    <p>Substituting the values:</p>
+    $$\sigma = \frac{(6 \times 10^{28}) \times (1.6 \times 10^{-19})^2 \times (10^{-14})}{9.11 \times 10^{-31}}$$
+    $$\sigma = \frac{6 \times 10^{28} \times 2.56 \times 10^{-38} \times 10^{-14}}{9.11 \times 10^{-31}}$$
+    
+    <p>Grouping powers of 10:</p>
+    $$\text{Numerator} = (6 \times 2.56) \times 10^{(28 - 38 - 14)} = 15.36 \times 10^{-24}$$
+    $$\sigma = \frac{15.36 \times 10^{-24}}{9.11 \times 10^{-31}}$$
+    $$\sigma = 1.686 \times 10^{7}$$
+
+    <div class="result-box">
+      $$\sigma = 1.686 \times 10^7 \, \Omega^{-1}m^{-1} \, (\text{or } S/m)$$
+    </div>
+  </div>
+
+  <div class="step">
+    <span class="step-title">2. Calculation of Lorentz Number (L)</span>
+    <p>According to the Wiedemann-Franz Law:</p>
+    $$\frac{K}{\sigma T} = L$$
+    $$L = \frac{K}{\sigma T}$$
+    
+    <p>Substituting the values:</p>
+    $$L = \frac{123.93}{(1.686 \times 10^7) \times 300}$$
+    $$L = \frac{123.93}{505.8 \times 10^7}$$
+    $$L = \frac{123.93}{5.058 \times 10^9}$$
+    $$L = 24.50 \times 10^{-9}$$
+
+    <div class="result-box">
+      $$L = 2.45 \times 10^{-8} \, W \Omega K^{-2}$$
+    </div>
+    (Note: This matches well with the standard theoretical value of \( 2.44 \times 10^{-8} \)).
+  </div>
+
+</div>
+
+  </div>
+
+</body>
+</html>

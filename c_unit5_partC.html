@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 5 (Part C) - Programming in C </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    /* Styles for the notes content */
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol, .qa-item table {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .qa-item p strong {
+      color: #222;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+      margin-top: 10px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    .notes-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 15px auto;
+      border: 1px solid #ddd;
+      display: block;
+    }
+    .code-block {
+      background: #2d2d2d;
+      color: #f1f1f1;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      white-space: pre;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    .styled-table th, .styled-table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    .styled-table th {
+      background-color: #f3f4f6;
+      color: #1e3a8a;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>💻 Unit 5 – Part C (15-Mark Q&A)</h1>
+      <p>Programming in C </p>
+      <a href="c_unit5.html" class="cta-btn">⬅ Back to Unit 5</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part C: 15-Mark Question</h2>
+
+    <div class="qa-item">
+     <h3>Write a C program to copy the contents from one file to another file and to merge two files. </h3>
+      <p>This program demonstrates both file copying and file merging. We will handle each part sequentially in the <code>main()</code> function for clarity. For this example, we will also create the initial 'source.txt', 'file1.txt', and 'file2.txt' so the program is fully runnable and can be tested immediately.</p>
+      
+      <p><strong>Part 1: Copying a File (source.txt to destination.txt)</strong></p>
+      <p>This part opens a source file in read mode (<code>"r"</code>) and a destination file in write mode (<code>"w"</code>). It reads characters one by one from the source and writes them to the destination until the end-of-file (EOF) is reached.</p>
+      
+      <p><strong>Part 2: Merging Two Files (file1.txt and file2.txt into merged.txt)</strong></p>
+      <p>This part opens two source files in read mode (<code>"r"</code>) and a target file in write mode (<code>"w"</code>). It first copies the entire content of <code>file1.txt</code> to <code>merged.txt</code>, and then appends the entire content of <code>file2.txt</code> to <code>merged.txt</code>.</p>
+
+      <p><strong>Full C Program:</strong></p>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt; // For exit()
+
+int main() {
+    FILE *sourceFile, *destFile;
+    FILE *file1, *file2, *mergedFile;
+    char ch;
+
+    // --- Part 1: Copy File ---
+    printf("--- Part 1: Copying File ---\n");
+    
+    // Create a dummy source file for the example
+    sourceFile = fopen("source.txt", "w");
+    if(sourceFile == NULL) {
+        printf("Error creating source.txt!\n");
+        exit(1);
+    }
+    fprintf(sourceFile, "This is the source file.\nIt has multiple lines.\nEnd of source.\n");
+    fclose(sourceFile);
+
+    // Open source file for reading
+    sourceFile = fopen("source.txt", "r");
+    if (sourceFile == NULL) {
+        printf("Error opening source.txt!\n");
+        exit(1);
+    }
+
+    // Open destination file for writing
+    destFile = fopen("destination.txt", "w");
+    if (destFile == NULL) {
+        printf("Error opening destination.txt!\n");
+        fclose(sourceFile);
+        exit(1);
+    }
+
+    // Copy character by character
+    while ((ch = fgetc(sourceFile)) != EOF) {
+        fputc(ch, destFile);
+    }
+
+    printf("File copied successfully to destination.txt.\n\n");
+
+    // Close the files
+    fclose(sourceFile);
+    fclose(destFile);
+
+    // --- Part 2: Merge Files ---
+    printf("--- Part 2: Merging Files ---\n");
+
+    // Create dummy files for merging
+    file1 = fopen("file1.txt", "w");
+    if(file1) {
+        fprintf(file1, "This is the first file.\nContent from file 1.\n");
+        fclose(file1);
+    }
+    
+    file2 = fopen("file2.txt", "w");
+    if(file2) {
+        fprintf(file2, "This is the second file.\nContent from file 2.\n");
+        fclose(file2);
+    }
+
+    // Open files for merging
+    file1 = fopen("file1.txt", "r");
+    if (file1 == NULL) {
+        printf("Error opening file1.txt!\n");
+        exit(1);
+    }
+
+    file2 = fopen("file2.txt", "r");
+    if (file2 == NULL) {
+        printf("Error opening file2.txt!\n");
+        fclose(file1);
+        exit(1);
+    }
+
+    // Open merged file for writing
+    mergedFile = fopen("merged.txt", "w");
+    if (mergedFile == NULL) {
+        printf("Error opening merged.txt!\n");
+        fclose(file1);
+        fclose(file2);
+        exit(1);
+    }
+
+    // Copy contents of first file to merged.txt
+    while ((ch = fgetc(file1)) != EOF) {
+        fputc(ch, mergedFile);
+    }
+
+    // Copy contents of second file to merged.txt
+    while ((ch = fgetc(file2)) != EOF) {
+        fputc(ch, mergedFile);
+    }
+
+    printf("Files merged successfully into merged.txt.\n");
+
+    // Close all files
+    fclose(file1);
+    fclose(file2);
+    fclose(mergedFile);
+
+    return 0;
+}</code></pre>
+
+      <p><strong>Explanation:</strong></p>
+      <ol>
+        <li><strong>Includes:</strong> <code>&lt;stdio.h&gt;</code> is included for all file operations (<code>fopen</code>, <code>fgetc</code>, <code>fputc</code>, <code>fclose</code>, <code>fprintf</code>) and <code>&lt;stdlib.h&gt;</code> is included for the <code>exit()</code> function, which is used to terminate the program if a file error occurs.</li>
+        <li><strong>File Pointers:</strong> Variables of type <code>FILE*</code> are declared to store the references to the files being handled.</li>
+        <li><strong>Error Handling:</strong> After every <code>fopen()</code> call, the program checks if the returned file pointer is <code>NULL</code>. A <code>NULL</code> value indicates that the file could not be opened (e.g., file not found, no permissions). If an error occurs, a message is printed, and <code>exit(1)</code> is called to stop the program.</li>
+        <li><strong>File Modes:</strong>
+          <ul>
+            <li><code>"w"</code> (write): Used for creating the initial dummy files and for the destination files (<code>destination.txt</code>, <code>merged.txt</code>). This mode creates a new file or overwrites an existing file.</li>
+            <li><code>"r"</code> (read): Used for all source files (<code>source.txt</code>, <code>file1.txt</code>, <code>file2.txt</code>) to read their contents.</li>
+          </ul>
+        </li>
+        <li><strong>Copy/Merge Logic:</strong> The core logic relies on a <code>while</code> loop: <code>while ((ch = fgetc(sourceFile)) != EOF)</code>.
+          <ul>
+            <li><code>fgetc(sourceFile)</code> reads a single character from the source file.</li>
+            <li>The character is assigned to <code>ch</code>.</li>
+            <li>This value is compared to <code>EOF</code> (End Of File).</li>
+            <li>If it's not the end of the file, <code>fputc(ch, destFile)</code> writes the character to the destination file.</li>
+            <li>This loop continues until the entire source file is read.</li>
+          </ul>
+        </li>
+        <li><strong>Closing Files:</strong> <code>fclose()</code> is called for every file that was successfully opened. This is crucial to save changes and free up system resources.</li>
+      </ol>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 4 (Part A) - Maths </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    /* --- Styles optimized for Math content (from provided example) --- */
+    body {
+        font-family: 'Times New Roman', Times, serif; /* Serif font for better readability */
+    }
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+      font-family: Arial, sans-serif; /* Sans-serif for headings */
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.25rem; /* Slightly larger for clarity */
+      margin-bottom: 12px;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol {
+      color: #222; /* Darker text */
+      font-size: 1.1rem; /* Larger base font */
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    /* Style for matrix/equation blocks */
+    .code-block {
+      background: #f8f9fa; /* Lighter background */
+      color: #212529;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.15rem; /* Larger font for equations */
+      white-space: pre-wrap;
+      overflow-x: auto;
+      margin: 15px 0;
+      border: 1px solid #ddd;
+      text-align: left; /* Align equations to the left */
+    }
+    /* Simple table style */
+    .matrix-table {
+      margin: 10px auto;
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 1.15rem;
+    }
+    .matrix-table td {
+      padding: 5px 10px;
+    }
+    .matrix-table {
+      border-left: 2px solid #000;
+      border-right: 2px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>🌊 Unit 4 – Part A (Vector Calculus)</h1>
+      <p>Engineering Mathematics </p>
+      <a href="maths_unit4.html" class="cta-btn">⬅ Back to Unit 4</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part A: 2-Mark Questions</h2>
+
+    <div class="qa-item">
+      <h3>1. If &phi;(x, y, z) = x<sup>2</sup>y - 2y<sup>2</sup>z<sup>3</sup> find &nabla;&phi; at the point (1, -1, 2).</h3>
+      <div class="code-block">
+<b>Sol:</b>
+<br>
+&nabla;&phi; = (&part;/&part;x)\(\vec{i}\) + (&part;/&part;y)\(\vec{j}\) + (&part;/&part;z)\(\vec{k}\)
+<br>
+&nabla;&phi; = (2xy)\(\vec{i}\) + (x<sup>2</sup> - 4yz<sup>3</sup>)\(\vec{j}\) + (-6y<sup>2</sup>z<sup>2</sup>)\(\vec{k}\)
+<br><br>
+At (1, -1, 2):
+<br>
+&nabla;&phi; = (2(1)(-1))\(\vec{i}\) + ((1)<sup>2</sup> - 4(-1)(2)<sup>3</sup>)\(\vec{j}\) - (6(-1)<sup>2</sup>(2)<sup>2</sup>)\(\vec{k}\)
+<br>
+&nabla;&phi; = (-2)\(\vec{i}\) + (1 - 4(-1)(8))\(\vec{j}\) - (6(1)(4))\(\vec{k}\)
+<br>
+&nabla;&phi; = -2\(\vec{i}\) + (1 + 32)\(\vec{j}\) - 24\(\vec{k}\)
+<br>
+&nabla;&phi; = -2\(\vec{i}\) + 33\(\vec{j}\) - 24\(\vec{k}\)
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>2. If &phi;(x, y, z) = 3x<sup>2</sup>y - y<sup>3</sup>z<sup>2</sup> find &nabla;&phi; at the point (1, -2, 1).</h3>
+      <div class="code-block">
+<b>Sol:</b>
+<br>
+&nabla;&phi; = (&part;/&part;x)\(\vec{i}\) + (&part;/&part;y)\(\vec{j}\) + (&part;/&part;z)\(\vec{k}\)
+<br>
+&nabla;&phi; = (6xy)\(\vec{i}\) + (3x<sup>2</sup> - 3y<sup>2</sup>z<sup>2</sup>)\(\vec{j}\) + (-2y<sup>3</sup>z)\(\vec{k}\)
+<br><br>
+At (1, -2, 1):
+<br>
+&nabla;&phi; = (6(1)(-2))\(\vec{i}\) + (3(1)<sup>2</sup> - 3(-2)<sup>2</sup>(1)<sup>2</sup>)\(\vec{j}\) - (2(-2)<sup>3</sup>(1))\(\vec{k}\)
+<br>
+&nabla;&phi; = (-12)\(\vec{i}\) + (3 - 3(4)(1))\(\vec{j}\) - (2(-8))\(\vec{k}\)
+<br>
+&nabla;&phi; = -12\(\vec{i}\) + (3 - 12)\(\vec{j}\) + 16\(\vec{k}\)
+<br>
+&nabla;&phi; = -12\(\vec{i}\) - 9\(\vec{j}\) + 16\(\vec{k}\)
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>3. Compute curl \(\vec{F}\) at (1, -1, 1) for \(\vec{F}\) = x<sup>2</sup>z \(\vec{i}\) + y<sup>3</sup>z<sup>2</sup> \(\vec{j}\) + xy<sup>2</sup>z \(\vec{k}\).</h3>
+      <div class="code-block">
+<b>Sol:</b>
+<br>
+curl \(\vec{F}\) = &nabla; &times; \(\vec{F}\) = 
+| \(\vec{i}\) &nbsp;&nbsp;&nbsp; \(\vec{j}\) &nbsp;&nbsp;&nbsp; \(\vec{k}\) |
+| &part;/&part;x &nbsp; &part;/&part;y &nbsp; &part;/&part;z |
+| x<sup>2</sup>z &nbsp; y<sup>3</sup>z<sup>2</sup> &nbsp; xy<sup>2</sup>z |
+<br><br>
+= \(\vec{i}\) [(&part;/&part;y)(xy<sup>2</sup>z) - (&part;/&part;z)(y<sup>3</sup>z<sup>2</sup>)] - \(\vec{j}\) [(&part;/&part;x)(xy<sup>2</sup>z) - (&part;/&part;z)(x<sup>2</sup>z)] + \(\vec{k}\) [(&part;/&part;x)(y<sup>3</sup>z<sup>2</sup>) - (&part;/&part;y)(x<sup>2</sup>z)]
+<br>
+= \(\vec{i}\) [2xyz - 2y<sup>3</sup>z] - \(\vec{j}\) [y<sup>2</sup>z - x<sup>2</sup>] + \(\vec{k}\) [0 - 0]
+<br><br>
+At (1, -1, 1):
+<br>
+curl \(\vec{F}\) = \(\vec{i}\) [2(1)(-1)(1) - 2(-1)<sup>3</sup>(1)] - \(\vec{j}\) [(-1)<sup>2</sup>(1) - (1)<sup>2</sup>] + \(\vec{k}\)[0]
+<br>
+= \(\vec{i}\) [-2 - 2(-1)] - \(\vec{j}\) [1 - 1] + \(\vec{k}\)[0]
+<br>
+= \(\vec{i}\) [-2 + 2] - \(\vec{j}\) [0] = 0\(\vec{i}\) + 0\(\vec{j}\) + 0\(\vec{k}\) = \(\vec{0}\)
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>4. If \(\vec{F}\) = xz<sup>3</sup> \(\vec{i}\) - 2xyz \(\vec{j}\) + xz \(\vec{k}\). Find curl \(\vec{F}\) at (1, 2, 0).</h3>
+      <div class="code-block">
+<b>Sol:</b>
+<br>
+curl \(\vec{F}\) = &nabla; &times; \(\vec{F}\) = 
+| \(\vec{i}\) &nbsp;&nbsp;&nbsp; \(\vec{j}\) &nbsp;&nbsp;&nbsp; \(\vec{k}\) |
+| &part;/&part;x &nbsp; &part;/&part;y &nbsp; &part;/&part;z |
+| xz<sup>3</sup> &nbsp; -2xyz &nbsp; xz |
+<br><br>
+= \(\vec{i}\) [(&part;/&part;y)(xz) - (&part;/&part;z)(-2xyz)] - \(\vec{j}\) [(&part;/&part;x)(xz) - (&part;/&part;z)(xz<sup>3</sup>)] + \(\vec{k}\) [(&part;/&part;x)(-2xyz) - (&part;/&part;y)(xz<sup>3</sup>)]<br>
+= \(\vec{i}\) [0 - (-2xy)] - \(\vec{j}\) [z - 3xz<sup>2</sup>] + \(\vec{k}\) [-2yz - 0]
+<br>
+= (2xy) \(\vec{i}\) - (z - 3xz<sup>2</sup>) \(\vec{j}\) - (2yz) \(\vec{k}\)
+<br><br>
+At (1, 2, 0):
+<br>
+curl \(\vec{F}\) = (2(1)(2)) \(\vec{i}\) - (0 - 3(1)(0)<sup>2</sup>) \(\vec{j}\) - (2(2)(0)) \(\vec{k}\)
+<br>
+= 4\(\vec{i}\) - 0\(\vec{j}\) - 0\(\vec{k}\) = 4\(\vec{i}\)
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>5. Find the directional derivative of &phi; = 4xz<sup>2</sup> + x<sup>2</sup>yz at (1, -2, -1) in the direction 2\(\vec{i}\) - \(\vec{j}\) - 2\(\vec{k}\).</h3>
+      <div class="code-block">
+<b>Sol:</b> Directional Derivative (DD) = &nabla;&phi; &middot; \(\hat{a}\)
+<br><br>
+<b>1. Find &nabla;&phi;:</b>
+<br>
+&nabla;&phi; = (4z<sup>2</sup> + 2xyz)\(\vec{i}\) + (x<sup>2</sup>z)\(\vec{j}\) + (8xz + x<sup>2</sup>y)\(\vec{k}\)
+<br>
+At (1, -2, -1):
+<br>
+&nabla;&phi; = (4(-1)<sup>2</sup> + 2(1)(-2)(-1))\(\vec{i}\) + ((1)<sup>2</sup>(-1))\(\vec{j}\) + (8(1)(-1) + (1)<sup>2</sup>(-2))\(\vec{k}\)
+<br>
+&nabla;&phi; = (4 + 4)\(\vec{i}\) + (-1)\(\vec{j}\) + (-8 - 2)\(\vec{k}\)
+<br>
+&nabla;&phi; = 8\(\vec{i}\) - \(\vec{j}\) - 10\(\vec{k}\)
+<br><br>
+<b>2. Find unit vector \(\hat{a}\):</b>
+<br>
+\(\vec{a}\) = 2\(\vec{i}\) - \(\vec{j}\) - 2\(\vec{k}\)
+<br>
+|\(\vec{a}\)| = &radic;(2<sup>2</sup> + (-1)<sup>2</sup> + (-2)<sup>2</sup>) = &radic;(4 + 1 + 4) = &radic;9 = 3
+<br>
+\(\hat{a}\) = (1/3) (2\(\vec{i}\) - \(\vec{j}\) - 2\(\vec{k}\))
+<br><br>
+<b>3. Calculate DD:</b>
+<br>
+DD = (8\(\vec{i}\) - \(\vec{j}\) - 10\(\vec{k}\)) &middot; (1/3) (2\(\vec{i}\) - \(\vec{j}\) - 2\(\vec{k}\))
+<br>
+DD = (1/3) [ (8)(2) + (-1)(-1) + (-10)(-2) ]
+<br>
+DD = (1/3) [ 16 + 1 + 20 ] = 37/3
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>6. Find the directional derivative of &phi; = xyz - xy<sup>2</sup>z<sup>3</sup> at (1, 2, -1) in the direction \(\vec{i}\) - \(\vec{j}\) - 3\(\vec{k}\).</h3>
+      <div class="code-block">
+<b>Sol:</b> DD = &nabla;&phi; &middot; \(\hat{a}\)
+<br><br>
+<b>1. Find &nabla;&phi;:</b>
+<br>
+&nabla;&phi; = (yz - y<sup>2</sup>z<sup>3</sup>)\(\vec{i}\) + (xz - 2xyz<sup>3</sup>)\(\vec{j}\) + (xy - 3xy<sup>2</sup>z<sup>2</sup>)\(\vec{k}\)
+<br>
+At (1, 2, -1):
+<br>
+&nabla;&phi; = ((2)(-1) - (2)<sup>2</sup>(-1)<sup>3</sup>)\(\vec{i}\) + ((1)(-1) - 2(1)(2)(-1)<sup>3</sup>)\(\vec{j}\) + ((1)(2) - 3(1)(2)<sup>2</sup>(-1)<sup>2</sup>)\(\vec{k}\)
+<br>
+&nabla;&phi; = (-2 - 4(-1))\(\vec{i}\) + (-1 - 4(-1))\(\vec{j}\) + (2 - 3(1)(4)(1))\(\vec{k}\)
+<br>
+&nabla;&phi; = (-2 + 4)\(\vec{i}\) + (-1 + 4)\(\vec{j}\) + (2 - 12)\(\vec{k}\)
+<br>
+&nabla;&phi; = 2\(\vec{i}\) + 3\(\vec{j}\) - 10\(\vec{k}\)
+<br><br>
+<b>2. Find unit vector \(\hat{a}\):</b>
+<br>
+\(\vec{a}\) = \(\vec{i}\) - \(\vec{j}\) - 3\(\vec{k}\)
+<br>
+|\(\vec{a}\)| = &radic;(1<sup>2</sup> + (-1)<sup>2</sup> + (-3)<sup>2</sup>) = &radic;(1 + 1 + 9) = &radic;11
+<br>
+\(\hat{a}\) = (1/&radic;11) (\(\vec{i}\) - \(\vec{j}\) - 3\(\vec{k}\))
+<br><br>
+<b>3. Calculate DD:</b>
+<br>
+DD = (2\(\vec{i}\) + 3\(\vec{j}\) - 10\(\vec{k}\)) &middot; (1/&radic;11) (\(\vec{i}\) - \(\vec{j}\) - 3\(\vec{k}\))
+<br>
+DD = (1/&radic;11) [ (2)(1) + (3)(-1) + (-10)(-3) ]
+<br>
+DD = (1/&radic;11) [ 2 - 3 + 30 ] = 29/&radic;11
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>7. Find the normal derivative of &phi; = xy + yz + zx at (-1, 1, 1).</h3>
+      <div class="code-block">
+<b>Sol:</b> The normal derivative is the magnitude of the gradient, |&nabla;&phi;|.
+<br><br>
+&nabla;&phi; = (&part;/&part;x)\(\vec{i}\) + (&part;/&part;y)\(\vec{j}\) + (&part;/&part;z)\(\vec{k}\)
+<br>
+&nabla;&phi; = (y + z)\(\vec{i}\) + (x + z)\(\vec{j}\) + (y + x)\(\vec{k}\)
+<br><br>
+At (-1, 1, 1):
+<br>
+&nabla;&phi; = (1 + 1)\(\vec{i}\) + (-1 + 1)\(\vec{j}\) + (1 + (-1))\(\vec{k}\)
+<br>
+&nabla;&phi; = 2\(\vec{i}\) + 0\(\vec{j}\) + 0\(\vec{k}\)
+<br><br>
+|&nabla;&phi;| = &radic;(2<sup>2</sup> + 0<sup>2</sup> + 0<sup>2</sup>) = &radic;4 = 2
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>8. Find the normal derivative of &phi; = x<sup>3</sup> - y<sup>3</sup> + z at (1, -1, -1).</h3>
+      <div class="code-block">
+<b>Sol:</b> Normal derivative = |&nabla;&phi;|.
+<br><br>
+&nabla;&phi; = (&part;/&part;x)\(\vec{i}\) + (&part;/&part;y)\(\vec{j}\) + (&part;/&part;z)\(\vec{k}\)
+<br>
+&nabla;&phi; = (3x<sup>2</sup>)\(\vec{i}\) + (-3y<sup>2</sup>)\(\vec{j}\) + (1)\(\vec{k}\)
+<br><br>
+At (1, -1, -1):
+<br>
+&nabla;&phi; = (3(1)<sup>2</sup>)\(\vec{i}\) + (-3(-1)<sup>2</sup>)\(\vec{j}\) + \(\vec{k}\)
+<br>
+&nabla;&phi; = 3\(\vec{i}\) - 3\(\vec{j}\) + \(\vec{k}\)
+<br><br>
+|&nabla;&phi;| = &radic;(3<sup>2</sup> + (-3)<sup>2</sup> + 1<sup>2</sup>) = &radic;(9 + 9 + 1) = &radic;19
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>9. What are the conditions for solenoidal and irrotational.</h3>
+      <div class="code-block">
+<b>Sol:</b>
+<br>
+<ul>
+    <li>A vector field \(\vec{F}\) is <b>solenoidal</b> if its divergence is zero.<br>
+    Condition: &nabla; &middot; \(\vec{F}\) = 0</li>
+    <br>
+    <li>A vector field \(\vec{F}\) is <b>irrotational</b> if its curl is zero.<br>
+    Condition: &nabla; &times; \(\vec{F}\) = \(\vec{0}\)</li>
+</ul>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>10. Prove that \(\vec{F}\) = z \(\vec{i}\) + x \(\vec{j}\) + y \(\vec{k}\) is solenoidal.</h3>
+      <div class="code-block">
+<b>Sol:</b> To prove \(\vec{F}\) is solenoidal, we must show that its divergence is zero (&nabla; &middot; \(\vec{F}\) = 0).
+<br><br>
+&nabla; &middot; \(\vec{F}\) = (&part;/&part;x)(F<sub>1</sub>) + (&part;/&part;y)(F<sub>2</sub>) + (&part;/&part;z)(F<sub>3</sub>)
+<br>
+&nabla; &middot; \(\vec{F}\) = (&part;/&part;x)(z) + (&part;/&part;y)(x) + (&part;/&part;z)(y)
+<br>
+&nabla; &middot; \(\vec{F}\) = 0 + 0 + 0 = 0
+<br><br>
+Since &nabla; &middot; \(\vec{F}\) = 0, the vector field \(\vec{F}\) is solenoidal.
+      </div>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+
+
+</body>
+</html>

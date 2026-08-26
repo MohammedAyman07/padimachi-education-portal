@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 5 (Part C) - Programming in C </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    /* Styles for the notes content */
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.15rem; /* Standard size */
+      margin-bottom: 12px;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol {
+      color: #333;
+      font-size: 1rem; /* Standard font size */
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    .qa-item pre {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: "Courier New", Courier, monospace;
+      overflow-x: auto;
+      line-height: 1.5;
+    }
+    .qa-item code {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #eee;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>💻 Unit 5 – Part C (Descriptive Q&A)</h1>
+      <p>Programming in C </p>
+      <a href="c_unit5.html" class="cta-btn">⬅ Back to Unit 5</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part C: Files and Preprocessor Directives</h2>
+
+    <div class="qa-item">
+      <h3>Write a C program to copy the contents from one file to another file and to merge two files.</h3>
+      <p>This question has two parts. Here are the programs for both operations.</p>
+      
+      <p><strong>Program 1: Copy contents from one file to another</strong></p>
+      <p>This program reads one file (e.g., <code>source.txt</code>) character by character and writes each character to a new file (<code>destination.txt</code>).</p>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt; // For exit()
+
+int main() {
+    FILE *sourceFile, *destFile;
+    char ch;
+
+    // --- Create a dummy source file for testing ---
+    sourceFile = fopen("source.txt", "w");
+    if(sourceFile == NULL) {
+        printf("Error creating source.txt\n");
+        return 1;
+    }
+    fprintf(sourceFile, "This is the content\nof the source file.\nHello World!");
+    fclose(sourceFile);
+    // ---------------------------------------------
+
+    // Open source file for reading
+    sourceFile = fopen("source.txt", "r");
+    if (sourceFile == NULL) {
+        printf("Error: Could not open source file 'source.txt'\n");
+        exit(1);
+    }
+
+    // Open destination file for writing
+    destFile = fopen("destination.txt", "w");
+    if (destFile == NULL) {
+        printf("Error: Could not create destination file 'destination.txt'\n");
+        fclose(sourceFile);
+        exit(1);
+    }
+
+    // Read from source and write to destination, character by character
+    while ((ch = fgetc(sourceFile)) != EOF) {
+        fputc(ch, destFile);
+    }
+
+    printf("File copied successfully!\n");
+    printf("Check 'destination.txt' for the copied content.\n");
+
+    // Close both files
+    fclose(sourceFile);
+    fclose(destFile);
+
+    return 0;
+}
+</code></pre>
+
+      <p><strong>Program 2: Merge two files into a third file</strong></p>
+      <p>This program reads the contents of <code>file1.txt</code> and appends them to <code>merged.txt</code>, then reads the contents of <code>file2.txt</code> and appends them to <code>merged.txt</code>.</p>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt; // For exit()
+
+int main() {
+    FILE *file1, *file2, *mergedFile;
+    char ch;
+
+    // --- Create dummy file 1 ---
+    file1 = fopen("file1.txt", "w");
+    if(file1 == NULL) { printf("Error.\n"); return 1; }
+    fprintf(file1, "Content from file 1.\nSecond line of file 1.\n");
+    fclose(file1);
+
+    // --- Create dummy file 2 ---
+    file2 = fopen("file2.txt", "w");
+    if(file2 == NULL) { printf("Error.\n"); return 1; }
+    fprintf(file2, "Content from file 2.\nThis is the last line.\n");
+    fclose(file2);
+    // ---------------------------------
+
+    // --- Open files for merging ---
+    file1 = fopen("file1.txt", "r");
+    file2 = fopen("file2.txt", "r");
+    
+    // Open merged file in "w" (write) mode to create it
+    mergedFile = fopen("merged.txt", "w"); 
+
+    if (file1 == NULL || file2 == NULL || mergedFile == NULL) {
+        printf("Error opening one or more files!\n");
+        exit(1);
+    }
+
+    // 1. Copy content from file1 to mergedFile
+    while ((ch = fgetc(file1)) != EOF) {
+        fputc(ch, mergedFile);
+    }
+    
+    fprintf(mergedFile, "\n"); // Add a newline for separation
+
+    // 2. Copy content from file2 to mergedFile
+    while ((ch = fgetc(file2)) != EOF) {
+        fputc(ch, mergedFile);
+    }
+
+    printf("Files merged successfully into 'merged.txt'!\n");
+
+    // Close all files
+    fclose(file1);
+    fclose(file2);
+    fclose(mergedFile);
+
+    return 0;
+}
+</code></pre>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  
+
+ 
+
+</body>
+</html>

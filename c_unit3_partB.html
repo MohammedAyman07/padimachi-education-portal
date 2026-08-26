@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 3 (Part B) - Programming in C </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    /* Styles for the notes content */
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.15rem; /* Standard size */
+      margin-bottom: 12px;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol {
+      color: #333;
+      font-size: 1rem; /* Standard font size */
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    .qa-item pre {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: "Courier New", Courier, monospace;
+      overflow-x: auto;
+      line-height: 1.5;
+    }
+    .qa-item code {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #eee;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>💻 Unit 3 – Part B (Descriptive Q&A)</h1>
+      <p>Programming in C </p>
+      <a href="c_unit3.html" class="cta-btn">⬅ Back to Unit 3</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part B: Functions and Pointers</h2>
+
+    <div class="qa-item">
+      <h3>57. Explain call by value and call by reference with example</h3>
+      <p>This question is also covered in Q.59, 61, and 63. Here is a detailed explanation:</p>
+      <p><strong>Call by Value:</strong></p>
+      <ul>
+        <li>In this method, the <strong>value</strong> of the actual arguments (from the calling function) is copied into the formal arguments (of the called function).</li>
+        <li>The two sets of variables (actual and formal) are stored in separate memory locations.</li>
+        <li>Any changes made to the formal arguments inside the function <strong>do not affect</strong> the actual arguments in the calling function.</li>
+      </ul>
+
+      <p><strong>Call by Reference:</strong></p>
+      <ul>
+        <li>In this method, the <strong>memory address</strong> of the actual arguments is passed to the function's formal parameters (which are pointers).</li>
+        <li>The formal parameters now point to the original variables.</li>
+        <li>Any changes made to the value using the pointer (dereferencing) inside the function <strong>will modify</strong> the actual arguments in the calling function.</li>
+      </ul>
+
+      <p><strong>Example (Swapping two numbers):</strong></p>
+<pre><code>
+#include &lt;stdio.h&gt;
+
+// Function for Call by Value (will NOT work)
+void swap_by_value(int a, int b) {
+    int temp = a;
+    a = b;
+    b = temp;
+    printf("Inside swap_by_value: a = %d, b = %d\n", a, b);
+}
+
+// Function for Call by Reference (WILL work)
+void swap_by_reference(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+    printf("Inside swap_by_reference: a = %d, b = %d\n", *a, *b);
+}
+
+int main() {
+    int x = 10, y = 20;
+    
+    // Call by Value
+    printf("Before swap_by_value: x = %d, y = %d\n", x, y);
+    swap_by_value(x, y);
+    printf("After swap_by_value: x = %d, y = %d\n\n", x, y); // x and y are unchanged
+    
+    // Reset values
+    x = 10;
+    y = 20;
+    
+    // Call by Reference
+    printf("Before swap_by_reference: x = %d, y = %d\n", x, y);
+    swap_by_reference(&x, &y); // Pass addresses
+    printf("After swap_by_reference: x = %d, y = %d\n", x, y); // x and y are swapped
+    
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>58. Explain dynamic memory allocation with example.</h3>
+      <p>This question is also covered in Q.62 and Q.64.</p>
+      <p><strong>Dynamic Memory Allocation</strong> is the process of allocating memory at <strong>runtime</strong>, rather than at compile time. This is essential when the exact amount of memory needed is not known until the program is running (e.g., based on user input).</p>
+      <p>The memory is allocated from a system memory area called the <strong>heap</strong>. All functions for dynamic memory allocation are found in the <code>&lt;stdlib.h&gt;</code> header file.</p>
+      
+      <p><strong>Key Functions:</strong></p>
+      <ul>
+        <li><code><strong>malloc(size_t size)</strong></code>: Allocates a single block of memory of the specified <code>size</code> (in bytes). It returns a <code>void*</code> pointer to the first byte of the allocated block, or <code>NULL</code> if allocation fails. The memory block is <strong>not initialized</strong> (contains garbage values).</li>
+        <li><code><strong>calloc(size_t n, size_t size)</strong></code>: Allocates memory for an array of <code>n</code> elements, each of <code>size</code> bytes. It returns a <code>void*</code> pointer. The allocated memory is <strong>initialized to zero</strong>.</li>
+        <li><code><strong>realloc(void *ptr, size_t new_size)</strong></code>: Resizes a previously allocated memory block (pointed to by <code>ptr</code>) to a <code>new_size</code>. It preserves the content of the old block.</li>
+        <li><code><strong>free(void *ptr)</strong></code>: Deallocates (releases) a block of memory previously allocated by <code>malloc</code>, <code>calloc</code>, or <code>realloc</code>, returning it to the heap.</li>
+      </ul>
+
+      <p><strong>Example (Allocating an array for 'n' integers):</strong></p>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt; // For malloc and free
+
+int main() {
+    int n, i, sum = 0;
+    int *ptr;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    // Dynamically allocate memory for n integers
+    ptr = (int*) malloc(n * sizeof(int));
+
+    // Check if memory was allocated
+    if (ptr == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1; // Exit with an error
+    }
+
+    printf("Enter %d numbers:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", ptr + i); // Same as &ptr[i]
+        sum += *(ptr + i);   // Same as ptr[i]
+    }
+
+    printf("The numbers are: ");
+    for (i = 0; i < n; i++) {
+        printf("%d ", *(ptr + i));
+    }
+    
+    printf("\nSum = %d\n", sum);
+
+    // Free the allocated memory
+    free(ptr);
+    
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>60. i. Write a C program to find the factorial of n numbers using recursion.</h3>
+      <p>A recursive function is a function that calls itself to solve a problem. To find a factorial, the base case is <code>factorial(0) = 1</code>, and the recursive step is <code>factorial(n) = n * factorial(n-1)</code>.</p>
+<pre><code>
+#include &lt;stdio.h&gt;
+
+// Recursive function to find factorial
+long long factorial(int n) {
+    // Base Case
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+    // Recursive Step
+    else {
+        return n * factorial(n - 1);
+    }
+}
+
+int main() {
+    int num;
+    printf("Enter a non-negative number: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+    } else {
+        printf("Factorial of %d = %lld\n", num, factorial(num));
+    }
+    
+    return 0;
+}
+</code></pre>
+
+      <h3>60. ii. Construct a C code to illustrate auto and register keywords.</h3>
+      <p><code>auto</code> and <code>register</code> are storage class specifiers.</p>
+      <ul>
+        <li><code><strong>auto</strong></code>: It is the default storage class for all local variables. It specifies that the variable has a local scope and is created when the block is entered and destroyed when the block is exited. Using the <code>auto</code> keyword is optional.</li>
+        <li><code><strong>register</strong></code>: It is a hint to the compiler to store the variable in a CPU register instead of memory (RAM) for faster access. This is often used for frequently accessed variables like loop counters. The compiler can ignore this request. You cannot get the address (using <code>&</code>) of a register variable.</li>
+      </ul>
+<pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    // 1. 'auto' storage class
+    // This is the default for local variables, so 'auto' is redundant.
+    auto int a = 10; // Same as 'int a = 10;'
+    
+    {
+        auto int b = 20; // 'b' is local to this block
+        printf("Inside block: a = %d, b = %d\n", a, b);
+    }
+    // printf("Outside block: b = %d\n"); // Error: 'b' is not defined here
+    
+    // 2. 'register' storage class
+    // Requesting the compiler to store 'i' in a CPU register
+    register int i;
+    long sum = 0;
+
+    printf("Illustrating 'register' keyword:\n");
+    for (i = 0; i <= 10000; i++) {
+        sum += i;
+    }
+
+    printf("Sum of first 10000 numbers = %ld\n", sum);
+    
+    // int *ptr = &i; // Error: Cannot take address of register variable
+    
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>83. i. Write a C program for calculate distance between two points</h3>
+      <p>This program uses a structure to hold the (x, y) coordinates of a point and calculates the distance using the Euclidean distance formula: $d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$.</p>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt; // For sqrt() and pow()
+
+// Define a structure for a point
+struct Point {
+    float x;
+    float y;
+};
+
+// Function to calculate distance
+float calculateDistance(struct Point p1, struct Point p2) {
+    float distance;
+    distance = sqrt(pow(p2.x - p1.x, 2) + pow(p2.y - p1.y, 2));
+    return distance;
+}
+
+int main() {
+    struct Point point1, point2;
+    float dist;
+
+    printf("Enter coordinates for Point 1 (x1 y1): ");
+    scanf("%f %f", &point1.x, &point1.y);
+
+    printf("Enter coordinates for Point 2 (x2 y2): ");
+    scanf("%f %f", &point2.x, &point2.y);
+
+    dist = calculateDistance(point1, point2);
+
+    printf("The distance between the two points is: %.2f\n", dist);
+
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>83. ii. Write a C program to check given number is odd or even using function</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+
+// Function to check if a number is odd or even
+// It takes one integer argument
+void checkOddEven(int num) {
+    if (num % 2 == 0) {
+        printf("%d is an Even number.\n", num);
+    } else {
+        printf("%d is an Odd number.\n", num);
+    }
+}
+
+int main() {
+    int n;
+
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+
+    // Call the function to check the number
+    checkOddEven(n);
+
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>84. Write a C program to sort N numbers.</h3>
+      <p>This program uses the simple Bubble Sort algorithm to sort an array of 'N' numbers entered by the user in ascending order.</p>
+<pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int n, i, j, temp;
+    int arr[100]; // Assuming max 100 elements
+
+    printf("Enter the number of elements (N): ");
+    scanf("%d", &n);
+
+    printf("Enter %d numbers:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Bubble Sort Algorithm
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Swap arr[j] and arr[j+1]
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("Sorted array in ascending order:\n");
+    for (i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>84. (Part 2) Write a C program for swapping of two numbers ... using pass by reference.</h3>
+      <p>This program uses a function with pointers (pass by reference) to swap the values of two variables located in the <code>main</code> function.</p>
+<pre><code>
+#include &lt;stdio.h&gt;
+
+// Function to swap two numbers using pointers (pass by reference)
+void swap(int *num1, int *num2) {
+    int temp;
+    
+    temp = *num1;   // Store the value at address num1
+    *num1 = *num2;  // Store the value at address num2 into address num1
+    *num2 = temp;   // Store the temporary value into address num2
+}
+
+int main() {
+    int a, b;
+
+    printf("Enter value for a: ");
+    scanf("%d", &a);
+    printf("Enter value for b: ");
+    scanf("%d", &b);
+
+    printf("Before swapping: a = %d, b = %d\n", a, b);
+
+    // Pass the addresses of 'a' and 'b' to the swap function
+    swap(&a, &b);
+
+    printf("After swapping:  a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+</code></pre>
+    </div>
+
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  
+
+  
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 5 (Part B) - Programming in C </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    /* Styles for the notes content */
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.15rem; /* Standard size */
+      margin-bottom: 12px;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol {
+      color: #333;
+      font-size: 1rem; /* Standard font size */
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    .qa-item pre {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: "Courier New", Courier, monospace;
+      overflow-x: auto;
+      line-height: 1.5;
+    }
+    .qa-item code {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #eee;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>💻 Unit 5 – Part B (Descriptive Q&A)</h1>
+      <p>Programming in C </p>
+      <a href="c_unit5.html" class="cta-btn">⬅ Back to Unit 5</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part B: Files and Preprocessor Directives</h2>
+
+    <div class="qa-item">
+      <h3>73. i. Discuss read/write of binary and text files with an example.</h3>
+      <p><strong>Text Files:</strong></p>
+      <ul>
+        <li>A text file stores data as a sequence of characters (ASCII).</li>
+        <li>It is human-readable. You can open and read it with a simple text editor.</li>
+        <li>In text mode, special conversions occur, e.g., the newline character <code>\n</code> might be translated to a carriage return-line feed combination (<code>\r\n</code>) on Windows.</li>
+        <li>Formatted I/O functions like <code>fprintf()</code>, <code>fscanf()</code>, <code>fgetc()</code>, <code>fputc()</code> are used.</li>
+      </ul>
+      <p><strong>Binary Files:</strong></p>
+      <ul>
+        <li>A binary file stores data as a sequence of raw bytes, exactly as it is represented in memory.</li>
+        <li>It is not human-readable.</li>
+        <li>No character translations occur, making it faster and more precise for storing data structures.</li>
+        <li>Block I/O functions <code>fread()</code> and <code>fwrite()</code> are used.</li>
+      </ul>
+      
+      <p><strong>Example (Writing/Reading a structure in Binary Mode):</strong></p>
+<pre><code>
+#include &lt;stdio.h&gt;
+
+struct Student {
+    int roll;
+    char name[50];
+};
+
+int main() {
+    FILE *fp;
+    struct Student s_write = {101, "Alice"};
+    struct Student s_read;
+
+    // --- Write to binary file ---
+    fp = fopen("student.dat", "wb"); // "wb" = write binary
+    if (fp == NULL) {
+        printf("Error opening file for writing.\n");
+        return 1;
+    }
+    fwrite(&s_write, sizeof(struct Student), 1, fp);
+    fclose(fp);
+    printf("Wrote: %d, %s\n", s_write.roll, s_write.name);
+
+    // --- Read from binary file ---
+    fp = fopen("student.dat", "rb"); // "rb" = read binary
+    if (fp == NULL) {
+        printf("Error opening file for reading.\n");
+        return 1;
+    }
+    fread(&s_read, sizeof(struct Student), 1, fp);
+    fclose(fp);
+
+    printf("Read: %d, %s\n", s_read.roll, s_read.name);
+
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>73. ii. & 77. Discuss about file processing types.</h3>
+      <p>(These questions are identical).</p>
+      <p>There are two main types of file processing (or file access) in C:</p>
+      <ol>
+        <li><strong>Sequential Access:</strong>
+          <ul>
+            <li>This is the default mode for files. Data is accessed in a linear sequence, one byte after another, from the beginning to the end.</li>
+            <li>It's like reading a book or listening to a cassette tape. To read the 100th record, you must first pass over the 99 preceding records.</li>
+            <li>All standard I/O functions like <code>fgetc()</code>, <code>fputc()</code>, <code>fscanf()</code>, and <code>fprintf()</code> use sequential access.</li>
+          </ul>
+        </li>
+        <li><strong>Random Access (or Direct Access):</strong>
+          <ul>
+            <li>This mode allows you to jump to any specific byte position within a file without reading the preceding data.</li>
+            <li>It's like accessing a specific track on a CD or a specific byte on a hard drive.</li>
+            <li>This is achieved using file-positioning functions:
+              <ul>
+                <li><code>fseek()</code>: To move the file pointer to a specific location.</li>
+                <li><code>ftell()</code>: To get the current position of the file pointer.</li>
+                <li><code>rewind()</code>: To reset the file pointer to the beginning.</li>
+              </ul>
+            </li>
+            <li>This is very efficient for large data files where you need to quickly access, read, or modify specific records.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <div class="qa-item">
+      <h3>74. i. & 75., 78. ii., 79. Explain the types of file handling operations / various file operations / Read and Write operation...</h3>
+      <p>(These questions are all related to basic file operations. This is a comprehensive answer.)</p>
+      <p>File handling in C involves several key operations to interact with files on the disk:</p>
+      <ol>
+        <li><strong>Opening a File (<code>fopen()</code>):</strong>
+          <ul>
+            <li>Before any operation, a file must be "opened". This connects the program to the file.</li>
+            <li><code>FILE *fp = fopen("filename.txt", "mode");</code></li>
+            <li>The <strong>mode</strong> specifies the operation:
+              <ul>
+                <li><code>"r"</code>: Read (file must exist).</li>
+                <li><code>"w"</code>: Write (creates new file or truncates existing).</li>
+                <li><code>"a"</code>: Append (adds to the end of the file; creates if not exist).</li>
+                <li><code>"r+"</code>: Read and Write (file must exist).</li>
+                <li><code>"w+"</code>: Read and Write (creates new or truncates).</li>
+                <li><code>"a+"</code>: Read and Append (creates if not exist).</li>
+                <li>Add <code>"b"</code> for binary mode (e.g., <code>"rb"</code>, <code>"wb"</code>).</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><strong>Reading from a File:</strong>
+          <ul>
+            <li><code>fscanf(fp, "...", ...)</code>: Reads formatted data (like <code>scanf</code>).</li>
+            <li><code>fgetc(fp)</code>: Reads a single character.</li>
+            <li><code>fgets(buffer, size, fp)</code>: Reads a line (string).</li>
+            <li><code>fread(buffer, size, count, fp)</code>: Reads <code>count</code> blocks of <code>size</code> bytes (for binary files).</li>
+          </ul>
+        </li>
+        <li><strong>Writing to a File:</strong>
+          <ul>
+            <li><code>fprintf(fp, "...", ...)</code>: Writes formatted data (like <code>printf</code>).</li>
+            <li><code>fputc(char, fp)</code>: Writes a single character.</li>
+            <li><code>fputs(buffer, fp)</code>: Writes a string.</li>
+            <li><code>fwrite(buffer, size, count, fp)</code>: Writes <code>count</code> blocks of <code>size</code> bytes (for binary files).</li>
+          </ul>
+        </li>
+        <li><strong>Closing a File (<code>fclose()</code>):</strong>
+          <ul>
+            <li>This disconnects the program from the file and saves any buffered data.</li>
+            <li><code>fclose(fp);</code></li>
+            <li>This is crucial to prevent data loss.</li>
+          </ul>
+        </li>
+      </ol>
+      <p><strong>Example (Write then Read):</strong></p>
+<pre><code>
+#include &lt;stdio.h&gt;
+int main() {
+    FILE *fp;
+    char text[100];
+
+    // 1. Write to file
+    fp = fopen("data.txt", "w");
+    if (fp == NULL) return 1;
+    fprintf(fp, "Hello World\n%d", 2025);
+    fclose(fp);
+
+    // 2. Read from file
+    fp = fopen("data.txt", "r");
+    if (fp == NULL) return 1;
+    fscanf(fp, "%s", text);
+    printf("Read string: %s\n", text);
+    int year;
+    fscanf(fp, "%d", &year);
+    printf("Read integer: %d\n", year);
+    fclose(fp);
+
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>74. ii. Write a C program to copy the contents of one file to another.</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt; // For exit()
+
+int main() {
+    FILE *sourceFile, *destFile;
+    char ch;
+
+    // Open the source file in read mode
+    sourceFile = fopen("source.txt", "r");
+    if (sourceFile == NULL) {
+        printf("Error: Cannot open source file.\n");
+        exit(1);
+    }
+
+    // Open the destination file in write mode
+    destFile = fopen("destination.txt", "w");
+    if (destFile == NULL) {
+        printf("Error: Cannot open destination file.\n");
+        fclose(sourceFile);
+        exit(1);
+    }
+
+    // Read character by character from source
+    // and write to destination until EOF is reached.
+    while ((ch = fgetc(sourceFile)) != EOF) {
+        fputc(ch, destFile);
+    }
+
+    printf("File copied successfully!\n");
+
+    // Close both files
+    fclose(sourceFile);
+    fclose(destFile);
+
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>76. Explain random access in files along with the functions used...</h3>
+      <p>Random access (or direct access) allows a program to read or write data from any location in a file, without having to read through all the preceding data. This is essential for applications like databases. This is achieved using file-positioning functions:</p>
+      <ul>
+        <li><code><strong>fseek(FILE *stream, long offset, int origin)</strong></code>: This is the main function. It moves the file pointer to a new position.
+          <ul>
+            <li><code>stream</code>: The file pointer (e.g., <code>fp</code>).</li>
+            <li><code>offset</code>: The number of bytes to move (can be positive or negative).</li>
+            <li><code>origin</code>: The starting point for the offset:
+              <ul>
+                <li><code>SEEK_SET</code>: Start from the beginning of the file.</li>
+                <li><code>SEEK_CUR</code>: Start from the current position.</li>
+                <li><code>SEEK_END</code>: Start from the end of the file (offset is usually negative).</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><code><strong>ftell(FILE *stream)</strong></code>:
+          <ul>
+            <li>Returns the current value of the file position indicator as a <code>long</code> integer.</li>
+            <li>It tells you "where you are" in the file, in bytes from the beginning.</li>
+          </ul>
+        </li>
+        <li><code><strong>rewind(FILE *stream)</strong></code>:
+          <ul>
+            <li>Resets the file pointer to the beginning of the file.</li>
+            <li>It is equivalent to <code>fseek(stream, 0, SEEK_SET);</code>.</li>
+          </ul>
+        </li>
+      </ul>
+      <p><strong>Example (Reading 5th character, then 2nd from end):</strong></p>
+<pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    FILE *fp;
+    fp = fopen("data.txt", "w");
+    fprintf(fp, "0123456789");
+    fclose(fp);
+
+    fp = fopen("data.txt", "r");
+    if (fp == NULL) return 1;
+
+    // Go to the 5th character (index 4)
+    fseek(fp, 4, SEEK_SET);
+    printf("5th char is: %c\n", fgetc(fp)); // Output: 4
+
+    // Go to the 2nd to last character
+    fseek(fp, -2, SEEK_END);
+    printf("2nd to last char is: %c\n", fgetc(fp)); // Output: 8
+    
+    // Get current position
+    printf("Current position: %ld\n", ftell(fp)); // Output: 9
+
+    // Go back to start
+    rewind(fp);
+    printf("First char is: %c\n", fgetc(fp)); // Output: 0
+
+    fclose(fp);
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>78. i. Discuss about the command line argument with an example.</h3>
+      <p>Command-line arguments are parameters passed to a program when it is executed from the terminal. This allows users to provide input or specify options to the program at startup.</p>
+      <p>In C, these arguments are accessed through the parameters of the <code>main()</code> function:</p>
+      <p><code>int main(int argc, char *argv[])</code></p>
+      <ul>
+        <li><code><strong>argc (Argument Count)</strong></code>: An integer that holds the *number* of arguments passed, including the program's name.</li>
+        <li><code><strong>argv (Argument Vector)</strong></code>: An array of character pointers (an array of strings). Each string is one of the arguments.
+          <ul>
+            <li><code>argv[0]</code> is always the name of the program itself (e.g., <code>./a.out</code>).</li>
+            <li><code>argv[1]</code> is the first actual argument.</li>
+            <li><code>argv[2]</code> is the second, and so on.</li>
+            <li><code>argv[argc]</code> is a <code>NULL</code> pointer.</li>
+          </ul>
+        </li>
+      </ul>
+      <p><strong>Example (Program that prints its arguments):</strong></p>
+<pre><code>
+#include &lt;stdio.h&gt;
+
+// Save as "args.c", compile as "gcc args.c -o myprogram"
+// Run as: ./myprogram hello world 123
+
+int main(int argc, char *argv[]) {
+    int i;
+
+    printf("Program name: %s\n", argv[0]);
+    printf("Number of arguments (argc): %d\n", argc);
+
+    if (argc > 1) {
+        printf("Arguments passed:\n");
+        for (i = 1; i < argc; i++) {
+            printf("  argv[%d] = %s\n", i, argv[i]);
+        }
+    } else {
+        printf("No arguments were passed.\n");
+    }
+
+    return 0;
+}
+</code></pre>
+      <p><strong>Output (when run as <code>./myprogram hello world 123</code>):</strong></p>
+<pre>
+Program name: ./myprogram
+Number of arguments (argc): 4
+Arguments passed:
+  argv[1] = hello
+  argv[2] = world
+  argv[3] = 123
+</pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>80. Compare sequential access with Random access file with an example</h3>
+      <p>Here is a comparison of sequential and random file access methods:</p>
+      
+      <p><strong>Sequential Access:</strong></p>
+      <ul>
+        <li><strong>Concept:</strong> Data is accessed in a linear, ordered sequence, one piece of data after another, starting from the beginning.</li>
+        <li><strong>Analogy:</strong> A cassette tape. To hear the 5th song, you must fast-forward through the first 4.</li>
+        <li><strong>Functions:</strong> <code>fgetc()</code>, <code>fputc()</code>, <code>fgets()</code>, <code>fputs()</code>, <code>fscanf()</code>, <code>fprintf()</code>.</li>
+        <li><strong>Use Case:</strong> Best for reading/writing an entire file, processing text files, or when the data order is important.
+<pre><code>
+// Example: Reading a file sequentially
+FILE *fp = fopen("file.txt", "r");
+char line[100];
+while (fgets(line, 100, fp) != NULL) {
+    printf("%s", line);
+}
+fclose(fp);
+</code></pre>
+        </li>
+      </ul>
+
+      <p><strong>Random Access:</strong></p>
+      <ul>
+        <li><strong>Concept:</strong> Data can be accessed directly at any arbitrary position (byte offset) in the file, without reading through the data that comes before it.</li>
+        <li><strong>Analogy:</strong> A CD or MP3 file. You can instantly jump to Track 5.</li>
+        <li><strong>Functions:</strong> <code>fseek()</code>, <code>ftell()</code>, <code>rewind()</code> (in combination with <code>fread()</code>/<code>fwrite()</code>).</li>
+        <li><strong>Use Case:</strong> Best for large files, databases, or any application where you need to quickly retrieve or modify specific records.
+<pre><code>
+// Example: Reading the 100th byte
+FILE *fp = fopen("data.bin", "rb");
+char ch;
+fseek(fp, 99, SEEK_SET); // Go to byte 99 (100th byte)
+fread(&ch, sizeof(char), 1, fp);
+printf("100th byte is: %c\n", ch);
+fclose(fp);
+</code></pre>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  
+  
+
+</body>
+</html>

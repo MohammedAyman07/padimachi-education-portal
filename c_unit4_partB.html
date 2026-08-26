@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 4 (Part B) - Programming in C </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    /* Styles for the notes content */
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.15rem; /* Standard size */
+      margin-bottom: 12px;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol {
+      color: #333;
+      font-size: 1rem; /* Standard font size */
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    .qa-item pre {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: "Courier New", Courier, monospace;
+      overflow-x: auto;
+      line-height: 1.5;
+    }
+    .qa-item code {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #eee;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>💻 Unit 4 – Part B (Descriptive Q&A)</h1>
+      <p>Programming in C </p>
+      <a href="c_unit4.html" class="cta-btn">⬅ Back to Unit 4</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part B: Structures and Unions</h2>
+
+    <div class="qa-item">
+      <h3>65. i. Explain arrays of structure with suitable examples.</h3>
+      <p>An <strong>array of structures</strong> is a collection of multiple structure variables of the same type, stored in a contiguous block of memory. It is similar to an array of <code>int</code> or <code>char</code>, but each element of the array is an entire structure.</p>
+      <p>This is extremely useful for storing records, such as a list of students, a database of employees, or a catalog of products, where each item has the same set of properties.</p>
+      
+      <p><strong>Syntax:</strong></p>
+      <code>struct structure_name variable_name[size];</code>
+      
+      <p><strong>Example:</strong></p>
+      <p>Let's define a <code>struct Student</code> and create an array to hold records for 3 students.</p>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+struct Student {
+    int roll_no;
+    char name[50];
+    float gpa;
+};
+
+int main() {
+    // Declare an array of 3 structures
+    struct Student class[3];
+    int i;
+
+    // --- Initialize the array elements ---
+    class[0].roll_no = 101;
+    strcpy(class[0].name, "Alice");
+    class[0].gpa = 8.5;
+
+    class[1].roll_no = 102;
+    strcpy(class[1].name, "Bob");
+    class[1].gpa = 9.1;
+
+    class[2].roll_no = 103;
+    strcpy(class[2].name, "Charlie");
+    class[2].gpa = 7.8;
+
+    // --- Accessing the array elements using a loop ---
+    printf("--- Student Records ---\n");
+    for (i = 0; i < 3; i++) {
+        printf("Student %d:\n", i + 1);
+        // Access members of each element using the dot operator
+        printf("  Roll No: %d\n", class[i].roll_no);
+        printf("  Name: %s\n", class[i].name);
+        printf("  GPA: %.2f\n", class[i].gpa);
+    }
+
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>65. ii. Explain nested structure in C with suitable example.</h3>
+      <p>A <strong>nested structure</strong> is a structure that contains another structure as one of its members. This allows you to create more complex and organized data types.</p>
+      <p>For example, an <code>Employee</code> structure might contain a <code>Date</code> structure for their date of birth, or an <code>Address</code> structure for their contact details.</p>
+      
+      <p><strong>Example:</strong></p>
+      <p>Let's create an <code>Employee</code> structure that has a nested <code>struct Date</code> for the date of joining (<code>doj</code>).</p>
+<pre><code>
+#include &lt;stdio.h&gt;
+
+// Define the inner structure first
+struct Date {
+    int day;
+    int month;
+    int year;
+};
+
+// Define the outer structure
+struct Employee {
+    int emp_id;
+    char name[50];
+    struct Date doj; // 'doj' is a nested structure variable
+};
+
+int main() {
+    // Declare and initialize a nested structure
+    struct Employee emp1 = {
+        1001, 
+        "Dave", 
+        {25, 10, 2022} // {day, month, year} for 'doj'
+    };
+
+    // --- Accessing members of a nested structure ---
+    // Use two dot operators
+    
+    printf("--- Employee Details ---\n");
+    printf("ID: %d\n", emp1.emp_id);
+    printf("Name: %s\n", emp1.name);
+    
+    // Accessing the nested members
+    printf("Date of Joining: %d-%d-%d\n", 
+           emp1.doj.day, 
+           emp1.doj.month, 
+           emp1.doj.year);
+
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>66. & 69. Describe the differences between structures and unions...</h3>
+      <p>(These questions are identical).</p>
+      <p>The primary difference between structures and unions is how they store their members in memory.</p>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Structure (<code>struct</code>)</th>
+            <th>Union (<code>union</code>)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Memory Allocation</strong></td>
+            <td>Allocates enough memory to store <strong>all</strong> of its members. The total size is the sum of the sizes of all members (plus padding).</td>
+            <td>Allocates only enough memory to store its <strong>largest</strong> member. All members share this single memory space.</td>
+          </tr>
+          <tr>
+            <td><strong>Member Access</strong></td>
+            <td>All members can be stored and accessed <strong>simultaneously</strong>. Each member has its own unique memory location.</td>
+            <td>Only <strong>one</strong> member can be stored and accessed at any given time. Storing a value in one member overwrites any value stored in another member.</td>
+          </tr>
+          <tr>
+            <td><strong>Purpose</strong></td>
+            <td>To group different but related data items that are all needed at the same time (e.g., a "student" with a name, roll number, and GPA).</td>
+            <td>To save memory when you know you will only use <strong>one</strong> of several possible members at any given time (e.g., a "value" that can be an <code>int</code> or a <code>float</code>, but never both).</td>
+          </tr>
+          <tr>
+            <td><strong>Size</strong></td>
+            <td><code>sizeof(struct)</code> is >= sum of <code>sizeof(all members)</code>.</td>
+            <td><code>sizeof(union)</code> is <code>sizeof(largest member)</code>.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>Example:</strong></p>
+<pre><code>
+#include &lt;stdio.h&gt;
+
+struct MyStruct {
+    int i;
+    char c;
+    float f;
+};
+
+union MyUnion {
+    int i;
+    char c;
+    float f;
+};
+
+int main() {
+    // --- Structure ---
+    struct MyStruct s;
+    s.i = 10;
+    s.c = 'A';
+    s.f = 3.14;
+    printf("Structure Size: %lu bytes\n", sizeof(s));
+    // All members are stored and valid
+    printf("Struct: %d, %c, %.2f\n", s.i, s.c, s.f);
+
+    // --- Union ---
+    union MyUnion u;
+    u.i = 10;
+    u.c = 'A'; // Overwrites the integer 'i'
+    u.f = 3.14; // Overwrites the char 'c'
+    printf("\nUnion Size: %lu bytes\n", sizeof(u));
+    // Only the last member 'f' is valid
+    printf("Union: %d, %c, %.2f\n", u.i, u.c, u.f); 
+    // u.i and u.c will print garbage or parts of the float
+
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>67., 70. & 71. Explain structures in 'C', the need for it, and its operations...</h3>
+      <p>(These questions are combined as they cover the same topic.)</p>
+      
+      <p><strong>What is a Structure?</strong></p>
+      <p>A <strong>structure</strong> is a user-defined, composite data type in C. It provides a way to group several related variables of different data types (like <code>int</code>, <code>char</code>, <code>float</code>, arrays, even other structures) under a single name.</p>
+
+      <p><strong>Need for Structures:</strong></p>
+      <p>Imagine you want to store information about a student. You would need a roll number (<code>int</code>), a name (<code>char</code> array), and a GPA (<code>float</code>). Without structures, you would have to manage these as separate variables:</p>
+      <code>int roll_nos[100];</code><br>
+      <code>char names[100][50];</code><br>
+      <code>float gpas[100];</code>
+      <p>This is clumsy and error-prone. Structures solve this problem by allowing you to create a new data type called <code>struct Student</code> that logically bundles all this information together. This makes the code cleaner, more organized, and easier to manage, especially when dealing with lists of records.</p>
+      
+      <p><strong>Syntax and Example:</strong></p>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+// 1. Defining the structure
+struct Student {
+    int roll_no;
+    char name[50];
+    float gpa;
+};
+
+int main() {
+    // 2. Declaring a structure variable
+    struct Student s1;
+
+    // 3. (Operation) Accessing members and assigning values
+    s1.roll_no = 101;
+    strcpy(s1.name, "Alice");
+    s1.gpa = 9.2;
+
+    // 4. (Operation) Reading member values
+    printf("Student Name: %s\n", s1.name);
+    printf("Roll No: %d\n", s1.roll_no);
+    
+    // 5. (Operation) Assignment
+    struct Student s2 = s1; // Copies all members from s1 to s2
+    printf("Copied Student Name: %s\n", s2.name);
+
+    return 0;
+}
+</code></pre>
+
+      <p><strong>Key Operations on Structures:</strong></p>
+      <ul>
+        <li><strong>Definition:</strong> Using the <code>struct</code> keyword to create a template.</li>
+        <li><strong>Declaration:</strong> Creating variables of that structure type.</li>
+        <li><strong>Member Access:</strong> Using the dot operator (<code>.</code>) on a structure variable (e.g., <code>s1.name</code>) or the arrow operator (<code>-&gt;</code>) on a structure pointer (e.g., <code>ptr-&gt;name</code>).</li>
+        <li><strong>Assignment:</strong> Copying one structure variable to another of the same type using the <code>=</code> operator.</li>
+        <li><strong>Passing to Functions:</strong> Structures can be passed by value (a copy is made) or by reference (passing a pointer for efficiency).</li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>68. & 72. Write a program to maintain employee records / prepare a payroll...</h3>
+      <p>(These questions are similar. The answer below maintains employee records and prints those with a salary above 5000, fulfilling both prompts.)</p>
+      <p>This program uses an array of structures to store employee records. It asks the user how many employees to enter, reads their details, and then iterates through the array to print the details of only those employees whose salary is greater than 5000.</p>
+<pre><code>
+#include &lt;stdio.h&gt;
+
+// Define the structure for an employee
+struct Employee {
+    int id;
+    char name[100];
+    double salary;
+};
+
+int main() {
+    int n, i;
+    
+    printf("How many employee records do you want to enter? ");
+    scanf("%d", &n);
+
+    // Declare an array of structures of size 'n'
+    struct Employee emp[n];
+
+    // --- Read 'n' Employee Details ---
+    printf("\n--- Enter Employee Details ---\n");
+    for (i = 0; i < n; i++) {
+        printf("Details for Employee %d:\n", i + 1);
+        
+        printf("  Enter ID: ");
+        scanf("%d", &emp[i].id);
+        
+        printf("  Enter Name: ");
+        scanf(" %[^\n]", emp[i].name); // Reads string with spaces
+        
+        printf("  Enter Salary: ");
+        scanf("%lf", &emp[i].salary);
+    }
+
+    // --- Prepare and Print Payroll/Details ---
+    printf("\n\n--- Employees with Salary > 5000 ---\n");
+    printf("--------------------------------------\n");
+    printf("ID\tName\t\tSalary\n");
+    printf("--------------------------------------\n");
+
+    int found = 0;
+    for (i = 0; i < n; i++) {
+        if (emp[i].salary > 5000) {
+            printf("%d\t%s\t\t%.2f\n", 
+                   emp[i].id, 
+                   emp[i].name, 
+                   emp[i].salary);
+            found = 1;
+        }
+    }
+
+    if (!found) {
+        printf("No employees found with salary > 5000.\n");
+    }
+    printf("--------------------------------------\n");
+
+    return 0;
+}
+</code></pre>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  
+
+
+
+</body>
+</html>

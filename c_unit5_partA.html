@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 5 (Part A) - Programming in C </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    /* Styles for the notes content */
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.15rem; /* Standard size */
+      margin-bottom: 12px;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol {
+      color: #333;
+      font-size: 1rem; /* Standard font size */
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>💻 Unit 5 – Part A (2-Mark Q&A)</h1>
+      <p>Programming in C </p>
+      <a href="c_unit5.html" class="cta-btn">⬅ Back to Unit 5</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part A: Files and Preprocessor Directives</h2>
+
+    <div class="qa-item">
+      <h3>33. What is meant by command line argument?</h3>
+      <p>Command-line arguments are values (strings) passed to a C program when it is executed from the command line or terminal.  They are accessed in the <code>main()</code> function using the <code>argc</code> (argument count) and <code>argv</code> (argument vector) parameters.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>34. How do you open a file in C for reading and writing?</h3>
+      <p>You can open an existing file for both reading and writing using the <code>"r+"</code> mode with the <code>fopen()</code> function.  If the file doesn't exist, it will return <code>NULL</code>.</p>
+      <p><strong>Example:</strong> <code>FILE *fp = fopen("data.txt", "r+");</code></p>
+    </div>
+
+    <div class="qa-item">
+      <h3>35. Why preprocessor directives are used?</h3>
+      <p>Preprocessor directives are instructions to the C preprocessor (which runs before the actual compiler).  They are used for:</p>
+      <ul>
+        <li><code>#include</code>: To include header files (libraries).</li>
+        <li><code>#define</code>: To define macros and symbolic constants.</li>
+        <li><code>#if, #else, #endif</code>: For conditional compilation (compiling parts of the code only if a condition is met).</li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>36. What does argc and argv indicate in command-line arguments?</h3>
+      <ul>
+        <li><code><strong>argc</strong></code> (Argument Count): An integer that stores the total number of command-line arguments passed to the program, including the program name itself. </li>
+        <li><code><strong>argv</strong></code> (Argument Vector): An array of character pointers (<code>char *argv[]</code>) where each element points to a string.  <code>argv[0]</code> is the program name, <code>argv[1]</code> is the first argument, and so on.</li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>37. Brief about single line comment with example.</h3>
+      <p>A single-line comment is used to add explanatory notes to the code, which are ignored by the compiler. In C (from C99 standard), it starts with <code>//</code> and continues to the end of the line. </p>
+      <p><strong>Example:</strong> </p>
+      <p><code>int x = 10; // This is a single-line comment initializing x.</code></p>
+    </div>
+
+    <div class="qa-item">
+      <h3>38. How to open a file and close a file in C language?</h3>
+      <ul>
+        <li><strong>Open a file:</strong> Use the <code>fopen()</code> function, which returns a file pointer (<code>FILE*</code>).  You must specify the filename and the mode (e.g., "r" for read, "w" for write).<br>
+        <code>FILE *fp = fopen("filename.txt", "w");</code></li>
+        <li><strong>Close a file:</strong> Use the <code>fclose()</code> function, passing it the file pointer. <br>
+        <code>fclose(fp);</code></li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>39. What is meant by command line argument?</h3>
+      <p>This is a duplicate of question 33.  Command-line arguments are parameters supplied to a program when it is invoked from the command line. They provide a way to pass data into the program at runtime.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>40. Compare the fseek() with ftell ().</h3>
+      <ul>
+        <li><code><strong>fseek()</strong></code>: This is a function used to <strong>move</strong> the file pointer (the current read/write position) to a specific location within a file (e.g., to the beginning, end, or a specific byte offset). </li>
+        <li><code><strong>ftell()</strong></code>: This is a function used to <strong>get</strong> the current position of the file pointer. It returns a <code>long</code> integer representing the number of bytes from the beginning of the file. </li>
+      </ul>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  
+
+  
+
+</body>
+</html>

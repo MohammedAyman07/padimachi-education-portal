@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1st Year Engineering </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script>
+    // Disable copy, screenshot, and right click
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.onkeydown = e => {
+      if (e.ctrlKey && ['u','s','c','x','p'].includes(e.key)) e.preventDefault();
+      if (e.key === 'PrintScreen') alert('Screenshots are disabled!');
+    };
+    document.addEventListener('selectstart', e => e.preventDefault());
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>🎓 1st Year Engineering</h1>
+      <p>Tamil Nadu Syllabus - Notes</p>
+      <a href="index.html" class="cta-btn">⬅ Back to Home</a>
+    </div>
+  </header>
+
+  <!-- Ad -->
+  <section class="ads">
+    <div class="ad-box">
+      <p>Ad Space</p>
+    </div>
+  </section>
+
+  <!-- Subject Cards -->
+  <section class="subjects">
+    <h2>Subjects</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>📘 Tamil</h3>
+        <p>Notes and guides for Tamil subject (1st Year Engineering).</p>
+        <a href="tamil_units.html" class="view-btn">View Notes</a>
+      </div>
+
+      <div class="card">
+        <h3>📖 English</h3>
+        <p>Comprehensive English notes, grammar, essays, and communication skills.</p>
+        <a href="english_units.html" class="view-btn">View Notes</a>
+      </div>
+
+      <div class="card">
+        <h3>🔬 Physics</h3>
+        <p>Complete Physics notes, formulas, and solved problems.</p>
+        <a href="physics_units.html" class="view-btn">View Notes</a>
+      </div>
+
+      <div class="card">
+        <h3>⚗️ Chemistry</h3>
+        <p>Important topics, reactions, and previous year questions.</p>
+        <a href="engineering_chemistry.html" class="view-btn">View Notes</a>
+      </div>
+
+      <div class="card">
+        <h3>📗 Mathematics</h3>
+        <p>Formulas, derivations, and exercise solutions.</p>
+        <a href="maths_units.html" class="view-btn">View Notes</a>
+      </div>
+
+      <div class="card">
+        <h3>💻 C Programming</h3>
+        <p>Programs, syntax explanations, and lab exercises.</p>
+        <a href="engineering_c_programming.html" class="view-btn">View Notes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ad -->
+  <section class="ads">
+    <div class="ad-box">
+      <p>Ad Space</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  
+
+  <!-- Watermark -->
+
+</body>
+</html>

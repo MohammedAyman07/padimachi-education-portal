@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENGINEERING PHYSICS</title>
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 50px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-radius: 8px;
+    }
+
+    h3 {
+      background-color: #eff6ff;
+      color: #1d4ed8;
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 0;
+    }
+
+    h4 {
+      color: #1e40af;
+      margin-top: 25px;
+      border-bottom: 1px dashed #bfdbfe;
+      padding-bottom: 5px;
+    }
+
+    .step {
+      margin-bottom: 15px;
+      padding-left: 15px;
+      border-left: 3px solid #cbd5e1;
+    }
+
+    .step-title {
+      font-weight: bold;
+      color: #475569;
+      display: block;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    .result-box {
+      border: 2px solid #2563eb;
+      background-color: #f0fdf4;
+      padding: 15px;
+      margin: 20px 0;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    .notes-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 20px auto;
+      border: 1px solid #ddd;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+     <h1>ENGINEERING PHYSICS UNIT 2 PART B</h1>
+    <div class="question-box">
+      <h3>1. Derive an expression for the time period of the torsional pendulum and arrive at the equation of torsional rigidity. Also mention its uses.</h3>
+
+      <h4>(A) Derivation of Time Period</h4>
+      
+      <p><strong>Principle:</strong> The torsional pendulum executes Angular Harmonic Motion.</p>
+
+      
+
+      <div class="step">
+        <span class="step-title">Step 1: Angular Harmonic Motion</span>
+        Consider a particle (or body) executing angular harmonic motion. At any instant \( t \), let \( \theta \) be the angular displacement measured from the equilibrium position.
+        The differential equation of angular harmonic motion is given by:
+        $$ \frac{d^2\theta}{dt^2} + \omega^2\theta = 0 $$
+        Where \( \omega^2 \) is a constant.
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 2: Restoring Torque Relation</span>
+        In a torsional pendulum, the restoring torque \( \tau \) is proportional to the angular displacement \( \theta \):
+        $$ \tau = -C\theta $$
+        (Where \( C \) is the <strong>Torsional Rigidity</strong> or couple per unit twist).
+        <br><br>
+        According to Newton's second law for rotation:
+        $$ \tau = I \frac{d^2\theta}{dt^2} $$
+        (Where \( I \) is the Moment of Inertia).
+        <br><br>
+        Equating the torques:
+        $$ I \frac{d^2\theta}{dt^2} = -C\theta $$
+        $$ \frac{d^2\theta}{dt^2} + \frac{C}{I}\theta = 0 $$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 3: Comparison and Time Period</span>
+        Comparing the above equation with the standard angular harmonic equation (\( \frac{d^2\theta}{dt^2} + \omega^2\theta = 0 \)):
+        $$ \omega^2 = \frac{C}{I} \implies \omega = \sqrt{\frac{C}{I}} $$
+        
+        The period of oscillation \( T \) is given by:
+        $$ T = \frac{2\pi}{\omega} $$
+        
+        Substituting \( \omega \):
+        $$ T = \frac{2\pi}{\sqrt{C/I}} $$
+      </div>
+
+      <div class="result-box">
+        \( T = 2\pi \sqrt{\frac{I}{C}} \)
+      </div>
+
+      <h4>(B) Equation of Torsional Rigidity</h4>
+      <p>Rearranging the Time Period formula for \( C \):</p>
+      <div class="step">
+        Square both sides of the time period equation:
+        $$ T^2 = 4\pi^2 \frac{I}{C} $$
+        Solving for \( C \):
+        <div class="result-box">
+          \( C = \frac{4\pi^2 I}{T^2} \)
+        </div>
+        (Note: In terms of material properties, \( C = \frac{\pi G r^4}{2L} \), where \( G \) is rigidity modulus).
+      </div>
+
+      <h4>(C) Uses</h4>
+      <div class="step">
+        The torsional pendulum is used to determine:
+        <ul>
+          <li><strong>Moment of Inertia (I):</strong> Of irregular bodies by measuring the time period.</li>
+          <li><strong>Rigidity Modulus (G):</strong> Of the material of the wire, using the relation between \( C \) and \( G \).</li>
+        </ul>
+      </div>
+  </div>
+<div class="question-box">
+      <h3>2.What is ultrasonics? Explain the magnetostriction method of producing ultrasonic waves.</h3>
+
+      <h4>1. Ultrasonics</h4>
+      <div class="step">
+        <p><strong>Definition:</strong> Vibrating bodies produce sound. The human ear is sensitive to sound waves of frequencies ranging from 20 Hz to 20,000 Hz. Sound waves of frequencies <strong>greater than 20,000 Hz</strong> are called <strong>Ultrasonic waves</strong>.</p>
+        <p>Human beings cannot sense this sound. Ultrasonic waves are generated by bats and dolphins and they use the reflection of the waves to find their way.</p>
+      </div>
+
+      <h4>2. Magnetostriction Generator</h4>
+      
+      <div class="step">
+        <span class="step-title">Principle: Magnetostriction Effect</span>
+        Magnetostriction generator is based on the principle of magnetostriction effect. When a ferromagnetic rod like iron or nickel is kept in a magnetic field parallel to its length, the rod expands or contracts producing a change in length. This is known as Magnetostriction effect.
+      </div>
+
+      <img src="magnetostriction.png" alt="Magnetostriction Generator Circuit" class="notes-image">
+
+      <div class="step">
+        <span class="step-title">Construction</span>
+        <ul>
+          <li><strong>The Rod:</strong> The generator consists of a nickel rod which is laminated, insulated, and pasted to avoid Eddy current loss. The rod is clamped in the middle.</li>
+          <li><strong>Coils:</strong> Coils \( L_1 \) and \( L_2 \) are wound on the two ends of the rod.
+            <ul>
+              <li>Coil \( L_1 \) is connected to the base circuit (feedback loop).</li>
+              <li>Coil \( L_2 \) is connected to the collector circuit.</li>
+            </ul>
+          </li>
+          <li><strong>Tank Circuit:</strong> The inductor \( L_2 \) and capacitor \( C_1 \) form the tank circuit.</li>
+          <li><strong>Biasing:</strong> The battery connected between the emitter and collector provides the necessary biasing.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">Working</span>
+        <ol>
+          <li>When the power supply is switched on, the collector current rises and sets up an alternating current in coil \( L_2 \).</li>
+          <li>This alternating current provides an alternating magnetic field along the length of the rod.</li>
+          <li>Due to the magnetostriction effect, the rod starts vibrating.</li>
+          <li>The longitudinal expansion and contraction of the rod produces an e.m.f in the coil \( L_1 \).</li>
+          <li>This e.m.f is applied to the base of the transistor, which in turn increases the amplitude of high frequency oscillations in coil \( L_2 \) due to <strong>positive feed-back</strong>.</li>
+          <li><strong>Resonance condition:</strong> When the frequency of vibration of the rod matches the frequency of the tank circuit, ultrasonic waves are produced. This is achieved by adjusting the capacitor \( C_1 \).</li>
+        </ol>
+      </div>
+
+      <div class="step">
+        <span class="step-title">Frequency Equation</span>
+        The frequency of vibration is given by:
+        $$ f = \frac{1}{2l} \sqrt{\frac{E}{\rho}} $$
+        Where \( l \) is the length of the rod, \( E \) is Young's modulus, and \( \rho \) is density.
+      </div>
+
+      <h4>3. Advantages and Drawbacks</h4>
+      
+      <div class="step">
+        <strong>Advantages:</strong>
+        <ul>
+          <li>Magnetostriction oscillators are mechanically rugged.</li>
+          <li>The construction cost is low.</li>
+          <li>They are capable of producing large acoustical power with fairly good efficiency (approx 60%).</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <strong>Drawbacks:</strong>
+        <ul>
+          <li>It can produce frequencies up to 3 MHz only.</li>
+          <li>The frequency of oscillations depends on temperature.</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="question-box">
+      <h3>3.Explain	with	a	neat	diagram,	principle, construction, working and application of piezoelectric method to produce ultrasonics.</h3>
+
+      <h4>1. Principle: Inverse Piezoelectric Effect</h4>
+      <div class="step">
+        <p>The Piezoelectric generator is based on the <strong>Inverse Piezoelectric Effect</strong>.</p>
+        <ul>
+          <li><strong>Piezoelectric Effect:</strong> When mechanical stress is applied to certain crystals (like Quartz), electric charges appear on opposite faces.</li>
+          <li><strong>Inverse Effect:</strong> Conversely, when an alternating electric field is applied to the opposite faces of the crystal, it undergoes mechanical deformation (expansion and contraction). This principle is used to generate ultrasonic waves.</li>
+        </ul>
+      </div>
+
+      <h4>2. Construction</h4>
+      
+      <div class="circuit-diagram">
+        <img src="Piezoelectric.png" alt="Piezoelectric Oscillator Circuit Diagram" class="notes-image">
+      </div>
+
+      <div class="step">
+        <span class="step-title">Components (Based on Diagram)</span>
+        <ul>
+          <li><strong>Crystal Unit:</strong> A slice of quartz crystal (Q) is placed between two metal plates A and B, forming a parallel plate capacitor.</li>
+          <li><strong>Oscillator Circuit:</strong> The circuit uses a transistor-based oscillator. 
+            <ul>
+              <li>The coil <strong>\( L_2 \)</strong> and variable capacitor <strong>\( C \)</strong> form the <strong>tank circuit</strong> connected to the collector. This determines the frequency of oscillation.</li>
+              <li>The coil <strong>\( L_1 \)</strong> is connected to the base and provides positive feedback (mutual induction) to sustain oscillations.</li>
+            </ul>
+          </li>
+          <li><strong>Coupling:</strong> The oscillator coils (\( L_1, L_2 \)) are inductively coupled to a secondary coil <strong>\( L \)</strong> via a transformer core. This coil \( L \) is connected to the crystal plates A and B.</li>
+        </ul>
+      </div>
+
+      <h4>3. Working</h4>
+      
+      <div class="step">
+        <ol>
+          <li><strong>Generation of Oscillations:</strong> When the DC supply (Battery) is switched on, the oscillator produces high-frequency alternating currents in the tank circuit (\( L_2, C \)).</li>
+          <li><strong>Induction:</strong> This alternating current induces a high-frequency alternating e.m.f. (voltage) in the secondary coil \( L \) due to transformer action.</li>
+          <li><strong>Crystal Vibration:</strong> This alternating voltage is applied across the plates A and B. Due to the inverse piezoelectric effect, the crystal \( Q \) expands and contracts (vibrates) rapidly.</li>
+          <li><strong>Resonance:</strong> The variable capacitor \( C \) is adjusted to tune the frequency of the oscillator. When the frequency of the oscillator matches the <strong>natural frequency</strong> of the crystal, <strong>resonance</strong> occurs.</li>
+          <li><strong>Ultrasonic Emission:</strong> At resonance, the crystal vibrates with maximum amplitude, and powerful ultrasonic waves are emitted into the surrounding air or medium.</li>
+        </ol>
+      </div>
+      
+      <div class="step">
+        <span class="step-title">Frequency Formula</span>
+        The natural frequency of the crystal is given by:
+        $$ f = \frac{k}{t} \sqrt{\frac{E}{\rho}} $$
+        Where \( t \) is thickness, \( E \) is Young's modulus, and \( \rho \) is density.
+      </div>
+
+      <h4>4. Applications</h4>
+      <div class="step">
+        <ul>
+          <li><strong>Ultrasonic Welding (Cold Welding):</strong> Used to weld materials at room temperature. Ultrasonic vibrations are sent between surfaces to disrupt oxide layers and form a bond without melting the metal.</li>
+          <li><strong>Ultrasonic Soldering:</strong> Enables soldering of metals like aluminum without flux. The vibrations remove the oxide layer (cavitation), allowing the solder to bond directly to the metal.</li>
+          <li><strong>Ultrasonic Cleaning:</strong> Highly effective for removing micron-sized particles from hard surfaces. It uses cavitation bubbles in a liquid solvent to dislodge contaminants from delicate instruments.</li>
+        </ul>
+      </div>
+
+      <h4>5. Merits and Demerits</h4>
+      <div class="step">
+        <strong>Advantages:</strong>
+        <ul>
+          <li>Can generate very high frequencies (up to 500 MHz).</li>
+          <li>High output power and efficiency.</li>
+          <li>Frequency is stable and independent of temperature/humidity.</li>
+        </ul>
+        <strong>Disadvantages:</strong>
+        <ul>
+          <li>Quartz crystals are expensive.</li>
+          <li>Cutting and shaping the crystal is complex.</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="question-box">
+      <h3>4.Describe Forbe’s method to determine thermal conductivity of metals with relevant theory and experiment.</h3>
+
+      <h4>1. Introduction and Principle</h4>
+      <div class="step">
+        <p>Forbe's method is used to determine the <strong>absolute thermal conductivity</strong> of metals.</p>
+        <p>The principle relies on the steady-state condition where the heat conducted across a specific cross-section of a heated rod is equal to the total heat lost by radiation from the rest of the rod beyond that section.</p>
+      </div>
+
+      <h4>2. Construction and Apparatus</h4>
+      
+      <div class="step">
+        <span class="step-title">Setup</span>
+        <ul>
+          <li><strong>Metal Rod:</strong> It consists of a long rod of uniform area of cross-section.</li>
+          <li><strong>Steam Chamber:</strong> One end of the rod is enclosed by a steam chamber (H) to heat it, while the other end is left free.</li>
+          <li><strong>Thermometers:</strong> Thermometers are inserted into provisions made in the rod at equal distances to measure the temperature gradient.</li>
+        </ul>
+      </div>
+
+      <img src="Forbe’s.png" alt="Forbe's Method Experimental Setup" class="notes-image">
+
+      <h4>3. Theory and Calculation</h4>
+      
+      <div class="step">
+        <span class="step-title">Step 1: Heat Conduction</span>
+        Consider a point \( B \) at a distance \( x \) from the hot end. The rod is heated until a steady state is reached. The amount of heat flowing per second across section \( B \) is given by:
+        $$ Q_1 = -KA \left(\frac{d\theta}{dx}\right) $$
+        (Note: The source text denotes this as \( KA(d\theta/dx) \)).
+        <br>Where:
+        <ul>
+          <li>\( K \) = Coefficient of thermal conductivity</li>
+          <li>\( A \) = Area of cross-section</li>
+          <li>\( \frac{d\theta}{dx} \) = Temperature gradient at \( B \)</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 2: Heat Loss by Radiation</span>
+        The heat conducted at \( B \) is lost by radiation from the portion of the rod between \( B \) and the end \( C \).
+        <br>
+        The amount of heat lost per second by radiation beyond \( B \) is:
+        $$ Q_2 = \int_{B}^{C} (m \cdot s) \frac{d\theta}{dt} $$
+        Since Mass \( m = \text{Volume} \times \text{Density} = (A \cdot dx) \cdot \rho \), the equation becomes:
+        $$ Q_2 = \int_{B}^{C} A \cdot dx \cdot s \cdot \rho \left( \frac{d\theta}{dt} \right) $$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 3: Steady State Equation</span>
+        At steady state, the heat conducted at \( B \) equals the heat lost by radiation beyond \( B \). Equating \( Q_1 \) and \( Q_2 \):
+        $$ KA \left(\frac{d\theta}{dx}\right) = \int_{B}^{C} A \cdot dx \cdot s \cdot \rho \left(\frac{d\theta}{dt}\right) $$
+        Canceling \( A \) and rearranging for \( K \):
+        <div class="result-box">
+          $$ K = \frac{\rho s \int_{B}^{C} \frac{d\theta}{dt} dx}{\left(\frac{d\theta}{dx}\right)_B} $$
+        </div>
+      </div>
+
+      <h4>4. Experimental Procedure</h4>
+      <p>The experiment is performed in two parts to find the values for the formula above.</p>
+
+      <div class="step">
+        <span class="step-title">Part A: Static Experiment (To find \( \frac{d\theta}{dx} \))</span>
+        <ol>
+          <li>The rod is heated by the steam chamber until the thermometers reach a steady state.</li>
+          <li>The temperatures \( \theta_1, \theta_2, \theta_3 \dots \) are noted corresponding to distances \( x_1, x_2, x_3 \dots \) from the hot end.</li>
+          <li>A graph is plotted with <strong>Distance (\( x \)) along the X-axis</strong> and <strong>Temperature (\( \theta \)) along the Y-axis</strong>.</li>
+          <li>A tangent is drawn to the curve at the point corresponding to section \( B \). The slope of this tangent gives \( \frac{d\theta}{dx} \).</li>
+          <li>$$ \left(\frac{d\theta}{dx}\right) = \tan \alpha = \frac{BD}{BE} $$</li>
+        </ol>
+      </div>
+
+      <div class="step">
+        <span class="step-title">Part B: Dynamic Experiment (To find \( \frac{d\theta}{dt} \))</span>
+        <ol>
+          <li>A sample piece of the original rod (same radius/material) is heated to the temperature of the hot end.</li>
+          <li>It is suspended in the open atmosphere and allowed to cool. A thermometer records the temperature as it falls.</li>
+          <li>A graph is plotted with <strong>Time along the X-axis</strong> and <strong>Temperature along the Y-axis</strong>.</li>
+          <li>Tangents are drawn at temperatures corresponding to the steady temperatures found in the static experiment (at \( T_1, T_2 \dots \)) to find the rate of cooling \( \frac{d\theta}{dt} \) for each point.</li>
+        </ol>
+      </div>
+
+      <div class="step">
+        <span class="step-title">Final Calculation (Integration)</span>
+        <ol>
+          <li>With the data obtained, a third curve is plotted with <strong>Distance (\( x \))</strong> along the X-axis and <strong>Rate of cooling (\( \frac{d\theta}{dt} \))</strong> along the Y-axis.</li>
+          <li>The area under the shaded portion of this curve from point \( B \) to the end \( C \) corresponds to the integral value: \( \int_{B}^{C} \frac{d\theta}{dt} dx \).</li>
+          <li>Substituting the values of density (\( \rho \)), specific heat (\( s \)), the area from the graph, and the slope \( \frac{d\theta}{dx} \) into the formula gives the value of \( K \).</li>
+        </ol>
+      </div>
+
+      <h4>5. Limitations</h4>
+      <div class="step">
+        <ul>
+          <li>The experiment is tedious as it involves drawing three different graphs.</li>
+          <li>It takes a long time to complete the experiment.</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="question-box">
+      <h3>5.Describe the process of non destructive testing of material, using ultrasonic waves by pulse echo techniques( A-scan, B -scan and TM- Mode Scanning)</h3>
+
+      <h4>1. Pulse Echo System</h4>
+      <div class="step">
+        <p>The main components of a pulse echo system are a transmitter, time-base generator, receiver, swept-gain generator, and cathode ray oscilloscope (CRO).</p>
+        
+
+        <span class="step-title">Working Principle</span>
+        <ol>
+          <li><strong>Transmission:</strong> The transmitter gives a sufficient amount of energy to the transducer, which emits a short burst of ultrasound waves.</li>
+          <li><strong>Coupling:</strong> The transducer is kept in close contact with the skin (or material). A good couplant is used between the skin and the transducer to provide good coupling and avoid excess reflection at the air-solid boundary.</li>
+          <li><strong>Reflection:</strong> The ultrasound generated is passed into the target and gets reflected back from the target.</li>
+          <li><strong>Reception:</strong> The same transducer (or a separate one) receives the reflected signal. This signal is amplified and applied to the y-plates of the CRO.</li>
+        </ol>
+      </div>
+
+      <h4>2. A - Scan (Amplitude Scan)</h4>
+      <div class="step">
+        <p>A-scan is the simplest form of display and the prime factor in obtaining all other scans. It gives only a <strong>one-dimensional image</strong> of the object.</p>
+        
+        <span class="step-title">Display Mechanism</span>
+        <ul>
+          <li><strong>X-axis:</strong> Represents the time taken by the pulse to reach the reflecting surface and return back (distance).</li>
+          <li><strong>Y-axis:</strong> Represents the amplitude of the echoes. The size of the vertical displacement measures the echo amplitude.</li>
+        </ul>
+        
+        <span class="step-title">Operation</span>
+        The transducer is fixed at one position. Any movement in the echo train is the result of movement of the interface target.
+        <br>
+        <strong>Example:</strong> The echo encephalogram.
+      </div>
+
+      <h4>3. B - Scan (Brightness Scan)</h4>
+      <div class="step">
+        <p>In B-scan display, brightness is related to the echo amplitude. This display gives a <strong>cross-sectional view</strong> of the test object and shows the position, orientation, and depth of defects.</p>
+
+        <span class="step-title">Display Mechanism</span>
+        <ul>
+          <li><strong>Brightness:</strong> The echo signals are not applied to the y-plates. Instead, they control the brightness of the spot on the screen.</li>
+          <li><strong>X-axis:</strong> Represents the position of the transducer.</li>
+          <li><strong>Y-axis:</strong> Represents the lapsed time.</li>
+        </ul>
+
+        <span class="step-title">Applications</span>
+        This method requires a skilled operator. It is widely used in diagnostics to detect pregnancy, multiple foetuses, the age of the foetus, and the position of the placenta.
+      </div>
+
+      <h4>4. T-M Scan (Time-Motion) or C-Scan</h4>
+      <div class="step">
+        <p>In the T-M mode or time-position scan, the movement of echo-generating tissues is displayed as a function of time.</p>
+
+        <span class="step-title">Display Mechanism</span>
+        <ul>
+          <li>A low-velocity time base generator is applied across the y-plates of the CRO to modify the static B-scan system.</li>
+          <li>The B-scan moves vertically at a constant low velocity (sweep time is approx. 3 seconds).</li>
+          <li>Under this condition, if the reflecting interface spot moves, a horizontal deflection in the vertical line pattern is obtained.</li>
+        </ul>
+
+        <span class="step-title">Applications</span>
+        This type of display is useful in obtaining pulsating structures such as the heart and the movement of the mitral valve related to various periods of the heart cycle.
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

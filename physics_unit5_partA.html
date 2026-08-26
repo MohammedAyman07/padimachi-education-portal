@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unit 5 (Part A) - Engineering Physics</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="protection.js" defer></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <!-- Internal CSS (safe to keep or move to style.css) -->
+  <style>
+    :root{
+      --bg:#f3f6fa; --card:#fff; --ink:#222; --sub:#333;
+      --brand:#1e3a8a; --accent:#2563eb; --accent2:#1d4ed8; --line:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Poppins",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    header.hero{position:relative;text-align:center;background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;padding:56px 20px}
+    header.hero .cta-btn{display:inline-block;margin-top:16px;padding:10px 18px;color:#fff;background:var(--accent);border-radius:10px;text-decoration:none;font-weight:600}
+    header.hero .cta-btn:hover{background:var(--accent2)}
+    .ads{text-align:center;margin:24px 0}
+    .ad-box{border:2px dashed #cbd5e1;padding:14px 16px;border-radius:12px;background:#fff;color:#475569}
+    .notes-content{max-width:900px;margin:34px auto;background:var(--card);border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.08);padding:28px}
+    .notes-content h2{color:var(--brand);margin-bottom:20px;border-left:6px solid var(--accent);padding-left:12px;font-size:1.5rem}
+    .qa-item{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:18px}
+    .qa-item:last-child{border-bottom:none;margin-bottom:0}
+    .qa-item h3{color:var(--accent2);font-size:1.08rem;margin:0 0 10px}
+    .qa-item p,.qa-item ul,.qa-item ol{color:var(--sub);font-size:1rem;line-height:1.7;margin:0 0 10px}
+    .qa-item ul,.qa-item ol{padding-left:22px}
+    .qa-item li{margin:6px 0}
+    .formula{display:inline-block;background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:2px 8px;font-family:ui-monospace,Menlo,Consolas,monospace}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{border:1px solid #cbd5e1;padding:8px;text-align:center}
+    th{background:#eff6ff;color:var(--accent2)}
+    sup,sub{font-size:0.7em}
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>⚛️ Unit 5 – Part A (2-Mark Q&A)</h1>
+      <p>Engineering Physics</p>
+      <a href="physics_unit5.html" class="cta-btn">⬅ Back to Unit 5</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part A: Semiconductor Physics</h2>
+
+    <div class="qa-item">
+      <h3>1) Direct vs Indirect bandgap semiconductors</h3>
+      <ul>
+        <li><strong>Direct:</strong> CB minimum and VB maximum at same <em>k</em>. Efficient radiative recombination ⇒ good for LEDs/lasers (e.g., GaAs, InP).</li>
+        <li><strong>Indirect:</strong> CB min and VB max at different <em>k</em>; needs phonon for momentum change ⇒ weak light emission (e.g., Si, Ge).</li>
+      </ul>
+      <p><span class="formula">E<sub>g</sub> = E<sub>c</sub> − E<sub>v</sub></span> (direct: vertical in E–k).</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>2) Drift current vs Diffusion current</h3>
+      <ul>
+        <li><strong>Drift:</strong> Due to applied electric field <em>E</em> (carriers “pulled”). <span class="formula">J<sub>drift</sub> = q(nμ<sub>n</sub> + pμ<sub>p</sub>)E</span></li>
+        <li><strong>Diffusion:</strong> Due to concentration gradient (carriers “spread”). <span class="formula">J<sub>diff</sub> = qD<sub>n</sub>∇n − qD<sub>p</sub>∇p</span></li>
+      </ul>
+      <p><span class="formula">D/μ = k<sub>B</sub>T/q</span> (Einstein relation).</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>3) Schottky diode vs Ohmic contact</h3>
+      <ul>
+        <li><strong>Schottky (metal–lightly doped semi):</strong> Forms barrier Φ<sub>B</sub> ⇒ rectifying I–V, fast switching, low forward drop.</li>
+        <li><strong>Ohmic (metal–heavily doped semi):</strong> Negligible barrier ⇒ linear I–V (Ohm’s law), bidirectional conduction.</li>
+      </ul>
+      <p class="formula">I = I<sub>S</sub>(e^{qV/ηkT} − 1)</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>4) Hall effect & Hall voltage</h3>
+      <p>Current <em>I</em> along x, magnetic field <em>B</em> along z ⇒ transverse voltage along y due to Lorentz force. Used to find type (n/p), carrier density, and mobility.</p>
+      <p><span class="formula">V<sub>H</sub> = (R<sub>H</sub> I B)/t</span>, <span class="formula">R<sub>H</sub> = 1/(q n)</span> (n-type ⇒ negative sign), <span class="formula">μ = σR<sub>H</sub></span>.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>5) Why prefer extrinsic over intrinsic?</h3>
+      <p>Extrinsic (doped) semiconductors provide <strong>much higher, controllable conductivity</strong> by adding donors/acceptors; enable <strong>n/p</strong> regions for diodes, BJTs, MOSFETs. Intrinsic has low σ and strong T-dependence.</p>
+      <p class="formula">σ = q(nμ<sub>n</sub> + pμ<sub>p</sub>)</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>6) Intrinsic vs Extrinsic semiconductor</h3>
+      <table>
+        <tr><th>Aspect</th><th>Intrinsic</th><th>Extrinsic</th></tr>
+        <tr><td>Purity</td><td>Pure; n = p = n<sub>i</sub></td><td>Doped (donor/acceptor)</td></tr>
+        <tr><td>Fermi level</td><td>Mid-gap</td><td>Towards CB (n) / VB (p)</td></tr>
+        <tr><td>Conductivity</td><td>Low, T-sensitive</td><td>High, engineered</td></tr>
+        <tr><td>Examples</td><td>Pure Si, Ge</td><td>n-Si (P), p-Si (B)</td></tr>
+      </table>
+    </div>
+
+    <div class="qa-item">
+      <h3>7) Hole concentration in p-type (valence band)</h3>
+      <p>For full ionization and light doping: <span class="formula">p ≈ N<sub>A</sub></span>.</p>
+      <p>General (from F-D stats): <span class="formula">p = N<sub>v</sub> exp\{−(E<sub>F</sub> − E<sub>v</sub>)/(k<sub>B</sub>T)\}</span></p>
+      <p>Mass-action law: <span class="formula">np = n<sub>i</sub><sup>2</sup></span>.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>8) Given an extrinsic sample — identify n-type or p-type</h3>
+      <p>Use <strong>Hall effect:</strong> measure polarity of Hall voltage.</p>
+      <ul>
+        <li>R<sub>H</sub> &lt; 0 ⇒ majority electrons ⇒ <strong>n-type</strong>.</li>
+        <li>R<sub>H</sub> &gt; 0 ⇒ majority holes ⇒ <strong>p-type</strong>.</li>
+      </ul>
+      <p>Optional cross-checks: Seebeck sign, hot-probe test.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>9) Energy band diagram of intrinsic semiconductor (T &gt; 0 K)</h3>
+      <ol>
+        <li>Valence band (VB) filled; conduction band (CB) nearly empty.</li>
+        <li>Forbidden gap <span class="formula">E<sub>g</sub> = E<sub>c</sub> − E<sub>v</sub></span>.</li>
+        <li>Equal electron–hole pairs thermally generated (n = p = n<sub>i</sub>).</li>
+        <li>Fermi level at mid-gap: <span class="formula">E<sub>F</sub> ≈ (E<sub>c</sub> + E<sub>v</sub>)/2</span>.</li>
+      </ol>
+    </div>
+
+    <div class="qa-item">
+      <h3>10) Elemental vs Compound semiconductors (with examples)</h3>
+      <ul>
+        <li><strong>Elemental (Group IV):</strong> Single element; typically indirect gap. <em>Examples:</em> Si, Ge.</li>
+        <li><strong>Compound (III–V / II–VI):</strong> Tunable bandgaps; many direct gap ⇒ optoelectronics. <em>Examples:</em> GaAs, InP, GaN, CdS.</li>
+      </ul>
+      <p>Advantages of compounds: high electron mobility, direct E<sub>g</sub>, lattice/ band-engineering (heterostructures).</p>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+</body>
+</html>

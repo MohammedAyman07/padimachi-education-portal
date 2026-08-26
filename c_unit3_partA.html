@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unit 3 (Part A) - Programming in C</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+
+  <!-- Internal CSS (move to style.css if you like) -->
+  <style>
+    :root{
+      --bg:#f3f6fa; --card:#fff; --ink:#222; --sub:#333;
+      --brand:#1e3a8a; --accent:#2563eb; --accent2:#1d4ed8; --line:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Poppins",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    header.hero{position:relative;text-align:center;background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;padding:56px 20px}
+    header.hero .cta-btn{display:inline-block;margin-top:16px;padding:10px 18px;color:#fff;background:var(--accent);border-radius:10px;text-decoration:none;font-weight:600}
+    header.hero .cta-btn:hover{background:var(--accent2)}
+    .ads{text-align:center;margin:24px 0}
+    .ad-box{border:2px dashed #cbd5e1;padding:14px 16px;border-radius:12px;background:#fff;color:#475569}
+
+    .notes-content{max-width:900px;margin:34px auto;background:var(--card);border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.08);padding:28px}
+    .notes-content h2{color:var(--brand);margin-bottom:20px;border-left:6px solid var(--accent);padding-left:12px;font-size:1.5rem}
+    .qa-item{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:18px}
+    .qa-item:last-child{border-bottom:none;margin-bottom:0}
+    .qa-item h3{color:var(--accent2);font-size:1.08rem;margin:0 0 10px}
+    .qa-item p,.qa-item ul,.qa-item ol{color:var(--sub);font-size:1rem;line-height:1.7;margin:0 0 10px}
+    .qa-item ul,.qa-item ol{padding-left:22px}
+    .qa-item li{margin:6px 0}
+
+    code,pre{font-family:ui-monospace,Menlo,Consolas,monospace;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px}
+    code{padding:2px 6px}
+    pre{padding:10px;overflow:auto}
+    .tip{background:#ecfeff;border:1px solid #a5f3fc;color:#0e7490;border-radius:10px;padding:8px 10px}
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>💻 Unit 3 – Part A (2-Mark Q&A)</h1>
+      <p>Programming in C </p>
+      <a href="c_unit3.html" class="cta-btn">⬅ Back to Unit 3</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part A: Functions & Pointers</h2>
+
+    <div class="qa-item">
+      <h3>17) Significance of a <em>function prototype</em> in C</h3>
+      <p>A prototype declares <strong>name</strong>, <strong>return type</strong>, and <strong>parameter types/order</strong> to the compiler. It enables <strong>type checking</strong> of calls, correct <strong>implicit conversions</strong>, and allows calling a function <em>before</em> its definition or from other files.</p>
+      <pre><code>int sum(int a, int b);  // prototype
+int main(){ printf("%d", sum(3,4)); } 
+int sum(int a,int b){ return a+b; }</code></pre>
+      <p class="tip">Without a prototype, mismatched arguments may compile but cause <strong>undefined behavior</strong>.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>18) Dynamic memory allocation – concept</h3>
+      <p>Allocates memory <strong>at runtime</strong> from the heap when exact size is unknown at compile time. Use <code>malloc()</code>, <code>calloc()</code>, <code>realloc()</code>, and always free with <code>free()</code>.</p>
+      <pre><code>#include &lt;stdlib.h&gt;
+int *arr = malloc(n * sizeof *arr);     // allocate n ints
+if(!arr){ /* handle error */ }
+arr = realloc(arr, m * sizeof *arr);    // resize to m
+free(arr);                              // release</code></pre>
+      <p><strong>calloc</strong> zero-initializes; <strong>malloc</strong> leaves memory indeterminate.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>19) When is a <code>NULL</code> pointer used?</h3>
+      <ul>
+        <li>To indicate “<strong>points to nothing</strong>” (safe initialization).</li>
+        <li>As a <strong>sentinel</strong> (e.g., end of list/tree child absent).</li>
+        <li>To check failed allocations or lookups: <code>if(ptr == NULL)</code>.</li>
+      </ul>
+      <pre><code>Node *head = NULL;                // empty list
+int *p = malloc(100*sizeof *p);
+if(p == NULL){ /* allocation failed */ }</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>20) Usage/advantages of functions</h3>
+      <ul>
+        <li><strong>Modularity:</strong> break big problems into small units.</li>
+        <li><strong>Reusability:</strong> call many times, avoid repetition (DRY).</li>
+        <li><strong>Readability & testing:</strong> easy to debug/maintain.</li>
+        <li><strong>Abstraction:</strong> hide implementation details behind a clear interface.</li>
+      </ul>
+      <pre><code>double area(double r){ return 3.14159*r*r; }</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>21) Built-in vs User-defined functions</h3>
+      <ul>
+        <li><strong>Built-in (library):</strong> Provided by headers like <code>&lt;stdio.h&gt;</code>, <code>&lt;string.h&gt;</code>. Example: <code>printf</code>, <code>strlen</code>, <code>qsort</code>.</li>
+        <li><strong>User-defined:</strong> Written by programmer for app-specific logic.</li>
+      </ul>
+      <pre><code>#include &lt;string.h&gt;  // built-in
+size_t n = strlen("C");
+int max2(int a,int b){ return a>b?a:b; } // user-defined</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>22) What is <em>call by reference</em>?</h3>
+      <p>Passing the <strong>address</strong> of variables (via pointers) so the callee can modify the caller’s originals. Use unary <code>*</code> to dereference inside the function.</p>
+      <pre><code>void swap(int *x,int *y){ int t=*x; *x=*y; *y=t; }
+int a=5,b=7; swap(&a,&b); // a=7,b=5</code></pre>
+      <p>Contrast: <em>call by value</em> passes copies; originals unchanged.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>23) Define a pointer & how to declare</h3>
+      <p>A <strong>pointer</strong> stores the <strong>memory address</strong> of another object/function. Declaration uses <code>*</code> with a base type.</p>
+      <pre><code>int *pi;    // pointer to int
+char *pc;   // pointer to char
+int **ppi;  // pointer to pointer to int
+int x=10; pi=&x;   // pi points to x; *pi == 10</code></pre>
+      <p class="tip">Type of pointer must match the pointed-to type (except <code>void*</code> which is generic address).</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>24) What are library functions?</h3>
+      <p>Pre-written, optimized functions from the <strong>C Standard Library</strong>. Include the right header, link with the standard library, and call.</p>
+      <pre><code>#include &lt;math.h&gt;
+double r = sqrt(49.0);   // 7.0</code></pre>
+      <p>Benefits: correctness, portability, and performance.</p>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+
+</body>
+</html>

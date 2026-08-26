@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1 (Part A) - Maths </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    /* --- Styles optimized for Math content --- */
+    body {
+        font-family: 'Times New Roman', Times, serif; /* Serif font for better readability */
+    }
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+      font-family: Arial, sans-serif; /* Sans-serif for headings */
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.25rem; /* Slightly larger for clarity */
+      margin-bottom: 12px;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol {
+      color: #222; /* Darker text */
+      font-size: 1.1rem; /* Larger base font */
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    /* Style for matrix/equation blocks */
+    .code-block {
+      background: #f8f9fa; /* Lighter background */
+      color: #212529;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.15rem; /* Larger font for equations */
+      white-space: pre-wrap;
+      overflow-x: auto;
+      margin: 15px 0;
+      border: 1px solid #ddd;
+      text-align: center; /* Center-align equations */
+    }
+    /* Simple table style */
+    .matrix-table {
+      margin: 10px auto;
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 1.15rem;
+    }
+    .matrix-table td {
+      padding: 5px 10px;
+    }
+    .matrix-table {
+      border-left: 2px solid #000;
+      border-right: 2px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>🧮 Unit 1 – Part A (2-Mark Q&A)</h1>
+      <p>Engineering Mathematics </p>
+      <a href="maths_unit1.html" class="cta-btn">⬅ Back to Unit 1</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part A: 2-Mark Questions</h2>
+
+    <div class="qa-item">
+      <h3>1. If 2, -1, -3 are the eigen values of a matrix A, then the eigen values of the matrix A<sup>24</sup> is</h3>
+      <p><strong>Step 1: Recall property of eigenvalues</strong></p>
+      <p>If &lambda; is an eigenvalue of A, then for any positive integer k, &lambda;<sup>k</sup> is an eigenvalue of A<sup>k</sup>.</p>
+      
+      <p><strong>Step 2: Apply for k=24</strong></p>
+      <p>The eigenvalues of A are &lambda;<sub>1</sub> = 2, &lambda;<sub>2</sub> = -1, &lambda;<sub>3</sub> = -3.</p>
+      <p>So the eigenvalues of A<sup>24</sup> are 2<sup>24</sup>, (-1)<sup>24</sup>, and (-3)<sup>24</sup>.</p>
+      
+      <p><strong>Step 3: Simplify powers</strong></p>
+      <ul>
+        <li>2<sup>24</sup></li>
+        <li>(-1)<sup>24</sup> = 1 (since 24 is even)</li>
+        <li>(-3)<sup>24</sup> = 3<sup>24</sup> (positive since 24 is even)</li>
+      </ul>
+      
+      <p><strong>Final Answer:</strong><br>The eigenvalues of A<sup>24</sup> are 2<sup>24</sup>, 1, 3<sup>24</sup>.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>2. If 1, -1, 2 are the eigen values of a matrix A, then find the eigen values of the matrix A<sup>-1</sup>.</h3>
+      <p><strong>Step 1: Recall property</strong></p>
+      <p>If &lambda; is an eigenvalue of A, then 1/&lambda; is an eigenvalue of A<sup>-1</sup> (provided &lambda; &ne; 0).</p>
+      
+      <p><strong>Step 2: Given eigenvalues of A</strong><br>
+      1, -1, 2</p>
+      
+      <p><strong>Step 3: Take reciprocals</strong></p>
+      <ul>
+        <li>For &lambda; = 1 &rArr; 1/1 = 1</li>
+        <li>For &lambda; = -1 &rArr; 1/(-1) = -1</li>
+        <li>For &lambda; = 2 &rArr; 1/2</li>
+      </ul>
+      
+      <p><strong>Final Answer:</strong><br>
+      Eigenvalues of A<sup>-1</sup> are 1, -1, 1/2.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>3. Write down the matrix for the following quadratic form 2x<sub>1</sub><sup>2</sup> - 2x<sub>2</sub><sup>2</sup> + 4x<sub>3</sub><sup>2</sup> + 2x<sub>1</sub>x<sub>2</sub> - 6x<sub>1</sub>x<sub>3</sub> + 6x<sub>2</sub>x<sub>3</sub>.</h3>
+      <p><strong>Step 1: General quadratic form</strong></p>
+      <p>A quadratic form can be written as Q(x) = x<sup>T</sup>Ax, where A is a symmetric matrix.</p>
+      
+      <p><strong>Step 2: Match coefficients</strong></p>
+      <ul>
+        <li>Coefficient of x<sub>1</sub><sup>2</sup> &rarr; a<sub>11</sub> = 2</li>
+        <li>Coefficient of x<sub>2</sub><sup>2</sup> &rarr; a<sub>22</sub> = -2</li>
+        <li>Coefficient of x<sub>3</sub><sup>2</sup> &rarr; a<sub>33</sub> = 4</li>
+        <li>Cross terms (General form 2a<sub>ij</sub>x<sub>i</sub>x<sub>j</sub>):</li>
+        <ul>
+          <li>2x<sub>1</sub>x<sub>2</sub> &rarr; 2a<sub>12</sub> = 2 &rArr; a<sub>12</sub> = 1</li>
+          <li>-6x<sub>1</sub>x<sub>3</sub> &rarr; 2a<sub>13</sub> = -6 &rArr; a<sub>13</sub> = -3</li>
+          <li>6x<sub>2</sub>x<sub>3</sub> &rarr; 2a<sub>23</sub> = 6 &rArr; a<sub>23</sub> = 3</li>
+        </ul>
+      </ul>
+      
+      <p><strong>Step 3: Write the matrix</strong></p>
+      <p><strong>Final Answer:</strong><br>The matrix of the quadratic form is:</p>
+      <div class="code-block">
+        <table class="matrix-table">
+          <tbody>
+            <tr><td>2</td><td>1</td><td>-3</td></tr>
+            <tr><td>1</td><td>-2</td><td>3</td></tr>
+            <tr><td>-3</td><td>3</td><td>4</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <h3>4. If the Matrix A = 
+        <table class="matrix-table" style="display: inline-block; vertical-align: middle;">
+          <tbody>
+            <tr><td>3</td><td>1</td><td>4</td></tr>
+            <tr><td>0</td><td>2</td><td>6</td></tr>
+            <tr><td>0</td><td>0</td><td>5</td></tr>
+          </tbody>
+        </table>
+       then eigen value of A<sup>-1</sup> is 3, 2, 5. (True/False)</h3>
+      <p><strong>Step 1: Recall properties</strong></p>
+      <ul>
+        <li>Eigenvalues of a triangular matrix (upper or lower) are just its diagonal entries.</li>
+        <li>If &lambda; is an eigenvalue of A, then 1/&lambda; is an eigenvalue of A<sup>-1</sup>.</li>
+      </ul>
+      
+      <p><strong>Step 2: Eigenvalues of A</strong></p>
+      <p>The matrix A is upper triangular. Therefore, its eigenvalues are the diagonal entries: 3, 2, 5.</p>
+      
+      <p><strong>Step 3: Eigenvalues of A<sup>-1</sup></strong></p>
+      <p>Take the reciprocals of A's eigenvalues: 1/3, 1/2, 1/5.</p>
+      
+      <p><strong>Step 4: Compare with statement</strong></p>
+      <p>The statement says the eigenvalues of A<sup>-1</sup> are 3, 2, 5. This is incorrect.</p>
+      
+      <p><strong>Final Answer:</strong> The statement is <strong>False</strong>.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>5. Is the Quadratic form x<sup>2</sup> - y<sup>2</sup> + 4z<sup>2</sup> + 4xy + 2yz + 6xz indefinite?</h3>
+      <p><strong>Step 1: Write the matrix of the quadratic form</strong></p>
+      <ul>
+        <li>x<sup>2</sup> &rarr; a<sub>11</sub> = 1</li>
+        <li>-y<sup>2</sup> &rarr; a<sub>22</sub> = -1</li>
+        <li>4z<sup>2</sup> &rarr; a<sub>33</sub> = 4</li>
+        <li>4xy &rarr; 2a<sub>12</sub> = 4 &rArr; a<sub>12</sub> = 2</li>
+        <li>2yz &rarr; 2a<sub>23</sub> = 2 &rArr; a<sub>23</sub> = 1</li>
+        <li>6xz &rarr; 2a<sub>13</sub> = 6 &rArr; a<sub>13</sub> = 3</li>
+      </ul>
+      <p>The symmetric matrix is:</p>
+      <div class="code-block">
+        <table class="matrix-table">
+          <tbody>
+            <tr><td>1</td><td>2</td><td>3</td></tr>
+            <tr><td>2</td><td>-1</td><td>1</td></tr>
+            <tr><td>3</td><td>1</td><td>4</td></tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <p><strong>Step 2: Check definiteness (using Sylvester's criterion)</strong></p>
+      <p>A quadratic form is indefinite if it has both positive and negative eigenvalues. We check the leading principal minors:</p>
+      <ol>
+        <li>D<sub>1</sub> = |1| = 1 (Positive)</li>
+        <li>D<sub>2</sub> = 
+          <table class="matrix-table" style="display: inline-block; vertical-align: middle; border: none;">
+            <tbody>
+              <tr><td style="border-left: 1px solid #000; padding: 0 5px;">1</td><td style="border-right: 1px solid #000; padding: 0 5px;">2</td></tr>
+              <tr><td style="border-left: 1px solid #000; padding: 0 5px;">2</td><td style="border-right: 1px solid #000; padding: 0 5px;">-1</td></tr>
+            </tbody>
+          </table>
+         = (1)(-1) - (2)(2) = -1 - 4 = -5 (Negative)</li>
+      </ol>
+      
+      <p><strong>Step 3: Conclusion</strong></p>
+      <p>Since the principal minors are not all positive (D<sub>2</sub> < 0), the form is not positive definite. Since D<sub>1</sub> > 0 and D<sub>2</sub> < 0, the eigenvalues must have mixed signs.</p>
+      <p><strong>Final Answer:</strong> Yes, the quadratic form is <strong>indefinite</strong>.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>6. Find the sum of eigen values and product of eigen values of A = 
+        <table class="matrix-table" style="display: inline-block; vertical-align: middle;">
+          <tbody>
+            <tr><td>2</td><td>-3</td></tr>
+            <tr><td>4</td><td>-2</td></tr>
+          </tbody>
+        </table>
+      </h3>
+      <p><strong>Step 1: Recall formulas</strong></p>
+      <ul>
+        <li><strong>Sum of eigenvalues</strong> = trace(A) = Sum of main diagonal elements.</li>
+        <li><strong>Product of eigenvalues</strong> = det(A) = Determinant of the matrix.</li>
+      </ul>
+      
+      <p><strong>Step 2: Apply formulas</strong></p>
+      <ul>
+        <li>Sum (Trace) = 2 + (-2) = 0</li>
+        <li>Product (Determinant) = (2)(-2) - (-3)(4) = -4 + 12 = 8</li>
+      </ul>
+      
+      <p><strong>Final Answer:</strong><br>
+      Sum of eigenvalues = <strong>0</strong><br>
+      Product of eigenvalues = <strong>8</strong></p>
+    </div>
+
+    <div class="qa-item">
+      <h3>7. Two of the eigen values of A = 
+        <table class="matrix-table" style="display: inline-block; vertical-align: middle;">
+          <tbody>
+            <tr><td>3</td><td>-1</td><td>1</td></tr>
+            <tr><td>-1</td><td>5</td><td>-1</td></tr>
+            <tr><td>1</td><td>-1</td><td>3</td></tr>
+          </tbody>
+        </table>
+       are 3 and 6. Find the eigen value of A<sup>-1</sup>.</h3>
+      <p><strong>Step 1: Find the third eigenvalue of A</strong></p>
+      <p>Property: Sum of eigenvalues = trace(A) (sum of diagonal elements).</p>
+      <p>Trace(A) = 3 + 5 + 3 = 11.</p>
+      <p>Let the eigenvalues be &lambda;<sub>1</sub>, &lambda;<sub>2</sub>, &lambda;<sub>3</sub>. We are given &lambda;<sub>1</sub> = 3 and &lambda;<sub>2</sub> = 6.</p>
+      <p>3 + 6 + &lambda;<sub>3</sub> = 11 &rArr; 9 + &lambda;<sub>3</sub> = 11 &rArr; &lambda;<sub>3</sub> = 2.</p>
+      <p>The eigenvalues of A are 3, 6, 2.</p>
+      
+      <p><strong>Step 2: Find eigenvalues of A<sup>-1</sup></strong></p>
+      <p>Property: If &lambda; is an eigenvalue of A, then 1/&lambda; is an eigenvalue of A<sup>-1</sup>.</p>
+      <p>Take the reciprocals: 1/3, 1/6, 1/2.</p>
+      
+      <p><strong>Final Answer:</strong><br>
+      The eigenvalues of A<sup>-1</sup> are 1/3, 1/6, 1/2.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>8. For A = 
+        <table class="matrix-table" style="display: inline-block; vertical-align: middle;">
+          <tbody>
+            <tr><td>1</td><td>0</td></tr>
+            <tr><td>0</td><td>5</td></tr>
+          </tbody>
+        </table>
+      , write A<sup>2</sup> in terms of A and I, using Cayley Hamilton theorem.</h3>
+      <p><strong>Step 1: Find the characteristic equation of A</strong></p>
+      <p>The characteristic equation is det(A - &lambda;I) = 0.</p>
+      <p>
+        <table class="matrix-table" style="display: inline-block; vertical-align: middle; border: none;">
+          <tbody>
+            <tr><td style="border-left: 1px solid #000; padding: 0 5px;">1-&lambda;</td><td style="border-right: 1px solid #000; padding: 0 5px;">0</td></tr>
+            <tr><td style="border-left: 1px solid #000; padding: 0 5px;">0</td><td style="border-right: 1px solid #000; padding: 0 5px;">5-&lambda;</td></tr>
+          </tbody>
+        </table>
+       = (1-&lambda;)(5-&lambda;) = 0
+      </p>
+      <p>This simplifies to &lambda;<sup>2</sup> - 6&lambda; + 5 = 0.</p>
+      
+      <p><strong>Step 2: Apply Cayley-Hamilton theorem</strong></p>
+      <p>The theorem states that a matrix satisfies its own characteristic equation.</p>
+      <p>So, we replace &lambda; with A and the constant 5 with 5I:<br>A<sup>2</sup> - 6A + 5I = 0</p>
+      
+      <p><strong>Step 3: Solve for A<sup>2</sup></strong></p>
+      <p>A<sup>2</sup> = 6A - 5I</p>
+      
+      <p><strong>Final Answer:</strong> A<sup>2</sup> = 6A - 5I</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>9. State the nature of Quadratic form 2xy + 2yz + 2zx.</h3>
+      <p><strong>Step 1: Write in matrix form</strong></p>
+      <p>The diagonal entries (x<sup>2</sup>, y<sup>2</sup>, z<sup>2</sup>) are 0.</p>
+      <p>For cross terms (like 2a<sub>ij</sub>x<sub>i</sub>x<sub>j</sub>), we divide the coefficient by 2.</p>
+      <ul>
+        <li>2xy &rArr; a<sub>12</sub> = 1</li>
+        <li>2yz &rArr; a<sub>23</sub> = 1</li>
+        <li>2zx &rArr; a<sub>13</sub> = 1</li>
+      </ul>
+      <p>The matrix is:</p>
+      <div class="code-block">
+        <table class="matrix-table">
+          <tbody>
+            <tr><td>0</td><td>1</td><td>1</td></tr>
+            <tr><td>1</td><td>0</td><td>1</td></tr>
+            <tr><td>1</td><td>1</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <p><strong>Step 2: Check nature</strong></p>
+      <p>The nature is determined by the eigenvalues of A.</p>
+      <p>The eigenvalues for this specific matrix are &lambda;<sub>1</sub> = 2, &lambda;<sub>2</sub> = -1, and &lambda;<sub>3</sub> = -1.</p>
+      <p>Since there are some positive eigenvalues (2) and some negative eigenvalues (-1), the form is indefinite.</p>
+      
+      <p><strong>Final Answer:</strong> The quadratic form is <strong>indefinite</strong>.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>10. State Cayley Hamilton theorem</h3>
+      <p><strong>Cayley-Hamilton Theorem:</strong><br>
+      Every square matrix satisfies its own characteristic equation.</p>
+      
+      <p><strong>Explanation:</strong></p>
+      <p>If A is a square matrix, and its characteristic equation (found from det(A - &lambda;I) = 0) is p(&lambda;) = 0.</p>
+      <p>Then, according to the theorem, if you replace &lambda; with the matrix A and any constant c with cI (where I is the identity matrix), the equation still holds true, resulting in the zero matrix.</p>
+      <p>p(A) = 0</p>
+      
+      <p><strong>Example:</strong></p>
+      <p>If A = 
+        <table class="matrix-table" style="display: inline-block; vertical-align: middle;">
+          <tbody>
+            <tr><td>2</td><td>0</td></tr>
+            <tr><td>0</td><td>3</td></tr>
+          </tbody>
+        </table>
+      , the characteristic equation is (2-&lambda;)(3-&lambda;) = &lambda;<sup>2</sup> - 5&lambda; + 6 = 0.</p>
+      <p>By the theorem, A<sup>2</sup> - 5A + 6I = 0.</p>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  
+
+
+</body>
+</html>

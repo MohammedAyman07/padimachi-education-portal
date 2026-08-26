@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENGINEERING PHYSICS</title>
+    <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 50px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-radius: 8px;
+    }
+
+    h3 {
+      background-color: #eff6ff;
+      color: #1d4ed8;
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 0;
+    }
+
+    h4 {
+      color: #1e40af;
+      margin-top: 25px;
+      border-bottom: 1px dashed #bfdbfe;
+      padding-bottom: 5px;
+    }
+
+    .step {
+      margin-bottom: 15px;
+      padding-left: 15px;
+      border-left: 3px solid #cbd5e1;
+    }
+
+    .step-title {
+      font-weight: bold;
+      color: #475569;
+      display: block;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    .result-box {
+      border: 2px solid #2563eb;
+      background-color: #f0fdf4;
+      padding: 15px;
+      margin: 20px 0;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    .notes-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 20px auto;
+      border: 1px solid #ddd;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+            <h1>Unit 5 – Part B: SEMICONDUCTORS PHYSICS</h1>
+
+    <div class="question-box">
+      <h3>1. Obtain an expression for carrier concentration in an intrinsic semiconductor and also calculate the intrinsic carrier concentration.</h3>
+
+      <h4>1. Carrier Concentration in Intrinsic Semiconductors</h4>
+
+      <div class="step">
+        <p><strong>Definition:</strong> The number of electrons in the conduction band per unit volume of the material or the number of holes in the valence band of the material is known as carrier concentration. It is also known as density of charge carriers.</p>
+      </div>
+
+      
+
+<img src="inteisc.png">
+
+
+      <h4>(A) Calculation of Density of Electrons in Conduction Band (\(n\))</h4>
+      
+      <div class="step">
+        <span class="step-title">Step 1: General Formula</span>
+        The number of electrons (\(n\)) is calculated by integrating the product of the density of energy states \(Z(E)\) and the Fermi-Dirac probability function \(F(E)\) from the energy \(E_c\) to \(+\infty\):
+        $$n = \int_{E_c}^{+\infty} Z(E)F(E)dE$$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 2: Density of States & Probability</span>
+        The density of states in the conduction band is given by:
+        $$Z(E)dE = \frac{4\pi}{h^3}(2m_e^*)^{3/2}(E-E_c)^{1/2}dE$$
+        Where \(m_e^*\) is the effective mass of the electron.
+        <br><br>
+        The probability of occupancy is \(F(E) = \frac{1}{1+e^{(E-E_F)/kT}}\). Since \((E-E_F)/kT\) is very large compared to 1, the term 1 in the denominator is neglected:
+        $$F(E) \approx e^{-(E-E_F)/kT} = e^{(E_F-E)/kT}$$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 3: Integration</span>
+        Substituting these into the integral equation:
+        $$n = \frac{4\pi}{h^3}(2m_e^*)^{3/2} e^{E_F/kT} \int_{E_c}^{+\infty} (E-E_c)^{1/2} e^{-E/kT} dE$$
+        <br>
+        To solve, let \(x = E - E_c\). Then \(dE = dx\) and \(E = E_c + x\). The limits change from \(E_c \to \infty\) to \(0 \to \infty\).
+        $$n = \frac{4\pi}{h^3}(2m_e^*)^{3/2} e^{(E_F-E_c)/kT} \int_{0}^{+\infty} x^{1/2} e^{-x/kT} dx$$
+        <br>
+        Using the Gamma function, \(\int_{0}^{+\infty} x^{1/2} e^{-x/kT} dx = \frac{(kT)^{3/2}\pi^{1/2}}{2}\).
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 4: Final Expression for Electron Density</span>
+        Substituting the integral value back gives the expression for the concentration of electrons in the conduction band:
+        <div class="result-box">
+          $$n = 2 \left( \frac{2\pi m_e^* kT}{h^2} \right)^{3/2} e^{(E_F - E_c)/kT}$$
+        </div>
+       
+      </div>
+
+      <h4>(B) Calculation of Density of Holes in Valence Band (\(p\))</h4>
+
+      <div class="step">
+        <span class="step-title">Step 1: Probability of Holes</span>
+        A hole is created when an electron leaves the valence band. The probability of an unoccupied state (presence of a hole) is \(1-F(E)\).
+        Approximating for the valence band where \(E < E_F\):
+        $$1-F(E) \approx e^{(E-E_F)/kT}$$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 2: Density of States</span>
+        The density of states in the valence band is:
+        $$Z(E)dE = \frac{4\pi}{h^3}(2m_h^*)^{3/2}(E_v-E)^{1/2}dE$$
+        Where \(m_h^*\) is the effective mass of the hole.
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 3: Integration</span>
+        Integrating from \(-\infty\) to the top of the valence band \(E_v\):
+        $$p = \frac{4\pi}{h^3}(2m_h^*)^{3/2} e^{-E_F/kT} \int_{-\infty}^{E_v} (E_v-E)^{1/2} e^{E/kT} dE$$
+        <br>
+        Using substitution \(x = E_v - E\), the integral is solved similarly using the Gamma function.
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 4: Final Expression for Hole Density</span>
+        This gives the expression for the concentration of holes in the valence band:
+        <div class="result-box">
+          $$p = 2 \left( \frac{2\pi m_h^* kT}{h^2} \right)^{3/2} e^{(E_v - E_F)/kT}$$
+        </div>
+       
+      </div>
+
+      <h4>2. Calculation of Intrinsic Carrier Concentration (\(n_i\))</h4>
+
+      <div class="step">
+        <span class="step-title">Derivation</span>
+        In an intrinsic semiconductor, the concentration of electrons equals the concentration of holes.
+        $$n = p = n_i$$
+        Therefore, \(n_i^2 = np\).
+        <br><br>
+        Multiplying the expressions for \(n\) and \(p\):
+        $$n_i^2 = \left[ 2 \left( \frac{2\pi m_e^* kT}{h^2} \right)^{3/2} e^{(E_F - E_c)/kT} \right] \times \left[ 2 \left( \frac{2\pi m_h^* kT}{h^2} \right)^{3/2} e^{(E_v - E_F)/kT} \right]$$
+        <br><br>
+        Simplifying the powers and exponentials (Since \(E_c - E_v = E_g\), then \(E_v - E_c = -E_g\)):
+        $$n_i^2 = 4 \left( \frac{2\pi kT}{h^2} \right)^3 (m_e^* m_h^*)^{3/2} e^{-E_g/kT}$$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Final Intrinsic Carrier Concentration</span>
+        Taking the square root of the above equation gives the intrinsic carrier concentration \(n_i\):
+        <div class="result-box">
+          $$n_i = 2 \left( \frac{2\pi kT}{h^2} \right)^{3/2} (m_e^* m_h^*)^{3/4} e^{-E_g/2kT}$$
+        </div>
+       
+      </div>
+
+    </div>
+    <div class="question-box">
+      <h3>2. Derive an expression for carrier concentration of an Extrinsic semiconductor (N–type & P-Type) and explain the variation of Fermi level with temperature.</h3>
+
+      <h4>(A) Carrier Concentration in N-Type Semiconductor</h4>
+      
+      
+
+<img src="ntype.png">
+
+      <div class="step">
+        <span class="step-title">Step 1: Electron Density in Conduction Band</span>
+        The density of electrons (\( n \)) in the conduction band is given by:
+        $$ n = 2 \left( \frac{2\pi m_e^* kT}{h^2} \right)^{3/2} e^{(E_F - E_c)/kT} \quad \dots(1) $$
+        Where \( E_c \) is the bottom of the conduction band and \( E_F \) is the Fermi level.
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 2: Density of Ionized Donors</span>
+        In N-type, the donor level \( E_d \) is just below the conduction band. The density of ionized donors (\( N_d^+ \)) is:
+        $$ N_d^+ \approx N_d e^{(E_d - E_F)/kT} \quad \dots(2) $$
+        (Assuming \( E_F \) lies above \( E_d \) for the approximation to hold).
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 3: Equilibrium Condition</span>
+        At equilibrium, the density of electrons in the conduction band equals the density of ionized donors:
+        $$ 2 \left( \frac{2\pi m_e^* kT}{h^2} \right)^{3/2} e^{(E_F - E_c)/kT} = N_d e^{(E_d - E_F)/kT} $$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 4: Solving for Fermi Level (\( E_F \))</span>
+        Taking natural log on both sides and rearranging:
+        $$ \frac{2E_F - (E_c + E_d)}{kT} = \ln \left[ \frac{N_d}{2 (2\pi m_e^* kT / h^2)^{3/2}} \right] $$
+        $$ E_F = \frac{E_c + E_d}{2} + \frac{kT}{2} \ln \left[ \frac{N_d}{2 (2\pi m_e^* kT / h^2)^{3/2}} \right] $$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 5: Final Expression for Carrier Concentration (\( n \))</span>
+        Substituting the value of \( E_F \) back into equation (1), we get:
+        <div class="result-box">
+          $$ n = (2N_d)^{1/2} \left( \frac{2\pi m_e^* kT}{h^2} \right)^{3/4} e^{-\Delta E / 2kT} $$
+        </div>
+        Where \( \Delta E = E_c - E_d \) (Ionization energy of donor).
+      </div>
+
+      <h4>(B) Carrier Concentration in P-Type Semiconductor</h4>
+
+      
+
+<img src="ptype.png">
+
+
+      <div class="step">
+        <span class="step-title">Step 1: Hole Density in Valence Band</span>
+        The density of holes (\( p \)) in the valence band is given by:
+        $$ p = 2 \left( \frac{2\pi m_h^* kT}{h^2} \right)^{3/2} e^{(E_v - E_F)/kT} \quad \dots(1) $$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 2: Density of Ionized Acceptors</span>
+        In P-type, the density of ionized acceptors (\( N_a^- \)) is:
+        $$ N_a^- \approx N_a e^{(E_F - E_a)/kT} \quad \dots(2) $$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 3: Equilibrium Condition</span>
+        At equilibrium, hole density equals ionized acceptor density:
+        $$ 2 \left( \frac{2\pi m_h^* kT}{h^2} \right)^{3/2} e^{(E_v - E_F)/kT} = N_a e^{(E_F - E_a)/kT} $$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 4: Solving for Fermi Level (\( E_F \))</span>
+        Taking logarithms and solving for \( E_F \):
+        $$ E_F = \frac{E_v + E_a}{2} - \frac{kT}{2} \ln \left[ \frac{N_a}{2 (2\pi m_h^* kT / h^2)^{3/2}} \right] $$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 5: Final Expression for Carrier Concentration (\( p \))</span>
+        Substituting \( E_F \) back into equation (1):
+        <div class="result-box">
+          $$ p = (2N_a)^{1/2} \left( \frac{2\pi m_h^* kT}{h^2} \right)^{3/4} e^{-\Delta E / 2kT} $$
+        </div>
+        Where \( \Delta E = E_a - E_v \) (Ionization energy of acceptor).
+      </div>
+
+      <h4>(C) Variation of Fermi Level with Temperature</h4>
+      
+      <div class="step">
+        <strong>1. In N-Type Semiconductor:</strong>
+        <ul>
+          <li>At \( T = 0 \) K, the Fermi level lies exactly at the middle of the donor level (\( E_d \)) and the bottom of the conduction band (\( E_c \)):
+            $$ E_F = \frac{E_d + E_c}{2} $$
+          </li>
+          <li>As temperature increases, the Fermi level <strong>decreases</strong> and moves towards the intrinsic Fermi level.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <strong>2. In P-Type Semiconductor:</strong>
+        <ul>
+          <li>At \( T = 0 \) K, the Fermi level lies exactly at the middle of the acceptor level (\( E_a \)) and the top of the valence band (\( E_v \)):
+            $$ E_F = \frac{E_a + E_v}{2} $$
+          </li>
+          <li>As temperature increases, the Fermi level <strong>increases</strong> and moves towards the intrinsic Fermi level.</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="question-box">
+  <h3>3. Describe the construction and working principle of Schottky diode. Give its advantages, disadvantages and applications.</h3>
+
+  <h4>1. Construction</h4>
+  <div class="step">
+    <p>A Schottky diode is formed by a junction between a metal and a semiconductor. The specific conditions for its construction are:</p>
+    <ul>
+      <li><strong>Materials:</strong> It is formed when a metal with a high work function is brought into contact with an n-type semiconductor with a lower work function.</li>
+      <li><strong>Schottky Junction:</strong> The junction formed is called a Schottky junction.</li>
+      <li><strong>Terminals:</strong> The metal region acts as the anode, and the n-region acts as the cathode.</li>
+    </ul>
+    <p>It is a unilateral device, meaning current flows only in one direction (from metal to semiconductor).</p>
+  </div>
+  <h4>2. Working Principle</h4>
+
+  <div class="step">
+    <span class="step-title">At Equilibrium (No Bias)</span>
+    <p>When the metal and n-type semiconductor are brought into contact:</p>
+    <ul>
+      <li><strong>Fermi Level Alignment:</strong> The Fermi levels of the metal and semiconductor line up.</li>
+      <li><strong>Electron Transfer:</strong> Since the semiconductor has a lower work function, electrons from the conduction band of the semiconductor move to the empty energy states in the metal.</li>
+      <li><strong>Potential Barrier:</strong> This transfer leaves a positive charge on the semiconductor side and a negative charge on the metal side, creating a contact potential (barrier).</li>
+      <li><strong>Band Bending:</strong> The energy bands in the semiconductor bend upward in the direction of the electric field within the depletion region.</li>
+    </ul>
+  </div>
+  <div class="step">
+    <span class="step-title">Forward Bias</span>
+    <ul>
+      <li><strong>Connection:</strong> The metal is connected to the positive terminal and the n-type semiconductor to the negative terminal.</li>
+      <li><strong>Operation:</strong> The applied external potential opposes the in-built potential. This lowers the barrier for electrons.</li>
+      <li><strong>Current Flow:</strong> Electrons are injected from the external circuit into the n-type semiconductor and cross into the metal. This results in a large current flow that increases exponentially with the applied voltage.</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <span class="step-title">Reverse Bias</span>
+    <ul>
+      <li><strong>Connection:</strong> The metal is connected to the negative terminal and the n-type semiconductor to the positive terminal.</li>
+      <li><strong>Operation:</strong> The external potential acts in the same direction as the junction potential.</li>
+      <li><strong>Depletion Region:</strong> This increases the width of the depletion region.</li>
+      <li><strong>Result:</strong> There is no flow of electrons from the semiconductor to the metal (only a very small current exists). Thus, the diode acts as a rectifier.</li>
+    </ul>
+  </div>
+  <h4>3. Advantages</h4>
+  <div class="step">
+    <ul>
+      <li><strong>Low Capacitance:</strong> Stored charges or the depletion region is negligible, leading to very low capacitance.</li>
+      <li><strong>Fast Switching:</strong> Due to the negligible depletion region, the diode can immediately switch from the ON state to the OFF state.</li>
+      <li><strong>High Efficiency:</strong> A small voltage is sufficient to produce a large current.</li>
+      <li><strong>High Frequency Operation:</strong> It can operate at very high frequencies.</li>
+      <li><strong>Low Noise:</strong> The device produces less noise compared to conventional PN junction diodes.</li>
+    </ul>
+  </div>
+
+  <h4>4. Applications</h4>
+  <div class="step">
+    <ul>
+      <li><strong>Rectification:</strong> Used for rectification of signals at frequencies exceeding 300 MHz.</li>
+      <li><strong>Switching:</strong> Used as a switching device at frequencies up to 20 GHz.</li>
+      <li><strong>Communication:</strong> Used in sensitive communication receivers like radars due to its low noise figure.</li>
+      <li><strong>Radio Frequency:</strong> Used in RF applications.</li>
+      <li><strong>Logic Circuits:</strong> Widely used in computer logic circuits and integrated circuits (ICs).</li>
+      <li><strong>Power Supplies:</strong> Used in power supply circuits.</li>
+      <li><strong>Signal Processing:</strong> Used in clipping and clamping circuits.</li>
+    </ul>
+  </div>
+
+</div>
+<div class="question-box">
+      <h3>4. What is Hall Effect? Derive an expression for the Hall Voltage. Explain an experimental method used to measure the Hall Coefficient. What are the uses of Hall effect?</h3>
+
+      <h4>1. Hall Effect</h4>
+      <p><strong>Definition:</strong> When a conductor (metal or semiconductor) carrying a current (\( I \)) is placed in a perpendicular magnetic field (\( B \)), a potential difference (electric field) is produced inside the conductor in a direction normal to the directions of both the current and the magnetic field.</p>
+      <p>This generated voltage is called the <strong>Hall Voltage</strong>.</p>
+
+      <h4>2. Derivation of Hall Voltage and Hall Coefficient</h4>
+      
+      <div class="step">
+        <span class="step-title">Step 1: Force Equilibrium</span>
+        Consider an n-type semiconductor slab where current flows in the X-direction and a magnetic field is applied in the Z-direction. Electrons moving with velocity \( v \) experience a downward magnetic force \( Bev \).
+        <br>
+        This accumulation of electrons creates a vertical electric field \( E_H \) (Hall Field). At equilibrium, the upward electric force balances the downward magnetic force:
+        $$ eE_H = Bev $$
+        $$ E_H = Bv \quad \dots(1) $$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 2: Relation with Current Density</span>
+        The current density \( J_x \) is given by \( J_x = nev \), where \( n \) is the electron concentration.
+        $$ v = \frac{J_x}{ne} $$
+        Substituting this into equation (1):
+        $$ E_H = B \left( \frac{J_x}{ne} \right) \quad \dots(2) $$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 3: Hall Coefficient (\( R_H \))</span>
+        The Hall Coefficient is defined as \( R_H = \frac{1}{ne} \) (or \( -\frac{1}{ne} \) for electrons).
+        Equation (2) becomes:
+        $$ E_H = R_H J_x B \quad \dots(3) $$
+      </div>
+
+      <div class="step">
+        <span class="step-title">Step 4: Hall Voltage Expression</span>
+        If \( t \) is the thickness and \( b \) is the breadth, the Hall Voltage \( V_H \) relates to the field by \( V_H = E_H t \).
+        <br>
+        The current density is \( J_x = \frac{I_x}{bt} \).
+        Substituting these into equation (3):
+        $$ \frac{V_H}{t} = R_H \left( \frac{I_x}{bt} \right) B $$
+        $$ V_H = R_H \frac{I_x B}{b} $$
+        Rearranging for Hall Coefficient:
+        <div class="result-box">
+          $$ R_H = \frac{V_H b}{I_x B} $$
+        </div>
+      </div>
+
+      <h4>3. Experimental Method to Measure Hall Coefficient</h4>
+      
+      <div class="step">
+        <span class="step-title">Setup</span>
+        <ul>
+          <li>A semiconductor material is taken in the form of a rectangular slab of thickness \( t \) and breadth \( b \).</li>
+          <li>A current \( I_x \) is passed through the sample along the X-axis using a battery.</li>
+          <li>The sample is placed between the poles of an electromagnet so the magnetic field \( B \) is applied along the Z-axis (perpendicular to the plane).</li>
+          <li>Two probes are fixed at the centers of the bottom and top faces to measure the Hall Voltage \( V_H \) developed along the Y-axis.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">Procedure</span>
+        By measuring the Hall voltage \( V_H \) for known values of current \( I_x \), magnetic field \( B \), and breadth \( b \), the Hall Coefficient is calculated using the formula:
+        $$ R_H = \frac{V_H b}{I_x B} $$
+      </div>
+
+      <h4>4. Uses of Hall Effect</h4>
+      
+      <div class="step">
+        <ul>
+          <li><strong>Determination of Semiconductor Type:</strong> The sign of the Hall coefficient indicates whether the semiconductor is n-type (negative) or p-type (positive).</li>
+          <li><strong>Calculation of Carrier Concentration:</strong> The density of charge carriers can be found using \( n = \frac{1}{e R_H} \).</li>
+          <li><strong>Determination of Mobility:</strong> Mobility can be calculated using electrical conductivity (\( \sigma \)) as \( \mu = \sigma R_H \).</li>
+          <li><strong>Magnetic Field Meter (Gauss Meter):</strong> Since \( V_H \propto B \), the Hall voltage can measure unknown magnetic fields.</li>
+          <li><strong>Hall Effect Multiplier:</strong> It can output a signal proportional to the product of two inputs (Current \( I \) and Field \( B \)).</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="question-box">
+      <h3>5.(i): Draw the band diagram for an ohmic contact and explain its principle, theory, V-I characteristics of ohmic contact.(10)</h3>
+
+      <h4>1. Principle</h4>
+      <p>An <strong>Ohmic contact</strong> is a non-rectifying contact which obeys Ohm's Law (\( V=IR \)). The resistance of the Ohmic contact should always be low (i.e., conductivity should be large). Current is conducted equally in both directions with very little voltage drop across the junction.</p>
+
+      <h4>2. Theory</h4>
+      <p>An Ohmic junction is formed when an n-type semiconductor has a <strong>higher work function</strong> than the metal (\( \phi_{semi} > \phi_{metal} \)).</p>
+      
+      <div class="step">
+        <span class="step-title">Before Contact</span>
+        The Fermi level of the metal (\( E_{Fm} \)) and the semiconductor (\( E_{Fn} \)) are at different positions. Since the work function of the metal is lower, its Fermi level is higher than that of the semiconductor.
+      </div>
+
+      <div class="step">
+        <span class="step-title">At Equilibrium (After Contact)</span>
+        <p>Electrons move from the metal (higher energy) to the empty states in the conduction band of the semiconductor. This flow continues until the Fermi levels align.</p>
+        <p>This creates an <strong>Accumulation Region</strong> of electrons near the interface on the semiconductor side. Unlike a depletion region, this accumulation of charge carriers facilitates easy conduction.</p>
+      </div>
+
+      <h4>3. Band Diagram</h4>
+      <div class="diagram-desc">
+        <img src="BEFOREAFTER.png">
+        <strong>(a) Before Contact:</strong> Show Metal on left, Semiconductor on right. Metal Fermi level is higher than Semiconductor Fermi level.<br>
+        <strong>(b) After Contact:</strong> The bands in the semiconductor bend <em>downwards</em> towards the interface. Electrons accumulate in the conduction band dip near the junction. This region is labeled "Accumulation region".
+      </div>
+
+      <h4>4. V-I Characteristics</h4>
+      <p>Since there is no potential barrier to block the flow of electrons in either direction (due to the accumulation of carriers), the junction behaves like a resistor.</p>
+      <ul>
+        <li>The V-I characteristic is <strong>Linear</strong>.</li>
+        <li>It passes through the origin.</li>
+        <li>The slope represents the conductance of the contact.</li>
+        <li>It follows Ohm's law: \( I \propto V \).</li>
+      </ul>
+
+      <hr>
+
+      <h3>(ii): The Hall coefficient of certain silicon specimen was found to be 7.35*10-5m3C-1 from 100 to 400K. Determine the nature of the semiconductor. If the conductivity was found to be Ω-1 m-1, Calculate the density and mobility of the charge carrier.(6)</h3>
+      
+      <div class="step">
+        <strong>Given Data:</strong>
+        <ul>
+          <li>Hall Coefficient (\( R_H \)) = \( 7.35 \times 10^{-5} \, m^3C^{-1} \) (Taken as negative for n-type calculation based on PDF solution context).</li>
+          <li>Temperature Range = 100 to 400 K.</li>
+          <li>Conductivity (\( \sigma \)) = \( 200 \, \Omega^{-1}m^{-1} \) (Value taken from PDF Problem 6).</li>
+          <li>Charge of electron (\( e \)) = \( 1.6 \times 10^{-19} \, C \).</li>
+        </ul>
+      </div>
+
+      <h4>1. Nature of the Semiconductor</h4>
+      <div class="step">
+        Since the Hall coefficient is typically negative for electrons and the problem context in the PDF identifies it as such:
+        <br>
+        <strong>The semiconductor is an 'n-type' semiconductor</strong>.
+      </div>
+
+      <h4>2. Density of Charge Carriers (\( n_e \))</h4>
+      <div class="step">
+        The formula for carrier concentration is:
+        $$ n_e = \frac{1}{e R_H} $$
+        $$ n_e = \frac{1}{1.6 \times 10^{-19} \times 7.35 \times 10^{-5}} $$
+        <div class="result-box">
+          \( n_e = 8.503 \times 10^{22} / m^3 \)
+        </div>
+      </div>
+
+      <h4>3. Mobility of Charge Carriers (\( \mu_e \))</h4>
+      <div class="step">
+        The formula for mobility is:
+        $$ \mu_e = \frac{\sigma}{n_e e} $$
+        $$ \mu_e = \frac{200}{8.503 \times 10^{22} \times 1.6 \times 10^{-19}} $$
+        <div class="result-box">
+          \( \mu_e = 0.0147 \, m^2 V^{-1} s^{-1} \)
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

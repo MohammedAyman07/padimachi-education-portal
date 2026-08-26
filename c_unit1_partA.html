@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1 (Part A) - C Basics </title>
+  <link rel="stylesheet" href="style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <script src="protection.js" defer></script>
+  <style>
+    /* Styles for the notes content */
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol, .qa-item table {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .qa-item p strong {
+      color: #222;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+      margin-top: 10px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    .notes-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 15px auto;
+      border: 1px solid #ddd;
+      display: block;
+    }
+    .code-block {
+      background: #2d2d2d;
+      color: #f1f1f1;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      white-space: pre;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    .styled-table th, .styled-table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    .styled-table th {
+      background-color: #f3f4f6;
+      color: #1e3a8a;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>💻 Unit 1 – Part A (2-Mark Q&A)</h1>
+      <p>C Programming </p>
+      <a href="c_unit1.html" class="cta-btn">⬅ Back to Unit 1</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part A: 2-Mark Questions</h2>
+
+    <div class="qa-item">
+      <h3>1. Define structured programming</h3>
+      <p>C is a structured programming language because it provides functions that enable us to break the code into small, manageable parts. This makes C programs easier to understand and modify. Functions also offer code reusability.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>2. What is the purpose of a flowchart in problem-solving?</h3>
+      <p>A flowchart is used in problem-solving to represent the logical sequence of steps in a program using standard symbols. This visual representation makes the program's logic easier to understand, analyze, and debug.</p>
+      <img src="c_for_loop_flowchart.png" alt="For Loop Flowchart" class="notes-image" style="max-width: 400px;">
+    </div>
+
+    <div class="qa-item">
+      <h3>3. Write pseudo code to find the sum of n numbers</h3>
+      <ol>
+        <li>Start</li>
+        <li>Read <i>n</i></li>
+        <li>Initialize <i>sum</i> = 0, <i>i</i> = 1</li>
+        <li>Repeat steps 5 and 6 while <i>i</i> &le; <i>n</i></li>
+        <li>Read <i>number</i></li>
+        <li><i>sum</i> = <i>sum</i> + <i>number</i></li>
+        <li><i>i</i> = <i>i</i> + 1</li>
+        <li>Print <i>sum</i></li>
+        <li>Stop</li>
+      </ol>
+    </div>
+
+    <div class="qa-item">
+      <h3>4. Differentiate break and continue statements in C.</h3>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Break Statement</th>
+            <th>Continue Statement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Used to terminate the loop or switch statement immediately.</td>
+            <td>Used to skip the current iteration and continue with the next iteration of the loop.</td>
+          </tr>
+          <tr>
+            <td>Control transfers to the first statement after the loop/switch.</td>
+            <td>Control transfers back to the loop condition for re-evaluation.</td>
+          </tr>
+          <tr>
+            <td>Example: Exits the loop when a certain condition is met.</td>
+            <td>Example: Skips printing a value and goes to the next loop cycle.</td>
+          </tr>
+          <tr>
+            <td>Commonly used in switch and loops.</td>
+            <td>Only used in loops.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="qa-item">
+      <h3>5. Draw the structure of C program</h3>
+      <img src="c_program_structure.png" alt="Structure of a C Program" class="notes-image" style="max-width: 400px;">
+      
+      <p>The main parts of a C program are:</p>
+      <ul>
+        <li><strong>Documentation Section:</strong> Comments about the program, author, etc.</li>
+        <li><strong>Preprocessor Section:</strong> Header files like <code>#include &lt;stdio.h&gt;</code>.</li>
+        <li><strong>Global Declaration Section:</strong> Global variables and function prototypes.</li>
+        <li><strong>main() Function Section:</strong> The entry point of the program where execution starts.</li>
+        <li><strong>Subprograms / Functions:</strong> User-defined functions that perform specific tasks.</li>
+      </ul>
+
+      <p><strong>Code Example:</strong></p>
+<pre class="code-block"><code>#include &lt;stdio.h&gt; // Preprocessor Directive
+
+int main()         // Main Function
+{
+    // Declarations & Statements
+    printf("Hello, World!\n"); // Example statement
+    
+    // Return Statement
+    return 0;
+}</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>6. What is the purpose of format specifier I/O statements?</h3>
+      <p>The purpose of format specifiers is to tell the compiler what type of data is being read from the user (in <code>scanf()</code>) or printed to the screen (in <code>printf()</code>).</p>
+      <ul>
+        <li><code>%d</code> &rarr; integer</li>
+        <li><code>%f</code> &rarr; float</li>
+        <li><code>%c</code> &rarr; character</li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>7. Define programming Paradigm.</h3>
+      <p>A programming paradigm is the fundamental style of computer programming. It determines how problems are solved and how solutions are represented in code.</p>
+      <p><strong>Types:</strong></p>
+      <ol>
+        <li>Imperative / Procedural Programming (like C)</li>
+        <li>Object-Oriented Programming (OOP)</li>
+        <li>Functional Programming</li>
+        <li>Logical Programming</li>
+      </ol>
+    </div>
+
+    <div class="qa-item">
+      <h3>8. What are keywords? Give an example.</h3>
+      <p>Keywords are reserved words in C that have a predefined meaning and purpose. They cannot be used as identifiers (like variable or function names) because they are part of the C language syntax.</p>
+      <p><strong>Example:</strong> <code>int</code>, <code>float</code>, <code>if</code>, <code>while</code>, <code>return</code></p>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  
+ 
+
+</body>
+</html>

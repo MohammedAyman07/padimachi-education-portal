@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1 (Part C) - C Operators </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    /* Styles for the notes content */
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+    .qa-item h4 {
+      color: #1e3a8a;
+      font-size: 1.1rem;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    .code-block {
+      background: #2d2d2d;
+      color: #f1f1f1;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+    /* Simple table style */
+    .notes-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    .notes-table th, .notes-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    .notes-table th {
+      background-color: #f3f4f6;
+      color: #1e3a8a;
+    }
+    .notes-table td code {
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>💻 Unit 1 – Part C</h1>
+      <p>C Programming </p>
+      <a href="c_unit1.html" class="cta-btn">⬅ Back to Unit 1</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part C: Additional Questions</h2>
+
+    <div class="qa-item">
+      <h3>1. Explain the different types of operators with a suitable program.</h3>
+      
+      <p>Operators are symbols that perform operations on variables and values. C supports different types of operators, grouped as follows:</p>
+
+      <h4>1. Arithmetic Operators</h4>
+      <p>Used for mathematical operations.</p>
+      <table class="notes-table">
+        <tr><th>Operator</th><th>Meaning</th></tr>
+        <tr><td><code>+</code></td><td>Addition</td></tr>
+        <tr><td><code>-</code></td><td>Subtraction</td></tr>
+        <tr><td><code>*</code></td><td>Multiplication</td></tr>
+        <tr><td><code>/</code></td><td>Division</td></tr>
+        <tr><td><code>%</code></td><td>Modulus</td></tr>
+      </table>
+      
+      <strong>Example:</strong>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+int main() {
+    int a = 10, b = 3;
+    
+    printf("a + b = %d\n", a + b);
+    printf("a - b = %d\n", a - b);
+    printf("a * b = %d\n", a * b);
+    printf("a / b = %d\n", a / b);
+    printf("a %% b = %d\n", a % b);
+    
+    return 0;
+}</code></pre>
+      <strong>Output:</strong>
+<pre class="code-block">a + b = 13
+a - b = 7
+a * b = 30
+a / b = 3
+a % b = 1
+</pre>
+
+      <h4>2. Relational Operators</h4>
+      <p>Used to compare values. They return 1 (true) or 0 (false).</p>
+      <table class="notes-table">
+        <tr><th>Operator</th><th>Meaning</th></tr>
+        <tr><td><code>==</code></td><td>Equal to</td></tr>
+        <tr><td><code>!=</code></td><td>Not equal to</td></tr>
+        <tr><td><code>&gt;</code></td><td>Greater than</td></tr>
+        <tr><td><code>&lt;</code></td><td>Less than</td></tr>
+        <tr><td><code>&gt;=</code></td><td>Greater than or equal to</td></tr>
+        <tr><td><code>&lt;=</code></td><td>Less than or equal to</td></tr>
+      </table>
+
+      <strong>Example:</strong>
+<pre class="code-block"><code>int x = 5, y = 10;
+printf("%d\n", x > y); // 0 (false)
+printf("%d\n", x < y); // 1 (true)
+</code></pre>
+
+      <h4>3. Logical Operators</h4>
+      <p>Used for logical conditions.</p>
+      <table class="notes-table">
+        <tr><th>Operator</th><th>Meaning</th></tr>
+        <tr><td><code>&&</code></td><td>Logical AND</td></tr>
+        <tr><td><code>||</code></td><td>Logical OR</td></tr>
+        <tr><td><code>!</code></td><td>Logical NOT</td></tr>
+      </table>
+
+      <strong>Example:</strong>
+<pre class="code-block"><code>int a = 5, b = 10;
+printf("%d\n", (a > 0 && b > 0)); // 1 (true)
+printf("%d\n", (a > 0 || b < 0)); // 1 (true)
+printf("%d\n", !(a > 0)); // 0 (false)
+</code></pre>
+
+      <h4>4. Assignment Operators</h4>
+      <p>Used to assign values.</p>
+      <table class="notes-table">
+        <tr><th>Operator</th><th>Example</th><th>Equivalent</th></tr>
+        <tr><td><code>=</code></td><td><code>a = 10</code></td><td><code>a = 10</code></td></tr>
+        <tr><td><code>+=</code></td><td><code>a += 5</code></td><td><code>a = a + 5</code></td></tr>
+        <tr><td><code>-=</code></td><td><code>a -= 5</code></td><td><code>a = a - 5</code></td></tr>
+        <tr><td><code>*=</code></td><td><code>a *= 5</code></td><td><code>a = a * 5</code></td></tr>
+        <tr><td><code>/=</code></td><td><code>a /= 5</code></td><td><code>a = a / 5</code></td></tr>
+        <tr><td><code>%=</code></td><td><code>a %= 5</code></td><td><code>a = a % 5</code></td></tr>
+      </table>
+
+      <h4>5. Increment and Decrement Operators</h4>
+      <p>Used to increment or decrement a value by 1.</p>
+      <table class="notes-table">
+        <tr><th>Operator</th><th>Meaning</th></tr>
+        <tr><td><code>++</code></td><td>Increments by 1</td></tr>
+        <tr><td><code>--</code></td><td>Decrements by 1</td></tr>
+      </table>
+      
+      <strong>Example:</strong>
+<pre class="code-block"><code>int a = 5;
+printf("%d\n", a++); // 5 (post-increment, a becomes 6)
+printf("%d\n", ++a); // 7 (pre-increment, a becomes 7)
+</code></pre>
+
+      <h4>6. Conditional (Ternary) Operator</h4>
+      <p>Used as a shorthand for if-else.</p>
+      <strong>Syntax:</strong>
+<pre class="code-block"><code>condition ? expr1 : expr2;</code></pre>
+      
+      <strong>Example:</strong>
+<pre class="code-block"><code>int a = 10, b = 20;
+int largest = (a > b) ? a : b;
+printf("Largest = %d", largest);
+</code></pre>
+      <strong>Output:</strong>
+<pre class="code-block">Largest = 20</pre>
+
+      <h4>7. Bitwise Operators</h4>
+      <p>Work at the bit level.</p>
+      <table class="notes-table">
+        <tr><th>Operator</th><th>Meaning</th></tr>
+        <tr><td><code>&</code></td><td>Bitwise AND</td></tr>
+        <tr><td><code>|</code></td><td>Bitwise OR</td></tr>
+        <tr><td><code>^</code></td><td>Bitwise XOR</td></tr>
+        <tr><td><code>~</code></td><td>Bitwise NOT (Complement)</td></tr>
+        <tr><td><code>&lt;&lt;</code></td><td>Left shift</td></tr>
+        <tr><td><code>&gt;&gt;</code></td><td>Right shift</td></tr>
+      </table>
+
+      <h4>Example Program (Demonstrating Multiple Operators)</h4>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 10, b = 20;
+
+    // Arithmetic
+    printf("a + b = %d\n", a + b);
+
+    // Relational
+    printf("a > b = %d\n", a > b); // 0 (false)
+
+    // Logical
+    printf("(a > 0 && b > 0) = %d\n", (a > 0 && b > 0)); // 1 (true)
+
+    // Assignment
+    a += 5; // a is now 15
+    printf("a after += 5: %d\n", a);
+
+    // Conditional
+    int max = (a > b) ? a : b; // a is 15, b is 20
+    printf("Largest = %d\n", max); // max will be 20
+
+    return 0;
+}</code></pre>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  
+
+ 
+
+</body>
+</html>

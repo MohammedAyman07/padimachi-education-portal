@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unit 4 (Part A) - Programming in C </title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+
+  <!-- Internal CSS (move to style.css if you like) -->
+  <style>
+    :root{
+      --bg:#f3f6fa; --card:#fff; --ink:#222; --sub:#333;
+      --brand:#1e3a8a; --accent:#2563eb; --accent2:#1d4ed8; --line:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Poppins",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    header.hero{position:relative;text-align:center;background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;padding:56px 20px}
+    header.hero .cta-btn{display:inline-block;margin-top:16px;padding:10px 18px;color:#fff;background:var(--accent);border-radius:10px;text-decoration:none;font-weight:600}
+    header.hero .cta-btn:hover{background:var(--accent2)}
+    .ads{text-align:center;margin:24px 0}
+    .ad-box{border:2px dashed #cbd5e1;padding:14px 16px;border-radius:12px;background:#fff;color:#475569}
+
+    .notes-content{max-width:900px;margin:34px auto;background:var(--card);border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.08);padding:28px}
+    .notes-content h2{color:var(--brand);margin-bottom:20px;border-left:6px solid var(--accent);padding-left:12px;font-size:1.5rem}
+    .qa-item{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:18px}
+    .qa-item:last-child{border-bottom:none;margin-bottom:0}
+    .qa-item h3{color:var(--accent2);font-size:1.08rem;margin:0 0 10px}
+    .qa-item p,.qa-item ul,.qa-item ol{color:var(--sub);font-size:1rem;line-height:1.7;margin:0 0 10px}
+    .qa-item ul,.qa-item ol{padding-left:22px}
+    .qa-item li{margin:6px 0}
+
+    code,pre{font-family:ui-monospace,Menlo,Consolas,monospace;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px}
+    code{padding:2px 6px}
+    pre{padding:10px;overflow:auto}
+    table{width:100%;border-collapse:collapse;margin-top:6px}
+    th,td{border:1px solid #cbd5e1;padding:8px;text-align:center}
+    th{background:#eff6ff;color:var(--accent2)}
+    .tip{background:#ecfeff;border:1px solid #a5f3fc;color:#0e7490;border-radius:10px;padding:8px 10px}
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>💻 Unit 4 – Part A (2-Mark Q&A)</h1>
+      <p>Programming in C </p>
+      <a href="c_unit4.html" class="cta-btn">⬅ Back to Unit 4</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part A: Structures and Unions</h2>
+
+    <div class="qa-item">
+      <h3>25) What is a self-referential structure?</h3>
+      <p>A structure that contains a <strong>pointer to its own type</strong>. It enables linked data structures (lists, trees, graphs).</p>
+      <pre><code>typedef struct Node{
+    int data;
+    struct Node *next;   // self-reference
+} Node;</code></pre>
+      <p class="tip">Without a pointer member, you can’t chain nodes together for dynamic collections.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>26) Compare a structure with a union.</h3>
+      <table>
+        <tr><th>Aspect</th><th>Structure</th><th>Union</th></tr>
+        <tr><td>Memory</td><td>Sum of all members</td><td>Size of largest member (shared)</td></tr>
+        <tr><td>Active members</td><td>All members valid at once</td><td>Only the last written member is valid</td></tr>
+        <tr><td>Use-case</td><td>Records with many fields</td><td>Variant data / memory saving</td></tr>
+        <tr><td>Example</td><td>Student record</td><td>Token that may be int/float/char*</td></tr>
+      </table>
+      <pre><code>struct S{ int i; float f; };   // sizeof(S) ≈ 8
+union  U{ int i; float f; };   // sizeof(U) = 4 (on 32-bit)</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>27) Structure vs Union (extra points)</h3>
+      <ul>
+        <li><strong>Type-punning:</strong> Unions allow reading the same bytes as different types (use with care).</li>
+        <li><strong>Initialization:</strong> Struct: can init multiple fields; Union: only first field directly.</li>
+        <li><strong>Safety:</strong> Accessing a union member other than the last stored can be <em>undefined behavior</em>.</li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>28) What is <code>typedef struct</code> in C?</h3>
+      <p><code>typedef</code> creates an <strong>alias</strong> for a type. With <code>struct</code> it shortens declarations.</p>
+      <pre><code>typedef struct Student{
+    int id; char name[32];
+} Student;                // alias = Student
+
+Student s1;              // no need to write 'struct Student'</code></pre>
+      <p>Helps readability and portability (change once in typedef).</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>29) What is meant by structure? Give an example.</h3>
+      <p>A <strong>user-defined composite type</strong> grouping heterogeneous fields under one name.</p>
+      <pre><code>struct Point{ int x; int y; };
+struct Point p = {10, 20};
+printf("%d,%d", p.x, p.y);</code></pre>
+      <p>Used for records, coordinates, complex numbers, etc.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>30) Can C allocate memory dynamically? Justify.</h3>
+      <p>Yes. C provides <code>malloc</code>, <code>calloc</code>, <code>realloc</code>, and <code>free</code> in <code>&lt;stdlib.h&gt;</code> to manage <strong>heap</strong> memory at runtime.</p>
+      <pre><code>#include &lt;stdlib.h&gt;
+int *a = malloc(n * sizeof *a);
+if(!a){ /* handle failure */ }
+a = realloc(a, m * sizeof *a);
+free(a);</code></pre>
+      <p>Essential when data size is unknown until execution (e.g., reading a file, building lists).</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>31) List operations on structures.</h3>
+      <ul>
+        <li><strong>Member access:</strong> <code>.</code> for objects, <code>-&gt;</code> for pointers.</li>
+        <li><strong>Assignment / copy:</strong> whole-struct copy allowed if types match.</li>
+        <li><strong>Function interface:</strong> pass by value or by reference (pointer).</li>
+        <li><strong>Arrays / pointers of structs</strong> for collections and dynamic containers.</li>
+        <li><strong>Nested structs</strong> and <strong>bit-fields</strong> for packed flags.</li>
+      </ul>
+      <pre><code>struct Emp{int id; char name[16];};
+void printEmp(const struct Emp *e){ printf("%d %s", e->id, e->name); }</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>32) Interpret the term <em>union</em> in C.</h3>
+      <p>A <strong>union</strong> stores different types in the <strong>same memory location</strong>; only one member is meaningful at a time. Useful for <strong>variant records</strong>, protocol packets, or memory-constrained embedded code.</p>
+      <pre><code>union Token{
+    int    ival;
+    float  fval;
+    char  *sval;
+} t;
+t.fval = 3.14f;          // last written member = active</code></pre>
+      <p class="tip">Always track which member is active (e.g., with an enum tag).</p>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  
+
+</body>
+</html>

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 2 Part B Solutions</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f8f9fa;
+        color: #212529;
+    }
+    .container {
+        max-width: 900px;
+        margin: auto;
+        background: #ffffff;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 25px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .question-block {
+        margin-bottom: 35px;
+        border-bottom: 2px solid #e9ecef;
+        padding-bottom: 25px;
+    }
+    .question-block:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    h1 {
+        color: #0d6efd;
+        border-bottom: 3px solid #0d6efd;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    h2 {
+        color: #005a9c;
+        margin-bottom: 15px;
+    }
+    h3 {
+        color: #343a40;
+        margin-top: 20px;
+        border-bottom: 1px solid #ced4da;
+        padding-bottom: 5px;
+    }
+    p {
+        margin-bottom: 10px;
+    }
+    .solution {
+        padding: 15px;
+        background: #fdfdfd;
+        border-left: 4px solid #0d6efd;
+        margin-top: 15px;
+        border-radius: 0 4px 4px 0;
+    }
+    .final-answer {
+        font-weight: bold;
+        color: #198754;
+        background: #e6f7ec;
+        padding: 15px;
+        border-radius: 4px;
+        border: 1px solid #b6e9c9;
+        margin-top: 10px;
+    }
+    .step {
+        margin-bottom: 15px;
+    }
+    .step strong {
+        color: #005a9c;
+    }
+    .note {
+        font-size: 0.9em;
+        color: #6c757d;
+        font-style: italic;
+        background: #f8f9fa;
+        padding: 5px;
+        border-left: 3px solid #6c757d;
+    }
+    /* Scroll wrapper for long equations */
+    .math-scroll {
+        overflow-x: auto;
+        margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+    <h1>Unit 2: Part B Solutions (Matrices and Calculus)</h1>
+    
+    <div class="question-block">
+        <h2>Question 1</h2>
+        <p>(i) Sketch the graph of the function:
+           $$ f(x) = \begin{cases} 1+x, & x < -1 \\ x^2, & -1 \le x \le 1 \\ 2-x, & x \ge 1 \end{cases} $$
+           and use it to determine the values of "a" for which \( \lim_{x \to a} f(x) \) exists.
+        </p>
+        <p>(ii) Differentiate \( y = (2x+1)^5(x^3-x+1)^4 \).</p>
+        
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Part (i): Graph and Limits</strong><br>
+                <br>
+                1. <strong>Graph Sketch:</strong>
+                <ul>
+                    <li>For \( x < -1 \), the graph is the line \( y = 1+x \). This is a line ending at the point \((-1, 0)\) (an open circle).</li>
+                    <li>From \( x = -1 \) to \( x = 1 \), the graph is the parabola \( y = x^2 \). It starts at \((-1, 1)\) (a closed circle), passes through \((0, 0)\), and ends at \((1, 1)\) (a closed circle).</li>
+                    <li>For \( x \ge 1 \), the graph is the line \( y = 2-x \). This line starts at \((1, 1)\) (at the same point the parabola ended) and goes down with a slope of -1.</li>
+                </ul>
+                2. <strong>Limits:</strong> We only need to check the points where the function definition changes: \( a = -1 \) and \( a = 1 \).
+                <ul>
+                    <li><strong>At \( a = -1 \):</strong>
+                        <br>Left-hand limit: \( \lim_{x \to -1^-} f(x) = \lim_{x \to -1^-} (1+x) = 0 \)
+                        <br>Right-hand limit: \( \lim_{x \to -1^+} f(x) = \lim_{x \to -1^+} (x^2) = 1 \)
+                        <br>Since \( 0 \neq 1 \), the limit <strong>does not exist</strong> at \( a = -1 \).
+                    </li>
+                    <li><strong>At \( a = 1 \):</strong>
+                        <br>Left-hand limit: \( \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (x^2) = 1 \)
+                        <br>Right-hand limit: \( \lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (2-x) = 1 \)
+                        <br>Since the left and right limits are equal, the limit <strong>exists</strong> at \( a = 1 \).
+                    </li>
+                </ul>
+            </p>
+            <div class="final-answer">
+                <strong>(i)</strong> The limit \( \lim_{x \to a} f(x) \) <strong>exists for all real numbers 'a' except \( a = -1 \)</strong>.
+            </div>
+
+            <p class="step">
+                <strong>Part (ii): Differentiation</strong><br>
+                We use the Product Rule: \( \frac{d}{dx}(uv) = u'v + uv' \).
+                <ul>
+                    <li>Let \( u = (2x+1)^5 \). Then \( u' = 5(2x+1)^4 \cdot 2 = 10(2x+1)^4 \).</li>
+                    <li>Let \( v = (x^3-x+1)^4 \). Then \( v' = 4(x^3-x+1)^3 \cdot (3x^2-1) \).</li>
+                </ul>
+                <div class="math-scroll">
+                $$ \frac{dy}{dx} = [10(2x+1)^4] \cdot (x^3-x+1)^4 + (2x+1)^5 \cdot [4(x^3-x+1)^3(3x^2-1)] $$
+                </div>
+                Factor out the common terms: \( 2(2x+1)^4 \) and \( (x^3-x+1)^3 \).
+                $$ \frac{dy}{dx} = 2(2x+1)^4(x^3-x+1)^3 [ 5(x^3-x+1) + (2x+1) \cdot 2(3x^2-1) ] $$
+                Simplify the expression in the brackets:
+                $$ [ 5x^3 - 5x + 5 + (4x+2)(3x^2-1) ] $$
+                $$ [ 5x^3 - 5x + 5 + (12x^3 - 4x + 6x^2 - 2) ] $$
+                $$ [ 17x^3 + 6x^2 - 9x + 3 ] $$
+            </p>
+            <div class="final-answer">
+                <strong>(ii)</strong> \( \frac{dy}{dx} = 2(2x+1)^4(x^3-x+1)^3(17x^3 + 6x^2 - 9x + 3) \)
+            </div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 2</h2>
+        <p>(i) If \( x^2 + y^2 = 25 \), then find \( \frac{dy}{dx} \) and also find an equation of the tangent line to the curve at the point (3, 4).</p>
+        <p>(ii) If \( f(x) = xe^x \) then find \( f'(x) \). Also find the n-th derivative \( f^n(x) \).</p>
+        
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Part (i): Implicit Differentiation and Tangent Line</strong><br>
+                <br>
+                1. <strong>Find \( \frac{dy}{dx} \):</strong> Differentiate \( x^2 + y^2 = 25 \) with respect to \( x \).
+                    $$ 2x + 2y \frac{dy}{dx} = 0 $$
+                    $$ 2y \frac{dy}{dx} = -2x $$
+                    $$ \frac{dy}{dx} = \frac{-2x}{2y} = -\frac{x}{y} $$
+                <br>
+                2. <strong>Find Tangent Line at (3, 4):</strong>
+                    <br>First, find the slope (m) at (3, 4):
+                    $$ m = \frac{dy}{dx} \Big|_{(3,4)} = -\frac{3}{4} $$
+                    Using the point-slope form \( y - y_1 = m(x - x_1) \):
+                    $$ y - 4 = -\frac{3}{4}(x - 3) $$
+                    Multiply by 4:
+                    $$ 4(y - 4) = -3(x - 3) $$
+                    $$ 4y - 16 = -3x + 9 $$
+                    $$ 3x + 4y = 25 $$
+            </p>
+            <div class="final-answer">
+                <strong>(i)</strong> \( \frac{dy}{dx} = -\frac{x}{y} \). The tangent line at (3, 4) is <strong>\( 3x + 4y = 25 \)</strong>.
+            </div>
+
+            <p class="step">
+                <strong>Part (ii): n-th Derivative</strong><br>
+                We find the first few derivatives to identify a pattern.
+                <ul>
+                    <li>\( f(x) = xe^x \)</li>
+                    <li>\( f'(x) = (1)e^x + (x)e^x = e^x(1 + x) \)</li>
+                    <li>\( f''(x) = (e^x)(1+x) + (e^x)(1) = e^x(1 + x + 1) = e^x(2 + x) \)</li>
+                    <li>\( f'''(x) = (e^x)(2+x) + (e^x)(1) = e^x(2 + x + 1) = e^x(3 + x) \)</li>
+                </ul>
+                The pattern is clear: the n-th derivative adds n to x.
+            </p>
+            <div class="final-answer">
+                <strong>(ii)</strong> \( f'(x) = e^x(1+x) \). The n-th derivative is <strong>\( f^n(x) = e^x(n + x) \)</strong>.
+            </div>
+        </div>
+    </div>
+    
+    <div class="question-block">
+        <h2>Question 3</h2>
+        <p>(i) For what values of \( a \) and \( b \), is 
+           $$ f(x) = \begin{cases} ax-b, & x \le -1 \\ 4x^3-12x^2+1, & -1 < x < 1 \\ 3, & x \ge 1 \end{cases} $$
+           continuous at every \( x \)? 
+        </p>
+        <p>(ii) Find \( \frac{dy}{dx} \), if \( y = \frac{\sec x}{1 + \tan x} \).</p>
+        
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Part (i): Continuity</strong><br>
+                For \( f(x) \) to be continuous everywhere, it must be continuous at the "break" points \( x = -1 \) and \( x = 1 \).
+                <br>
+                1. <strong>Continuity at \( x = -1 \):</strong>
+                    $$ \lim_{x \to -1^-} f(x) = \lim_{x \to -1^-} (ax - b) = a(-1) - b = -a - b $$
+                    $$ \lim_{x \to -1^+} f(x) = \lim_{x \to -1^+} (4x^3 - 12x^2 + 1) = 4(-1)^3 - 12(-1)^2 + 1 = -4 - 12 + 1 = -15 $$
+                    For continuity, we must have: <strong>\( -a - b = -15 \)</strong> or <strong>\( a + b = 15 \)</strong>.
+                <br>
+                2. <strong>Continuity at \( x = 1 \):</strong>
+                    $$ \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (4x^3 - 12x^2 + 1) = 4(1)^3 - 12(1)^2 + 1 = 4 - 12 + 1 = -7 $$
+                    $$ \lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (3) = 3 $$
+                    The left-hand limit (-7) does not equal the right-hand limit (3).
+            </p>
+            <div class="final-answer">
+                <strong>(i)</strong> Since the limit at \( x = 1 \) does not exist (as \( -7 \neq 3 \)), it is impossible for the function to be continuous at \( x = 1 \). Therefore, there are <strong>no values</strong> of \( a \) and \( b \) that can make this function continuous at every \( x \).
+            </div>
+
+            <p class="step">
+                <strong>Part (ii): Differentiation</strong><br>
+                We use the Quotient Rule: \( \frac{d}{dx}\left(\frac{u}{v}\right) = \frac{u'v - uv'}{v^2} \).
+                <ul>
+                    <li>Let \( u = \sec x \). Then \( u' = \sec x \tan x \).</li>
+                    <li>Let \( v = 1 + \tan x \). Then \( v' = \sec^2 x \).</li>
+                </ul>
+                $$ \frac{dy}{dx} = \frac{(\sec x \tan x)(1 + \tan x) - (\sec x)(\sec^2 x)}{(1 + \tan x)^2} $$
+                Expand the numerator:
+                $$ \frac{\sec x \tan x + \sec x \tan^2 x - \sec^3 x}{(1 + \tan x)^2} $$
+                Factor out \( \sec x \) from the numerator:
+                $$ \frac{\sec x (\tan x + \tan^2 x - \sec^2 x)}{(1 + \tan x)^2} $$
+                Use the identity \( 1 + \tan^2 x = \sec^2 x \), which means \( \tan^2 x - \sec^2 x = -1 \).
+                $$ \frac{\sec x (\tan x - 1)}{(1 + \tan x)^2} $$
+            </p>
+            <div class="final-answer">
+                <strong>(ii)</strong> \( \frac{dy}{dx} = \frac{\sec x (\tan x - 1)}{(1 + \tan x)^2} \)
+            </div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 4</h2>
+        <p>(i) Find the absolute maximum and absolute minimum value of the function \( f(x) = 3x^4 \), on \( [-2, 3] \).</p>
+        <p>(ii) Evaluate (1) \( \frac{d}{dx}(3x^5 \log x) \) and (2) \( \frac{d}{dx}\left(\frac{x^3}{3x-2}\right) \).</p>
+        <p>(iii) Find \( \frac{dy}{dx} \), if \( y = (\sin x)^{\cos x} \).</p>
+        
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Part (i): Absolute Extrema</strong><br>
+                <br>
+                1. <strong>Find critical points:</strong> \( f'(x) = 12x^3 \).
+                    <br>Set \( f'(x) = 0 \implies 12x^3 = 0 \implies x = 0 \).
+                <br>
+                2. <strong>Test endpoints and critical points:</strong> We test the values \( x = -2 \), \( x = 3 \) (endpoints) and \( x = 0 \) (critical point) in the original function.
+                    <ul>
+                        <li>\( f(-2) = 3(-2)^4 = 3(16) = 48 \)</li>
+                        <li>\( f(0) = 3(0)^4 = 0 \)</li>
+                        <li>\( f(3) = 3(3)^4 = 3(81) = 243 \)</li>
+                    </ul>
+            </p>
+            <div class="final-answer">
+                <strong>(i)</strong> The <strong>Absolute Maximum is 243</strong> (at \( x = 3 \)). The <strong>Absolute Minimum is 0</strong> (at \( x = 0 \)).
+            </div>
+
+            <p class="step">
+                <strong>Part (ii-1): Derivative (Product Rule)</strong><br>
+                \( \frac{d}{dx}(3x^5 \ln x) \) &nbsp; <em>(Assuming log x is natural log, ln x)</em>
+                $$ = \left[\frac{d}{dx}(3x^5)\right] \cdot (\ln x) + (3x^5) \cdot \left[\frac{d}{dx}(\ln x)\right] $$
+                $$ = (15x^4)(\ln x) + (3x^5)\left(\frac{1}{x}\right) $$
+                $$ = 15x^4 \ln x + 3x^4 = 3x^4(5 \ln x + 1) $$
+            </p>
+            <p class="step">
+                <strong>Part (ii-2): Derivative (Quotient Rule)</strong><br>
+                \( \frac{d}{dx}\left( \frac{x^3}{3x-2} \right) \)
+                $$ = \frac{(3x^2)(3x-2) - (x^3)(3)}{(3x-2)^2} $$
+                $$ = \frac{9x^3 - 6x^2 - 3x^3}{(3x-2)^2} $$
+                $$ = \frac{6x^3 - 6x^2}{(3x-2)^2} = \frac{6x^2(x - 1)}{(3x - 2)^2} $$
+            </p>
+
+            <p class="step">
+                <strong>Part (iii): Logarithmic Differentiation</strong><br>
+                Given \( y = (\sin x)^{\cos x} \).
+                <br>1. Take the natural log of both sides:
+                $$ \ln y = \ln( (\sin x)^{\cos x} ) $$
+                $$ \ln y = (\cos x) \cdot \ln(\sin x) $$
+                2. Differentiate implicitly w.r.t. \( x \) (using Product Rule on the right):
+                $$ \frac{1}{y} \frac{dy}{dx} = \left[\frac{d}{dx}(\cos x)\right] \cdot \ln(\sin x) + (\cos x) \cdot \left[\frac{d}{dx}(\ln(\sin x))\right] $$
+                $$ \frac{1}{y} \frac{dy}{dx} = (-\sin x) \ln(\sin x) + (\cos x) \cdot \left(\frac{1}{\sin x}\right) \cdot (\cos x) $$
+                $$ \frac{1}{y} \frac{dy}{dx} = -\sin x \ln(\sin x) + \frac{\cos^2 x}{\sin x} $$
+                3. Solve for \( \frac{dy}{dx} \) by multiplying by \( y \):
+                $$ \frac{dy}{dx} = y \left[ -\sin x \ln(\sin x) + \frac{\cos^2 x}{\sin x} \right] $$
+                $$ \frac{dy}{dx} = (\sin x)^{\cos x} \left[ -\sin x \ln(\sin x) + \frac{\cos^2 x}{\sin x} \right] $$
+            </p>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 5</h2>
+        <p>(i) Find critical value of the function \( f(x) = \frac{x-1}{x^2-x+1} \).</p>
+        <p>(ii) Find \( \frac{dy}{dx} \), if \( y = \frac{\sec x}{1 + \tan x} \).</p>
+        
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Part (i): Critical Values</strong><br>
+                Critical values occur where \( f'(x) = 0 \) or \( f'(x) \) is undefined.
+                <br>1. Find \( f'(x) \) using the Quotient Rule:
+                $$ f'(x) = \frac{(1)(x^2-x+1) - (x-1)(2x-1)}{(x^2-x+1)^2} $$
+                Expand the numerator:
+                $$ f'(x) = \frac{(x^2-x+1) - (2x^2 - 3x + 1)}{(x^2-x+1)^2} $$
+                $$ f'(x) = \frac{x^2 - x + 1 - 2x^2 + 3x - 1}{(x^2-x+1)^2} $$
+                $$ f'(x) = \frac{-x^2 + 2x}{(x^2-x+1)^2} $$
+                2. Find where \( f'(x) = 0 \):
+                $$ -x^2 + 2x = 0 \implies -x(x - 2) = 0 $$
+                This gives <strong>\( x = 0 \)</strong> and <strong>\( x = 2 \)</strong>.
+                <br>3. Find where \( f'(x) \) is undefined:
+                <br>This occurs if the denominator is zero. \( x^2-x+1 = 0 \).
+                <br>Using the discriminant (\( b^2-4ac \)): \( (-1)^2 - 4(1)(1) = 1 - 4 = -3 \). Since it's negative, the denominator has no real roots and is never zero.
+            </p>
+            <div class="final-answer">
+                <strong>(i)</strong> The critical values are <strong>\( x = 0 \)</strong> and <strong>\( x = 2 \)</strong>.
+            </div>
+
+            <p class="step">
+                <strong>Part (ii): Differentiation</strong><br>
+                <p class="note">Note: This is identical to Question 3(ii).</p>
+                We use the Quotient Rule:
+                <ul>
+                    <li>\( u = \sec x, \quad u' = \sec x \tan x \)</li>
+                    <li>\( v = 1 + \tan x, \quad v' = \sec^2 x \)</li>
+                </ul>
+                $$ \frac{dy}{dx} = \frac{(\sec x \tan x)(1 + \tan x) - (\sec x)(\sec^2 x)}{(1 + \tan x)^2} $$
+                Factor out \( \sec x \) in the numerator:
+                $$ \frac{dy}{dx} = \frac{\sec x [\tan x(1 + \tan x) - \sec^2 x]}{(1 + \tan x)^2} $$
+                $$ \frac{dy}{dx} = \frac{\sec x [\tan x + \tan^2 x - \sec^2 x]}{(1 + \tan x)^2} $$
+                Using the identity \( \tan^2 x - \sec^2 x = -1 \):
+                $$ \frac{dy}{dx} = \frac{\sec x (\tan x - 1)}{(1 + \tan x)^2} $$
+            </p>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 6</h2>
+        <p>For \( f(x) = 2x^3 + 3x^2 - 36x \), find:
+            <br>(i) Critical points.
+            <br>(ii) On what interval is f increasing or decreasing?
+            <br>(iii) At what points if any, does f assume local maximum and minimum values?
+            <br>(iv) Find intervals of concavity and the inflection points.
+        </p>
+        <div class="solution">
+            <h3>Solution</h3>
+            <br>
+            <p>
+                $$ f(x) = 2x^3 + 3x^2 - 36x $$
+                $$ f'(x) = 6x^2 + 6x - 36 = 6(x^2 + x - 6) = 6(x+3)(x-2) $$
+                $$ f''(x) = 12x + 6 = 6(2x+1) $$
+            </p>
+            <p class="step">
+                <strong>(i) Critical points:</strong>
+                <br>Set \( f'(x) = 0 \implies 6(x+3)(x-2) = 0 \).
+                <br>The critical points are <strong>\( x = -3 \)</strong> and <strong>\( x = 2 \)</strong>.
+            </p>
+            <p class="step">
+                <strong>(ii) Increasing/Decreasing:</strong> We test intervals around the critical points.
+                <ul>
+                    <li>Interval \( (-\infty, -3) \): Let \( x = -4 \). \( f'(-4) = 6(-1)(-6) = (+) \) (Increasing)</li>
+                    <li>Interval \( (-3, 2) \): Let \( x = 0 \). \( f'(0) = 6(3)(-2) = (-) \) (Decreasing)</li>
+                    <li>Interval \( (2, \infty) \): Let \( x = 3 \). \( f'(3) = 6(6)(1) = (+) \) (Increasing)</li>
+                </ul>
+            </p>
+            <p class="step">
+                <strong>(iii) Local Max/Min:</strong>
+                <ul>
+                    <li>At \( x = -3 \), \( f(x) \) changes from Increasing to Decreasing &rarr; <strong>Local Maximum</strong>.
+                        <br>\( f(-3) = 2(-27) + 3(9) - 36(-3) = -54 + 27 + 108 = \mathbf{81} \).</li>
+                    <li>At \( x = 2 \), \( f(x) \) changes from Decreasing to Increasing &rarr; <strong>Local Minimum</strong>.
+                        <br>\( f(2) = 2(8) + 3(4) - 36(2) = 16 + 12 - 72 = \mathbf{-44} \).</li>
+                </ul>
+            </p>
+            <p class="step">
+                <strong>(iv) Concavity/Inflection Points:</strong>
+                <br>Set \( f''(x) = 0 \implies 12x + 6 = 0 \implies x = -1/2 \).
+                <ul>
+                    <li>Interval \( (-\infty, -1/2) \): Let \( x = -1 \). \( f''(-1) = 12(-1) + 6 = (-) \) (Concave Down)</li>
+                    <li>Interval \( (-1/2, \infty) \): Let \( x = 0 \). \( f''(0) = 12(0) + 6 = (+) \) (Concave Up)</li>
+                </ul>
+                The concavity changes at \( x = -1/2 \), so there is an inflection point.
+                <br>\( f(-1/2) = 2(-1/8) + 3(1/4) - 36(-1/2) = -1/4 + 3/4 + 18 = 1/2 + 18 = 18.5 \)
+            </p>
+            <div class="final-answer">
+                <strong>(i) Critical Points:</strong> \( x = -3, x = 2 \)
+                <br><strong>(ii) Increasing:</strong> \( (-\infty, -3) \cup (2, \infty) \). <strong>Decreasing:</strong> \( (-3, 2) \).
+                <br><strong>(iii) Local Max:</strong> 81 at \( x = -3 \). <strong>Local Min:</strong> -44 at \( x = 2 \).
+                <br><strong>(iv) Concave Up:</strong> \( (-1/2, \infty) \). <strong>Concave Down:</strong> \( (-\infty, -1/2) \).
+                <br><strong>Inflection Point:</strong> \( (-0.5, 18.5) \).
+            </div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 7</h2>
+        <p>For \( f(x) = 2 + 2x^2 - x^4 \), find:
+            <br>(i) Critical points.
+            <br>(ii) On what interval is f increasing or decreasing?
+            <br>(iii) At what points if any, does f assume local maximum and minimum values?
+            <br>(iv) Find the intervals of concavity and the inflection points.
+        </p>
+        <div class="solution">
+            <h3>Solution</h3>
+            <br>
+            <p>
+                $$ f(x) = 2 + 2x^2 - x^4 $$
+                $$ f'(x) = 4x - 4x^3 = 4x(1 - x^2) = 4x(1-x)(1+x) $$
+                $$ f''(x) = 4 - 12x^2 = 4(1 - 3x^2) $$
+            </p>
+            <p class="step">
+                <strong>(i) Critical points:</strong>
+                <br>Set \( f'(x) = 0 \implies 4x(1-x)(1+x) = 0 \).
+                <br>The critical points are <strong>\( x = 0 \)</strong>, <strong>\( x = 1 \)</strong>, and <strong>\( x = -1 \)</strong>.
+            </p>
+            <p class="step">
+                <strong>(ii) Increasing/Decreasing:</strong>
+                <ul>
+                    <li>Interval \( (-\infty, -1) \): Let \( x = -2 \). \( f'(-2) = 4(-2)(1-4) = (+) \) (Increasing)</li>
+                    <li>Interval \( (-1, 0) \): Let \( x = -0.5 \). \( f'(-0.5) = 4(-0.5)(1-0.25) = (-) \) (Decreasing)</li>
+                    <li>Interval \( (0, 1) \): Let \( x = 0.5 \). \( f'(0.5) = 4(0.5)(1-0.25) = (+) \) (Increasing)</li>
+                    <li>Interval \( (1, \infty) \): Let \( x = 2 \). \( f'(2) = 4(2)(1-4) = (-) \) (Decreasing)</li>
+                </ul>
+            </p>
+            <p class="step">
+                <strong>(iii) Local Max/Min:</strong>
+                <ul>
+                    <li>At \( x = -1 \), (Inc &rarr; Dec) &rarr; <strong>Local Maximum</strong>.
+                        <br>\( f(-1) = 2 + 2(-1)^2 - (-1)^4 = 2 + 2 - 1 = \mathbf{3} \).</li>
+                    <li>At \( x = 0 \), (Dec &rarr; Inc) &rarr; <strong>Local Minimum</strong>.
+                        <br>\( f(0) = 2 + 0 - 0 = \mathbf{2} \).</li>
+                    <li>At \( x = 1 \), (Inc &rarr; Dec) &rarr; <strong>Local Maximum</strong>.
+                        <br>\( f(1) = 2 + 2(1)^2 - (1)^4 = 2 + 2 - 1 = \mathbf{3} \).</li>
+                </ul>
+            </p>
+            <p class="step">
+                <strong>(iv) Concavity/Inflection Points:</strong>
+                <br>Set \( f''(x) = 0 \implies 4(1 - 3x^2) = 0 \implies x^2 = 1/3 \implies x = \pm 1/\sqrt{3} \).
+                <ul>
+                    <li>Interval \( (-\infty, -1/\sqrt{3}) \): Let \( x = -1 \). \( f''(-1) = 4 - 12(1) = (-) \) (Concave Down)</li>
+                    <li>Interval \( (-1/\sqrt{3}, 1/\sqrt{3}) \): Let \( x = 0 \). \( f''(0) = 4 - 0 = (+) \) (Concave Up)</li>
+                    <li>Interval \( (1/\sqrt{3}, \infty) \): Let \( x = 1 \). \( f''(1) = 4 - 12(1) = (-) \) (Concave Down)</li>
+                </ul>
+                The concavity changes at \( x = \pm 1/\sqrt{3} \).
+                <br>\( f(\pm 1/\sqrt{3}) = 2 + 2(1/3) - (1/3)^2 = 2 + 2/3 - 1/9 = 18/9 + 6/9 - 1/9 = 23/9 \).
+            </p>
+            <div class="final-answer">
+                <strong>(i) Critical Points:</strong> \( x = -1, 0, 1 \)
+                <br><strong>(ii) Increasing:</strong> \( (-\infty, -1) \cup (0, 1) \). <strong>Decreasing:</strong> \( (-1, 0) \cup (1, \infty) \).
+                <br><strong>(iii) Local Max:</strong> 3 at \( x = -1 \) and \( x = 1 \). <strong>Local Min:</strong> 2 at \( x = 0 \).
+                <br><strong>(iv) Concave Up:</strong> \( (-1/\sqrt{3}, 1/\sqrt{3}) \). <strong>Concave Down:</strong> \( (-\infty, -1/\sqrt{3}) \cup (1/\sqrt{3}, \infty) \).
+                <br><strong>Inflection Points:</strong> \( (-1/\sqrt{3}, 23/9) \) and \( (1/\sqrt{3}, 23/9) \).
+            </div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 8</h2>
+        <p>(i) Find the values of \( a \) and \( b \) that make \( f \) continuous on \( (-\infty, \infty) \) if:
+           $$ f(x) = \begin{cases} \frac{x^2-4}{x-2}, & x < 2 \\ ax^2-bx+3, & 2 \le x \le 3 \\ 2x-a+b, & x \ge 3 \end{cases} $$
+           <em>(Note: Corrected typo from \( (x^i-b_i)/(x-2) \) to \( (x^2-4)/(x-2) \))</em>
+        </p>
+        <p>(ii) Find \( \frac{dy}{dx} \) if \( y = x^2 e^{2x} (x^2+1)^4 \).</p>
+        
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Part (i): Continuity</strong><br>
+                <p class="note">Note: The term \( (x^i-b_i)/(x-2) \) is assumed to be the common limit problem \( (x^2-4)/(x-2) \), which means \( f(x) = x+2 \) for \( x < 2 \).</p>
+                
+                1. <strong>Continuity at \( x = 2 \):</strong>
+                    $$ \lim_{x \to 2^-} f(x) = \lim_{x \to 2^-} \frac{x^2-4}{x-2} = \lim_{x \to 2^-} (x+2) = 4 $$
+                    $$ \lim_{x \to 2^+} f(x) = f(2) = a(2)^2 - b(2) + 3 = 4a - 2b + 3 $$
+                    Equation 1: <strong>\( 4a - 2b + 3 = 4 \)</strong> &nbsp;&rarr;&nbsp; <strong>\( 4a - 2b = 1 \)</strong>
+                <br>
+                2. <strong>Continuity at \( x = 3 \):</strong>
+                    $$ \lim_{x \to 3^-} f(x) = f(3) = a(3)^2 - b(3) + 3 = 9a - 3b + 3 $$
+                    $$ \lim_{x \to 3^+} f(x) = 2(3) - a + b = 6 - a + b $$
+                    Equation 2: <strong>\( 9a - 3b + 3 = 6 - a + b \)</strong> &nbsp;&rarr;&nbsp; <strong>\( 10a - 4b = 3 \)</strong>
+                <br>
+                3. <strong>Solve the system of equations:</strong>
+                    <br>(1) \( 4a - 2b = 1 \)
+                    <br>(2) \( 10a - 4b = 3 \)
+                    <br>From (1), multiply by 2: \( 8a - 4b = 2 \).
+                    <br>Subtract this new equation from (2):
+                    $$ (10a - 4b) - (8a - 4b) = 3 - 2 $$
+                    $$ 2a = 1 \implies \mathbf{a = 1/2} $$
+                    Substitute \( a = 1/2 \) into (1): \( 4(1/2) - 2b = 1 \implies 2 - 2b = 1 \implies 1 = 2b \implies \mathbf{b = 1/2} \)
+            </p>
+            <div class="final-answer">
+                <strong>(i)</strong> <strong>\( a = 1/2 \)</strong> and <strong>\( b = 1/2 \)</strong>.
+            </div>
+            
+            <p class="step">
+                <strong>Part (ii): Logarithmic Differentiation</strong><br>
+                Given \( y = x^2 e^{2x} (x^2+1)^4 \)
+                <br>1. Take the natural log of both sides:
+                $$ \ln y = \ln(x^2) + \ln(e^{2x}) + \ln((x^2+1)^4) $$
+                $$ \ln y = 2 \ln x + 2x + 4 \ln(x^2+1) $$
+                2. Differentiate implicitly w.r.t. \( x \):
+                $$ \frac{1}{y} \frac{dy}{dx} = \frac{2}{x} + 2 + 4 \cdot \frac{1}{x^2+1} \cdot 2x $$
+                $$ \frac{1}{y} \frac{dy}{dx} = \frac{2}{x} + 2 + \frac{8x}{x^2+1} $$
+                3. Solve for \( \frac{dy}{dx} \) by multiplying by \( y \):
+            </p>
+            <div class="final-answer">
+                <strong>(ii)</strong> \( \frac{dy}{dx} = x^2 e^{2x} (x^2+1)^4 \left[ \frac{2}{x} + 2 + \frac{8x}{x^2+1} \right] \)
+            </div>
+        </div>
+    </div>
+    
+    <div class="question-block">
+        <h2>Question 9</h2>
+        <p>For \( f(x) = x^4 - 2x^3 + 3 \), find:
+            <br>(i) Critical points.
+            <br>(ii) On what interval is f increasing or decreasing?
+            <br>(iii) At what points if any, does f assume local maximum and minimum values?
+            <br>(iv) Find the intervals of concavity and the inflection points.
+        </p>
+        <div class="solution">
+            <h3>Solution</h3>
+            <br>
+            <p>
+                $$ f(x) = x^4 - 2x^3 + 3 $$
+                $$ f'(x) = 4x^3 - 6x^2 = 2x^2(2x - 3) $$
+                $$ f''(x) = 12x^2 - 12x = 12x(x - 1) $$
+            </p>
+            <p class="step">
+                <strong>(i) Critical points:</strong>
+                <br>Set \( f'(x) = 0 \implies 2x^2(2x - 3) = 0 \).
+                <br>The critical points are <strong>\( x = 0 \)</strong> and <strong>\( x = 3/2 \)</strong>.
+            </p>
+            <p class="step">
+                <strong>(ii) Increasing/Decreasing:</strong>
+                <ul>
+                    <li>Interval \( (-\infty, 0) \): Let \( x = -1 \). \( f'(-1) = 2(1)(-5) = (-) \) (Decreasing)</li>
+                    <li>Interval \( (0, 3/2) \): Let \( x = 1 \). \( f'(1) = 2(1)(-1) = (-) \) (Decreasing)</li>
+                    <li>Interval \( (3/2, \infty) \): Let \( x = 2 \). \( f'(2) = 2(4)(1) = (+) \) (Increasing)</li>
+                </ul>
+            </p>
+            <p class="step">
+                <strong>(iii) Local Max/Min:</strong>
+                <ul>
+                    <li>At \( x = 0 \), (Dec &rarr; Dec) &rarr; <strong>Neither a max nor a min</strong> (it is a saddle point).</li>
+                    <li>At \( x = 3/2 \), (Dec &rarr; Inc) &rarr; <strong>Local Minimum</strong>.
+                        <br>\( f(3/2) = (3/2)^4 - 2(3/2)^3 + 3 = 81/16 - 2(27/8) + 3 = 81/16 - 108/16 + 48/16 = \mathbf{21/16} \).</li>
+                </ul>
+            </p>
+            <p class="step">
+                <strong>(iv) Concavity/Inflection Points:</strong>
+                <br>Set \( f''(x) = 0 \implies 12x(x - 1) = 0 \implies x = 0 \) and \( x = 1 \).
+                <ul>
+                    <li>Interval \( (-\infty, 0) \): Let \( x = -1 \). \( f''(-1) = 12(-1)(-2) = (+) \) (Concave Up)</li>
+                    <li>Interval \( (0, 1) \): Let \( x = 0.5 \). \( f''(0.5) = 12(0.5)(-0.5) = (-) \) (Concave Down)</li>
+                    <li>Interval \( (1, \infty) \): Let \( x = 2 \). \( f''(2) = 12(2)(1) = (+) \) (Concave Up)</li>
+                </ul>
+                Concavity changes at \( x = 0 \) and \( x = 1 \).
+                <br>\( f(0) = 3 \)
+                <br>\( f(1) = 1^4 - 2(1)^3 + 3 = 1 - 2 + 3 = 2 \)
+            </p>
+            <div class="final-answer">
+                <strong>(i) Critical Points:</strong> \( x = 0, x = 3/2 \)
+                <br><strong>(ii) Increasing:</strong> \( (3/2, \infty) \). <strong>Decreasing:</strong> \( (-\infty, 0) \cup (0, 3/2) \).
+                <br><strong>(iii) Local Min:</strong> 21/16 at \( x = 3/2 \). <strong>No Local Max</strong>.
+                <br><strong>(iv) Concave Up:</strong> \( (-\infty, 0) \cup (1, \infty) \). <strong>Concave Down:</strong> \( (0, 1) \).
+                <br><strong>Inflection Points:</strong> \( (0, 3) \) and \( (1, 2) \).
+            </div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 10</h2>
+        <p>For \( f(x) = \sin x + \cos x \), \( [0, 2\pi] \), find:
+            <br>(i) Critical points.
+            <br>(ii) On what interval is f increasing or decreasing?
+            <br>(iii) At what points if any, does f assume local maximum and minimum values?
+            <br>(iv) Find the intervals of concavity and the inflection points.
+        </p>
+        <div class="solution">
+            <h3>Solution</h3>
+            <br>
+            <p>
+                $$ f(x) = \sin x + \cos x $$
+                $$ f'(x) = \cos x - \sin x $$
+                $$ f''(x) = -\sin x - \cos x $$
+            </p>
+            <p class="step">
+                <strong>(i) Critical points:</strong>
+                <br>Set \( f'(x) = 0 \implies \cos x - \sin x = 0 \implies \cos x = \sin x \implies \tan x = 1 \).
+                <br>In the interval \( [0, 2\pi] \), this occurs at <strong>\( x = \pi/4 \)</strong> and <strong>\( x = 5\pi/4 \)</strong>.
+            </p>
+            <p class="step">
+                <strong>(ii) Increasing/Decreasing:</strong>
+                <ul>
+                    <li>Interval \( [0, \pi/4) \): Let \( x = 0 \). \( f'(0) = \cos(0) - \sin(0) = 1 = (+) \) (Increasing)</li>
+                    <li>Interval \( (\pi/4, 5\pi/4) \): Let \( x = \pi \). \( f'(\pi) = \cos(\pi) - \sin(\pi) = -1 = (-) \) (Decreasing)</li>
+                    <li>Interval \( (5\pi/4, 2\pi] \): Let \( x = 2\pi \). \( f'(2\pi) = \cos(2\pi) - \sin(2\pi) = 1 = (+) \) (Increasing)</li>
+                </ul>
+            </p>
+            <p class="step">
+                <strong>(iii) Local Max/Min:</strong>
+                <ul>
+                    <li>At \( x = \pi/4 \), (Inc &rarr; Dec) &rarr; <strong>Local Maximum</strong>.
+                        <br>\( f(\pi/4) = \sin(\pi/4) + \cos(\pi/4) = (1/\sqrt{2}) + (1/\sqrt{2}) = 2/\sqrt{2} = \mathbf{\sqrt{2}} \).</li>
+                    <li>At \( x = 5\pi/4 \), (Dec &rarr; Inc) &rarr; <strong>Local Minimum</strong>.
+                        <br>\( f(5\pi/4) = \sin(5\pi/4) + \cos(5\pi/4) = (-1/\sqrt{2}) + (-1/\sqrt{2}) = -2/\sqrt{2} = \mathbf{-\sqrt{2}} \).</li>
+                </ul>
+            </p>
+            <p class="step">
+                <strong>(iv) Concavity/Inflection Points:</strong>
+                <br>Set \( f''(x) = 0 \implies -\sin x - \cos x = 0 \implies \tan x = -1 \).
+                <br>In the interval \( [0, 2\pi] \), this occurs at <strong>\( x = 3\pi/4 \)</strong> and <strong>\( x = 7\pi/4 \)</strong>.
+                <ul>
+                    <li>Interval \( [0, 3\pi/4) \): Let \( x = \pi/2 \). \( f''(\pi/2) = -\sin(\pi/2) - \cos(\pi/2) = -1 = (-) \) (Concave Down)</li>
+                    <li>Interval \( (3\pi/4, 7\pi/4) \): Let \( x = \pi \). \( f''(\pi) = -\sin(\pi) - \cos(\pi) = 1 = (+) \) (Concave Up)</li>
+                    <li>Interval \( (7\pi/4, 2\pi] \): Let \( x = 2\pi \). \( f''(2\pi) = -\sin(2\pi) - \cos(2\pi) = -1 = (-) \) (Concave Down)</li>
+                </ul>
+                Inflection points are at \( x = 3\pi/4 \) and \( x = 7\pi/4 \).
+                <br>\( f(3\pi/4) = \sin(3\pi/4) + \cos(3\pi/4) = (1/\sqrt{2}) + (-1/\sqrt{2}) = 0 \)
+                <br>\( f(7\pi/4) = \sin(7\pi/4) + \cos(7\pi/4) = (-1/\sqrt{2}) + (1/\sqrt{2}) = 0 \)
+            </p>
+            <div class="final-answer">
+                <strong>(i) Critical Points:</strong> \( x = \pi/4, x = 5\pi/4 \)
+                <br><strong>(ii) Increasing:</strong> \( [0, \pi/4) \cup (5\pi/4, 2\pi] \). <strong>Decreasing:</strong> \( (\pi/4, 5\pi/4) \).
+                <br><strong>(iii) Local Max:</strong> \( \sqrt{2} \) at \( x = \pi/4 \). <strong>Local Min:</strong> \( -\sqrt{2} \) at \( x = 5\pi/4 \).
+                <br><strong>(iv) Concave Up:</strong> \( (3\pi/4, 7\pi/4) \). <strong>Concave Down:</strong> \( [0, 3\pi/4) \cup (7\pi/4, 2\pi] \).
+                <br><strong>Inflection Points:</strong> \( (3\pi/4, 0) \) and \( (7\pi/4, 0) \).
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

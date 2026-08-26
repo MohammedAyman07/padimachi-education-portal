@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 2 (Part A) - C Arrays & Strings </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    /* Styles for the notes content */
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    .code-block {
+      background: #2d2d2d;
+      color: #f1f1f1;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+    /* Simple table style */
+    .notes-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    .notes-table th, .notes-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    .notes-table th {
+      background-color: #f3f4f6;
+      color: #1e3a8a;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>💻 Unit 2 – Part A (2-Mark Q&A)</h1>
+      <p>C Programming </p>
+      <a href="c_unit2.html" class="cta-btn">⬅ Back to Unit 2</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part A: 2-Mark Questions</h2>
+
+    <div class="qa-item">
+      <h3>1. Define string?</h3>
+      <p>In C, a string is a sequence of characters stored in a character array and always ends with a special null character '\0' that indicates the end of the string.</p>
+      <ul>
+        <li>Strings are written inside double quotes.</li>
+        <li>Example: "Hello" is stored as {'H', 'e', 'l', 'l', 'o', '\0'}.</li>
+      </ul>
+      <p>Strings are widely used for handling names, messages, and text data in C programs.</p>
+    </div>
+
+    <div class="qa-item">
+      <h3>2. What is the difference between one dimensional and two-dimensional array?</h3>
+      <table class="notes-table">
+        <thead>
+          <tr>
+            <th>One-Dimensional Array</th>
+            <th>Two-Dimensional Array</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Stores data in a single row (linear form).</td>
+            <td>Stores data in rows and columns (matrix form).</td>
+          </tr>
+          <tr>
+            <td>Declared as: <code>datatype arrayName[size];</code></td>
+            <td>Declared as: <code>datatype arrayName[rows][cols];</code></td>
+          </tr>
+          <tr>
+            <td>Accessed using one subscript → <code>a[i]</code></td>
+            <td>Accessed using two subscripts → <code>a[i][j]</code>.</td>
+          </tr>
+          <tr>
+            <td>Example: <code>int marks[5];</code></td>
+            <td>Example: <code>int matrix[3][3];</code></td>
+          </tr>
+          <tr>
+            <td>Suitable for storing a list of items like marks of students.</td>
+            <td>Suitable for storing tabular data like a matrix or table.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="qa-item">
+      <h3>3. What is an array? Write the syntax for multi-dimensional array.</h3>
+      <p>An array in C is a collection of elements of the same data type stored in contiguous memory locations. Each element can be accessed using an index.</p>
+      <p>e.g. <code>int marks[5]; // array of 5 integers</code></p>
+      
+      <strong>Syntax of Multi-Dimensional Array</strong>
+      <p>A multi-dimensional array is an array of arrays (2D, 3D, etc.).</p>
+      <p><strong>General Syntax:</strong></p>
+      <pre class="code-block"><code>data_type array_name[size1][size2]...[sizeN];</code></pre>
+      <p><strong>Example (2D array):</strong></p>
+      <pre class="code-block"><code>int matrix[3][3]; // 3x3 integer matrix</code></pre>
+      <p><strong>Example (3D array):</strong></p>
+      <pre class="code-block"><code>int cube[3][3][3]; // 3x3x3 integer cube</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>4. List out the string operations.</h3>
+      <p>Common String Operations in C:</p>
+      <ol>
+        <li><strong>String Length → <code>strlen()</code></strong>
+          <br>Finds the number of characters in a string (excluding '\0').</li>
+        <li><strong>String Copy → <code>strcpy()</code></strong>
+          <br>Copies one string into another.</li>
+        <li><strong>String Concatenation → <code>strcat()</code></strong>
+          <br>Joins (appends) one string to the end of another.</li>
+        <li><strong>String Comparison → <code>strcmp()</code></strong>
+          <br>Compares two strings (returns 0 if equal).</li>
+        <li><strong>String Reverse → <code>strrev()</code></strong> (in some compilers)
+          <br>Reverses a string.</li>
+        <li><strong>String Conversion → <code>atoi()</code>, <code>atof()</code>, <code>itoa()</code></strong>
+          <br>Converts strings to integers, floats, etc.</li>
+      </ol>
+    </div>
+
+    <div class="qa-item">
+      <h3>5. How to identify length of a string and give an example?</h3>
+      <p>In C, the function <strong><code>strlen()</code></strong> (from <code>&lt;string.h&gt;</code>) is used to find the length of a string. It counts the number of characters excluding the null character '\0'.</p>
+      
+      <p><strong>Syntax:</strong></p>
+      <pre class="code-block"><code>int strlen(string_name);</code></pre>
+      
+      <p><strong>Example Program:</strong></p>
+<pre class="code-block"><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char str[20] = "Hello World";
+    int len;
+    
+    len = strlen(str);
+    
+    printf("Length of the string = %d\n", len);
+    return 0;
+}</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre class="code-block"><code>Length of the string = 11</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>6. Write down the syntax for 2D array declaration with example.</h3>
+      <p><strong>Syntax:</strong></p>
+      <pre class="code-block"><code>data_type array_name[rows][columns];</code></pre>
+      <p><strong>Example:</strong></p>
+      <pre class="code-block"><code>int a[3][3];</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>7. Identify the main elements of an array declaration.</h3>
+      <p>When declaring an array in C, the declaration contains the following main elements:</p>
+      <ol>
+        <li><strong>Data Type</strong>
+          <ul>
+            <li>Specifies the type of elements the array will store.</li>
+            <li>Example: <code>int</code>, <code>float</code>, <code>char</code>.</li>
+          </ul>
+        </li>
+        <li><strong>Array Name</strong>
+          <ul>
+            <li>The identifier used to access the array.</li>
+            <li>Example: <code>marks</code>, <code>arr</code>.</li>
+          </ul>
+        </li>
+        <li><strong>Size (Subscript/Dimension)</strong>
+          <ul>
+            <li>Specifies the number of elements (for 1D) or rows & columns (for 2D).</li>
+            <li>Example: <code>[5]</code>, <code>[3][3]</code>.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <div class="qa-item">
+      <h3>8. Differentiate between one dimension array and two-dimension array.</h3>
+      <table class="notes-table">
+        <thead>
+          <tr>
+            <th>One-Dimensional Array (1D)</th>
+            <th>Two-Dimensional Array (2D)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Stores data in a linear (single row) form.</td>
+            <td>Stores data in a tabular (rows & columns) form.</td>
+          </tr>
+          <tr>
+            <td>Declared as: <code>datatype arrayName[size];</code></td>
+            <td>Declared as: <code>datatype arrayName[rows][cols];</code></td>
+          </tr>
+          <tr>
+            <td>Accessed using one subscript → <code>arr[i]</code>.</td>
+            <td>Accessed using two subscripts → <code>arr[i][j]</code>.</td>
+          </tr>
+          <tr>
+            <td>Example: <code>int marks[5];</code></td>
+            <td>Example: <code>int matrix[3][3];</code></td>
+          </tr>
+          <tr>
+            <td>Suitable for storing a list (e.g., marks of students).</td>
+            <td>Suitable for storing tables/matrices (e.g., multiplication table).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  
+
+ 
+
+</body>
+</html>

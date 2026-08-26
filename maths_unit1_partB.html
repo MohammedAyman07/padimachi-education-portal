@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1 Part B Solutions</title>
+  <script src="protection.js" defer></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+
+  <style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f8f9fa;
+        color: #212529;
+    }
+    .container {
+        max-width: 900px;
+        margin: auto;
+        background: #ffffff;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 25px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .question-block {
+        margin-bottom: 35px;
+        border-bottom: 2px solid #e9ecef;
+        padding-bottom: 25px;
+    }
+    .question-block:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    h1 {
+        color: #0d6efd;
+        border-bottom: 3px solid #0d6efd;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    h2 {
+        color: #005a9c;
+        margin-bottom: 15px;
+    }
+    h3 {
+        color: #343a40;
+        margin-top: 20px;
+        border-bottom: 1px solid #ced4da;
+        padding-bottom: 5px;
+    }
+    p {
+        margin-bottom: 10px;
+    }
+    .solution {
+        padding: 15px;
+        background: #fdfdfd;
+        border-left: 4px solid #0d6efd;
+        margin-top: 15px;
+        border-radius: 0 4px 4px 0;
+    }
+    .final-answer {
+        font-weight: bold;
+        color: #198754;
+        background: #e6f7ec;
+        padding: 15px;
+        border-radius: 4px;
+        border: 1px solid #b6e9c9;
+        margin-top: 15px;
+    }
+    .step {
+        margin-bottom: 15px;
+    }
+    .step strong {
+        color: #005a9c;
+    }
+    /* Scroll wrapper for long math equations on mobile */
+    .math-scroll {
+        overflow-x: auto;
+        margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+    <h1>Unit 1: Part B Solutions (Matrices and Calculus)</h1>
+ 
+    <div class="question-block">
+        <h2>Question 1</h2>
+        <p>Find the eigenvalues and eigenvectors of the matrix:
+            $$ A = \begin{bmatrix} 2 & 0 & 1 \\ 0 & 2 & 0 \\ 1 & 0 & 2 \end{bmatrix} $$
+        </p>
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Step 1: Find the characteristic equation.</strong><br>
+                The characteristic equation is \( |A - \lambda I| = 0 \).
+            </p>
+            <div class="math-scroll">
+            $$ \begin{vmatrix} 2-\lambda & 0 & 1 \\ 0 & 2-\lambda & 0 \\ 1 & 0 & 2-\lambda \end{vmatrix} = 0 $$
+            </div>
+            <p>
+                Expanding along the second row (R2):<br>
+                $$ (2-\lambda) \left[ (2-\lambda)(2-\lambda) - (1)(1) \right] = 0 $$
+                $$ (2-\lambda) [ (2-\lambda)^2 - 1 ] = 0 $$
+                $$ (2-\lambda) [ \lambda^2 - 4\lambda + 4 - 1 ] = 0 $$
+                $$ (2-\lambda) (\lambda^2 - 4\lambda + 3) = 0 $$
+                $$ (2-\lambda) (\lambda - 1) (\lambda - 3) = 0 $$
+            </p>
+            <p>The eigenvalues (\(\lambda\)) are <strong>1, 2, 3</strong>.</p>
+
+            <p class="step">
+                <strong>Step 2: Find the eigenvectors for each eigenvalue.</strong><br>
+                The eigenvector \( X = [x_1, x_2, x_3]^T \) is found by solving \( (A - \lambda I)X = 0 \).
+            </p>
+            <p>
+                <strong>Case 1: \(\lambda = 1\)</strong><br>
+                $$ (A - 1I)X = \begin{bmatrix} 1 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix} $$
+                Equations:<br>
+                1. \( x_1 + x_3 = 0 \Rightarrow x_1 = -x_3 \)<br>
+                2. \( x_2 = 0 \)<br>
+                Let \( x_3 = k \). Then \( x_1 = -k, x_2 = 0 \).<br>
+                Eigenvector \( X_1 = k \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix} \).
+            </p>
+            <p>
+                <strong>Case 2: \(\lambda = 2\)</strong><br>
+                $$ (A - 2I)X = \begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix} $$
+                Equations:<br>
+                1. \( x_3 = 0 \)<br>
+                2. \( x_1 = 0 \)<br>
+                \( x_2 \) is a free variable. Let \( x_2 = k \).<br>
+                Eigenvector \( X_2 = k \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \).
+            </p>
+            <p>
+                <strong>Case 3: \(\lambda = 3\)</strong><br>
+                $$ (A - 3I)X = \begin{bmatrix} -1 & 0 & 1 \\ 0 & -1 & 0 \\ 1 & 0 & -1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix} $$
+                Equations:<br>
+                1. \( -x_1 + x_3 = 0 \Rightarrow x_1 = x_3 \)<br>
+                2. \( -x_2 = 0 \Rightarrow x_2 = 0 \)<br>
+                Let \( x_3 = k \). Then \( x_1 = k \).<br>
+                Eigenvector \( X_3 = k \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \).
+            </p>
+            <div class="final-answer">
+                Eigenvalues: \( \lambda = 1, 2, 3 \)<br>
+                Eigenvectors: \( X_1 = \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}, X_2 = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, X_3 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \)
+            </div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 2</h2>
+        <p>Using Cayley-Hamilton theorem, find \( A^4 \) if:
+            $$ A = \begin{bmatrix} 1 & 2 & 3 \\ 2 & -1 & 4 \\ 3 & 1 & 1 \end{bmatrix} $$
+        </p>
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Step 1: Find the characteristic equation of A.</strong><br>
+                The equation is \( \lambda^3 - S_1\lambda^2 + S_2\lambda - S_3 = 0 \).
+                <ul>
+                    <li>\( S_1 = \text{Sum of diagonal elements} = 1 + (-1) + 1 = 1 \)</li>
+                    <li>\( S_2 = \text{Sum of minors of diagonal elements} \)
+                        $$ = \begin{vmatrix} -1 & 4 \\ 1 & 1 \end{vmatrix} + \begin{vmatrix} 1 & 3 \\ 3 & 1 \end{vmatrix} + \begin{vmatrix} 1 & 2 \\ 2 & -1 \end{vmatrix} $$
+                        $$ = (-1 - 4) + (1 - 9) + (-1 - 4) = -5 - 8 - 5 = -18 $$
+                    </li>
+                    <li>\( S_3 = |A| \)
+                        $$ = 1(-1 - 4) - 2(2 - 12) + 3(2 + 3) $$
+                        $$ = 1(-5) - 2(-10) + 3(5) = -5 + 20 + 15 = 30 $$
+                    </li>
+                </ul>
+                Characteristic Equation: \( \lambda^3 - \lambda^2 - 18\lambda - 30 = 0 \).
+            </p>
+            <p class="step">
+                <strong>Step 2: Apply the Cayley-Hamilton Theorem.</strong><br>
+                Matrix A satisfies its own characteristic equation:<br>
+                \( A^3 - A^2 - 18A - 30I = 0 \)<br>
+                Thus, \( A^3 = A^2 + 18A + 30I \).
+            </p>
+            <p class="step">
+                <strong>Step 3: Express \( A^4 \) in terms of lower powers.</strong><br>
+                Multiply by A:<br>
+                \( A^4 = A(A^3) = A(A^2 + 18A + 30I) \)<br>
+                \( A^4 = A^3 + 18A^2 + 30A \)<br>
+                Substitute \( A^3 \) back:<br>
+                \( A^4 = (A^2 + 18A + 30I) + 18A^2 + 30A \)<br>
+                \( A^4 = 19A^2 + 48A + 30I \)
+            </p>
+            <p class="step">
+                <strong>Step 4: Calculate \( A^2 \).</strong><br>
+                $$ A^2 = \begin{bmatrix} 1 & 2 & 3 \\ 2 & -1 & 4 \\ 3 & 1 & 1 \end{bmatrix} \begin{bmatrix} 1 & 2 & 3 \\ 2 & -1 & 4 \\ 3 & 1 & 1 \end{bmatrix} $$
+                $$ = \begin{bmatrix} 1+4+9 & 2-2+3 & 3+8+3 \\ 2-2+12 & 4+1+4 & 6-4+4 \\ 3+2+3 & 6-1+1 & 9+4+1 \end{bmatrix} = \begin{bmatrix} 14 & 3 & 14 \\ 12 & 9 & 6 \\ 8 & 6 & 14 \end{bmatrix} $$
+            </p>
+            <p class="step">
+                <strong>Step 5: Calculate \( A^4 \).</strong><br>
+                $$ A^4 = 19 \begin{bmatrix} 14 & 3 & 14 \\ 12 & 9 & 6 \\ 8 & 6 & 14 \end{bmatrix} + 48 \begin{bmatrix} 1 & 2 & 3 \\ 2 & -1 & 4 \\ 3 & 1 & 1 \end{bmatrix} + 30 \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} $$
+                <div class="math-scroll">
+                $$ = \begin{bmatrix} 266 & 57 & 266 \\ 228 & 171 & 114 \\ 152 & 114 & 266 \end{bmatrix} + \begin{bmatrix} 48 & 96 & 144 \\ 96 & -48 & 192 \\ 144 & 48 & 48 \end{bmatrix} + \begin{bmatrix} 30 & 0 & 0 \\ 0 & 30 & 0 \\ 0 & 0 & 30 \end{bmatrix} $$
+                </div>
+                $$ = \begin{bmatrix} 266+48+30 & 57+96+0 & 266+144+0 \\ 228+96+0 & 171-48+30 & 114+192+0 \\ 152+144+0 & 114+48+0 & 266+48+30 \end{bmatrix} $$
+            </p>
+            <div class="final-answer">
+                $$ A^4 = \begin{bmatrix} 344 & 153 & 410 \\ 324 & 153 & 306 \\ 296 & 162 & 344 \end{bmatrix} $$
+            </div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 3</h2>
+        <p>Reduce the quadratic form \( 3x_1^2 + 3x_2^2 + 3x_3^2 + 2x_1x_2 + 2x_1x_3 - 2x_2x_3 \) to canonical form through an orthogonal transformation. Also find its nature, index, signature.</p>
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Step 1: Write the matrix of the quadratic form.</strong><br>
+                $$ A = \begin{bmatrix} 3 & 1 & 1 \\ 1 & 3 & -1 \\ 1 & -1 & 3 \end{bmatrix} $$
+            </p>
+            <p class="step">
+                <strong>Step 2: Find the eigenvalues of A.</strong><br>
+                \( \lambda^3 - S_1\lambda^2 + S_2\lambda - S_3 = 0 \)
+                <ul>
+                    <li>\( S_1 = 3 + 3 + 3 = 9 \)</li>
+                    <li>\( S_2 = (9 - 1) + (9 - 1) + (9 - 1) = 8 + 8 + 8 = 24 \)</li>
+                    <li>\( S_3 = |A| = 3(9-1) - 1(3 - (-1)) + 1(-1 - 3) = 3(8) - 4 - 4 = 24 - 8 = 16 \)</li>
+                </ul>
+                Eq: \( \lambda^3 - 9\lambda^2 + 24\lambda - 16 = 0 \).<br>
+                Inspection:
+                For \( \lambda = 1 \): \( 1 - 9 + 24 - 16 = 0 \). Factor: \( (\lambda - 1) \).<br>
+                For \( \lambda = 4 \): \( 64 - 144 + 96 - 16 = 0 \). Factor: \( (\lambda - 4) \).<br>
+                Sum of eigenvalues = 9. So \( 1 + 4 + \lambda_3 = 9 \Rightarrow \lambda_3 = 4 \).<br>
+                Eigenvalues: <strong>1, 4, 4</strong>.
+            </p>
+            <p class="step">
+                <strong>Step 3: Write the canonical form.</strong><br>
+                Formula: \( \lambda_1 y_1^2 + \lambda_2 y_2^2 + \lambda_3 y_3^2 \)
+            </p>
+            <div class="final-answer">
+                Canonical Form: \( y_1^2 + 4y_2^2 + 4y_3^2 \)
+            </div>
+            <p class="step">
+                <strong>Step 4: Determine nature, index, and signature.</strong>
+            </p>
+            <div class="final-answer">
+                <ul>
+                    <li><strong>Nature:</strong> Positive Definite (all eigenvalues > 0).</li>
+                    <li><strong>Index (p):</strong> 3 (number of positive terms).</li>
+                    <li><strong>Signature (s):</strong> \( 3 - 0 = 3 \).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 4</h2>
+        <p>Reduce the quadratic form \( 6x^2 + 3y^2 + 3z^2 - 4xy - 2yz + 4xz \) into a canonical form through an orthogonal reduction.</p>
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Step 1: Write the matrix of the quadratic form.</strong><br>
+                $$ A = \begin{bmatrix} 6 & -2 & 2 \\ -2 & 3 & -1 \\ 2 & -1 & 3 \end{bmatrix} $$
+            </p>
+            <p class="step">
+                <strong>Step 2: Find the eigenvalues of A.</strong><br>
+                \( \lambda^3 - S_1\lambda^2 + S_2\lambda - S_3 = 0 \)
+                <ul>
+                    <li>\( S_1 = 6 + 3 + 3 = 12 \)</li>
+                    <li>\( S_2 = (9 - 1) + (18 - 4) + (18 - 4) = 8 + 14 + 14 = 36 \)</li>
+                    <li>\( S_3 = |A| = 6(9 - 1) - (-2)(-6 - (-2)) + 2(2 - 6) \)<br>
+                        \( = 6(8) + 2(-4) + 2(-4) = 48 - 8 - 8 = 32 \)</li>
+                </ul>
+                Eq: \( \lambda^3 - 12\lambda^2 + 36\lambda - 32 = 0 \).<br>
+                By inspection:<br>
+                If \( \lambda = 2 \): \( 8 - 48 + 72 - 32 = 0 \).<br>
+                If \( \lambda = 8 \): \( 512 - 768 + 288 - 32 = 0 \).<br>
+                Using sum: \( 2 + 8 + \lambda_3 = 12 \Rightarrow \lambda_3 = 2 \).<br>
+                Eigenvalues: <strong>2, 2, 8</strong>.
+            </p>
+            <p class="step">
+                <strong>Step 3: Write the canonical form.</strong>
+            </p>
+            <div class="final-answer">
+                Canonical Form: \( 2y_1^2 + 2y_2^2 + 8y_3^2 \)
+            </div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 5</h2>
+        <p>Find the eigenvalues and eigenvectors of a matrix:
+            $$ A = \begin{bmatrix} 2 & 2 & 0 \\ 2 & 1 & 1 \\ -7 & 2 & -3 \end{bmatrix} $$
+        </p>
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Step 1: Find the characteristic equation.</strong><br>
+                <ul>
+                    <li>\( S_1 = 2 + 1 - 3 = 0 \)</li>
+                    <li>\( S_2 = (-3-2) + (-6-0) + (2-4) = -5 - 6 - 2 = -13 \)</li>
+                    <li>\( S_3 = |A| = 2(-3-2) - 2(-6+7) + 0 = -10 - 2 = -12 \)</li>
+                </ul>
+                Eq: \( \lambda^3 - 0\lambda^2 - 13\lambda + 12 = 0 \Rightarrow \lambda^3 - 13\lambda + 12 = 0 \).<br>
+                Factors of 12: <br>
+                \( \lambda = 1 \Rightarrow 1 - 13 + 12 = 0 \).<br>
+                \( \lambda = 3 \Rightarrow 27 - 39 + 12 = 0 \).<br>
+                Sum = 0: \( 1 + 3 + \lambda_3 = 0 \Rightarrow \lambda_3 = -4 \).<br>
+                Eigenvalues: <strong>1, 3, -4</strong>.
+            </p>
+
+            <p class="step">
+                <strong>Step 2: Find eigenvectors \( (A - \lambda I)X = 0 \).</strong>
+            </p>
+            <p>
+                <strong>Case 1: \(\lambda = 1\)</strong><br>
+                $$ \begin{bmatrix} 1 & 2 & 0 \\ 2 & 0 & 1 \\ -7 & 2 & -4 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 0 $$
+                \( x_1 + 2x_2 = 0 \Rightarrow x_1 = -2x_2 \)<br>
+                \( 2x_1 + x_3 = 0 \Rightarrow x_3 = -2x_1 = 4x_2 \)<br>
+                Let \( x_2 = k \). Eigenvector \( X_1 = k \begin{bmatrix} -2 \\ 1 \\ 4 \end{bmatrix} \).
+            </p>
+            <p>
+                <strong>Case 2: \(\lambda = 3\)</strong><br>
+                $$ \begin{bmatrix} -1 & 2 & 0 \\ 2 & -2 & 1 \\ -7 & 2 & -6 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 0 $$
+                \( -x_1 + 2x_2 = 0 \Rightarrow x_1 = 2x_2 \)<br>
+                \( 2x_1 - 2x_2 + x_3 = 0 \Rightarrow 4x_2 - 2x_2 + x_3 = 0 \Rightarrow x_3 = -2x_2 \)<br>
+                Let \( x_2 = k \). Eigenvector \( X_2 = k \begin{bmatrix} 2 \\ 1 \\ -2 \end{bmatrix} \).
+            </p>
+            <p>
+                <strong>Case 3: \(\lambda = -4\)</strong><br>
+                $$ \begin{bmatrix} 6 & 2 & 0 \\ 2 & 5 & 1 \\ -7 & 2 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 0 $$
+                \( 6x_1 + 2x_2 = 0 \Rightarrow x_2 = -3x_1 \)<br>
+                \( 2x_1 + 5x_2 + x_3 = 0 \Rightarrow 2x_1 - 15x_1 + x_3 = 0 \Rightarrow x_3 = 13x_1 \)<br>
+                Let \( x_1 = k \). Eigenvector \( X_3 = k \begin{bmatrix} 1 \\ -3 \\ 13 \end{bmatrix} \).
+            </p>
+            <div class="final-answer">
+                Eigenvalues: 1, 3, -4<br>
+                Eigenvectors: \( \begin{bmatrix} -2 \\ 1 \\ 4 \end{bmatrix}, \begin{bmatrix} 2 \\ 1 \\ -2 \end{bmatrix}, \begin{bmatrix} 1 \\ -3 \\ 13 \end{bmatrix} \)
+            </div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 6</h2>
+        <p>Using Cayley-Hamilton theorem find the inverse of the matrix:
+            $$ A = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 4 & 5 \\ 3 & 5 & 6 \end{bmatrix} $$
+        </p>
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Step 1: Characteristic Equation.</strong><br>
+                <ul>
+                    <li>\( S_1 = 1 + 4 + 6 = 11 \)</li>
+                    <li>\( S_2 = (24-25) + (6-9) + (4-4) = -1 - 3 + 0 = -4 \)</li>
+                    <li>\( S_3 = 1(-1) - 2(-3) + 3(-2) = -1 + 6 - 6 = -1 \)</li>
+                </ul>
+                Eq: \( \lambda^3 - 11\lambda^2 - 4\lambda + 1 = 0 \).
+            </p>
+            <p class="step">
+                <strong>Step 2: Apply Cayley-Hamilton.</strong><br>
+                \( A^3 - 11A^2 - 4A + I = 0 \)
+            </p>
+            <p class="step">
+                <strong>Step 3: Find \( A^{-1} \).</strong><br>
+                Multiply by \( A^{-1} \):<br>
+                \( A^2 - 11A - 4I + A^{-1} = 0 \)<br>
+                \( A^{-1} = -A^2 + 11A + 4I \)
+            </p>
+            <p class="step">
+                <strong>Step 4: Calculate \( A^2 \).</strong><br>
+                $$ A^2 = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 4 & 5 \\ 3 & 5 & 6 \end{bmatrix} \begin{bmatrix} 1 & 2 & 3 \\ 2 & 4 & 5 \\ 3 & 5 & 6 \end{bmatrix} $$
+                $$ = \begin{bmatrix} 1+4+9 & 2+8+15 & 3+10+18 \\ 2+8+15 & 4+16+25 & 6+20+30 \\ 3+10+18 & 6+20+30 & 9+25+36 \end{bmatrix} = \begin{bmatrix} 14 & 25 & 31 \\ 25 & 45 & 56 \\ 31 & 56 & 70 \end{bmatrix} $$
+            </p>
+            <p class="step">
+                <strong>Step 5: Calculate \( A^{-1} \).</strong><br>
+                $$ A^{-1} = -\begin{bmatrix} 14 & 25 & 31 \\ 25 & 45 & 56 \\ 31 & 56 & 70 \end{bmatrix} + 11\begin{bmatrix} 1 & 2 & 3 \\ 2 & 4 & 5 \\ 3 & 5 & 6 \end{bmatrix} + 4\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} $$
+                $$ = \begin{bmatrix} -14+11+4 & -25+22+0 & -31+33+0 \\ -25+22+0 & -45+44+4 & -56+55+0 \\ -31+33+0 & -56+55+0 & -70+66+4 \end{bmatrix} $$
+            </p>
+            <div class="final-answer">
+                $$ A^{-1} = \begin{bmatrix} 1 & -3 & 2 \\ -3 & 3 & -1 \\ 2 & -1 & 0 \end{bmatrix} $$
+            </div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 7</h2>
+        <p>Diagonalise the matrix by Orthogonality transformation:
+            $$ A = \begin{bmatrix} 8 & -6 & 2 \\ -6 & 7 & -4 \\ 2 & -4 & 3 \end{bmatrix} $$
+        </p>
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Step 1: Find Eigenvalues.</strong><br>
+                \( S_1 = 18 \)<br>
+                \( S_2 = (21-16) + (24-4) + (56-36) = 5 + 20 + 20 = 45 \)<br>
+                \( S_3 = 8(5) + 6(-10) + 2(10) = 40 - 60 + 20 = 0 \)<br>
+                Eq: \( \lambda^3 - 18\lambda^2 + 45\lambda = 0 \Rightarrow \lambda(\lambda^2 - 18\lambda + 45) = 0 \).<br>
+                Factors: \( \lambda(\lambda - 3)(\lambda - 15) = 0 \).<br>
+                Eigenvalues: <strong>0, 3, 15</strong>.
+            </p>
+            <p class="step">
+                <strong>Step 2: Find Eigenvectors.</strong><br>
+                <strong>For \(\lambda = 0\):</strong><br>
+                Using cross-multiplication on first two rows of A:<br>
+                \( \frac{x_1}{24-14} = \frac{x_2}{-12+32} = \frac{x_3}{56-36} \Rightarrow \frac{x_1}{10} = \frac{x_2}{20} = \frac{x_3}{20} \)<br>
+                \( X_1 = [1, 2, 2]^T \).<br><br>
+
+                <strong>For \(\lambda = 3\):</strong><br>
+                Rows imply \( 2x_1 - 4x_2 = 0 \Rightarrow x_1 = 2x_2 \) and \( 5x_1 - 6x_2 + 2x_3 = 0 \).<br>
+                Sub \( x_1 \): \( 10x_2 - 6x_2 + 2x_3 = 0 \Rightarrow 4x_2 = -2x_3 \Rightarrow x_3 = -2x_2 \).<br>
+                Let \( x_2 = 1 \). \( X_2 = [2, 1, -2]^T \).<br><br>
+
+                <strong>For \(\lambda = 15\):</strong><br>
+                Cross multiplication on \( -7x_1 - 6x_2 + 2x_3 = 0 \) and \( x_1 - 2x_2 - 6x_3 = 0 \) (simplified R3):<br>
+                \( \frac{x_1}{36+4} = \frac{x_2}{2-42} = \frac{x_3}{14+6} \Rightarrow \frac{x_1}{40} = \frac{x_2}{-40} = \frac{x_3}{20} \)<br>
+                \( X_3 = [2, -2, 1]^T \).
+            </p>
+            <p class="step">
+                <strong>Step 3: Normalize Eigenvectors.</strong><br>
+                \( |X_1| = \sqrt{1+4+4} = 3 \)<br>
+                \( |X_2| = \sqrt{4+1+4} = 3 \)<br>
+                \( |X_3| = \sqrt{4+4+1} = 3 \)<br>
+                Normalized Matrix N:
+                $$ N = \frac{1}{3} \begin{bmatrix} 1 & 2 & 2 \\ 2 & 1 & -2 \\ 2 & -2 & 1 \end{bmatrix} $$
+            </p>
+            <div class="final-answer">
+                $$ D = N^T A N = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 15 \end{bmatrix} $$
+            </div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 8</h2>
+        <p>Reduce the quadratic form \( x_1^2 + 2x_2^2 + x_3^2 - 2x_1x_2 + 2x_2x_3 \) to canonical form and find its nature.</p>
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Step 1: Matrix A.</strong><br>
+                $$ A = \begin{bmatrix} 1 & -1 & 0 \\ -1 & 2 & 1 \\ 0 & 1 & 1 \end{bmatrix} $$
+            </p>
+            <p class="step">
+                <strong>Step 2: Eigenvalues.</strong><br>
+                \( S_1 = 4 \), \( S_2 = (2-1) + (1-0) + (2-1) = 3 \), \( S_3 = 1(1) - (-1)(-1) = 1 - 1 = 0 \).<br>
+                Eq: \( \lambda^3 - 4\lambda^2 + 3\lambda = 0 \Rightarrow \lambda(\lambda-1)(\lambda-3) = 0 \).<br>
+                Eigenvalues: <strong>0, 1, 3</strong>.
+            </p>
+            <p class="step">
+                <strong>Step 3: Canonical Form.</strong>
+            </p>
+            <div class="final-answer">
+                \( 0y_1^2 + 1y_2^2 + 3y_3^2 = y_2^2 + 3y_3^2 \)<br>
+                <strong>Nature:</strong> Positive Semi-definite.
+            </div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 9</h2>
+        <p>Obtain an orthogonal transformation which will transform the quadratic form \( Q = 2xy + 2yz + 2xz \) to canonical form.</p>
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Step 1: Matrix A.</strong><br>
+                $$ A = \begin{bmatrix} 0 & 1 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 0 \end{bmatrix} $$
+            </p>
+            <p class="step">
+                <strong>Step 2: Eigenvalues.</strong><br>
+                \( S_1 = 0 \), \( S_2 = -3 \), \( S_3 = 2 \).<br>
+                Eq: \( \lambda^3 - 3\lambda - 2 = 0 \).<br>
+                Roots: \( (\lambda-2)(\lambda+1)^2 = 0 \).<br>
+                Eigenvalues: <strong>2, -1, -1</strong>.
+            </p>
+            <p class="step">
+                <strong>Step 3: Eigenvectors.</strong><br>
+                <strong>Case 1: \(\lambda = 2\)</strong><br>
+                \( -2x + y + z = 0 \) and \( x - 2y + z = 0 \). Cross multiply: \( x/3 = y/3 = z/3 \).<br>
+                \( X_1 = [1, 1, 1]^T \).<br><br>
+
+                <strong>Case 2: \(\lambda = -1\) (Repeated)</strong><br>
+                The equation reduces to single form \( x + y + z = 0 \).<br>
+                Let \( X_2 = [1, -1, 0]^T \) (satisfies eq).<br>
+                To find \( X_3 \), it must be orthogonal to \( X_1 \) and \( X_2 \).<br>
+                \( X_3 = [l, m, n]^T \).<br>
+                1. \( l+m+n = 0 \)<br>
+                2. \( l-m = 0 \Rightarrow l=m \)<br>
+                Sub into 1: \( 2l + n = 0 \Rightarrow n = -2l \). Let \( l=1 \).<br>
+                \( X_3 = [1, 1, -2]^T \).
+            </p>
+            <p class="step">
+                <strong>Step 4: Normalize.</strong><br>
+                \( |X_1| = \sqrt{3} \), \( |X_2| = \sqrt{2} \), \( |X_3| = \sqrt{6} \).
+            </p>
+            <div class="final-answer">
+                Transformation \( X = NY \):
+                $$ \begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} 1/\sqrt{3} & 1/\sqrt{2} & 1/\sqrt{6} \\ 1/\sqrt{3} & -1/\sqrt{2} & 1/\sqrt{6} \\ 1/\sqrt{3} & 0 & -2/\sqrt{6} \end{bmatrix} \begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix} $$
+                Canonical Form: \( 2y_1^2 - y_2^2 - y_3^2 \)
+            </div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 10</h2>
+        <p>Diagonalise the symmetric matrix by Orthogonality transformation:
+            $$ A = \begin{bmatrix} 2 & 0 & 4 \\ 0 & 6 & 0 \\ 4 & 0 & 2 \end{bmatrix} $$
+        </p>
+        <div class="solution">
+            <h3>Solution</h3>
+            <p class="step">
+                <strong>Step 1: Eigenvalues.</strong><br>
+                \( |A-\lambda I| = (6-\lambda)[(2-\lambda)^2 - 16] = 0 \)<br>
+                \( (6-\lambda)(\lambda^2 - 4\lambda - 12) = 0 \)<br>
+                \( (6-\lambda)(\lambda-6)(\lambda+2) = 0 \)<br>
+                Eigenvalues: <strong>6, 6, -2</strong>.
+            </p>
+            <p class="step">
+                <strong>Step 2: Eigenvectors.</strong><br>
+                <strong>Case 1: \(\lambda = -2\)</strong><br>
+                \( 4x_1 + 4x_3 = 0 \Rightarrow x_1 = -x_3 \), \( 8x_2 = 0 \Rightarrow x_2 = 0 \).<br>
+                \( X_1 = [-1, 0, 1]^T \).<br><br>
+                <strong>Case 2: \(\lambda = 6\) (Repeated)</strong><br>
+                \( -4x_1 + 4x_3 = 0 \Rightarrow x_1 = x_3 \). \( x_2 \) is free.<br>
+                We need two orthogonal vectors satisfying \( x_1 = x_3 \).<br>
+                Let \( X_2 = [0, 1, 0]^T \) (x2=1, x1=x3=0).<br>
+                Let \( X_3 = [1, 0, 1]^T \) (x2=0, x1=x3=1).<br>
+                Check orthogonality: \( X_2 \cdot X_3 = 0 \). Correct.
+            </p>
+            <p class="step">
+                <strong>Step 3: Normalize and Form N.</strong><br>
+                \( |X_1| = \sqrt{2} \), \( |X_2| = 1 \), \( |X_3| = \sqrt{2} \).<br>
+                $$ N = \begin{bmatrix} -1/\sqrt{2} & 0 & 1/\sqrt{2} \\ 0 & 1 & 0 \\ 1/\sqrt{2} & 0 & 1/\sqrt{2} \end{bmatrix} $$
+            </p>
+            <div class="final-answer">
+                $$ D = \begin{bmatrix} -2 & 0 & 0 \\ 0 & 6 & 0 \\ 0 & 0 & 6 \end{bmatrix} $$
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

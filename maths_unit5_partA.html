@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Unit 5 Part A Solutions</title> 
+    <style>
+     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; padding: 20px; background-color: #f8f9fa; color: #212529; } .container { max-width: 900px; margin: auto; background: #ffffff; border: 1px solid #dee2e6; border-radius: 8px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); } .question-block { margin-bottom: 25px; border-bottom: 2px solid #e9ecef; padding-bottom: 15px; } .question-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; } h1 { color: #0d6efd; border-bottom: 3px solid #0d6efd; padding-bottom: 10px; text-align: center; } h2 { color: #005a9c; margin-bottom: 15px; } p { margin-bottom: 10px; } .solution { padding: 10px 15px; background: #fdfdfd; border-left: 4px solid #0d6efd; margin-top: 15px; border-radius: 0 4px 4px 0; } .final-answer { font-weight: bold; color: #198754; background: #e6f7ec; padding: 8px 12px; border-radius: 4px; border: 1px solid #b6e9c9; display: inline-block; } .note { font-size: 0.9em; color: #6c757d; font-style: italic; } </style> </head> <body> <div class="container"> <h1>Unit 5: Part A Solutions (Complex Variables)</h1>
+<script src="protection.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+
+
+    <div class="question-block">
+        <h2>Question 1</h2>
+        <p>Show that an analytic function with constant imaginary part is constant.</p>
+        <div class="solution">
+            <p>Let f(z) = u + iv be an analytic function.</p>
+            <p>Given: The imaginary part is constant. Let v(x, y) = c, where c is a constant.</p>
+            <p>1. &part;v/&part;x = 0</p>
+            <p>2. &part;v/&part;y = 0</p>
+            <p>By the Cauchy-Riemann (C-R) equations, since f(z) is analytic:</p>
+            <p>&part;u/&part;x = &part;v/&part;y = 0</p>
+            <p>&part;u/&part;y = -&part;v/&part;x = 0</p>
+            <p>Since both partial derivatives of u are zero, u(x, y) must also be a constant, say k.</p>
+            <p>Therefore, f(z) = u + iv = k + ic, which is a constant. (Proved)</p>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 2</h2>
+        <p>If u = x<sup>2</sup>-y<sup>2</sup> and v = -y / (x<sup>2</sup>+y<sup>2</sup>), then u+iv is not an analytic function. (True/False). 
+        </p>
+        <div class="solution">
+            <p>We check the Cauchy-Riemann (C-R) equations.</p>
+            <p><b>For u = x<sup>2</sup> - y<sup>2</sup>:</b></p>
+            <p>&part;u/&part;x = 2x</p>
+            <p>&part;u/&part;y = -2y</p>
+            <p><b>For v = -y / (x<sup>2</sup>+y<sup>2</sup>):</b></p>
+            <p>&part;v/&part;y = [(-1)(x<sup>2</sup>+y<sup>2</sup>) - (-y)(2y)] / (x<sup>2</sup>+y<sup>2</sup>)<sup>2</sup> = (-x<sup>2</sup>-y<sup>2</sup>+2y<sup>2</sup>) / (x<sup>2</sup>+y<sup>2</sup>)<sup>2</sup> = (y<sup>2</sup>-x<sup>2</sup>) / (x<sup>2</sup>+y<sup>2</sup>)<sup>2</sup></p>
+            <p>&part;v/&part;x = (-(-y) &middot; 2x) / (x<sup>2</sup>+y<sup>2</sup>)<sup>2</sup> = 2xy / (x<sup>2</sup>+y<sup>2</sup>)<sup>2</sup></p>
+            <p><b>Check C-R 1: &part;u/&part;x = &part;v/&part;y ?</b></p>
+            <p>2x &ne; (y<sup>2</sup>-x<sup>2</sup>) / (x<sup>2</sup>+y<sup>2</sup>)<sup>2</sup></p>
+            <p><b>Check C-R 2: &part;u/&part;y = -&part;v/&part;x ?</b></p>
+            <p>-2y &ne; -[ 2xy / (x<sup>2</sup>+y<sup>2</sup>)<sup>2</sup> ]</p>
+            <p>Since the C-R equations are not satisfied, the function is not analytic.</p>
+            <div class="final-answer">True</div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 3</h2>
+        <p>Show that &phi; = x<sup>3</sup> - 3xy<sup>2</sup> + 3x<sup>2</sup> - 3y<sup>2</sup> + 1 is harmonic. </p>
+        <div class="solution">
+            <p>To be harmonic, &phi; must satisfy Laplace's equation: &part;<sup>2</sup>&phi;/&part;x<sup>2</sup> + &part;<sup>2</sup>&phi;/&part;y<sup>2</sup> = 0.</p>
+            <p><b>Derivatives w.r.t. x:</b></p>
+            <p>&part;&phi;/&part;x = 3x<sup>2</sup> - 3y<sup>2</sup> + 6x</p>
+            <p>&part;<sup>2</sup>&phi;/&part;x<sup>2</sup> = 6x + 6</p>
+            <p><b>Derivatives w.r.t. y:</b></p>
+            <p>&part;&phi;/&part;y = -6xy - 6y</p>
+            <p>&part;<sup>2</sup>&phi;/&part;y<sup>2</sup> = -6x - 6</p>
+            <p><b>Sum:</b></p>
+            <p>&part;<sup>2</sup>&phi;/&part;x<sup>2</sup> + &part;<sup>2</sup>&phi;/&part;y<sup>2</sup> = (6x + 6) + (-6x - 6) = 0</p>
+            <p>Since Laplace's equation is satisfied, the function is harmonic.</p>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 4</h2>
+        <p>3x<sup>2</sup>y - y<sup>3</sup> is harmonic (True/False). </p>
+        <div class="solution">
+            <p>Let &phi; = 3x<sup>2</sup>y - y<sup>3</sup>. We check Laplace's equation.</p>
+            <p><b>Derivatives w.r.t. x:</b></p>
+            <p>&part;&phi;/&part;x = 6xy</p>
+            <p>&part;<sup>2</sup>&phi;/&part;x<sup>2</sup> = 6y</p>
+            <p><b>Derivatives w.r.t. y:</b></p>
+            <p>&part;&phi;/&part;y = 3x<sup>2</sup> - 3y<sup>2</sup></p>
+            <p>&part;<sup>2</sup>&phi;/&part;y<sup>2</sup> = -6y</p>
+            <p><b>Sum:</b></p>
+            <p>&part;<sup>2</sup>&phi;/&part;x<sup>2</sup> + &part;<sup>2</sup>&phi;/&part;y<sup>2</sup> = (6y) + (-6y) = 0</p>
+            <p>Since Laplace's equation is satisfied, the function is harmonic.</p>
+            <div class="final-answer">True</div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 5</h2>
+        <p>Show that u = e<sup>x</sup>(cos y - sin y) is harmonic. </p>
+        <div class="solution">
+            <p>We check if u<sub>xx</sub> + u<sub>yy</sub> = 0.</p>
+            <p><b>Derivatives w.r.t. x:</b></p>
+            <p>&part;u/&part;x = e<sup>x</sup>(cos y - sin y)</p>
+            <p>&part;<sup>2</sup>u/&part;x<sup>2</sup> = e<sup>x</sup>(cos y - sin y)</p>
+            <p><b>Derivatives w.r.t. y:</b></p>
+            <p>&part;u/&part;y = e<sup>x</sup>(-sin y - cos y)</p>
+            <p>&part;<sup>2</sup>u/&part;y<sup>2</sup> = e<sup>x</sup>(-cos y + sin y) = -e<sup>x</sup>(cos y - sin y)</p>
+            <p><b>Sum:</b></p>
+            <p>&part;<sup>2</sup>u/&part;x<sup>2</sup> + &part;<sup>2</sup>u/&part;y<sup>2</sup> = e<sup>x</sup>(cos y - sin y) - e<sup>x</sup>(cos y - sin y) = 0</p>
+            <p>Since Laplace's equation is satisfied, the function is harmonic.</p>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 6</h2>
+        <p>Find a function w such that w = u+iv is analytic if u = e<sup>x</sup>sin y. </p>
+        <div class="solution">
+            <p>We need to find the conjugate function v using the C-R equations.</p>
+            <p>1. &part;u/&part;x = e<sup>x</sup>sin y</p>
+            <p>2. &part;u/&part;y = e<sup>x</sup>cos y</p>
+            <p>From C-R 1: &part;v/&part;y = &part;u/&part;x = e<sup>x</sup>sin y</p>
+            <p>Integrate w.r.t. y to find v:</p>
+            <p>v = &int; e<sup>x</sup>sin y dy = -e<sup>x</sup>cos y + g(x) &nbsp;&nbsp; (where g(x) is a function of x only)</p>
+            <p>From C-R 2: &part;v/&part;x = -&part;u/&part;y = -e<sup>x</sup>cos y</p>
+            <p>Differentiate our v w.r.t. x:</p>
+            <p>&part;v/&part;x = &part;/&part;x(-e<sup>x</sup>cos y + g(x)) = -e<sup>x</sup>cos y + g'(x)</p>
+            <p>Compare the two expressions for &part;v/&part;x:</p>
+            <p>-e<sup>x</sup>cos y + g'(x) = -e<sup>x</sup>cos y &nbsp;&implies&nbsp; g'(x) = 0 &nbsp;&implies&nbsp; g(x) = C (a constant)</p>
+            <p>So, v = -e<sup>x</sup>cos y + C.</p>
+            <p>w = u + iv = e<sup>x</sup>sin y + i(-e<sup>x</sup>cos y + C)</p>
+            <p>w = -i e<sup>x</sup>(cos y + i sin y) + iC = -i e<sup>x</sup>e<sup>iy</sup> + iC = -i e<sup>z</sup> + iC</p>
+            <div class="final-answer">w = -i e<sup>z</sup> + K</div>
+            <p class="note">(where K is a complex constant, iC)</p>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 7</h2>
+        <p>Find the image of |z| = 2 under the transformation w = z + 3 + 2i. </p>
+        <div class="solution">
+            <p>The transformation w = z + c is a simple translation (shift).</p>
+            <p>The original curve |z| = 2 is a circle centered at the origin (0, 0) with a radius of 2.</p>
+            <p>The transformation shifts the center by the vector (3 + 2i).</p>
+            <p>New center = (0 + 3) + i(0 + 2) = 3 + 2i.</p>
+            <p>The radius remains unchanged.</p>
+            <p><b>Alternatively:</b></p>
+            <p>Let z = w - (3 + 2i). Substitute this into |z| = 2:</p>
+            <p>|w - (3 + 2i)| = 2 &nbsp;&nbsp; or &nbsp;&nbsp; |w - 3 - 2i| = 2</p>
+            <p>This is the equation of a circle.</p>
+            <div class="final-answer">A circle centered at (3, 2) with radius 2.</div>
+        </div>
+    </div>
+    
+    <div class="question-block">
+        <h2>Question 8</h2>
+        <p>The invariant points of the transformation w = (2z+6) / (z+7) is... </p>
+        <div class="solution">
+            <p>Invariant (or fixed) points are found by setting w = z.</p>
+            <p>z = (2z + 6) / (z + 7)</p>
+            <p>z(z + 7) = 2z + 6</p>
+            <p>z<sup>2</sup> + 7z = 2z + 6</p>
+            <p>z<sup>2</sup> + 5z - 6 = 0</p>
+            <p>Factor the quadratic equation:</p>
+            <p>(z + 6)(z - 1) = 0</p>
+            <p>The invariant points are z = 1 and z = -6.</p>
+            <div class="final-answer">z = 1 and z = -6</div>
+        </div>
+    </div>
+
+    <div class="question-block">
+        <h2>Question 9</h2>
+        <p>Find the bilinear transformation which maps Z<sub>1</sub>=0, Z<sub>2</sub>=1, Z<sub>3</sub>=&infin; into the points w<sub>1</sub>=i, w<sub>2</sub>=1, w<sub>3</sub>=-i. </p>
+        <div class="solution">
+            <p>We use the cross-ratio formula:</p>
+            <p>( (w-w<sub>1</sub>)(w<sub>2</sub>-w<sub>3</sub>) ) / ( (w-w<sub>3</sub>)(w<sub>2</sub>-w<sub>1</sub>) ) = ( (z-z<sub>1</sub>)(z<sub>2</sub>-z<sub>3</sub>) ) / ( (z-z<sub>3</sub>)(z<sub>2</sub>-z<sub>1</sub>) )</p>
+            <p>Since z<sub>3</sub> = &infin;, the term (z<sub>2</sub>-z<sub>3</sub>) / (z-z<sub>3</sub>) simplifies to -1.</p>
+            <p><b>RHS:</b> ( (z-0) / ( (z<sub>2</sub>-z<sub>1</sub>) ) ) &middot; (-1) = ( z / (1-0) ) &middot; (-1) = -z</p>
+            <p><b>LHS:</b> ( (w-i)(1 - (-i)) ) / ( (w - (-i))(1 - i) )</p>
+            <p>= ( (w-i)(1+i) ) / ( (w+i)(1-i) )</p>
+            <p>= [ (w-i) / (w+i) ] &middot; [ (1+i) / (1-i) ]</p>
+            <p>Simplify the constant term: (1+i)/(1-i) = (1+i)<sup>2</sup> / ((1-i)(1+i)) = (1 + 2i - 1) / (1 - (-1)) = 2i / 2 = i</p>
+            <p><b>Equate LHS and RHS:</b></p>
+            <p>i &middot; ( (w-i) / (w+i) ) = -z</p>
+            <p>(w-i) / (w+i) = -z / i = iz</p>
+            <p>w - i = iz(w + i)</p>
+            <p>w - i = izw + i<sup>2</sup>z</p>
+            <p>w - i = izw - z</p>
+            <p>w - izw = i - z</p>
+            <p>w(1 - iz) = i - z</p>
+            <div class="final-answer">w = (i - z) / (1 - iz)</div>
+        </div>
+    </div>
+
+</div>
+</body> </html>

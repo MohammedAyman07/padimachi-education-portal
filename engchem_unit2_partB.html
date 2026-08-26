@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Engineering Chemistry – Unit 2 Part B (Phase Rule & Composites)</title>
+  <script src="protection.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <!-- MathJax (if you ever need equations) -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    /* Overall page */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f2fe, #f9fafb);
+      color: #0f172a;
+      margin: 0;
+      padding: 0;
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto 60px;
+      background: #ffffff;
+      padding: 40px 30px 60px;
+      box-shadow: 0 20px 40px rgba(15,23,42,0.15);
+      border-radius: 18px;
+    }
+
+    /* Main heading */
+    h1 {
+      color: #1e3a8a;
+      border-bottom: 3px solid #2563eb;
+      padding-bottom: 12px;
+      margin-bottom: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 1.5rem;
+    }
+
+    /* Question blocks */
+    .question-box {
+      border-radius: 14px;
+      padding: 26px 22px 30px;
+      margin-bottom: 32px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .question-title {
+      background: linear-gradient(90deg, #eff6ff, #dbeafe);
+      color: #1d4ed8;
+      padding: 12px 16px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      font-weight: 700;
+      font-size: 1rem;
+      border-left: 5px solid #2563eb;
+    }
+
+    .topic-tag {
+      display: inline-block;
+      margin-bottom: 6px;
+      padding: 2px 10px;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .sub-heading {
+      font-weight: 700;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      color: #0f172a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    p {
+      margin: 8px 0 10px;
+    }
+
+    .step {
+      margin: 12px 0;
+      padding: 10px 16px;
+      border-left: 4px solid #cbd5e1;
+      border-radius: 6px;
+      background: #ffffff;
+    }
+
+    .step-title {
+      display: block;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.07em;
+      margin-bottom: 4px;
+      color: #475569;
+    }
+
+    ul, ol {
+      margin: 6px 0 6px 20px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .definition {
+      font-weight: 650;
+      color: #111827;
+      background: #fefce8;
+      border-left: 4px solid #eab308;
+      padding: 8px 12px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .important {
+      background: #fef3c7;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border-left: 4px solid #f59e0b;
+      margin: 10px 0;
+      font-size: 0.95rem;
+    }
+
+    .result-box {
+      border: 2px dashed #2563eb;
+      background-color: #eff6ff;
+      padding: 12px 16px;
+      margin: 18px 0 6px;
+      border-radius: 10px;
+      font-weight: 650;
+    }
+
+    .notes-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 14px auto;
+      border: 1px solid #e5e7eb;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ENGINEERING CHEMISTRY – UNIT 2 (PHASE RULE & COMPOSITES) – PART B</h1>
+
+    <!-- Q1 -->
+    <div class="question-box">
+      <span class="topic-tag">Phase Rule & Water System</span>
+      <div class="question-title">
+        1. Define phase rule. Draw the phase diagram of water system and explain in detail. (13 Marks)
+      </div>
+
+      <p class="definition">
+        <strong>Phase Rule:</strong> For a system in equilibrium whose state is influenced only by pressure, temperature and concentration (and not by gravity, electrical or magnetic forces), the number of degrees of freedom (F) is related to the number of components (C) and phases (P) by<br>
+        \[
+        F = C - P + 2
+        \]
+        This relation is called <strong>Gibbs phase rule</strong>.
+      </p>
+
+      <div class="sub-heading">Water System – One Component System</div>
+      <p>
+        Water exists in three phases: ice (solid), liquid water and water vapour. Since the chemical composition of all three phases is H₂O, it is a <strong>one-component, three-phase</strong> system. Its phase diagram is a pressure–temperature (P–T) diagram.
+      </p>
+
+      <!-- Image for phase diagram of water -->
+      <img src="water_phase_diagram.png"
+           alt="Phase diagram of water system (P–T diagram with curves OA, OB, OC and triple point O)"
+           class="notes-image" />
+
+      <div class="sub-heading">Important Curves and Point in the Diagram</div>
+
+      <div class="step">
+        <span class="step-title">1. Curve OA – Vapourisation Curve</span>
+        <p>
+          Represents equilibrium between liquid water and vapour:
+          <br><strong>Water ⇌ Water vapour</strong>
+        </p>
+        <ul>
+          <li>For any point on OA, two phases (liquid + vapour) exist.</li>
+          <li>Applying phase rule: \(F = 1 - 2 + 2 = 1\). Hence the system is <strong>univariant</strong>.</li>
+          <li>The curve ends at the critical temperature (≈374°C); above this, only vapour exists.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">2. Curve OB – Sublimation Curve</span>
+        <p>
+          Represents equilibrium between ice and vapour:
+          <br><strong>Ice ⇌ Vapour</strong>
+        </p>
+        <ul>
+          <li>Two phases (solid + vapour) are in equilibrium.</li>
+          <li>Phase rule: \(F = 1 - 2 + 2 = 1\) → univariant.</li>
+          <li>Curve extends theoretically towards very low temperatures (near absolute zero) where only ice exists.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">3. Curve OC – Melting Point Curve</span>
+        <p>
+          Represents equilibrium between ice and liquid water:
+          <br><strong>Ice ⇌ Water</strong>
+        </p>
+        <ul>
+          <li>Again, two phases are present; \(F = 1\) → univariant.</li>
+          <li>Curve slopes slightly towards the pressure axis, indicating that <strong>melting point of ice decreases with increase in pressure</strong> (anomalous behaviour of water).</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">4. Triple Point O</span>
+        <p>
+          Curves OA, OB and OC meet at point O where three phases – ice, water and vapour – coexist:
+          <br><strong>Ice(s) ⇌ Water(l) ⇌ Vapour(g)</strong>
+        </p>
+        <ul>
+          <li>Here \(C = 1\), \(P = 3\); therefore \(F = 1 - 3 + 2 = 0\).</li>
+          <li>The system is <strong>non-variant</strong>; both pressure (4.58 mm Hg) and temperature (0.0075°C) are fixed and cannot be changed without losing one phase.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">5. Curve OB′ – Metastable Equilibrium</span>
+        <p>
+          Sometimes water can be super-cooled below 0°C without freezing. The equilibrium:
+          <br><strong>Super-cooled water ⇌ Vapour</strong>
+        </p>
+        <p>
+          is represented by curve OB′ (dotted). This is a <strong>metastable</strong> state; super-cooled water is unstable and readily converts to ice on seeding or disturbance.
+        </p>
+      </div>
+
+      <div class="step">
+        <span class="step-title">6. Areas</span>
+        <ul>
+          <li>Area AOC – only liquid water is present.</li>
+          <li>Area BOC – only solid ice is present.</li>
+          <li>Area AOB – only vapour is present.</li>
+        </ul>
+        <p>
+          In each area only one phase exists, so \(P = 1\), \(F = 1 - 1 + 2 = 2\). Hence water in these regions is <strong>bivariant</strong>. Both temperature and pressure must be specified to define the state completely.
+        </p>
+      </div>
+
+      <div class="result-box">
+        The water system phase diagram is an excellent experimental proof of Gibbs phase rule. It clearly shows univariant equilibria along the curves, non-variant triple point and bivariant single-phase regions for a one-component system.
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-box">
+      <span class="topic-tag">Basic Terms & Cooling Curves</span>
+      <div class="question-title">
+        2. (i) Define phase, component and degree of freedom with examples. List out the limitations of phase rule.
+        <br>(ii) Explain thermal analysis / cooling curves in detail. (13 Marks)
+      </div>
+
+      <div class="sub-heading">Part (i): Definitions</div>
+
+      <p class="definition">
+        <strong>Phase (P):</strong> Any homogeneous, physically distinct and mechanically separable portion of a system, separated from other parts by definite boundaries.
+      </p>
+      <ul>
+        <li>Air (mixture of O₂, N₂, CO₂, etc.) – single gaseous phase.</li>
+        <li>Mixture of benzene and water – two liquid phases + one vapour phase.</li>
+        <li>CaCO₃(s) ⇌ CaO(s) + CO₂(g) – three phases: solid CaCO₃, solid CaO and gaseous CO₂.</li>
+        <li>Ice, liquid water and water vapour together – three phases.</li>
+      </ul>
+
+      <p class="definition">
+        <strong>Component (C):</strong> Minimum number of independently variable constituents required to express the composition of each phase in the system.
+      </p>
+      <ul>
+        <li>Water system (ice, water, vapour): all phases are H₂O → <strong>one-component</strong> system.</li>
+        <li>Decomposition of CaCO₃: CaCO₃(s) ⇌ CaO(s) + CO₂(g) – <strong>two components</strong> (e.g., CaCO₃ and CaO or CaO and CO₂).</li>
+        <li>Aqueous NaCl solution – two components (NaCl and H₂O).</li>
+      </ul>
+
+      <p class="definition">
+        <strong>Degree of Freedom (F):</strong> Minimum number of independent variables (T, P and concentration) that must be fixed to define the system completely at equilibrium.
+      </p>
+      <ul>
+        <li>Ice ⇌ Water ⇌ Vapour: at triple point \(F = 0\) → <strong>non-variant</strong>.</li>
+        <li>Water ⇌ Vapour: \(F = 1\) (either T or P must be fixed) → <strong>univariant</strong>.</li>
+        <li>Gaseous mixture of N₂ and H₂: need both T and P → \(F = 2\) → <strong>bivariant</strong>.</li>
+      </ul>
+
+      <div class="sub-heading">Limitations of Phase Rule</div>
+      <ul>
+        <li>Applicable only to systems in true equilibrium; not valid for systems undergoing rapid change.</li>
+        <li>Considers only T, P and composition; ignores effects of electrical, magnetic and gravitational fields.</li>
+        <li>All phases must be at the same T and P; otherwise the rule cannot be directly applied.</li>
+        <li>Solid and liquid phases should not be in finely divided (colloidal) state; deviations occur if they are.</li>
+      </ul>
+
+      <div class="sub-heading">Part (ii): Thermal Analysis / Cooling Curves</div>
+
+      <p class="definition">
+        <strong>Thermal analysis</strong> is a method in which the temperature of a substance or mixture is recorded as it is allowed to cool slowly, and a graph of temperature versus time (cooling curve) is obtained. From this, phase changes and eutectic temperature can be determined.
+      </p>
+
+      <div class="sub-heading">1. Cooling Curve for a Pure Substance</div>
+
+      <!-- Image for cooling curve pure solid -->
+      <img src="pure_substance_cooling_curve.png"
+           alt="Cooling curve of a pure substance showing horizontal arrest at freezing point"
+           class="notes-image" />
+
+      <div class="step">
+        <span class="step-title">Explanation</span>
+        <ol>
+          <li>Molten pure substance is cooled and temperature is recorded at regular intervals.</li>
+          <li>Temperature falls steadily along curve <em>ab</em> until it reaches the freezing point.</li>
+          <li>At point <em>b</em>, solidification begins; during the phase change, temperature remains constant, giving a horizontal line <em>bc</em>. Here liquid and solid are in equilibrium.</li>
+          <li>When the whole liquid has solidified (point <em>c</em>), cooling continues and temperature again falls along <em>cd</em>.</li>
+        </ol>
+        <p>Thus, the constant-temperature plateau indicates the freezing/melting point of the pure substance.</p>
+      </div>
+
+      <div class="sub-heading">2. Cooling Curve for a Binary Mixture</div>
+
+      <!-- Image for cooling curve mixture -->
+      <img src="mixture_cooling_curve.png"
+           alt="Cooling curve for a binary mixture showing two breaks and eutectic arrest"
+           class="notes-image" />
+
+      <div class="step">
+        <span class="step-title">Explanation</span>
+        <ol>
+          <li>Initially, temperature falls steadily with time.</li>
+          <li>At first break <em>b'</em>, one component (say A) starts crystallising; cooling rate changes but temperature continues to fall.</li>
+          <li>At second break <em>c'</em>, remaining liquid reaches eutectic composition; both components solidify simultaneously at constant temperature along horizontal line <em>cd</em> (eutectic arrest).</li>
+          <li>After complete solidification at point <em>d'</em>, temperature again decreases with time.</li>
+        </ol>
+      </div>
+
+      <!-- Image for cooling curves of various compositions -->
+      <img src="various_composition_cooling_curves.png"
+           alt="Family of cooling curves for different compositions leading to eutectic phase diagram"
+           class="notes-image" />
+
+      <div class="step">
+        <span class="step-title">Construction of Eutectic Phase Diagram</span>
+        <p>
+          By performing thermal analysis for several compositions of the two components and locating the arrests, a family of cooling curves is obtained. From these curves, points corresponding to liquidus and eutectic temperatures are plotted on a temperature–composition diagram to obtain the <strong>simple eutectic phase diagram</strong>.
+        </p>
+      </div>
+
+      <div class="sub-heading">Uses of Cooling Curves</div>
+      <ul>
+        <li>Determine melting point of pure substances and eutectic temperature of mixtures.</li>
+        <li>Assess purity of materials (sharp plateau indicates high purity).</li>
+        <li>Study solidification behaviour and phase relationships in alloys.</li>
+        <li>Used to construct phase diagrams of two-component systems.</li>
+      </ul>
+
+      <div class="result-box">
+        Thermal analysis and cooling curves give an experimental method of constructing phase diagrams and understanding phase changes in pure substances and mixtures.
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-box">
+      <span class="topic-tag">Composite Materials</span>
+      <div class="question-title">
+        3. What are composite materials? Discuss the important types of fibre reinforced composites. (13 Marks)
+      </div>
+
+      <p class="definition">
+        <strong>Composite material</strong> is a macroscopically homogeneous material obtained by combining two or more distinct materials (matrix and reinforcement) so that the final material has superior properties which no single constituent alone can provide.
+      </p>
+
+      <div class="sub-heading">Basic Structure of Composites</div>
+      <ul>
+        <li><strong>Matrix phase:</strong> Continuous phase that binds the reinforcement, transfers load and protects it from environment.</li>
+        <li><strong>Reinforcement phase:</strong> Discontinuous phase (fibres, particles, flakes, whiskers) that provides strength, stiffness and other special properties.</li>
+      </ul>
+
+      <div class="sub-heading">Fibre Reinforced Composites (FRCs)</div>
+      <p>
+        In fibre reinforced composites, fibres are the main reinforcing phase. They may be glass, carbon, aramid, boron etc. Depending on the type of matrix, FRCs are broadly classified as:
+      </p>
+
+      <div class="step">
+        <span class="step-title">1. Polymer Matrix Composites (PMC)</span>
+        <ul>
+          <li>Thermoset or thermoplastic polymers (epoxy, polyester, vinyl ester, nylon, polypropylene) act as matrix.</li>
+          <li>Reinforced with fibres such as glass (GFRP), carbon (CFRP) or aramid (Kevlar).</li>
+          <li>Advantages: low density, good corrosion resistance, easy fabrication and low cost.</li>
+          <li>Applications: aerospace fairings, automobile body panels, boat hulls, sports goods, helmets.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">2. Metal Matrix Composites (MMC)</span>
+        <ul>
+          <li>Metals like Al, Mg, Ti or their alloys act as matrices.</li>
+          <li>Reinforced with continuous or discontinuous fibres (boron, carbon, SiC) or whiskers.</li>
+          <li>Exhibit high strength and stiffness at elevated temperature, better wear resistance than alloys.</li>
+          <li>Applications: aircraft structural parts, brake rotors, connecting rods, drive shafts.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">3. Ceramic Matrix Composites (CMC)</span>
+        <ul>
+          <li>Ceramics such as SiC, Al₂O₃ or glass-ceramics are used as matrices.</li>
+          <li>Reinforced with ceramic or carbon fibres, improving toughness and thermal shock resistance.</li>
+          <li>Applications: high-temperature engine parts, turbine blades, heat shields, cutting tools.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">4. Typical Fibre Arrangements</span>
+        <ul>
+          <li><strong>Continuous (unidirectional) fibres</strong> – maximum strength in fibre direction.</li>
+          <li><strong>Woven fabrics</strong> – good in-plane properties and damage tolerance.</li>
+          <li><strong>Chopped strand mats</strong> – isotropic properties, easier processing.</li>
+        </ul>
+      </div>
+
+      <div class="result-box">
+        Composite materials, especially fibre reinforced composites, provide an excellent combination of high strength-to-weight ratio, tailor-made properties and design flexibility, making them indispensable in modern engineering applications.
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-box">
+      <span class="topic-tag">Polymer Matrix Composites</span>
+      <div class="question-title">
+        4. Explain the properties and applications of polymer matrix composites. (13 Marks)
+      </div>
+
+      <p class="definition">
+        <strong>Polymer Matrix Composites (PMCs)</strong> are composites in which a thermosetting or thermoplastic polymer acts as the continuous matrix phase and fibres or particles act as reinforcement.
+      </p>
+
+      <div class="sub-heading">Properties of Polymer Matrix Composites</div>
+      <ul>
+        <li><strong>Low density:</strong> Much lighter than metals, leading to high specific strength and stiffness.</li>
+        <li><strong>High strength and stiffness:</strong> Due to reinforcement with glass, carbon or aramid fibres.</li>
+        <li><strong>Excellent corrosion resistance:</strong> Resistant to moisture and many chemicals; suitable for marine and chemical applications.</li>
+        <li><strong>Good fatigue resistance:</strong> Capable of withstanding cyclic loading, useful in aerospace and automobile structures.</li>
+        <li><strong>Good damping and vibration absorption:</strong> Polymers reduce noise and vibration, improving comfort and stability.</li>
+        <li><strong>Ease of fabrication:</strong> Can be moulded into complex shapes by lay-up, filament winding, pultrusion, injection moulding, etc.</li>
+        <li><strong>Tailor-made properties:</strong> By choosing matrix type, fibre type, volume fraction and orientation, properties can be customised.</li>
+        <li><strong>Low thermal conductivity and electrical insulation:</strong> Useful as insulating components; carbon-fibre composites can be made moderately conductive when needed.</li>
+      </ul>
+
+      <div class="sub-heading">Applications of Polymer Matrix Composites</div>
+      <div class="step">
+        <span class="step-title">1. Aerospace and Aircraft</span>
+        <ul>
+          <li>Fuselage and wing skins of aircraft, helicopter rotor blades.</li>
+          <li>Satellite structures, fairings, radomes and interior panels.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">2. Automotive and Transportation</span>
+        <ul>
+          <li>Body panels, bumpers, leaf springs, drive shafts and engine covers.</li>
+          <li>Weight reduction leads to improved fuel efficiency and reduced emissions.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">3. Marine and Offshore</span>
+        <ul>
+          <li>Boat hulls, decks, masts and propeller shafts.</li>
+          <li>Because of high corrosion resistance in saline water and good fatigue behaviour.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">4. Civil Engineering and Construction</span>
+        <ul>
+          <li>FRP rebars and laminates for strengthening bridges and buildings.</li>
+          <li>Composite doors, panels, roofing sheets and gratings.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">5. Sports, Medical and Consumer Products</span>
+        <ul>
+          <li>Racquets, golf clubs, hockey sticks, bicycle frames and helmets.</li>
+          <li>Artificial limbs, dental posts and various medical devices.</li>
+          <li>Casings of electronic gadgets, luggage shells and furniture components.</li>
+        </ul>
+      </div>
+
+      <div class="result-box">
+        Due to their combination of low weight, high performance and design flexibility, polymer matrix composites have become the most widely used class of composites in aerospace, automotive, marine, sports and many other industries.
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="question-box">
+      <span class="topic-tag">Matrix & Dispersed Phase</span>
+      <div class="question-title">
+        5. Explain matrix phase and dispersed phase with example. (13 Marks)
+      </div>
+
+      <div class="sub-heading">1. Matrix Phase</div>
+      <p class="definition">
+        The <strong>matrix phase</strong> is the continuous, surrounding phase in a composite material. It holds the reinforcement in position, transfers and distributes the applied load and protects the reinforcement from environmental damage.
+      </p>
+      <ul>
+        <li>May be polymer, metal or ceramic.</li>
+        <li>Controls overall shape and surface finish of the composite.</li>
+        <li>Provides ductility and toughness, preventing catastrophic failure.</li>
+      </ul>
+
+      <div class="sub-heading">2. Dispersed (Reinforcing) Phase</div>
+      <p class="definition">
+        The <strong>dispersed phase</strong> (or reinforcement) is the second phase distributed within the matrix in the form of fibres, particles, flakes or whiskers. It mainly provides strength, stiffness and special properties to the composite.
+      </p>
+      <ul>
+        <li>High modulus and strength compare to matrix.</li>
+        <li>May be continuous or discontinuous, oriented or random.</li>
+        <li>Improves wear resistance, thermal stability, conductivity, etc., depending on material.</li>
+      </ul>
+
+      <div class="sub-heading">3. Examples</div>
+      <div class="step">
+        <span class="step-title">Example 1 – Glass Fibre Reinforced Plastic (GFRP)</span>
+        <ul>
+          <li><strong>Matrix phase:</strong> Thermoset polymer such as polyester or epoxy resin.</li>
+          <li><strong>Dispersed phase:</strong> Continuous or chopped glass fibres.</li>
+          <li><strong>Result:</strong> Composite with high tensile strength and good corrosion resistance used in boat hulls, tanks and panels.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">Example 2 – Aluminium–SiC Metal Matrix Composite</span>
+        <ul>
+          <li><strong>Matrix:</strong> Aluminium alloy.</li>
+          <li><strong>Reinforcement:</strong> Silicon carbide particles or fibres.</li>
+          <li><strong>Result:</strong> Lightweight, high stiffness material used in brake rotors and engine components.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">Example 3 – Concrete</span>
+        <ul>
+          <li><strong>Matrix:</strong> Hydrated cement paste.</li>
+          <li><strong>Dispersed phase:</strong> Sand and coarse aggregates (gravel, stones).</li>
+          <li>Steel bars in reinforced concrete act as an additional continuous reinforcement phase.</li>
+        </ul>
+      </div>
+
+      <div class="result-box">
+        In any composite, the matrix phase provides shape, toughness and environmental resistance, while the dispersed phase provides high strength and stiffness; the judicious combination of both phases gives the desired engineering properties.
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="question-box">
+      <span class="topic-tag">Reduced Phase Rule & Pb–Ag System</span>
+      <div class="question-title">
+        6. Explain the following:<br>
+        (i) State reduced phase rule. <br>
+        (ii) With the help of neat phase diagram explain Lead–Silver system. <br>
+        (iii) Explain its application in Pattinson process. (13 Marks)
+      </div>
+
+      <div class="sub-heading">(i) Reduced Phase Rule / Condensed Phase Rule</div>
+      <p class="definition">
+        For many two-component systems involving only solid and liquid phases, the vapour phase is absent or its effect is negligible. Experiments are conducted at constant pressure (usually 1 atm). Such systems are called <strong>condensed systems</strong>.
+      </p>
+      <p>
+        Since pressure is constant, it is not considered as a variable. Hence Gibbs phase rule
+        \[
+        F = C - P + 2
+        \]
+        becomes
+        \[
+        F' = C - P + 1
+        \]
+        This is known as the <strong>reduced phase rule</strong> or <strong>condensed phase rule</strong>.
+      </p>
+
+      <div class="sub-heading">(ii) Lead–Silver (Pb–Ag) System – Simple Eutectic System</div>
+
+      <!-- Image for Pb-Ag phase diagram -->
+      <img src="lead_silver_diagram.png"
+           alt="Phase diagram of lead–silver simple eutectic system with curves AO, BO and eutectic point O"
+           class="notes-image" />
+
+      <p>
+        Lead–silver system is a typical <strong>binary eutectic alloy system</strong> studied at constant pressure using reduced phase rule. The phase diagram has two liquidus curves (AO and BO) and a eutectic point O.
+      </p>
+
+      <div class="step">
+        <span class="step-title">1. Curve AO – Freezing Point Curve of Silver</span>
+        <ul>
+          <li>Point A – melting point of pure Ag (961°C).</li>
+          <li>Curve AO shows the depression of freezing point of silver on adding lead.</li>
+          <li>Along AO, solid Ag is in equilibrium with liquid melt:
+            <br><strong>Solid Ag ⇌ Liquid melt</strong>
+          </li>
+          <li>Here C = 2, P = 2 → \(F' = 2 - 2 + 1 = 1\) → univariant.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">2. Curve BO – Freezing Point Curve of Lead</span>
+        <ul>
+          <li>Point B – melting point of pure Pb (327°C).</li>
+          <li>Curve BO shows depression of freezing point of lead on adding silver.</li>
+          <li>Along BO, solid Pb is in equilibrium with liquid melt:
+            <br><strong>Solid Pb ⇌ Liquid melt</strong>
+          </li>
+          <li>Again C = 2, P = 2 → \(F' = 1\) → univariant.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">3. Eutectic Point O</span>
+        <ul>
+          <li>Curves AO and BO meet at O at 303°C.</li>
+          <li>Three phases coexist: solid Ag, solid Pb and liquid melt.</li>
+          <li>Composition at O is about 97.4% Pb and 2.6% Ag by mass (eutectic composition).</li>
+          <li>According to reduced phase rule, C = 2, P = 3:
+            \(F' = 2 - 3 + 1 = 0\) → system is <strong>non-variant</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">4. Areas</span>
+        <ul>
+          <li>Area above line AOB – single liquid phase (molten Pb + Ag). Here \(P = 1\), \(F' = 2\) → bivariant; both temperature and composition must be specified.</li>
+          <li>Area below AO – two phases: solid Ag + liquid melt.</li>
+          <li>Area below BO – two phases: solid Pb + liquid melt.</li>
+          <li>Region below eutectic horizontal at 303°C – mixture of eutectic (fine layers of Pb + Ag) and primary crystals of Pb or Ag depending on composition.</li>
+        </ul>
+      </div>
+
+      <div class="sub-heading">(iii) Pattinson Process – Desilverisation of Argentiferous Lead</div>
+
+      <p class="definition">
+        <strong>Pattinson process</strong> uses the Pb–Ag eutectic phase diagram to enrich silver content in argentiferous lead (lead containing a small amount of silver).
+      </p>
+
+      <div class="step">
+        <span class="step-title">Principle</span>
+        <p>
+          From the phase diagram, lead crystallises out first from the melt on cooling, and the remaining liquid becomes richer in silver as temperature approaches eutectic point. By repeated partial solidification and removal of crystals, silver concentration in the remaining melt increases.
+        </p>
+      </div>
+
+      <div class="step">
+        <span class="step-title">Process Steps</span>
+        <ol>
+          <li>Argentiferous lead (about 0.1% Ag) is melted in a series of iron pots.</li>
+          <li>The melt corresponds to a point <em>p</em> in the single-liquid region of the phase diagram.</li>
+          <li>On slow cooling along line <em>pq</em>, pure lead crystallises out first when curve BO is approached.</li>
+          <li>These Pb crystals, poor in silver, are removed mechanically and remelted for ordinary use.</li>
+          <li>The remaining liquid becomes progressively richer in Ag and its composition moves towards eutectic point O.</li>
+          <li>When composition of residual melt reaches eutectic, it is collected and further treated (e.g., by cupellation) to recover silver metal.</li>
+        </ol>
+      </div>
+
+      <div class="result-box">
+        Thus, by repeated partial crystallisation of lead and removal of Pb crystals, Pattinson process successfully concentrates silver in the melt, utilising the eutectic nature of the Pb–Ag phase diagram and the reduced phase rule.
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="question-box">
+      <span class="topic-tag">MMC, CMC & Hybrid Composites</span>
+      <div class="question-title">
+        7. Discuss the applications and properties of metal matrix, ceramic and hybrid composites. (13 Marks)
+      </div>
+
+      <div class="sub-heading">1. Metal Matrix Composites (MMC)</div>
+      <p class="definition">
+        MMCs are composites in which a metal or alloy (Al, Mg, Ti, Cu, etc.) acts as the matrix phase reinforced with fibres, whiskers or particles (such as SiC, Al₂O₃, graphite).
+      </p>
+
+      <div class="step">
+        <span class="step-title">Properties</span>
+        <ul>
+          <li>High specific strength and stiffness compared to monolithic metals.</li>
+          <li>Retain strength at elevated temperatures where polymer composites fail.</li>
+          <li>Improved wear and creep resistance.</li>
+          <li>Better thermal conductivity than PMCs (useful for heat dissipation).</li>
+          <li>Can be tailored for low coefficient of thermal expansion.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">Applications</span>
+        <ul>
+          <li>Aerospace structures, satellite frames, aircraft brake discs.</li>
+          <li>Automotive components such as pistons, brake rotors, connecting rods and drive shafts.</li>
+          <li>Heat sinks and electronic packaging where high thermal conductivity and dimensional stability are required.</li>
+        </ul>
+      </div>
+
+      <div class="sub-heading">2. Ceramic Matrix Composites (CMC)</div>
+      <p class="definition">
+        In CMCs, a ceramic (SiC, Al₂O₃, Si₃N₄ or glass-ceramic) forms the matrix and is reinforced with ceramic or carbon fibres/whiskers.
+      </p>
+
+      <div class="step">
+        <span class="step-title">Properties</span>
+        <ul>
+          <li>Very high melting point and excellent high-temperature strength.</li>
+          <li>Outstanding wear, oxidation and corrosion resistance.</li>
+          <li>Improved fracture toughness and thermal shock resistance compared to monolithic ceramics.</li>
+          <li>Low density and good fatigue resistance at high temperatures.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">Applications</span>
+        <ul>
+          <li>Gas turbine components, combustor liners and nozzles.</li>
+          <li>Heat shields in aerospace vehicles and brake pads.</li>
+          <li>Cutting tools and wear-resistant parts.</li>
+        </ul>
+      </div>
+
+      <div class="sub-heading">3. Hybrid Composites</div>
+      <p class="definition">
+        <strong>Hybrid composite</strong> is a composite containing <em>two or more different types of reinforcement</em> (for example, glass + carbon fibres) and sometimes different matrices. The aim is to combine advantages of each constituent and minimise their limitations.
+      </p>
+
+      <div class="step">
+        <span class="step-title">Properties</span>
+        <ul>
+          <li>Balanced combination of stiffness, strength, impact resistance and fatigue life.</li>
+          <li>Better damage tolerance than single-fibre composites.</li>
+          <li>Possibility of tailoring properties in different directions and regions of a structure.</li>
+          <li>Often more cost-effective (e.g., glass + carbon hybrid to reduce cost of pure carbon composites).</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-title">Applications</span>
+        <ul>
+          <li>Aerospace and automobile structural parts where different regions need different stiffness or damping.</li>
+          <li>Wind turbine blades using glass–carbon hybrids for good stiffness and fatigue resistance.</li>
+          <li>Sporting goods – tennis racquets, bicycles, fishing rods – combining performance and cost effectiveness.</li>
+        </ul>
+      </div>
+
+      <div class="result-box">
+        Metal matrix, ceramic matrix and hybrid composites widen the application range of composite materials from room-temperature structural components to severe high-temperature and high-wear environments, each type contributing a unique combination of properties.
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

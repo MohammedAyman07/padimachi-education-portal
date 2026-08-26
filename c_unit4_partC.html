@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 4 (Part C) - Programming in C </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="protection.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+  <style>
+    /* Styles for the notes content */
+    .notes-content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: left;
+    }
+    .notes-content h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      font-size: 1.5rem;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    .qa-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .qa-item h3 {
+      color: #1d4ed8;
+      font-size: 1.15rem; /* Standard size */
+      margin-bottom: 12px;
+      font-family: Arial, sans-serif;
+    }
+    .qa-item p, .qa-item ul, .qa-item ol {
+      color: #333;
+      font-size: 1rem; /* Standard font size */
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .qa-item ul, .qa-item ol {
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+    .qa-item li {
+      margin-bottom: 8px;
+    }
+    .qa-item pre {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: "Courier New", Courier, monospace;
+      overflow-x: auto;
+      line-height: 1.5;
+    }
+    .qa-item code {
+      font-family: "Courier New", Courier, monospace;
+      background-color: #eee;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>💻 Unit 4 – Part C (Descriptive Q&A)</h1>
+      <p>Programming in C </p>
+      <a href="c_unit4.html" class="cta-btn">⬅ Back to Unit 4</a>
+    </div>
+  </header>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  <section class="notes-content">
+    <h2>Part C: Structures and Unions</h2>
+
+    <div class="qa-item">
+      <h3>85. Explain in detail the control structures in C (decision-making and looping statements) with examples.</h3>
+      <p>Control structures alter the normal sequential flow of execution in a program. They are categorized into decision-making and looping statements.</p>
+      
+      <p><strong>1. Decision-Making (Conditional) Statements:</strong></p>
+      <p>These statements execute a block of code only if a certain condition is true.</p>
+      <ul>
+        <li><strong><code>if</code> Statement:</strong> Executes code if the condition is true.
+<pre><code>
+if (age > 18) {
+    printf("You are an adult.");
+}
+</code></pre>
+        </li>
+        <li><strong><code>if-else</code> Statement:</strong> Executes one block of code if the condition is true, and another block if it is false.
+<pre><code>
+if (num % 2 == 0) {
+    printf("Even");
+} else {
+    printf("Odd");
+}
+</code></pre>
+        </li>
+        <li><strong><code>if-else-if</code> Ladder:</strong> Used to test multiple conditions.
+<pre><code>
+if (marks >= 90) {
+    printf("Grade A");
+} else if (marks >= 80) {
+    printf("Grade B");
+} else {
+    printf("Grade C");
+}
+</code></pre>
+        </li>
+        <li><strong><code>switch</code> Statement:</strong> Used to select one of many code blocks to be executed based on a single integer or character value.
+<pre><code>
+switch (day) {
+    case 1:
+        printf("Monday");
+        break;
+    case 2:
+        printf("Tuesday");
+        break;
+    default:
+        printf("Invalid day");
+}
+</code></pre>
+        </li>
+      </ul>
+      
+      <p><strong>2. Looping (Iterative) Statements:</strong></p>
+      <p>These statements execute a block of code repeatedly as long as a condition is true.</p>
+      <ul>
+        <li><strong><code>while</code> Loop (Entry-Controlled):</strong> The condition is checked *before* executing the loop body. The loop runs 0 or more times.
+<pre><code>
+int i = 1;
+while (i <= 5) {
+    printf("%d ", i);
+    i++;
+}
+// Output: 1 2 3 4 5
+</code></pre>
+        </li>
+        <li><strong><code>do-while</code> Loop (Exit-Controlled):</strong> The condition is checked *after* executing the loop body. The loop runs at least 1 time.
+<pre><code>
+int i = 1;
+do {
+    printf("%d ", i);
+    i++;
+} while (i <= 5);
+// Output: 1 2 3 4 5
+</code></pre>
+        </li>
+        <li><strong><code>for</code> Loop (Entry-Controlled):</strong> A compact loop structure with initialization, condition, and update in one line.
+<pre><code>
+int i;
+for (i = 1; i <= 5; i++) {
+    printf("%d ", i);
+}
+// Output: 1 2 3 4 5
+</code></pre>
+        </li>
+      </ul>
+    </div>
+
+    <div class="qa-item">
+      <h3>86. Create a student information system, i) Declare a structure Student... ii) Calculate the GPA and CGPA...</h3>
+      <p>This program defines a <code>Student</code> structure, calculates percentage (as a proxy for GPA, since a true GPA/CGPA calculation system is complex and specific), and demonstrates its usage.</p>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+// i) Declare the structure
+struct Student {
+    char name[100];
+    int age;
+    long roll_number;
+    int marks[5]; // Marks for 5 subjects
+    float percentage;
+    float gpa; // Using percentage as a proxy
+};
+
+// Function to calculate GPA/Percentage
+void calculateGPA(struct Student *s) {
+    int total_marks = 0;
+    int num_subjects = 5;
+    for (int i = 0; i < num_subjects; i++) {
+        total_marks += s->marks[i];
+    }
+    
+    s->percentage = (float)total_marks / num_subjects;
+    
+    // ii) Calculate GPA (on a 10-point scale, as percentage/10)
+    // This is a simplification. Real GPA/CGPA involves credits.
+    s->gpa = s->percentage / 10.0;
+}
+
+int main() {
+    struct Student s1;
+
+    // --- Get Student Details ---
+    strcpy(s1.name, "Arun Kumar");
+    s1.age = 19;
+    s1.roll_number = 12345;
+
+    printf("Enter marks for 5 subjects for %s:\n", s1.name);
+    for (int i = 0; i < 5; i++) {
+        printf("Subject %d: ", i + 1);
+        scanf("%d", &s1.marks[i]);
+    }
+
+    // --- Calculate GPA/Percentage ---
+    calculateGPA(&s1);
+
+    // --- Display Student Details ---
+    printf("\n--- Student Information ---\n");
+    printf("Name: %s\n", s1.name);
+    printf("Age: %d\n", s1.age);
+    printf("Roll Number: %ld\n", s1.roll_number);
+    printf("Percentage: %.2f%%\n", s1.percentage);
+    printf("GPA (out of 10): %.2f\n", s1.gpa);
+    // CGPA is an average of GPAs over multiple semesters.
+    // We can only show GPA for this single set of marks.
+    printf("CGPA: (Requires marks from previous semesters)\n");
+    
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <div class="qa-item">
+      <h3>87. Define a structure called student... Write a c program to read the details for 30 students and calculate the percentage then display...</h3>
+      <p>This program defines a <code>student</code> structure and uses an array of structures to store records for 3 students (using 3 instead of 30 for easier testing).</p>
+<pre><code>
+#include &lt;stdio.h&gt;
+
+#define NUM_STUDENTS 3 // Using 3 for testing. Change to 30 for full program.
+#define NUM_SUBJECTS 5
+
+struct student {
+    char name[100];
+    long reg_no;
+    int marks[NUM_SUBJECTS];
+    float percentage;
+};
+
+int main() {
+    struct student s[NUM_STUDENTS];
+    int i, j;
+
+    // --- Read Details for 30 Students ---
+    for (i = 0; i < NUM_STUDENTS; i++) {
+        printf("\n--- Enter Details for Student %d ---\n", i + 1);
+        
+        printf("Enter Name: ");
+        scanf(" %[^\n]", s[i].name); // Read string with spaces
+        
+        printf("Enter Register No.: ");
+        scanf("%ld", &s[i].reg_no);
+
+        printf("Enter Marks for 5 Subjects:\n");
+        int total_marks = 0;
+        for (j = 0; j < NUM_SUBJECTS; j++) {
+            printf("Subject %d: ", j + 1);
+            scanf("%d", &s[i].marks[j]);
+            total_marks += s[i].marks[j];
+        }
+        
+        // --- Calculate Percentage ---
+        s[i].percentage = (float)total_marks / NUM_SUBJECTS;
+    }
+
+    // --- Display All Student Details ---
+    printf("\n\n*** Student Details ***\n");
+    printf("--------------------------------------------\n");
+    printf("Reg. No.\tName\t\tPercentage\n");
+    printf("--------------------------------------------\n");
+
+    for (i = 0; i < NUM_STUDENTS; i++) {
+        printf("%ld\t\t%s\t\t%.2f%%\n", s[i].reg_no, s[i].name, s[i].percentage);
+    }
+    printf("--------------------------------------------\n");
+
+    return 0;
+}
+</code></pre>
+    </div>
+
+  </section>
+
+  <section class="ads"><div class="ad-box"><p>Ad Space</p></div></section>
+
+  
+ 
+
+</body>
+</html>
