@@ -93,4 +93,4 @@ All external links and local file references have been verified.
 
 ## License
 
-This project is intended for educational purposes. All content is the property of PadiMachi / AymanInfotech.
+This project is intended for educational purposes. All content is the property of PadiMachi.
