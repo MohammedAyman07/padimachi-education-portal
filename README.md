@@ -1,5 +1,7 @@
 # PadiMachi
 
+🚀 **Live Demo:** [https://padimachi-education-portal.vercel.app/](https://padimachi-education-portal.vercel.app/)
+
 A comprehensive static educational platform offering study materials and resources for 1st-year engineering and 11th-grade students.
 
 ## Overview
