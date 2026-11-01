@@ -164,4 +164,4 @@ If I continue developing PadiMachi, I would like to add:
 
 ## License
 
-This project is mainly shared as a portfolio and educational project. Some educational content may belong to its original sources or copyright holders.
+The original source code, design, and documentation in this repository are proprietary and all rights are reserved by Mohammed Ayman S. The source is publicly available for portfolio review only. Educational content, images, audio, and other third-party materials may belong to their respective owners and remain subject to their own terms. See the [AYMAN Proprietary Portfolio Licence](LICENSE) for permitted use and restrictions.
